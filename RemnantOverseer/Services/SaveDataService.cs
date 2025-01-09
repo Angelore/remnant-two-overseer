@@ -123,6 +123,7 @@ public class SaveDataService
     private async Task SaveFilePathChangedMessageHandler(SaveFilePathChangedMessage message)
     {
         PauseWatching();
+        // TODO: Change to reset + getsavedata. Do after backups are done to not mess with it for now.
         _dataset = await Task.Run(() => Analyzer.Analyze(FilePath));
         _lastCharacterCount = _dataset.Characters.Count;
         StartWatching();

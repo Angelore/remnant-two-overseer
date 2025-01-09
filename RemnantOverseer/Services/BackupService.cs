@@ -134,7 +134,44 @@ internal class BackupService
 
     private async Task SaveBackup()
     {
+        if (!Directory.Exists(_pathToSave))
+        {
+            // TODO: Send message
+            return;
+        }
+        if (!Directory.Exists(_pathToBackups))
+        {
+            // TODO: send message
+            return;
+        }
 
+        var dirInfo = Directory.CreateDirectory(BackupSettingsFileName);
+    }
+
+    public async Task<string?> GetSaveDataDescription(bool isCompact)
+    {
+        var data = await _saveDataService.GetSaveData();
+        if (data == null)
+            return null;
+
+        var activeCharacter = data.Characters[data.ActiveCharacterIndex];
+        var playtime = activeCharacter.Save.Playtime ?? TimeSpan.Zero;
+
+        if (isCompact)
+        {
+            return
+                activeCharacter.Profile.Archetype +
+                (string.IsNullOrEmpty(activeCharacter.Profile.SecondaryArchetype) ? "" : activeCharacter.Profile.SecondaryArchetype) +
+                activeCharacter.Profile.ItemLevel;
+        }
+        else
+        {
+            return
+                activeCharacter.Profile.Archetype + "/" +
+                (string.IsNullOrEmpty(activeCharacter.Profile.SecondaryArchetype) ? "" : activeCharacter.Profile.SecondaryArchetype) +
+                "[" + activeCharacter.Profile.ItemLevel + "]" +
+                " Playtime: " + (int)playtime.TotalHours + playtime.ToString(@"\:mm\:ss");
+        }
     }
 
     private async Task SaveFileChangedMessageHandler(SaveFileChangedMessage m)
