@@ -1,7 +1,7 @@
-﻿using Avalonia.Controls;
-using CommunityToolkit.Mvvm.Messaging;
+﻿using CommunityToolkit.Mvvm.Messaging;
 using lib.remnant2.analyzer;
 using RemnantOverseer.Models.Messages;
+using RemnantOverseer.Services.Models;
 using RemnantOverseer.Utilities;
 using System;
 using System.IO;
@@ -18,7 +18,7 @@ public class SettingsService
     public SettingsService()
     {
         // XAML Designer support
-        if (Design.IsDesignMode)
+        if (Avalonia.Controls.Design.IsDesignMode)
         {
             return; // TODO?
         }        
@@ -39,6 +39,8 @@ public class SettingsService
             try
             {
                 _settings.SaveFilePath = Utils.GetSteamSavePath();
+                _settings.BackupPath = Path.Combine(_settings.SaveFilePath, "BackupsTest");
+                _settings.RollingBackupAmount = 3;
                 Update(_settings);
             }
             catch

@@ -12,4 +12,6 @@ internal static class NotificationStrings
     public static string SelectedCharacterNotValid = "An issue encountered when trying to select active wharacter. Select a character manually";
 
     public static string NewerVersionFound = "A new version ({0}) is available";
+
+    public static string BackupFolderDoesntExist = "Backup folder doesn't exist. Created a new folder";
 }
