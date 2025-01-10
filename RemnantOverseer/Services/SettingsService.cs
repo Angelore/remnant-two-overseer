@@ -39,8 +39,9 @@ public class SettingsService
             try
             {
                 _settings.SaveFilePath = Utils.GetSteamSavePath();
-                _settings.BackupPath = Path.Combine(_settings.SaveFilePath, "BackupsTest");
-                _settings.RollingBackupAmount = 3;
+                _settings.BackupsPath = Path.Combine(_settings.SaveFilePath, "BackupsTest");
+                _settings.RollingBackupsAmount = 3;
+                _settings.MinutesBetweenRollingBackups = 10;
                 Update(_settings);
             }
             catch

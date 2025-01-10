@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Messaging;
+using RemnantOverseer.Models.Enums;
 using RemnantOverseer.Models.Messages;
 using RemnantOverseer.Services.Models;
 using RemnantOverseer.Utilities;
@@ -51,10 +52,10 @@ internal class BackupService
 
     public void Initialize()
     {
-        if (_settingsService.Get().BackupPath == null || _settingsService.Get().SaveFilePath == null) { throw new Exception("Settings service not initialized, can't init backup service"); }
-        _pathToBackups = _settingsService.Get().BackupPath!;
+        if (_settingsService.Get().BackupsPath == null || _settingsService.Get().SaveFilePath == null) { throw new Exception("Settings service not initialized, can't init backup service"); }
+        _pathToBackups = _settingsService.Get().BackupsPath!;
         _pathToSave = _settingsService.Get().SaveFilePath!;
-        _amountOfRollingBackups = _settingsService.Get().RollingBackupAmount; // TODO: Allow to disable rolling backups completely?
+        _amountOfRollingBackups = _settingsService.Get().RollingBackupsAmount; // TODO: Allow to disable rolling backups completely?
 
         if (!Directory.Exists(_pathToBackups))
         {
@@ -132,7 +133,7 @@ internal class BackupService
         }
     }
 
-    private async Task SaveBackup()
+    private async Task SaveBackup(BackupTypes backupType)
     {
         if (!Directory.Exists(_pathToSave))
         {
@@ -145,6 +146,14 @@ internal class BackupService
             return;
         }
 
+        var namePattern = backupType switch
+        {
+            BackupTypes.Regular => _fileNamePattern,
+            BackupTypes.Rolling => _rollingFileNamePattern,
+            _ => throw new NotImplementedException(),
+        };
+        var saveDescription = await GetSaveDataDescription(true);
+        var folderName = string.Format(namePattern, saveDescription, DateTime.Now.Ticks / 10000);
         var dirInfo = Directory.CreateDirectory(BackupSettingsFileName);
     }
 
