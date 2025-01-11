@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace RemnantOverseer.ViewModels;
 
-public partial class WorldViewModel : ViewModelBase
+internal partial class WorldViewModel : ViewModelBase
 {
     private readonly SaveDataService _saveDataService;
 

@@ -39,11 +39,13 @@ public partial class App : Application
                 services
                     .AddSingleton<SettingsService>()
                     .AddSingleton<SaveDataService>()
+                    .AddSingleton<BackupService>()
                     .AddTransient<MainWindowViewModel>()
                     .AddSingleton<CharacterSelectViewModel>()
                     .AddSingleton<SettingsViewModel>()
                     .AddSingleton<MissingItemsViewModel>()
-                    .AddSingleton<WorldViewModel>();
+                    .AddSingleton<WorldViewModel>()
+                    .AddSingleton<BackupViewModel>();
                     //.AddTransient<DebugViewModel>();
             })          
             .Build();

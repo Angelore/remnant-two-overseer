@@ -14,7 +14,7 @@ using System.Reactive.Subjects;
 using System.Reactive.Linq;
 
 namespace RemnantOverseer.ViewModels;
-public partial class MissingItemsViewModel : ViewModelBase
+internal partial class MissingItemsViewModel : ViewModelBase
 {
     private readonly SaveDataService _saveDataService;
     private MappedMissingItems _mappedMissingItems = new();

@@ -8,7 +8,7 @@ using System.IO;
 using System.Text.Json;
 
 namespace RemnantOverseer.Services;
-public class SettingsService
+internal class SettingsService
 {
     private readonly object _lock = new object();
     private readonly string path = Path.Combine(AppContext.BaseDirectory, "settings.json");
@@ -33,7 +33,7 @@ public class SettingsService
             _settings = JsonSerializer.Deserialize<Settings>(json)!;
         }
 
-        if (_settings.RollingBackupsAmount == 0 || _settings.MinutesBetweenRollingBackups == 0)
+        if (_settings.RollingBackupsAmount <= 0 || _settings.MinutesBetweenRollingBackups <= 0)
         {
             _settings.RollingBackupsAmount = 3;
             _settings.MinutesBetweenRollingBackups = 10;
@@ -46,14 +46,14 @@ public class SettingsService
             {
                 _settings.SaveFilePath = Utils.GetSteamSavePath();
                 // TODO: throw if dir doesnt exist?
+
+                WeakReferenceMessenger.Default.Send(new NotificationInfoMessage(NotificationStrings.DefaultLocationFound));
             }
             catch
             {
                 WeakReferenceMessenger.Default.Send(new NotificationWarningMessage(NotificationStrings.DefaultLocationNotFound));
                 return;
             }
-
-            WeakReferenceMessenger.Default.Send(new NotificationInfoMessage(NotificationStrings.DefaultLocationFound));
         }
 
         if (_settings.BackupsPath == null)
@@ -87,7 +87,7 @@ public class SettingsService
         }
         catch(Exception ex)
         {
-            WeakReferenceMessenger.Default.Send(new NotificationInfoMessage(NotificationStrings.ErrorWhenUpdatingSettings + Environment.NewLine + ex.Message));
+            WeakReferenceMessenger.Default.Send(new NotificationErrorMessage(NotificationStrings.ErrorWhenUpdatingSettings + Environment.NewLine + ex.Message));
         }
     }
 }

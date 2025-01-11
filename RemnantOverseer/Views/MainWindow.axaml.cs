@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using RemnantOverseer.Services;
 using RemnantOverseer.Utilities;
 using RemnantOverseer.ViewModels;
 using System;
@@ -15,7 +16,9 @@ public partial class MainWindow : Window
         {
             // This can be before or after InitializeComponent.
             var settingsService = new Services.SettingsService();
-            Design.SetDataContext(this, new MainWindowViewModel(settingsService, new Services.SaveDataService(settingsService)));
+            var saveDataService = new SaveDataService(settingsService);
+            var backupService = new BackupService(settingsService, saveDataService);
+            Design.SetDataContext(this, new MainWindowViewModel(settingsService, saveDataService, backupService));
         }
         InitializeComponent();
         Win32Properties.AddWndProcHookCallback(this, WndProcHook);

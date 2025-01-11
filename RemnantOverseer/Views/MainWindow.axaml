@@ -129,6 +129,11 @@
                 Data="{StaticResource MissingItemsIcon}"/>
           </RadioButton>
 
+          <RadioButton Grid.Row="4" Classes="SidebarButton"  GroupName="SideMenuButtons" Theme="{StaticResource ButtonWithBorder}" Command="{Binding SwitchToBackupsViewCommand}" IsChecked="{Binding IsBackupsViewSelected}"
+                       ToolTip.Tip="Settings" ToolTip.ShowDelay="700" ToolTip.Placement="RightEdgeAlignedTop">
+            <PathIcon Height="{StaticResource IconSize}" Width="{StaticResource IconSize}" Foreground="{StaticResource BaseTextColor}"
+                Data="{StaticResource GearIcon}"/>
+          </RadioButton>
           <RadioButton Grid.Row="5" Classes="SidebarButton"  GroupName="SideMenuButtons" Theme="{StaticResource ButtonWithBorder}" Command="{Binding SwitchToSettingsViewCommand}" IsChecked="{Binding IsSettingsViewSelected}"
                        ToolTip.Tip="Settings" ToolTip.ShowDelay="700" ToolTip.Placement="RightEdgeAlignedTop">
             <PathIcon Height="{StaticResource IconSize}" Width="{StaticResource IconSize}" Foreground="{StaticResource BaseTextColor}"

@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace RemnantOverseer.ViewModels;
-public partial class CharacterSelectViewModel: ViewModelBase
+internal partial class CharacterSelectViewModel: ViewModelBase
 {
     private readonly SaveDataService _saveDataService;
 

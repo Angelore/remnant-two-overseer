@@ -12,10 +12,11 @@ using System.Threading.Tasks;
 
 namespace RemnantOverseer.ViewModels;
 
-public partial class MainWindowViewModel : ViewModelBase, IDisposable
+internal partial class MainWindowViewModel : ViewModelBase, IDisposable
 {
     private readonly SettingsService _settingsService;
     private readonly SaveDataService _saveDataService;
+    private readonly BackupService _backupService;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(CanDisplayContent))]
@@ -29,6 +30,9 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
 
     [ObservableProperty]
     private bool _isMissingItemsViewSelected;
+
+    [ObservableProperty]
+    private bool _isBackupsViewSelected;
 
     [ObservableProperty]
     private bool _isSettingsViewSelected;
@@ -45,11 +49,12 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
     public WindowNotificationManager? NotificationManager { get; set; }
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable. (Is set in SwitchToWorldView)
-    public MainWindowViewModel(SettingsService settingsService, SaveDataService saveDataService)
+    public MainWindowViewModel(SettingsService settingsService, SaveDataService saveDataService, BackupService backupService)
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
     {
         _settingsService = settingsService;
         _saveDataService = saveDataService;
+        _backupService = backupService;
         IsActive = true; // Turn on the messenger https://github.com/CommunityToolkit/MVVM-Samples/issues/37
     }
 
@@ -78,6 +83,14 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
     }
 
     [RelayCommand]
+    public void SwitchToBackupsView()
+    {
+        if (ContentViewModel is BackupViewModel) return;
+        ContentViewModel = App.Resolve<BackupViewModel>();
+        IsBackupsViewSelected = true;
+    }
+
+    [RelayCommand]
     public void SwitchToSettingsView()
     {
         if (ContentViewModel is SettingsViewModel) return;
@@ -90,6 +103,7 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
     public void OnLoaded()
     {
         _settingsService.Initialize();
+        _backupService.Initialize();
         SaveFileUpdatedHandler(true);
         SwitchToWorldView();
         _saveDataService.StartWatching();
@@ -132,7 +146,7 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
         });
 
         Messenger.Register<MainWindowViewModel, NotificationErrorMessage>(this, (r, m) => {
-            NotificationManager?.Show(new Notification("Error", m.Value, NotificationType.Error));
+            NotificationManager?.Show(new Notification("Error", m.Value, NotificationType.Error, TimeSpan.Zero));
         });
 
         Messenger.Register<MainWindowViewModel, NotificationWarningMessage>(this, (r, m) => {

@@ -12,7 +12,7 @@ using System.Reactive.Linq;
 using RemnantOverseer.Utilities;
 
 namespace RemnantOverseer.Services;
-public class SaveDataService
+internal class SaveDataService
 {
     private readonly SettingsService _settingsService;
     private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);

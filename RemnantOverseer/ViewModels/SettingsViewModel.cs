@@ -13,7 +13,7 @@ using System.Reactive.Subjects;
 using System.Threading.Tasks;
 
 namespace RemnantOverseer.ViewModels;
-public partial class SettingsViewModel: ViewModelBase
+internal partial class SettingsViewModel: ViewModelBase
 {
     private const byte MIN_SPINNER = 1;
     private const byte MAX_SPINNER = 60;
@@ -163,7 +163,7 @@ public partial class SettingsViewModel: ViewModelBase
         var set = _settingsService.Get();
         set.RollingBackupsAmount = AmountOfRollingBackups;
         _settingsService.Update(set);
-        WeakReferenceMessenger.Default.Send(new RollingBackupAmountChangedMessage(AmountOfRollingBackups));
+        WeakReferenceMessenger.Default.Send(new RollingBackupsAmountChangedMessage(AmountOfRollingBackups));
     }
 
     [RelayCommand]

@@ -24,7 +24,7 @@
         </Grid>
       </Grid>
     </Border>
-    <Separator Grid.Row="1" BorderBrush="AliceBlue" Background="{StaticResource OuterBorderInactiveColor}" Height="2"/>
+    <Separator Grid.Row="1" Background="{StaticResource OuterBorderInactiveColor}" Height="2"/>
     <Border Grid.Row="2" Margin="20 10">
       <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto">
         <TextBlock Grid.Row="0" Text="Backups location" FontWeight="DemiBold" FontSize="16" Margin="5"/>
@@ -37,20 +37,23 @@
                     Data="{StaticResource FolderOpenIcon}"/>
           </Button>
         </Grid>
-        <Grid Grid.Row="2" ColumnDefinitions="Auto" Margin="0 10">
-          <CheckBox Grid.Column="0" IsChecked="{Binding IsRollingBackupsEnabled}" Command="{Binding RollingBackupsEnabledCommand}">Enable rolling saves</CheckBox>
-        </Grid>
-        <Grid Grid.Row="3" ColumnDefinitions="Auto, Auto, *" Margin="0 10" IsEnabled="{Binding IsRollingBackupsEnabled}">
-          <ButtonSpinner Name="AmountOfRollingBackupsSpinner" Grid.Column="0" BorderBrush="{StaticResource InnerBorderColor}" Width="115"
-                         Content="{Binding AmountOfRollingBackups}"
-                         Spin="AmountOfRollingBackupsSpinner_Spin"/>
-          <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="15 0 0 0">Amount of rolling saves</TextBlock>
-        </Grid>
-        <Grid Grid.Row="4" ColumnDefinitions="Auto, Auto, *" Margin="0 10" IsEnabled="{Binding IsRollingBackupsEnabled}">
-          <ButtonSpinner Name="MinutesBetweenRollingBackupsSpinner" Grid.Column="0" BorderBrush="{StaticResource InnerBorderColor}" Width="115"
-                         Content="{Binding MinutesBetweenRollingBackups}"
-                         Spin="MinutesBetweenRollingBackupsSpinner_Spin"/>
-          <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="15 0 0 0">Time between rolling saves (minutes)</TextBlock>
+        <Grid Grid.Row="2" RowDefinitions="Auto, Auto, Auto">
+          <!-- IsEnabled="{Binding BackupsPath, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"-->
+          <Grid Grid.Row="0" ColumnDefinitions="Auto" Margin="0 10">
+            <CheckBox Grid.Column="0" IsChecked="{Binding IsRollingBackupsEnabled}" Command="{Binding RollingBackupsEnabledCommand}">Enable rolling saves</CheckBox>
+          </Grid>
+          <Grid Grid.Row="1" ColumnDefinitions="Auto, Auto, *" Margin="0 10" IsEnabled="{Binding IsRollingBackupsEnabled}">
+            <ButtonSpinner Name="AmountOfRollingBackupsSpinner" Grid.Column="0" BorderBrush="{StaticResource InnerBorderColor}" Width="115"
+                           Content="{Binding AmountOfRollingBackups}"
+                           Spin="AmountOfRollingBackupsSpinner_Spin"/>
+            <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="15 0 0 0">Amount of rolling saves</TextBlock>
+          </Grid>
+          <Grid Grid.Row="2" ColumnDefinitions="Auto, Auto, *" Margin="0 10" IsEnabled="{Binding IsRollingBackupsEnabled}">
+            <ButtonSpinner Name="MinutesBetweenRollingBackupsSpinner" Grid.Column="0" BorderBrush="{StaticResource InnerBorderColor}" Width="115"
+                           Content="{Binding MinutesBetweenRollingBackups}"
+                           Spin="MinutesBetweenRollingBackupsSpinner_Spin"/>
+            <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="15 0 0 0">Time between rolling saves (minutes)</TextBlock>
+          </Grid>
         </Grid>
       </Grid>
     </Border>
