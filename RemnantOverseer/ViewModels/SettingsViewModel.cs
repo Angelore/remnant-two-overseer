@@ -8,7 +8,6 @@ using RemnantOverseer.Services;
 using RemnantOverseer.Utilities;
 using System;
 using System.IO;
-using System.Linq;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Threading.Tasks;
@@ -29,6 +28,7 @@ public partial class SettingsViewModel: ViewModelBase
     private string? _filePath;
 
     [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(RollingBackupsEnabledCommand))]
     private string? _backupsPath;
 
     [ObservableProperty]
@@ -48,6 +48,7 @@ public partial class SettingsViewModel: ViewModelBase
         _settingsService = settingsService;
         FilePath = _settingsService.Get()?.SaveFilePath ?? null;
         BackupsPath = _settingsService.Get().BackupsPath ?? null;
+        // TODO: disable this if path is null or make sure settings service disables it
         IsRollingBackupsEnabled = _settingsService.Get().RollingBackupsEnabled;
         AmountOfRollingBackups = _settingsService.Get().RollingBackupsAmount;
         MinutesBetweenRollingBackups = _settingsService.Get().MinutesBetweenRollingBackups;
@@ -55,7 +56,7 @@ public partial class SettingsViewModel: ViewModelBase
         if(Design.IsDesignMode)
         {
             FilePath = @"C:\Remnant\Remnant 2: I'm Beginning to Remn";
-            BackupsPath = FilePath + "\\Backups";
+            BackupsPath = null;// FilePath + "\\Backups";
             IsRollingBackupsEnabled = true;
             AmountOfRollingBackups = 3;
             MinutesBetweenRollingBackups = 10;
@@ -66,7 +67,7 @@ public partial class SettingsViewModel: ViewModelBase
     }
 
     [RelayCommand]
-    public async Task OpenFile()
+    public async Task SelectSaveFile()
     {
         var topLevel = FileDialogManager.GetTopLevelForContext(this);
         if (topLevel != null)
@@ -81,7 +82,7 @@ public partial class SettingsViewModel: ViewModelBase
 
             if (storageFiles.Count > 0)
             {
-                var selectedFile = storageFiles.First();
+                var selectedFile = storageFiles[0];
                 var settings = _settingsService.Get();
                 var newPath = Path.GetDirectoryName(selectedFile.TryGetLocalPath());
 
@@ -96,15 +97,49 @@ public partial class SettingsViewModel: ViewModelBase
         }
     }
 
-    [RelayCommand(CanExecute = nameof(canexec))]
-    public void RollingBackupsEnabled(bool value)
+    [RelayCommand]
+    public async Task SelectBackupFolder()
+    {
+        var topLevel = FileDialogManager.GetTopLevelForContext(this);
+        if (topLevel != null)
+        {
+            IStorageFolder? suggestedStart = null;
+            if (FilePath != null) suggestedStart = await topLevel.StorageProvider.TryGetFolderFromPathAsync(FilePath);
+
+            var storageFolders = await topLevel.StorageProvider.OpenFolderPickerAsync(
+                new FolderPickerOpenOptions()
+                {
+                    AllowMultiple = false,
+                    SuggestedStartLocation = suggestedStart,
+                    Title = "Choose a location for backups"
+                });
+
+            if (storageFolders.Count > 0)
+            {
+                var selectedFolder = storageFolders[0];
+                var settings = _settingsService.Get();
+                var newPath = selectedFolder.TryGetLocalPath();
+
+                if (newPath == settings.BackupsPath) return;
+
+                settings.BackupsPath = newPath;
+                _settingsService.Update(settings);
+                BackupsPath = newPath;
+                WeakReferenceMessenger.Default.Send(new BackupPathChangedMessage(BackupsPath!));
+                WeakReferenceMessenger.Default.Send(new NotificationInfoMessage(NotificationStrings.BackupsLocationChanged));
+            }
+        }
+    }
+
+    [RelayCommand(CanExecute = nameof(CanToggleBackupsEnabled))]
+    public void RollingBackupsEnabled()
     {
         WeakReferenceMessenger.Default.Send(new RollingBackupsEnabledChangedMessage(IsRollingBackupsEnabled));
     }
 
-    public bool canexec(bool v)
+    private bool CanToggleBackupsEnabled()
     {
-        return true;
+        return BackupsPath != null;
     }
 
     [RelayCommand]

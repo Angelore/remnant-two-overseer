@@ -17,7 +17,7 @@
           <Border Grid.Column="0" BorderThickness="2" CornerRadius="3" BorderBrush="{StaticResource OuterBorderInactiveBrush}" Padding="10 0">
             <TextBlock Height="16" Text="{Binding FilePath}" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" VerticalAlignment="Center"/>
           </Border>
-          <Button Grid.Column="1" Command="{Binding OpenFileCommand}" Margin="5 0 0 0">
+          <Button Grid.Column="1" Command="{Binding SelectSaveFileCommand}" Margin="5 0 0 0">
             <PathIcon Height="20" Width="20" Foreground="{StaticResource BaseTextColor}"
                     Data="{StaticResource FolderOpenIcon}"/>
           </Button>
@@ -32,7 +32,7 @@
           <Border Grid.Column="0" BorderThickness="2" CornerRadius="3" BorderBrush="{StaticResource OuterBorderInactiveBrush}" Padding="10 0">
             <TextBlock Height="16" Text="{Binding BackupsPath}" TextTrimming="CharacterEllipsis" TextWrapping="NoWrap" VerticalAlignment="Center"/>
           </Border>
-          <Button Grid.Column="1" Command="{Binding OpenFileCommand}" Margin="5 0 0 0">
+          <Button Grid.Column="1" Command="{Binding SelectBackupFolderCommand}" Margin="5 0 0 0">
             <PathIcon Height="20" Width="20" Foreground="{StaticResource BaseTextColor}"
                     Data="{StaticResource FolderOpenIcon}"/>
           </Button>

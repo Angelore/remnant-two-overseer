@@ -45,6 +45,7 @@ public class SettingsService
             try
             {
                 _settings.SaveFilePath = Utils.GetSteamSavePath();
+                // TODO: throw if dir doesnt exist?
             }
             catch
             {
@@ -57,6 +58,8 @@ public class SettingsService
 
         if (_settings.BackupsPath == null)
         {
+            // TODO: Handle this better. Check directory
+            //Directory.CreateDirectory(_settings.BackupsPath);
             _settings.BackupsPath = Path.Combine(_settings.SaveFilePath, "BackupsTest");
         }
 

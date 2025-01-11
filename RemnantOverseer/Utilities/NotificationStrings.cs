@@ -9,6 +9,7 @@ internal static class NotificationStrings
     public static string FileWatcherFolderNotFound = "The folder with the requested file was not found. Ensure that the path is correct and restart the application";
 
     public static string SaveFileLocationChanged = "Save file location was changed successfully";
+    public static string BackupsLocationChanged = "Location for backups was changed successfully";
 
     public static string SelectedCharacterNotValid = "An issue encountered when trying to select active wharacter. Select a character manually";
 
