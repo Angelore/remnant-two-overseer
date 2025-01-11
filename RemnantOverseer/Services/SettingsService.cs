@@ -33,16 +33,18 @@ public class SettingsService
             _settings = JsonSerializer.Deserialize<Settings>(json)!;
         }
 
+        if (_settings.RollingBackupsAmount == 0 || _settings.MinutesBetweenRollingBackups == 0)
+        {
+            _settings.RollingBackupsAmount = 3;
+            _settings.MinutesBetweenRollingBackups = 10;
+        }
+
         if (_settings.SaveFilePath == null)
         {
             // Try to get a path
             try
             {
                 _settings.SaveFilePath = Utils.GetSteamSavePath();
-                _settings.BackupsPath = Path.Combine(_settings.SaveFilePath, "BackupsTest");
-                _settings.RollingBackupsAmount = 3;
-                _settings.MinutesBetweenRollingBackups = 10;
-                Update(_settings);
             }
             catch
             {
@@ -52,6 +54,13 @@ public class SettingsService
 
             WeakReferenceMessenger.Default.Send(new NotificationInfoMessage(NotificationStrings.DefaultLocationFound));
         }
+
+        if (_settings.BackupsPath == null)
+        {
+            _settings.BackupsPath = Path.Combine(_settings.SaveFilePath, "BackupsTest");
+        }
+
+        Update(_settings);
     }
 
     // Application is simple enough to allow client to read the whole config.
@@ -64,11 +73,18 @@ public class SettingsService
 
     public void Update(Settings settings)
     {
-        var json = JsonSerializer.Serialize(settings, options: _options);
-        lock (_lock)
+        try
         {
-            File.WriteAllText(path, json);
-            _settings = settings;
+            var json = JsonSerializer.Serialize(settings, options: _options);
+            lock (_lock)
+            {
+                File.WriteAllText(path, json);
+                _settings = settings;
+            }
+        }
+        catch(Exception ex)
+        {
+            WeakReferenceMessenger.Default.Send(new NotificationInfoMessage(NotificationStrings.ErrorWhenUpdatingSettings + Environment.NewLine + ex.Message));
         }
     }
 }
