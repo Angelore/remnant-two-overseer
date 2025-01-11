@@ -39,11 +39,13 @@ internal class DatasetMapper
 
     public static Models.Character MapCharacter(Character character)
     {
+        Enum.TryParse<Archetypes>(character.Profile.Archetype, true, out var archetype); // If false, will default to default value in enum, i.e. Unknown
+        Enum.TryParse<Archetypes>(character.Profile.SecondaryArchetype, true, out var subarchetype);
         return new Models.Character
         {
             Index = character.Index,
-            Archetype = Enum.Parse<Archetypes>(character.Profile.Archetype),
-            SubArchetype = Enum.Parse<Archetypes>(character.Profile.SecondaryArchetype),
+            Archetype = archetype,
+            SubArchetype = string.IsNullOrEmpty(character.Profile.SecondaryArchetype) ? null : subarchetype,
             ObjectCount = character.Profile.AcquiredItems,
             PowerLevel = character.Profile.ItemLevel, // Yes.
             ActiveWorld = Enum.Parse<WorldTypes>(character.ActiveWorldSlot.ToString(), true),

@@ -1,6 +1,7 @@
 ﻿namespace RemnantOverseer.Models.Enums;
 public enum ItemTypes
 {
+    Unknown,
     Amulet,
     Armor,
     Concoction,
@@ -14,6 +15,5 @@ public enum ItemTypes
     Relic,
     Ring,
     Trait,
-    Unknown,
     Weapon
 }

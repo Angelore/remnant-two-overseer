@@ -7,6 +7,7 @@ using RemnantOverseer.Models.Enums;
 using RemnantOverseer.Models.Messages;
 using RemnantOverseer.Services;
 using RemnantOverseer.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -67,7 +68,17 @@ public partial class CharacterSelectViewModel: ViewModelBase
         var data = await _saveDataService.GetSaveData();
         if (data != null && data.Characters.Count > 0)
         {
-            var mappedCharacters = DatasetMapper.MapCharacters(data.Characters).CharacterList;
+            List<Character> mappedCharacters = [];
+            try
+            {
+                mappedCharacters = DatasetMapper.MapCharacters(data.Characters).CharacterList;
+            }
+            catch(Exception ex)
+            {
+                IsLoading = false;
+                // TODO: Handle this better when reworking error handling
+                Messenger.Send(new NotificationErrorMessage("Could not load characters. Please report this error with attached zipped save folder" + Environment.NewLine + ex.Message));
+            }
 #if DEBUG
             //mappedCharacters.Add(new Character() { ObjectCount = 0, Archetype = Archetypes.Unknown, Index = 2 });
             //mappedCharacters.Add(new Character() { ObjectCount = 10, Archetype = Archetypes.Invader, Index = 3, PowerLevel = 4, Playtime = TimeSpan.FromHours(10) });
@@ -90,11 +101,6 @@ public partial class CharacterSelectViewModel: ViewModelBase
             }
 
             Characters = mappedCharacters;
-        }
-        // TODO: Sometimes char screen is empty. I think this might be the cause.
-        if (data is null)
-        {
-            // throw new ArgumentNullException(nameof(data));
         }
 
         IsLoading = false;

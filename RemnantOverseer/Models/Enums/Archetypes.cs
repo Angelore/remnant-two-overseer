@@ -1,6 +1,7 @@
 ﻿namespace RemnantOverseer.Models.Enums;
 public enum Archetypes
 {
+    Unknown,
     Alchemist,
     Archon,
     Challenger,
@@ -14,6 +15,5 @@ public enum Archetypes
     Medic,
     Ritualist,
     Summoner,
-    Warden,
-    Unknown
+    Warden
 }
