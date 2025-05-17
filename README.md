@@ -15,7 +15,6 @@ This tool only **reads** the save file, it can not make any changes to it.
 - Displays the items that are available in the current rolled world
 - Displays the current location of the player
 - Indicates whether Trait book and/or Simulacrum are available in the location
-- ~~Displays Bloodmoon status~~ Temporarily doesn't
 - Displays whether an item is only obtainable in co-op
 - Allows to filter by item names and injectable events
 - Updates the state whenever the save file changes
@@ -28,6 +27,17 @@ This tool only **reads** the save file, it can not make any changes to it.
 - Download the latest release
 - Unpack the archive to a folder. To avoid issues, use a non-system folder, such as `C:\Games\RemnantOverseer`
 - Launch the .exe file
+
+# Finding your save
+- If playing on the Xbox/Gamepass release of the game, you'll need to go into settings and update your save file location.
+- This is typically found in:
+```
+C:\Users\[YourUser]\AppData\Local\Packages\PerfectWorldEntertainment.GFREMP2_jrajkyc4tsa6w\SystemAppData\wgs
+```
+- In that folder, there should be a folder named `t` and then a folder with a long ID for the name, open that folder
+- Inside, there should be a `containers.index` file, that's the save you're looking for
+
+If that doesn't work, you can try searching your drive for `containers.index` file. (The path should include `PerfectWorldEntertainment.GFREMP2`)
 
 # Acknowledgements
 - Razzmatazzz for his [project](https://github.com/Razzmatazzz/RemnantSaveGuardian), which served as an inspiration for this one and made me look into working on Remnant in the first place
