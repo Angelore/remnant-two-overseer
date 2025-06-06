@@ -102,6 +102,8 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
         // Version check
         Task.Run(async () =>
         {
+            if (_settingsService.Get().DisableVersionCheck ?? false)
+                return;
             var nv = await VersionChecker.TryGetNewVersion();
             if (nv is not null)
                 await Dispatcher.UIThread.InvokeAsync(() =>
