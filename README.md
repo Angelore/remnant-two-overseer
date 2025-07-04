@@ -27,6 +27,18 @@ This tool only **reads** the save file, it can not make any changes to it.
 - Download the latest release
 - Unpack the archive to a folder. To avoid issues, use a non-system folder, such as `C:\Games\RemnantOverseer`
 - Launch the .exe file
+- If playing on steam, it should autodetect your save. If playing from Xbox/Gamepass, check the "Finding your save" section below.
+
+# Finding your save
+- If playing on the Xbox/Gamepass release of the game, you'll need to go into settings and update your save file location.
+- This is typically found in:
+```
+C:\Users\[YourUser]\AppData\Local\Packages\PerfectWorldEntertainment.GFREMP2_jrajkyc4tsa6w\SystemAppData\wgs
+```
+- In that folder, there should be a folder named `t` and then a folder with a long ID for the name, open that folder
+- Inside, there should be a `containers.index` file, that's the save you're looking for
+
+If that doesn't work, you can try searching your drive for `containers.index` file. (The path should include `PerfectWorldEntertainment.GFREMP2`)
 
 # Finding your save
 - If playing on the Xbox/Gamepass release of the game, you'll need to go into settings and update your save file location.
