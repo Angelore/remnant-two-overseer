@@ -6,6 +6,7 @@ using CommunityToolkit.Mvvm.Messaging;
 using RemnantOverseer.Models.Messages;
 using RemnantOverseer.Services;
 using RemnantOverseer.Utilities;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -43,37 +44,36 @@ public partial class SettingsViewModel: ViewModelBase
     public async Task OpenFile()
     {
         var topLevel = FileDialogManager.GetTopLevelForContext(this);
-        if (topLevel != null)
+        if (topLevel == null) return;
+
+        var storageFiles = await topLevel.StorageProvider.OpenFilePickerAsync(
+                        new FilePickerOpenOptions()
+                        {
+                            FileTypeFilter = [Saves],
+                            AllowMultiple = false,
+                            Title = "Select the profile file. Can be either 'profile.sav' or 'containers.index'"
+                        });
+
+        if (storageFiles.Count > 0)
         {
-            var storageFiles = await topLevel.StorageProvider.OpenFilePickerAsync(
-                            new FilePickerOpenOptions()
-                            {
-                                FileTypeFilter = [Saves],
-                                AllowMultiple = false,
-                                Title = "Select the profile file. Can be either 'profile.sav' or 'containers.index'"
-                            });
-
-            if (storageFiles.Count > 0)
+            var selectedFile = storageFiles[0];
+            var settings = _settingsService.Get();
+            var localPath = selectedFile.TryGetLocalPath()!;
+            if (Path.GetExtension(localPath).Equals(".index"))
             {
-                var selectedFile = storageFiles[0];
-                var settings = _settingsService.Get();
-                var localPath = selectedFile.TryGetLocalPath()!;
-                if (Path.GetExtension(localPath).Equals(".index"))
-                {
-                    // Gamepass need one extra jump
-                    //localPath = new DirectoryInfo(localPath).Parent!.Parent!.FullName;
-                    localPath = Path.GetDirectoryName(localPath);
-                }
-                var newPath = Path.GetDirectoryName(localPath);
-
-                if (newPath == settings.SaveFilePath) return;
-                
-                settings.SaveFilePath = newPath;
-                _settingsService.Update(settings);
-                FilePath = newPath;
-                WeakReferenceMessenger.Default.Send(new SaveFilePathChangedMessage(FilePath!));
-                WeakReferenceMessenger.Default.Send(new NotificationInfoMessage(NotificationStrings.SaveFileLocationChanged));
+                // Gamepass need one extra jump
+                //localPath = new DirectoryInfo(localPath).Parent!.Parent!.FullName;
+                localPath = Path.GetDirectoryName(localPath);
             }
+            var newPath = Path.GetDirectoryName(localPath);
+
+            if (newPath == settings.SaveFilePath) return;
+
+            settings.SaveFilePath = newPath;
+            _settingsService.Update(settings);
+            FilePath = newPath;
+            WeakReferenceMessenger.Default.Send(new SaveFilePathChangedMessage(FilePath!));
+            WeakReferenceMessenger.Default.Send(new NotificationInfoMessage(NotificationStrings.SaveFileLocationChanged));
         }
     }
 
@@ -81,14 +81,13 @@ public partial class SettingsViewModel: ViewModelBase
     public async Task OpenLog()
     {
         var topLevel = FileDialogManager.GetTopLevelForContext(this);
-        if (topLevel != null)
+        if (topLevel == null) return;
+
+        try
         {
-            try
-            {
-                await topLevel.Launcher.LaunchFileInfoAsync(new FileInfo(Log.LogFilePath));
-            }
-            catch { }
+            await topLevel.Launcher.LaunchFileInfoAsync(new FileInfo(Log.LogFilePath));
         }
+        catch { }
     }
 
     [RelayCommand]
@@ -100,7 +99,21 @@ public partial class SettingsViewModel: ViewModelBase
     [RelayCommand]
     public async Task ExportSave()
     {
-        await Task.Run(_saveDataService.ExportSave);
+        var topLevel = FileDialogManager.GetTopLevelForContext(this);
+        if (topLevel == null) return;
+
+        var documents = await topLevel.StorageProvider.TryGetWellKnownFolderAsync(WellKnownFolder.Documents);
+        var storageDir = await topLevel.StorageProvider.OpenFolderPickerAsync(
+            new FolderPickerOpenOptions()
+            {
+                Title = "Select a folder to export save data to",
+                SuggestedStartLocation = documents,
+                SuggestedFileName = $"Remnant2_export_{DateTime.Now:yyyy-MM-dd}",
+                AllowMultiple = false,
+            });
+        if (storageDir.Count == 0) return;
+
+        await Task.Run(() => _saveDataService.ExportSave(storageDir[0].TryGetLocalPath()));
     }
 
     [RelayCommand]

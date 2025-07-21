@@ -146,13 +146,9 @@ public class SaveDataService
     }
 
     #region For debug only
-    internal async Task ExportSave()
+    internal async Task ExportSave(string? exportPath)
     {
-        if (FilePath is null) throw new ArgumentNullException("File path not set");
-
-        var exportPath = Path.Combine(FilePath, "Export");
-        if (!Directory.Exists(exportPath))
-            Directory.CreateDirectory(exportPath);
+        if (exportPath is null) throw new ArgumentNullException("File path not set");
 
         await Task.Run(() => Exporter.Export(exportPath, FilePath, true, true, true));
     }

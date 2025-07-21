@@ -47,21 +47,21 @@
                 <StackPanel Orientation="Horizontal">
                   <PathIcon Height="20" Width="20" Foreground="{StaticResource BaseTextColor}"
                             Data="{StaticResource LogIcon}" Margin="0 0 5 0"/>
-                  <TextBlock Text="Open Log" FontWeight="Medium" VerticalAlignment="Center"/>
+                  <TextBlock Text="Open log" FontWeight="Medium" VerticalAlignment="Center"/>
                 </StackPanel>
               </Button>
               <Button Grid.Column="1" Command="{Binding DumpPlayerInfoCommand}" Margin="5 0 0 0">
                 <StackPanel Orientation="Horizontal">
                   <PathIcon Height="20" Width="20" Foreground="{StaticResource BaseTextColor}"
                             Data="{StaticResource CharacterIcon}" Margin="0 0 5 0"/>
-                  <TextBlock Text="Dump Player Info" FontWeight="Medium" VerticalAlignment="Center"/>
+                  <TextBlock Text="Dump player info to Log" FontWeight="Medium" VerticalAlignment="Center"/>
                 </StackPanel>
               </Button>
-              <Button Grid.Column="2" Command="{Binding ExportSaveCommand}" Margin="5 0 0 0" ToolTip.Tip="Exports to %save_location%\Export">
+              <Button Grid.Column="2" Command="{Binding ExportSaveCommand}" Margin="5 0 0 0">
                 <StackPanel Orientation="Horizontal">
                   <PathIcon Height="20" Width="20" Foreground="{StaticResource BaseTextColor}"
                             Data="{StaticResource ExportIcon}" Margin="0 0 5 0"/>
-                  <TextBlock Text="Export Save Data" FontWeight="Medium" VerticalAlignment="Center"/>
+                  <TextBlock Text="Export save data" FontWeight="Medium" VerticalAlignment="Center"/>
                 </StackPanel>
               </Button>
               <!--<Border Grid.Column="0" BorderThickness="2" CornerRadius="3" BorderBrush="{StaticResource OuterBorderInactiveBrush}" Padding="10 0">
