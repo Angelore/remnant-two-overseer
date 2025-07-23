@@ -46,6 +46,7 @@ To aid in package management efforts the following options may be set at compile
 | Option                                     | Effect                                                                                 |
 |--------------------------------------------|----------------------------------------------------------------------------------------|
 | `REMNANTOVERSEER_NO_DEFAULT_VERSION_CHECK` | The version check will be disabled by **default**, can still be reenabled by the user. |
+| `REMNANTOVERSEER_USER_DIRECTORIES`         | Use per-user directories (e.g. XDG on Linux, AppData on Windows).                      |
 
 Options can be provided as such:
 

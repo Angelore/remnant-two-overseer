@@ -14,7 +14,6 @@ public class SettingsService
 {
     private readonly object _lock = new object();
     private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
-    private readonly string path = Path.Combine(AppContext.BaseDirectory, "settings.json");
     private Settings _settings = new();
     private JsonSerializerOptions _options = new() { WriteIndented = true };
 
@@ -27,8 +26,19 @@ public class SettingsService
         }        
     }
 
+    private string GetSettingsPath()
+    {
+# if REMNANTOVERSEER_USER_DIRECTORIES
+        string userdir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData, Environment.SpecialFolderOption.Create);
+        return Path.Combine(userdir, "remnant-two-overseer", "settings.json");
+# else
+        return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "settings.json");
+# endif
+    }
+
     public void Initialize()
     {
+        string path = SettingsPath();
         if (File.Exists(path))
         {
             // Considering making a toast for this and remaking the file. But I think crashing is more educational
@@ -74,6 +84,8 @@ public class SettingsService
             var json = JsonSerializer.Serialize(settings, options: _options);
             lock (_lock)
             {
+                string path = SettingsPath();
+                Directory.CreateDirectory(Path.GetDirectoryName(path));
                 File.WriteAllText(path, json);
                 _settings = settings;
             }
@@ -95,7 +107,9 @@ public class SettingsService
         await _semaphore.WaitAsync();
         try
         {
+            string path = SettingsPath();
             var json = JsonSerializer.Serialize(settings, options: _options);
+            await Task.Run(() => Directory.CreateDirectory(Path.GetDirectoryName(path)));
             await File.WriteAllTextAsync(path, json);
             _settings = settings;
         }

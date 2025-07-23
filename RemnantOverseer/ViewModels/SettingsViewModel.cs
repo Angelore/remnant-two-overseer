@@ -89,7 +89,7 @@ public partial class SettingsViewModel : ViewModelBase
 
         try
         {
-            await topLevel.Launcher.LaunchFileInfoAsync(new FileInfo(Log.LogFilePath));
+            await topLevel.Launcher.LaunchFileInfoAsync(new FileInfo(Log.GetLogFilePath()));
         }
         catch { }
     }
