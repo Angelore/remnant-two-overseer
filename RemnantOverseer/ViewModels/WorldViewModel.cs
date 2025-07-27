@@ -65,6 +65,15 @@ public partial class WorldViewModel : ViewModelBase
     [ObservableProperty]
     private List<string> _completedQuests = [];
 
+    private float? _bloodmoonChanceCampaign = null;
+    private float? _bloodmoonChanceAdventure = null;
+
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(BloodmoonChanceString))]
+    private float? _bloodmoonChance = null;
+
+    public string BloodmoonChanceString => BloodmoonChance.HasValue ? $"Blood moon chance: {BloodmoonChance.Value}%" : "Unknown";
+
     [ObservableProperty]
     private bool _hideTips = false;
 
@@ -103,6 +112,7 @@ public partial class WorldViewModel : ViewModelBase
     partial void OnIsCampaignSelectedChanged(bool value)
     {
         ApplyFilter();
+        BloodmoonChance = IsCampaignSelected ? _bloodmoonChanceCampaign : _bloodmoonChanceAdventure;
     }
 
     partial void OnHideDuplicatesChanged(bool value)
@@ -308,6 +318,9 @@ public partial class WorldViewModel : ViewModelBase
 
         ThaenTree = DatasetMapper.MapThaenTree(dataset.Characters[_selectedCharacterIndex]);
         CompletedQuests = dataset.Characters[_selectedCharacterIndex].Save.QuestCompletedLog;
+        _bloodmoonChanceCampaign = DatasetMapper.GetBloodmoonChance(dataset.Characters[_selectedCharacterIndex].Save.Campaign);
+        _bloodmoonChanceAdventure = DatasetMapper.GetBloodmoonChance(dataset.Characters[_selectedCharacterIndex].Save.Adventure);
+        BloodmoonChance = IsCampaignSelected ? _bloodmoonChanceCampaign : _bloodmoonChanceAdventure;
 
         ApplyFilter();
 

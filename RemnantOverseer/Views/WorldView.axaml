@@ -14,6 +14,7 @@
 
   <UserControl.Resources>
     <util:ItemTypeToIconConverter x:Key="ItemTypeToIconConverter" />
+    <util:StringComparisonConverter x:Key="StringComparisonConverter" />
     <sys:Double x:Key="IconSize">20</sys:Double>
     <!-- Preload -->
     <Bitmap x:Key="ToolkitImg">/Assets/Images/toolkit-logo.png</Bitmap>
@@ -200,6 +201,14 @@
             <TreeDataTemplate DataType="models:Zone" ItemsSource="{Binding Locations}">
               <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="5,0,0,0"  Text="{Binding Name}" />
+                <PathIcon Data="{StaticResource BloodmoonIcon}" Foreground="{StaticResource BloodmoonColor}" ToolTip.Tip="{Binding $parent[TreeView].((vm:WorldViewModel)DataContext).BloodmoonChanceString}" Margin="5 0" Height="16">
+                  <PathIcon.IsVisible>
+                    <MultiBinding Converter="{x:Static BoolConverters.And}">
+                      <Binding Path="Name" Converter="{StaticResource StringComparisonConverter}" ConverterParameter="{x:Static util:LocationStrings.Yaesha}" Mode="OneWay" />
+                      <Binding Path="!$parent[TreeView].((vm:WorldViewModel)DataContext).BloodmoonChance" Converter="{x:Static ObjectConverters.IsNotNull}" Mode="OneWay" />
+                    </MultiBinding>
+                  </PathIcon.IsVisible>
+                </PathIcon>
               </StackPanel>
             </TreeDataTemplate>
 
@@ -213,7 +222,6 @@
                 <Grid Grid.Column="1" ColumnDefinitions="Auto, Auto, Auto, Auto">
                   <PathIcon Grid.Column="0" Data="{StaticResource TraitBookIcon}" IsVisible="{Binding IsTraitBookPresent}" IsEnabled="{Binding !IsTraitBookLooted}" ToolTip.Tip="Trait Book Available" Margin="5 0"/>
                   <PathIcon Grid.Column="1" Data="{StaticResource SimulacrumIcon2}" IsVisible="{Binding IsSimulacrumPresent}" IsEnabled="{Binding !IsSimulacrumLooted}" ToolTip.Tip="Simulacrum Available" Margin="5 0"/>
-                  <!--<PathIcon Grid.Column="2" Data="{StaticResource BloodmoonIcon}" IsVisible="{Binding IsBloodmoon}" Foreground="{StaticResource BaseAccentColor}" ToolTip.Tip="Bloodmoon altar present" Margin="5 0"/>-->
                   <PathIcon Grid.Column="2" Data="{StaticResource CurrentLocationIcon}" IsVisible="{Binding IsRespawnLocation}" Foreground="{StaticResource ZoneTransitionColor}" ToolTip.Tip="{Binding FormattedRespawnPointName}" Margin="5 0"/>
                   
                   <!-- Hints -->

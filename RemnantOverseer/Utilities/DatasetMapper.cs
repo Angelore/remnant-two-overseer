@@ -82,6 +82,12 @@ internal class DatasetMapper
         };
     }
 
+    public static float? GetBloodmoonChance(RolledWorld? world)
+    {
+        if (world is null) return null;
+        return world.BloodMoon?.CurrentChance is not null ? (float)Math.Round(world.BloodMoon.CurrentChance, 2, MidpointRounding.AwayFromZero) : null;
+    }
+
     private static List<Models.Zone> MapZonesToZones(List<Zone> zones, List<string> missingItemIds, RespawnPoint? respawnPoint)
     {
         //var locnames = new List<string>();

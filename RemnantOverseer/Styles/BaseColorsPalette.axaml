@@ -30,4 +30,7 @@
   
   <!-- Quilt -->
   <Color x:Key="QuiltBorderColor">#a68749</Color>
+
+
+  <Color x:Key="BloodmoonColor">#FF791515</Color>
 </ResourceDictionary>
