@@ -38,6 +38,7 @@ internal class Log
         else
         {
             config = new LoggerConfiguration()
+                .WriteTo.Console()
                 .WriteTo.File(template, LogFilePath);
         }
 
