@@ -39,6 +39,20 @@ C:\Users\[YourUser]\AppData\Local\Packages\PerfectWorldEntertainment.GFREMP2_jra
 
 If that doesn't work, you can try searching your drive for `containers.index` file. (The path should include `PerfectWorldEntertainment.GFREMP2`)
 
+# Compilation Options
+
+To aid in package management efforts the following options may be set at compile time:
+
+| Option                                     | Effect                                                                                 |
+|--------------------------------------------|----------------------------------------------------------------------------------------|
+| `REMNANTOVERSEER_NO_DEFAULT_VERSION_CHECK` | The version check will be disabled by **default**, can still be reenabled by the user. |
+
+Options can be provided as such:
+
+```bash
+dotnet build -p:DefineConstants=REMNANTOVERSEER_NO_DEFAULT_VERSION_CHECK
+```
+
 # Acknowledgements
 - Razzmatazzz for his [project](https://github.com/Razzmatazzz/RemnantSaveGuardian), which served as an inspiration for this one and made me look into working on Remnant in the first place
 - AndrewSav for [https://github.com/AndrewSav/lib.remnant2.analyzer](https://github.com/AndrewSav/lib.remnant2.analyzer), which is used as an underlying parsing library

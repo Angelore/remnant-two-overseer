@@ -95,10 +95,15 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
         _saveDataService.StartWatching();
         IsInitialized = true;
 
-#if DEBUG
-        // Avoid being rate limited by gh
-        return;
-#endif
+        bool versionCheck = _settingsService.Get().DisableVersionCheck ??
+# if DEBUG || REMNANTOVERSEER_NO_DEFAULT_VERSION_CHECK
+            false;
+# else
+            true;
+# endif
+        if (!versionCheck)
+            return;
+
         // Version check
         Task.Run(async () =>
         {
