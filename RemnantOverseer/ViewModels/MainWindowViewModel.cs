@@ -95,15 +95,16 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
         _saveDataService.StartWatching();
         IsInitialized = true;
 
-#if DEBUG
+#if DEBUG || R2O_DISABLE_VERSION_CHECK
         // Avoid being rate limited by gh
         return;
 #endif
+        if (_settingsService.Get().DisableVersionCheck ?? false)
+            return;
+
         // Version check
         Task.Run(async () =>
         {
-            if (_settingsService.Get().DisableVersionCheck ?? false)
-                return;
             var nv = await VersionChecker.TryGetNewVersion();
             if (nv is not null)
                 await Dispatcher.UIThread.InvokeAsync(() =>

@@ -30,7 +30,8 @@
           <Separator Background="{StaticResource OuterBorderInactiveColor}" Height="2" Margin="0 15 0 0"/>
 
           <!-- Toggles -->
-          <CheckBox IsChecked="{Binding !DisableVersionCheck}"
+          <CheckBox IsEnabled="{Binding ConfigurableVersionCheck}"
+                    IsChecked="{Binding !DisableVersionCheck}"
                     Command="{Binding UpdateDisableVersionCheckCommand}"
                     Content="Enable version checking" Margin="0 15 0 0"/>
           <CheckBox IsChecked="{Binding !HideTips}"
