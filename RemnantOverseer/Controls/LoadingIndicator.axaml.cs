@@ -13,7 +13,7 @@ public class LoadingIndicator : TemplatedControl
         AvaloniaProperty.Register<LoadingIndicator, bool>(nameof(IsLoading), false);
 
     /// <summary>
-    /// Gets or sets the IsLoading property. This StyledProperty 
+    /// Gets or sets the IsLoading property. This StyledProperty
     /// indicates that loading is taking place.
     /// </summary>
     public bool IsLoading

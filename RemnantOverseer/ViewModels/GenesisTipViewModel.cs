@@ -28,7 +28,7 @@ public partial class GenesisTipViewModel: ViewModelBase, IDisposable
     {
         _cancellationTokenSource = new CancellationTokenSource();
         SetSymbols();
-        Task.Run(async () => { await WaitForUpdate(_cancellationTokenSource.Token); }); 
+        Task.Run(async () => { await WaitForUpdate(_cancellationTokenSource.Token); });
     }
 
     public void Dispose()

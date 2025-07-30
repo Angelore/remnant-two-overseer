@@ -13,7 +13,7 @@ public class LocationCard : TemplatedControl
         AvaloniaProperty.Register<LocationCard, string>(nameof(Title), "Unknown");
 
     /// <summary>
-    /// Gets or sets the Title property. This StyledProperty 
+    /// Gets or sets the Title property. This StyledProperty
     /// indicates the title :).
     /// </summary>
     public string Title

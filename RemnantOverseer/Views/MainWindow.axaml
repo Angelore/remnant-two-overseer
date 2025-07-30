@@ -147,7 +147,7 @@
 
       <!-- Separator -->
       <Border Grid.Column="1" CornerRadius="3" Background="{StaticResource OuterBorderInactiveBrush}" Margin="0 5" />
-      
+
       <!-- Content -->
       <TransitioningContentControl Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{Binding ContentViewModel}" />
       <Border Grid.Column="2" IsVisible="{Binding !CanDisplayContent}" Background="{StaticResource GlobalBackroundBrush}">

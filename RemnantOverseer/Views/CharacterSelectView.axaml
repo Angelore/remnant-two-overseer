@@ -159,7 +159,7 @@
 
                 </Grid>
               </Grid>
-              
+
               <!-- Outline and inline shadow -->
               <!-- background needs to be null to not overlay tooltips for hit test purposes -->
               <Border Name="InnerBorder" BorderBrush="{StaticResource InnerBorderBrush}" BorderThickness="2"

@@ -45,7 +45,7 @@ public partial class App : Application
                     .AddSingleton<MissingItemsViewModel>()
                     .AddSingleton<WorldViewModel>();
                     //.AddTransient<DebugViewModel>();
-            })          
+            })
             .Build();
     }
 

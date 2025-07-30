@@ -45,7 +45,7 @@
               <Setter Property="Margin" Value="0 0 10 0" />
             </Style>
           </Grid.Styles>
-          
+
           <StackPanel Grid.Column="0" Orientation="Horizontal" >
             <!-- CampaignAdventureToggle -->
             <ToggleButton Width="140" IsChecked="{Binding IsCampaignSelected, Mode=TwoWay}">
@@ -68,7 +68,7 @@
               </Grid>
             </ToggleButton>
           </StackPanel>
-          
+
           <!-- Quick filters -->
           <StackPanel Grid.Column="1" Orientation="Horizontal">
             <!-- Could just make them radios honestly. But I have no time nor desire to style them -->
@@ -223,7 +223,7 @@
                   <PathIcon Grid.Column="0" Data="{StaticResource TraitBookIcon}" IsVisible="{Binding IsTraitBookPresent}" IsEnabled="{Binding !IsTraitBookLooted}" ToolTip.Tip="Trait Book Available" Margin="5 0"/>
                   <PathIcon Grid.Column="1" Data="{StaticResource SimulacrumIcon2}" IsVisible="{Binding IsSimulacrumPresent}" IsEnabled="{Binding !IsSimulacrumLooted}" ToolTip.Tip="Simulacrum Available" Margin="5 0"/>
                   <PathIcon Grid.Column="2" Data="{StaticResource CurrentLocationIcon}" IsVisible="{Binding IsRespawnLocation}" Foreground="{StaticResource ZoneTransitionColor}" ToolTip.Tip="{Binding FormattedRespawnPointName}" Margin="5 0"/>
-                  
+
                   <!-- Hints -->
                   <Button Classes="hint" Grid.Column="3" Margin="5 0" ToolTip.Tip="Hint: Genesis" Click="GenesisHintButton_Click">
                     <Button.IsVisible>
@@ -307,7 +307,7 @@
                   <PathIcon Grid.Column="0" Margin="10 0 10 0" Data="{StaticResource InjectableIcon}" Height="{StaticResource IconSize}" Width="{StaticResource IconSize}"/>
                   <TextBlock Grid.Column="1" Text="{Binding OriginNameFormatted}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
                 </Grid>
-                                
+
                 <StackPanel Grid.Column="4" Orientation="Horizontal" Margin="20 0 20 0">
                   <StackPanel.Styles>
                     <Style Selector="PathIcon">
