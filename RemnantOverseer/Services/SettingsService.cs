@@ -32,7 +32,7 @@ public class SettingsService
         if (Design.IsDesignMode)
         {
             return; // TODO?
-        }        
+        }
     }
 
     public SettingsService() : this(GetDefaultSettingsPath()) {}

@@ -16,9 +16,9 @@
         <ResourceInclude Source="/Styles/BaseResources.axaml" />
         <ResourceInclude Source="/Styles/IconResources.axaml" />
         <ResourceInclude Source="/Styles/GenesisGlyphs.axaml" />
-        
+
         <ResourceInclude Source="avares://LoadingIndicators.Avalonia/LoadingIndicators.axaml" />
-        
+
         <!-- Why? -->
         <!-- https://github.com/AvaloniaUI/Avalonia.Samples/blob/main/src/Avalonia.Samples/CustomControls/RatingControlSample/App.axaml -->
         <ResourceInclude Source="/Controls/LoadingIndicator.axaml"/>
@@ -27,7 +27,7 @@
 
     <FontFamily x:Key="ContentControlThemeFontFamily">fonts:Montserrat#Montserrat, $Default</FontFamily>
   </Application.Resources>
-  
+
     <Application.Styles>
         <FluentTheme>
           <!-- What? -->

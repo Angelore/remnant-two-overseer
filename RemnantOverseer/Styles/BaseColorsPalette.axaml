@@ -10,7 +10,7 @@
   <!--<Color x:Key="BaseTextDisabledColor">#FF999999</Color>-->
   <Color x:Key="BaseTextDisabledColor">#FF7A7A7A</Color>
   <Color x:Key="ZoneTransitionColor">#FFcfa050</Color>
-  
+
   <!-- Notifications (not using these colors for now, using default theme) -->
   <Color x:Key="NotificationInfoColor">#FF154779</Color>
   <!-- Same as accent -->
@@ -18,16 +18,16 @@
   <!-- Same as zone transition -->
   <Color x:Key="NotificationWarningColor">#FFCFA050</Color>
   <Color x:Key="NotificationNeutralColor">#FF2B2B2B</Color>
-  
+
   <!-- Glyphs -->
   <!--<Color x:Key="GlyphColor">#b4a9cb</Color>-->
   <Color x:Key="RequiredGlyphColor">#9f87d0</Color>
   <Color x:Key="CurrentGlyphColor">#b3a3d2</Color>
   <Color x:Key="GlyphGlowColor">#cec7dd</Color>
-  
+
   <!-- Tree -->
   <Color x:Key="ThaenFruitColor">#e4ab3b</Color>
-  
+
   <!-- Quilt -->
   <Color x:Key="QuiltBorderColor">#a68749</Color>
 

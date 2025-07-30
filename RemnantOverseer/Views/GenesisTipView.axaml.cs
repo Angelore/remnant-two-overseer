@@ -18,7 +18,7 @@ public partial class GenesisTipView : UserControl
 
     protected override void OnUnloaded(RoutedEventArgs e)
     {
-        (DataContext as IDisposable)?.Dispose(); 
+        (DataContext as IDisposable)?.Dispose();
         base.OnUnloaded(e);
     }
 }

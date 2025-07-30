@@ -3,21 +3,21 @@
         xmlns:controls="using:RemnantOverseer.Controls">
 
   <!--
-    Additional resources 
+    Additional resources
     Using Control Themes:
          https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes
     Using Theme Variants:
          https://docs.avaloniaui.net/docs/guides/styles-and-resources/how-to-use-theme-variants
   -->
-  
+
   <Design.PreviewWith>
-    <StackPanel Width="400" Spacing="10">      
+    <StackPanel Width="400" Spacing="10">
         <StackPanel Background="{DynamicResource SystemRegionBrush}">
           <controls:LocationCard />
         </StackPanel>
     </StackPanel>
   </Design.PreviewWith>
- 
+
   <!-- Why? -->
   <!-- https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes#control-theme-lookup -->
   <ControlTheme x:Key="{x:Type controls:LocationCard}" TargetType="controls:LocationCard">

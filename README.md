@@ -8,7 +8,7 @@ This tool only **reads** the save file, it can not make any changes to it.
 # Screenshots
 <p float="left">
   <img src="RemnantOverseer/Assets/.github/character-view.png" width="400" />
-  <img src="RemnantOverseer/Assets/.github/world-view.png" width="400" /> 
+  <img src="RemnantOverseer/Assets/.github/world-view.png" width="400" />
 </p>
 
 # Features
