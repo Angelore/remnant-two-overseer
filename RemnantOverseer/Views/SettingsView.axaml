@@ -30,14 +30,11 @@
           <Separator Background="{StaticResource OuterBorderInactiveColor}" Height="2" Margin="0 15 0 0"/>
 
           <!-- Toggles -->
-          <CheckBox IsChecked="{Binding !DisableVersionCheck}"
-                    Command="{Binding UpdateDisableVersionCheckCommand}"
+          <CheckBox IsChecked="{Binding EnableVersionCheck}"
                     Content="Enable version checking" Margin="0 15 0 0"/>
-          <CheckBox IsChecked="{Binding !HideTips}"
-                    Command="{Binding UpdateHideTipsCommand}"
+          <CheckBox IsChecked="{Binding ShowTips}"
                     Content="Enable location-specific hints" />
-          <CheckBox IsChecked="{Binding !HideToolkitLinks}"
-                    Command="{Binding UpdateHideToolkitLinksCommand}"
+          <CheckBox IsChecked="{Binding ShowToolkitLinks}"
                     Content="Display links to Remnant Toolkit for applicable items" />
 
           <Separator Background="{StaticResource OuterBorderInactiveColor}" Height="2" Margin="0 15 0 0"/>

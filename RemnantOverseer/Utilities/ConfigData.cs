@@ -1,5 +1,6 @@
-﻿namespace RemnantOverseer;
-public class Settings
+namespace RemnantOverseer.Utilities;
+
+public class ConfigData
 {
     public string? SaveFilePath { get; set; }
     public bool? HideDuplicates { get; set; }
