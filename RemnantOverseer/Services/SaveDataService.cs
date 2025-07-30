@@ -24,9 +24,7 @@ public class SaveDataService
     Subject<DateTime> _fileUpdateSubject = new Subject<DateTime>();
     private Dataset? _dataset;
     private int _lastCharacterCount = 0;
-
-    private string? FilePath => _settingsService.Get().SaveFilePath;
-
+    private string? FilePath { get { return _settingsService.Get().SaveFilePath; } }
     private static readonly FileSystemWatcher FileWatcher = new();
 
     public SaveDataService(SettingsService settingsService)
@@ -44,10 +42,21 @@ public class SaveDataService
 
     public async Task<Dataset?> GetSaveData()
     {
-        if (FilePath is null)
+        if (FilePath == null)
         {
-            WeakReferenceMessenger.Default.Send(new DatasetIsNullMessage());
-            return null;
+            try
+            {
+                _settingsService.Get().SaveFilePath = SaveUtils.GetSaveFolder();
+                await _settingsService.Sync();
+                WeakReferenceMessenger.Default.Send(new NotificationInfoMessage(NotificationStrings.DefaultLocationFound));
+                Log.Instance.Information(NotificationStrings.DefaultLocationFound);
+            }
+            catch
+            {
+                WeakReferenceMessenger.Default.Send(new NotificationWarningMessage(NotificationStrings.DefaultLocationNotFound));
+                Log.Instance.Warning(NotificationStrings.DefaultLocationNotFound);
+                return null;
+            }
         }
 
         // TODO: Add timeout?

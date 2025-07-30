@@ -89,19 +89,12 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
     // Otherwise everything inits before notification manager gets attached
     public void OnViewLoaded()
     {
-        _settingsService.Initialize();
         SaveFileUpdatedHandler(true);
         SwitchToWorldView();
         _saveDataService.StartWatching();
         IsInitialized = true;
 
-        bool versionCheck = _settingsService.Get().DisableVersionCheck ??
-# if DEBUG || REMNANTOVERSEER_NO_DEFAULT_VERSION_CHECK
-            false;
-# else
-            true;
-# endif
-        if (!versionCheck)
+        if (_settingsService.Get().DisableVersionCheck)
             return;
 
         // Version check
