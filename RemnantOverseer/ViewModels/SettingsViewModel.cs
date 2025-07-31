@@ -11,13 +11,23 @@ using System.IO;
 using System.Threading.Tasks;
 
 namespace RemnantOverseer.ViewModels;
-public partial class SettingsViewModel: ViewModelBase
+public partial class SettingsViewModel : ViewModelBase
 {
     private readonly SettingsService _settingsService;
     private readonly SaveDataService _saveDataService;
 
     [ObservableProperty]
     private string? _filePath;
+
+    [ObservableProperty]
+    private bool _disableVersionCheck;
+
+    [ObservableProperty]
+#if DEBUG || R2O_DISABLE_VERSION_CHECK
+    private bool _configurableVersionCheck = false;
+#else
+    private bool _configurableVersionCheck = true;
+#endif
 
     [ObservableProperty]
     private bool _hideTips;
@@ -33,6 +43,12 @@ public partial class SettingsViewModel: ViewModelBase
         FilePath = settings?.SaveFilePath ?? null;
         HideTips = settings?.HideTips ?? false;
         HideToolkitLinks = settings?.HideToolkitLinks ?? false;
+#if DEBUG || R2O_DISABLE_VERSION_CHECK
+        DisableVersionCheck = true;
+#else
+        DisableVersionCheck = settings?.DisableVersionCheck ?? false;
+#endif
+
 
         if (Design.IsDesignMode)
         {
@@ -114,6 +130,20 @@ public partial class SettingsViewModel: ViewModelBase
         if (storageDir.Count == 0) return;
 
         await Task.Run(() => _saveDataService.ExportSave(storageDir[0].TryGetLocalPath()));
+    }
+
+    [RelayCommand]
+    public async Task UpdateDisableVersionCheck()
+    {
+#if !DEBUG && !R2O_DISABLE_VERSION_CHECK
+        await Task.Run(async () =>
+        {
+            var settings = _settingsService.Get();
+            settings.DisableVersionCheck = DisableVersionCheck;
+            await _settingsService.UpdateAsync(settings);
+            WeakReferenceMessenger.Default.Send(new DisableVersionCheckChangedMessage(DisableVersionCheck));
+        });
+#endif
     }
 
     [RelayCommand]
