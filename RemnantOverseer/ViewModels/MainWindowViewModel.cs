@@ -164,7 +164,7 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
                 SelectedCharacter = null;
                 return;
             }
-            SelectedCharacter = DatasetMapper.MapCharacter(ds.Characters[index]);
+            SelectedCharacter = DatasetMapper.MapCharacter(ds.Characters[index], index);
         });
     }
 
@@ -179,7 +179,7 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
                 return;
             }
             var index = resetActiveCharacter ? DatasetMapper.GetActiveCharacterIndex(ds) : SelectedCharacter?.Index ?? 0;
-            SelectedCharacter = DatasetMapper.MapCharacter(ds.Characters[index]);
+            SelectedCharacter = DatasetMapper.MapCharacter(ds.Characters[index],index);
         });
     }
 

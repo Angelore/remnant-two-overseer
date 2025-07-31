@@ -24,9 +24,10 @@ internal class DatasetMapper
     public static MappedCharacters MapCharacters(List<Character> characters)
     {
         var result = new MappedCharacters();
-        foreach (var character in characters)
+        for (int index = 0; index < characters.Count; index++)
         {
-            var mappedCharacter = MapCharacter(character);
+            var character = characters[index];
+            var mappedCharacter = MapCharacter(character, index);
             result.CharacterList.Add(mappedCharacter);
         }
 
@@ -36,13 +37,13 @@ internal class DatasetMapper
         return result;
     }
 
-    public static Models.Character MapCharacter(Character character)
+    public static Models.Character MapCharacter(Character character, int index)
     {
         Enum.TryParse<Archetypes>(character.Profile.Archetype, true, out var archetype); // If false, will default to default value in enum, i.e. Unknown
         Enum.TryParse<Archetypes>(character.Profile.SecondaryArchetype, true, out var subarchetype);
         return new Models.Character
         {
-            Index = character.Index,
+            Index = index,
             Archetype = archetype,
             SubArchetype = string.IsNullOrEmpty(character.Profile.SecondaryArchetype) ? null : subarchetype,
             ObjectCount = character.Profile.AcquiredItems,
@@ -68,7 +69,10 @@ internal class DatasetMapper
 
     public static int GetActiveCharacterIndex(Dataset dataset)
     {
-        return dataset.Characters.Count <= dataset.ActiveCharacterIndex ? 0 : dataset.ActiveCharacterIndex;
+        // Can have gaps due to removed/dead characters, e.g. 0, 1, 3, 4
+        int[] indices = dataset.Characters.Select(c => c.Index).ToArray();
+        var activeIndex = Array.IndexOf(indices, dataset.ActiveCharacterIndex);
+        return activeIndex < 0 ? 0 : activeIndex;
     }
 
     public static Models.ThaenTree? MapThaenTree(Character character)
