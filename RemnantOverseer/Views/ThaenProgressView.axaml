@@ -8,9 +8,9 @@
              x:DataType="vm:ThaenProgressViewModel">
 
   <UserControl.Resources>
-    
+
   </UserControl.Resources>
-  
+
   <Grid RowDefinitions="Auto, Auto, Auto">
     <TextBlock Grid.Row="0" HorizontalAlignment="Center"
                FontWeight="DemiBold" FontSize="16" Margin="10 10 10 0">
@@ -36,5 +36,5 @@
                 ToolTip.Tip="A fruit is available"/>
     </StackPanel>
   </Grid>
-  
+
 </UserControl>

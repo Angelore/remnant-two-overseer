@@ -27,7 +27,7 @@ public partial class WorldViewModel : ViewModelBase
     private ObservableCollection<Zone> _filteredZones = [];
 
     [ObservableProperty]
-    private bool _isLoading = false;
+    private bool _isLoading = true;
 
     [ObservableProperty]
     private bool _isCampaignSelected = true; // TODO: add disabling when no adventure
@@ -36,16 +36,16 @@ public partial class WorldViewModel : ViewModelBase
     private bool _isGlobalExpandOn = true;
 
     [ObservableProperty]
-    private bool _hideDuplicates = true;
+    private bool _hideDuplicates;
 
     [ObservableProperty]
-    private bool _hideLootedItems = false;
+    private bool _hideLootedItems;
 
     [ObservableProperty]
-    private bool _hideMissingPrerequisiteItems = false;
+    private bool _hideMissingPrerequisiteItems ;
 
     [ObservableProperty]
-    private bool _hideHasRequiredMaterialItems = false;
+    private bool _hideHasRequiredMaterialItems;
 
     [ObservableProperty]
     private bool _isNerudFilterChecked = false;
@@ -75,22 +75,25 @@ public partial class WorldViewModel : ViewModelBase
     public string BloodmoonChanceString => BloodmoonChance.HasValue ? $"Blood moon chance: {BloodmoonChance.Value}%" : "Unknown";
 
     [ObservableProperty]
-    private bool _hideTips = false;
+    private bool _hideTips;
 
     [ObservableProperty]
-    private bool _hideToolkitLinks = false;
+    private bool _hideToolkitLinks;
 
     public WorldViewModel(SettingsService settingsService, SaveDataService saveDataService)
     {
         _settingsService = settingsService;
+        var settings = _settingsService.Get();
+        HideDuplicates = settings.HideDuplicates;
+        HideLootedItems = settings.HideLootedItems;
+        HideMissingPrerequisiteItems = settings.HideMissingPrerequisiteItems;
+        HideHasRequiredMaterialItems = settings.HideHasRequiredMaterialItems;
+        HideTips = settings.HideTips;
+        HideToolkitLinks = settings.HideToolkitLinks;
         _saveDataService = saveDataService;
         _filterTextSubject
           .Throttle(TimeSpan.FromMilliseconds(400))
           .Subscribe(OnFilterTextChangedDebounced);
-        ApplySettingsOnInit();
-
-        // Set the flag until after onLoaded is executed
-        IsLoading = true;
     }
 
     public void OnViewLoaded()
@@ -120,9 +123,8 @@ public partial class WorldViewModel : ViewModelBase
         ApplyFilter();
         Task.Run(async () =>
         {
-            var settings = _settingsService.Get();
-            settings.HideDuplicates = value;
-            await _settingsService.UpdateAsync(settings);
+            _settingsService.Get().HideDuplicates = value;
+            await _settingsService.Sync();
         });
     }
 
@@ -132,9 +134,8 @@ public partial class WorldViewModel : ViewModelBase
         ApplyFilter();
         Task.Run(async () =>
         {
-            var settings = _settingsService.Get();
-            settings.HideLootedItems = value;
-            await _settingsService.UpdateAsync(settings);
+            _settingsService.Get().HideLootedItems = value;
+            await _settingsService.Sync();
         });
     }
 
@@ -143,9 +144,8 @@ public partial class WorldViewModel : ViewModelBase
         ApplyFilter();
         Task.Run(async () =>
         {
-            var settings = _settingsService.Get();
-            settings.HideMissingPrerequisiteItems = value;
-            await _settingsService.UpdateAsync(settings);
+            _settingsService.Get().HideMissingPrerequisiteItems = value;
+            await _settingsService.Sync();
         });
     }
 
@@ -154,9 +154,8 @@ public partial class WorldViewModel : ViewModelBase
         ApplyFilter();
         Task.Run(async () =>
         {
-            var settings = _settingsService.Get();
-            settings.HideHasRequiredMaterialItems = value;
-            await _settingsService.UpdateAsync(settings);
+            _settingsService.Get().HideHasRequiredMaterialItems = value;
+            await _settingsService.Sync();
         });
     }
     // ~Additional filters
@@ -359,64 +358,6 @@ public partial class WorldViewModel : ViewModelBase
         HideMissingPrerequisiteItems = false;
         HideHasRequiredMaterialItems = false;
     }
-
-#pragma warning disable MVVMTK0034 // Direct field reference to [ObservableProperty] backing field
-    private void ApplySettingsOnInit()
-    {
-        var updateQueued = false;
-        var settings = _settingsService.Get();
-        if (settings.HideDuplicates.HasValue)
-        {
-            _hideDuplicates = settings.HideDuplicates.Value;
-        }
-        else
-        {
-            settings.HideDuplicates = true;
-            updateQueued = true;
-        }
-        if (settings.HideLootedItems.HasValue)
-        {
-            _hideLootedItems = settings.HideLootedItems.Value;
-        }
-        else
-        {
-            settings.HideLootedItems = false;
-            updateQueued = true;
-        }
-        if (settings.HideMissingPrerequisiteItems.HasValue)
-        {
-            _hideMissingPrerequisiteItems = settings.HideMissingPrerequisiteItems.Value;
-        }
-        else
-        {
-            settings.HideMissingPrerequisiteItems = false;
-            updateQueued = true;
-        }
-        if (settings.HideHasRequiredMaterialItems.HasValue)
-        {
-            _hideHasRequiredMaterialItems = settings.HideHasRequiredMaterialItems.Value;
-        }
-        else
-        {
-            settings.HideHasRequiredMaterialItems = false;
-            updateQueued = true;
-        }
-
-        if (settings.HideTips.HasValue)
-        {
-            _hideTips = settings.HideTips.Value;
-        }
-        if (settings.HideToolkitLinks.HasValue)
-        {
-            _hideToolkitLinks = settings.HideToolkitLinks.Value;
-        }
-
-        if (updateQueued)
-        {
-            Task.Run(() => _settingsService.UpdateAsync(settings));
-        }
-    }
-#pragma warning restore MVVMTK0034 // Direct field reference to [ObservableProperty] backing field
 
     #region Messages
     protected override void OnActivated()

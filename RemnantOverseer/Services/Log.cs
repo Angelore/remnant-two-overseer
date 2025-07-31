@@ -9,9 +9,6 @@ using System.Reflection;
 namespace RemnantOverseer.Services;
 internal class Log
 {
-    public const string LogFileName = "log.txt";
-    public static string LogFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, LogFileName);
-
     private static Logger? _disposableLogger;
     private static ILogger? _instance;
     public static ILogger Instance
@@ -22,12 +19,22 @@ internal class Log
         }
     }
 
+    public static string GetLogFilePath()
+    {
+# if REMNANTOVERSEER_USER_DIRECTORIES
+        string userdir = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData, Environment.SpecialFolderOption.Create);
+        return Path.Combine(userdir, "remnant-two-overseer", "log.txt");
+# else
+        return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "log.txt");
+# endif
+    }
+
     public static void Initialize()
     {
         ExpressionTemplate template = new("{@t:dd MMM yyyy HH:mm:ss} {@l:u3} [{Substring(SourceContext, LastIndexOf(SourceContext, '.') + 1)}] {@m}\n");
-        if (File.Exists(LogFilePath))
+        if (File.Exists(GetLogFilePath()))
         {
-            File.Delete(LogFilePath);
+            File.Delete(GetLogFilePath());
         }
 
         LoggerConfiguration config;
@@ -38,7 +45,8 @@ internal class Log
         else
         {
             config = new LoggerConfiguration()
-                .WriteTo.File(template, LogFilePath);
+                .WriteTo.Console()
+                .WriteTo.File(template, GetLogFilePath());
         }
 
         _disposableLogger = config.CreateLogger();

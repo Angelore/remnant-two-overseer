@@ -2,13 +2,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:li="using:LoadingIndicators.Avalonia"
         xmlns:controls="using:RemnantOverseer.Controls">
-  
+
   <Design.PreviewWith>
     <Grid Width="400" Height="400" Background="{DynamicResource SystemRegionBrush}">
           <controls:LoadingIndicator IsLoading="True"/>
     </Grid>
   </Design.PreviewWith>
- 
+
   <ControlTheme x:Key="{x:Type controls:LoadingIndicator}" TargetType="controls:LoadingIndicator">
     <Setter Property="Template">
       <ControlTemplate>
