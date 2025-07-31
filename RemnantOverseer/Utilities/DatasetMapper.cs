@@ -69,7 +69,10 @@ internal class DatasetMapper
 
     public static int GetActiveCharacterIndex(Dataset dataset)
     {
-        return dataset.Characters.Count <= dataset.ActiveCharacterIndex ? 0 : dataset.ActiveCharacterIndex;
+        // Can have gaps due to removed/dead characters, e.g. 0, 1, 3, 4
+        int[] indices = dataset.Characters.Select(c => c.Index).ToArray();
+        var activeIndex = Array.IndexOf(indices, dataset.ActiveCharacterIndex);
+        return activeIndex < 0 ? 0 : activeIndex;
     }
 
     public static Models.ThaenTree? MapThaenTree(Character character)
