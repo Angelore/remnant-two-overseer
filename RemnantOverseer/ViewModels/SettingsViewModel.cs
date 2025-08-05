@@ -6,33 +6,38 @@ using CommunityToolkit.Mvvm.Messaging;
 using RemnantOverseer.Models.Messages;
 using RemnantOverseer.Services;
 using RemnantOverseer.Utilities;
+using RemnantOverseer.Models;
 using System;
 using System.IO;
 using System.Threading.Tasks;
 
 namespace RemnantOverseer.ViewModels;
-public partial class SettingsViewModel: ViewModelBase
+public partial class SettingsViewModel : ViewModelBase
 {
-    private readonly SettingsService _settingsService;
     private readonly SaveDataService _saveDataService;
+    private readonly SettingsService _settingsService;
 
     [ObservableProperty]
     private string? _filePath;
 
     [ObservableProperty]
-    private bool _hideTips;
+    private bool _enableVersionCheck;
 
     [ObservableProperty]
-    private bool _hideToolkitLinks;
+    private bool _showTips;
+
+    [ObservableProperty]
+    private bool _showToolkitLinks;
 
     public SettingsViewModel(SettingsService settingsService, SaveDataService saveDataService)
     {
         _settingsService = settingsService;
         _saveDataService = saveDataService;
         var settings = _settingsService.Get();
-        FilePath = settings?.SaveFilePath ?? null;
-        HideTips = settings?.HideTips ?? false;
-        HideToolkitLinks = settings?.HideToolkitLinks ?? false;
+        _filePath = settings.SaveFilePath;
+        _showTips = !settings.HideTips;
+        _showToolkitLinks = !settings.HideToolkitLinks;
+        _enableVersionCheck = !settings.DisableVersionCheck;
 
         if (Design.IsDesignMode)
         {
@@ -69,9 +74,9 @@ public partial class SettingsViewModel: ViewModelBase
 
             if (newPath == settings.SaveFilePath) return;
 
-            settings.SaveFilePath = newPath;
-            _settingsService.Update(settings);
             FilePath = newPath;
+            settings.SaveFilePath = newPath;
+            await _settingsService.Sync();
             WeakReferenceMessenger.Default.Send(new SaveFilePathChangedMessage(FilePath!));
             WeakReferenceMessenger.Default.Send(new NotificationInfoMessage(NotificationStrings.SaveFileLocationChanged));
         }
@@ -85,7 +90,7 @@ public partial class SettingsViewModel: ViewModelBase
 
         try
         {
-            await topLevel.Launcher.LaunchFileInfoAsync(new FileInfo(Log.LogFilePath));
+            await topLevel.Launcher.LaunchFileInfoAsync(new FileInfo(Log.GetLogFilePath()));
         }
         catch { }
     }
@@ -116,29 +121,33 @@ public partial class SettingsViewModel: ViewModelBase
         await Task.Run(() => _saveDataService.ExportSave(storageDir[0].TryGetLocalPath()));
     }
 
-    [RelayCommand]
-    public async Task UpdateHideTips()
+    partial void OnEnableVersionCheckChanged(bool value)
     {
-        await Task.Run(async () =>
+        Task.Run(async () =>
         {
-            var settings = _settingsService.Get();
-            settings.HideTips = HideTips;
-            await _settingsService.UpdateAsync(settings);
-
-            WeakReferenceMessenger.Default.Send(new HideTipsChangedMessage(HideTips));
+            _settingsService.Get().DisableVersionCheck = !value;
+            await _settingsService.Sync();
+            WeakReferenceMessenger.Default.Send(new DisableVersionCheckChangedMessage(!value));
         });
     }
 
-    [RelayCommand]
-    public async Task UpdateHideToolkitLinks()
+    partial void OnShowTipsChanged(bool value)
     {
-        await Task.Run(async () =>
+        Task.Run(async () =>
         {
-            var settings = _settingsService.Get();
-            settings.HideToolkitLinks = HideToolkitLinks;
-            await _settingsService.UpdateAsync(settings);
+            _settingsService.Get().DisableVersionCheck = !value;
+            await _settingsService.Sync();
+            WeakReferenceMessenger.Default.Send(new HideTipsChangedMessage(!value));
+        });
+    }
 
-            WeakReferenceMessenger.Default.Send(new HideToolkitLinksChangedMessage(HideToolkitLinks));
+    partial void OnShowToolkitLinksChanged(bool value)
+    {
+        Task.Run(async () =>
+        {
+            _settingsService.Get().HideToolkitLinks = !value;
+            await _settingsService.Sync();
+            WeakReferenceMessenger.Default.Send(new HideToolkitLinksChangedMessage(!value));
         });
     }
 

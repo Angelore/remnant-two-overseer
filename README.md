@@ -8,7 +8,7 @@ This tool only **reads** the save file, it can not make any changes to it.
 # Screenshots
 <p float="left">
   <img src="RemnantOverseer/Assets/.github/character-view.png" width="400" />
-  <img src="RemnantOverseer/Assets/.github/world-view.png" width="400" /> 
+  <img src="RemnantOverseer/Assets/.github/world-view.png" width="400" />
 </p>
 
 # Features
@@ -38,6 +38,21 @@ C:\Users\[YourUser]\AppData\Local\Packages\PerfectWorldEntertainment.GFREMP2_jra
 - Inside, there should be a `containers.index` file, that's the save you're looking for
 
 If that doesn't work, you can try searching your drive for `containers.index` file. (The path should include `PerfectWorldEntertainment.GFREMP2`)
+
+# Compilation Options
+
+To aid in package management efforts the following options may be set at compile time:
+
+| Option                                     | Effect                                                                                 |
+|--------------------------------------------|----------------------------------------------------------------------------------------|
+| `REMNANTOVERSEER_NO_DEFAULT_VERSION_CHECK` | The version check will be disabled by **default**, can still be reenabled by the user. |
+| `REMNANTOVERSEER_USER_DIRECTORIES`         | Use per-user directories (e.g. XDG on Linux, AppData on Windows).                      |
+
+Options can be provided as such:
+
+```bash
+dotnet build -p:DefineConstants=REMNANTOVERSEER_NO_DEFAULT_VERSION_CHECK
+```
 
 # Acknowledgements
 - Razzmatazzz for his [project](https://github.com/Razzmatazzz/RemnantSaveGuardian), which served as an inspiration for this one and made me look into working on Remnant in the first place

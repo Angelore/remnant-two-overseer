@@ -21,7 +21,7 @@ public class ArchetypeToBackgroundConverter: IValueConverter
             var color = Color.Parse(ArchetypeColors.Map[(Archetypes)value]);
             if (parameter is string percent && !string.IsNullOrEmpty(percent))
             {
-                var percentNum = int.Parse(percent); 
+                var percentNum = int.Parse(percent);
                 if (percentNum > 100 || percentNum < -100)
                     return AvaloniaProperty.UnsetValue;
 

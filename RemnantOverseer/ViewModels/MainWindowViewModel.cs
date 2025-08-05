@@ -89,16 +89,14 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
     // Otherwise everything inits before notification manager gets attached
     public void OnViewLoaded()
     {
-        _settingsService.Initialize();
         SaveFileUpdatedHandler(true);
         SwitchToWorldView();
         _saveDataService.StartWatching();
         IsInitialized = true;
 
-#if DEBUG
-        // Avoid being rate limited by gh
-        return;
-#endif
+        if (_settingsService.Get().DisableVersionCheck)
+            return;
+
         // Version check
         Task.Run(async () =>
         {
