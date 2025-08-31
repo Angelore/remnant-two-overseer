@@ -1,0 +1,43 @@
+name: .NET
+
+on:
+  push:
+    tags:
+    - "v[0-9]+.[0-9]+.[0-9]+"
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Set Version Variable
+      if: ${{ github.ref_type == 'tag' }}
+      env:
+        TAG: ${{ github.ref_name }}
+      run: echo "VERSION=${TAG#v}" >> $GITHUB_ENV
+    - name: Build for Windows
+      run: dotnet publish --runtime win-x64 -p:PublishSingleFile=true -p:Version=$VERSION -p:AssemblyVersion=$VERSION
+    - name: Build for Linux
+      run: dotnet publish --runtime linux-x64 -p:PublishSingleFile=true -p:Version=$VERSION -p:AssemblyVersion=$VERSION
+    - name: Create Linux artifact
+      run: |
+        tar -C ./RemnantOverseer/bin/Release/net8.0/linux-x64/publish -czvf RemnantOverseer-${{ github.ref_name }}-linux.tar.gz .
+    - name: Create Windows artifact
+      run: |
+        zip -j RemnantOverseer-${{ github.ref_name }}-windows.zip ./RemnantOverseer/bin/Release/net8.0/win-x64/publish/*
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: |
+          RemnantOverseer-${{ github.ref_name }}-linux.tar.gz
+          RemnantOverseer-${{ github.ref_name }}-windows.zip
+
+
