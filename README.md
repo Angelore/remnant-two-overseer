@@ -24,7 +24,7 @@ This tool only **reads** the save file, it can not make any changes to it.
 # Installation
 - Download and install [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) or greater
   - You only need a .NET Desktop Runtime x64, but you can install the whole SDK if you want to
-- Download the latest release
+- Download the [latest release](https://github.com/Angelore/remnant-two-overseer/releases)
 - Unpack the archive to a folder. To avoid issues, use a non-system folder, such as `C:\Games\RemnantOverseer`
 - Launch the .exe file
 
