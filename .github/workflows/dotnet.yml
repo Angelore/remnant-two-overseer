@@ -24,9 +24,9 @@ jobs:
         TAG: ${{ github.ref_name }}
       run: echo "VERSION=${TAG#v}" >> $GITHUB_ENV
     - name: Build for Windows
-      run: dotnet publish --runtime win-x64 -p:PublishSingleFile=true -p:Version=$VERSION -p:AssemblyVersion=$VERSION
+      run: dotnet publish --runtime win-x64 -p:PublishSingleFile=true -p:SelfContained=false -p:Version=$VERSION -p:AssemblyVersion=$VERSION
     - name: Build for Linux
-      run: dotnet publish --runtime linux-x64 -p:PublishSingleFile=true -p:Version=$VERSION -p:AssemblyVersion=$VERSION
+      run: dotnet publish --runtime linux-x64 -p:PublishSingleFile=true -p:SelfContained=false -p:Version=$VERSION -p:AssemblyVersion=$VERSION
     - name: Create Linux artifact
       run: |
         tar -C ./RemnantOverseer/bin/Release/net8.0/linux-x64/publish -czvf RemnantOverseer-${{ github.ref_name }}-linux.tar.gz .
