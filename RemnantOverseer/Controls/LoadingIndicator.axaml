@@ -26,8 +26,6 @@
               <Setter Property="Background" Value="{x:Null}" />
               <Setter Property="Opacity" Value="0"/>
             </Style>
-          </Border.Styles>
-          <Border.Styles>
             <Style Selector="Border#LoadingContainer.loading">
               <Setter Property="Background" Value="#CC000000" />
               <Setter Property="Opacity" Value="1"/>
