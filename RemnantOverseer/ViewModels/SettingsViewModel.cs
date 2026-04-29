@@ -135,7 +135,7 @@ public partial class SettingsViewModel : ViewModelBase
     {
         Task.Run(async () =>
         {
-            _settingsService.Get().DisableVersionCheck = !value;
+            _settingsService.Get().HideTips = !value;
             await _settingsService.Sync();
             WeakReferenceMessenger.Default.Send(new HideTipsChangedMessage(!value));
         });
