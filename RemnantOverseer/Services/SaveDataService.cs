@@ -140,7 +140,7 @@ public class SaveDataService
     {
         _dataset = await Task.Run(() => Analyzer.Analyze(FilePath));
         // If the number of character changed, we can't rely on previous index anymore. There is no way to uniquely id  characters, so we will just reset
-        var countChanged = _dataset.Characters.Count > _lastCharacterCount;
+        var countChanged = _dataset.Characters.Count != _lastCharacterCount;
         _lastCharacterCount = _dataset.Characters.Count;
         WeakReferenceMessenger.Default.Send(new SaveFileChangedMessage(countChanged));
     }
