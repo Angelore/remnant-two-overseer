@@ -15,4 +15,5 @@ internal static class NotificationStrings
     public static string SelectedCharacterNotValid = "An issue encountered when trying to select active character. Select a character manually";
 
     public static string NewerVersionFound = "A new version ({0}) is available";
+    public static string PlayerInfoNotAvailable = "Player info is not available until a save file has been loaded";
 }

@@ -175,7 +175,12 @@ public class SaveDataService
 
     internal void ReportPlayerInfo()
     {
-        Debug.Assert(_dataset != null, nameof(_dataset) + " != null");
+        if (_dataset is null)
+        {
+            WeakReferenceMessenger.Default.Send(new NotificationWarningMessage(NotificationStrings.PlayerInfoNotAvailable));
+            Log.Instance.Warning(NotificationStrings.PlayerInfoNotAvailable);
+            return;
+        }
 
         var logger = Log.Instance.ForContext<SaveDataService>();
         logger.Information($"Active character save: save_{_dataset.ActiveCharacterIndex}.sav");
