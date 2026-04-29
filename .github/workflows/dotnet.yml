@@ -6,6 +6,9 @@ on:
     - "v[0-9]+.[0-9]+.[0-9]+"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
 
@@ -39,5 +42,4 @@ jobs:
         files: |
           RemnantOverseer-${{ github.ref_name }}-linux.tar.gz
           RemnantOverseer-${{ github.ref_name }}-windows.zip
-
 
