@@ -311,13 +311,14 @@ public class SaveDataService
             logger.Information($"BEGIN Inventory, Character {index + 1} (save_{character.Index})");
 
             List<InventoryItem> debug = character.Profile.Inventory.Where(x => x.ProfileId == "/Game/Items/Common/Item_DragonHeartUpgrade.Item_DragonHeartUpgrade_C").ToList();
-            List<IGrouping<string, InventoryItem>> itemTypes = [.. character.Profile.Inventory
+            List<IGrouping<string?, InventoryItem>> itemTypes = [.. character.Profile.Inventory
                 .GroupBy(x => x.LootItem?.Type)
                 .OrderBy(x=> x.Key)];
 
-            foreach (IGrouping<string, InventoryItem> type in itemTypes)
+            foreach (IGrouping<string?, InventoryItem> type in itemTypes)
             {
-                if (type.Key == null)
+                string? typeKey = type.Key;
+                if (typeKey == null)
                 {
                     foreach (InventoryItem item in type)
                     {
@@ -329,8 +330,8 @@ public class SaveDataService
                 }
                 else
                 {
-                    if (type.Key == "armorspecial") continue;
-                    logger.Information("  " + Utils.Capitalize(type.Key) + ":");
+                    if (typeKey == "armorspecial") continue;
+                    logger.Information("  " + Utils.Capitalize(typeKey) + ":");
 
                     bool hasOne = false;
                     foreach (InventoryItem item in type.OrderBy(x => x.LootItem!.Name))

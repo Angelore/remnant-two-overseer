@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace RemnantOverseer.ViewModels;
 internal class PatchworkQuiltViewModel: ViewModelBase
 {
-    public QuiltPatch[] QuiltPatches { get; private set; }
+    public QuiltPatch[] QuiltPatches { get; private set; } = [];
 
     public PatchworkQuiltViewModel(List<string> questCompletedLog)
     {
@@ -122,10 +122,10 @@ internal class PatchworkQuiltViewModel: ViewModelBase
 
 internal class QuiltPatch
 {
-    public string Name { get; set; }
+    public required string Name { get; set; }
     public bool IsCompleted { get; set; }
-    public string ImagePath { get; set; }
-    public string QuestId { get; set; }
+    public required string ImagePath { get; set; }
+    public required string QuestId { get; set; }
 
     public Bitmap Image => new(AssetLoader.Open(new Uri(ImagePath)));
 }
