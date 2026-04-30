@@ -1,19 +1,21 @@
-﻿namespace RemnantOverseer.Utilities;
+using RemnantOverseer.Services;
+
+namespace RemnantOverseer.Utilities;
 internal static class NotificationStrings
 {
-    public static string DefaultLocationFound = "Save file location was found and set";
-    public static string DefaultLocationNotFound = "Could not detect the location of the save folder. Set it manually in the settings";
-    public static string ErrorWhenLoadingSettings = "Could not read settings file";
-    public static string ErrorWhenUpdatingSettings = "An error was encountered while saving settings";
+    public static string DefaultLocationFound => LocalizationService.Get(nameof(DefaultLocationFound));
+    public static string DefaultLocationNotFound => LocalizationService.Get(nameof(DefaultLocationNotFound));
+    public static string ErrorWhenLoadingSettings => LocalizationService.Get(nameof(ErrorWhenLoadingSettings));
+    public static string ErrorWhenUpdatingSettings => LocalizationService.Get(nameof(ErrorWhenUpdatingSettings));
 
-    public static string SaveFileParsingError = "An error was encountered while parsing the save file. Message:";
-    public static string FileWatcherFolderNotFound = "The folder with the requested file was not found. Ensure that the path is correct and restart the application";
-    public static string FileWatcherFileNotFound = "The profile was not found. Ensure that the path is correct and restart the application";
+    public static string SaveFileParsingError => LocalizationService.Get(nameof(SaveFileParsingError));
+    public static string FileWatcherFolderNotFound => LocalizationService.Get(nameof(FileWatcherFolderNotFound));
+    public static string FileWatcherFileNotFound => LocalizationService.Get(nameof(FileWatcherFileNotFound));
 
-    public static string SaveFileLocationChanged = "Save file location was changed successfully";
+    public static string SaveFileLocationChanged => LocalizationService.Get(nameof(SaveFileLocationChanged));
 
-    public static string SelectedCharacterNotValid = "An issue encountered when trying to select active character. Select a character manually";
+    public static string SelectedCharacterNotValid => LocalizationService.Get(nameof(SelectedCharacterNotValid));
 
-    public static string NewerVersionFound = "A new version ({0}) is available";
-    public static string PlayerInfoNotAvailable = "Player info is not available until a save file has been loaded";
+    public static string NewerVersionFound => LocalizationService.Get(nameof(NewerVersionFound));
+    public static string PlayerInfoNotAvailable => LocalizationService.Get(nameof(PlayerInfoNotAvailable));
 }

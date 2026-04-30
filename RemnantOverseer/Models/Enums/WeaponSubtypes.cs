@@ -1,4 +1,5 @@
-﻿using System;
+using RemnantOverseer.Services;
+using System;
 
 namespace RemnantOverseer.Models.Enums;
 public enum WeaponSubtypes
@@ -25,9 +26,9 @@ public static class WeaponSubtypesExtensions
     {
         return subtype switch
         {
-            WeaponSubtypes.LongGun => "Long Gun",
-            WeaponSubtypes.HandGun => "Hand Gun",
-            WeaponSubtypes.MeleeWeapon => "Melee Weapon",
+            WeaponSubtypes.LongGun => LocalizationService.WeaponSubtypeName(WeaponSubtypes.LongGun),
+            WeaponSubtypes.HandGun => LocalizationService.WeaponSubtypeName(WeaponSubtypes.HandGun),
+            WeaponSubtypes.MeleeWeapon => LocalizationService.WeaponSubtypeName(WeaponSubtypes.MeleeWeapon),
             _ => throw new NotImplementedException()
         };
     }

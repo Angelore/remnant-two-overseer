@@ -1,5 +1,6 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using RemnantOverseer.Models.Enums;
+using RemnantOverseer.Services;
 using System;
 
 namespace RemnantOverseer.Models;
@@ -18,11 +19,17 @@ public partial class Character: ObservableObject
 
     public string FormattedPowerLevel => PowerLevel > 0 ? PowerLevel.ToString() : "?";
 
+    public string ArchetypeName => LocalizationService.ArchetypeName(Archetype);
+
+    public string? SubArchetypeName => SubArchetype is null ? null : LocalizationService.ArchetypeName(SubArchetype.Value);
+
     public string? Summary
     {
         get
         {
-            return SubArchetype == null ? $"{Archetype} :: Level {FormattedPowerLevel}" : $"{Archetype}/{SubArchetype} :: Level {FormattedPowerLevel}";
+            return SubArchetypeName is null
+                ? LocalizationService.Format("Character_SummarySingle", ArchetypeName, FormattedPowerLevel)
+                : LocalizationService.Format("Character_SummaryDual", ArchetypeName, SubArchetypeName, FormattedPowerLevel);
         }
     }
 

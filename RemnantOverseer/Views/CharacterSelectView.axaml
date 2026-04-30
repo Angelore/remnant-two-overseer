@@ -8,6 +8,7 @@
              xmlns:models="using:RemnantOverseer.Models"
              xmlns:controls="using:RemnantOverseer.Controls"
              xmlns:util="using:RemnantOverseer.Utilities"
+             xmlns:loc="using:RemnantOverseer.Services"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="550"
              x:Class="RemnantOverseer.Views.CharacterSelectView"
              x:DataType="vm:CharacterSelectViewModel">
@@ -126,7 +127,7 @@
                   <Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto" RowDefinitions="*, Auto">
                     <Panel Grid.Row="1" Grid.Column="0" Margin="10 5">
                       <Border Background="{StaticResource PowerLevelBackgoundBrush}" CornerRadius="5"></Border>
-                      <StackPanel Orientation="Horizontal" Margin="5" ToolTip.Tip="Power Level" IsHitTestVisible="True">
+                      <StackPanel Orientation="Horizontal" Margin="5" ToolTip.Tip="{loc:Loc Character_PowerLevel}" IsHitTestVisible="True">
                         <PathIcon Data="{StaticResource PowerLevelIcon}" Height="20" Width="20" Margin="5 0"/>
                         <TextBlock Text="{Binding FormattedPowerLevel}" FontWeight="Bold" FontSize="20" />
                       </StackPanel>
@@ -134,7 +135,7 @@
                     <Panel Grid.Row="1" Grid.Column="2" Margin="10 5">
                       <Border Background="{StaticResource PowerLevelBackgoundBrush}" CornerRadius="5"></Border>
                       <StackPanel Orientation="Horizontal" Margin="5" IsVisible="{Binding IsHardcore}">
-                        <PathIcon Data="{StaticResource HardcoreIcon}" Height="20" Width="20" Margin="5 0" ToolTip.Tip="Hardcore"/>
+                        <PathIcon Data="{StaticResource HardcoreIcon}" Height="20" Width="20" Margin="5 0" ToolTip.Tip="{loc:Loc Character_Hardcore}"/>
                       </StackPanel>
                     </Panel>
                   </Grid>
@@ -149,8 +150,8 @@
                         <Setter Property="FontSize" Value="16" />
                       </Style>
                     </Grid.Styles>
-                    <TextBlock Grid.Row="0" Text="{Binding Archetype}"/>
-                    <TextBlock Grid.Row="1" Text="{Binding SubArchetype}" Margin="0 3 0 0" IsVisible="{Binding SubArchetype, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+                    <TextBlock Grid.Row="0" Text="{Binding ArchetypeName}"/>
+                    <TextBlock Grid.Row="1" Text="{Binding SubArchetypeName}" Margin="0 3 0 0" IsVisible="{Binding SubArchetype, Converter={x:Static ObjectConverters.IsNotNull}}"/>
                     <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 3 0 0" HorizontalAlignment="Center">
                       <PathIcon Data="{StaticResource PlaytimeIcon}" Height="12" Width="12" Margin="3 0" />
                       <TextBlock Text="{Binding FormattedPlaytime}"/>

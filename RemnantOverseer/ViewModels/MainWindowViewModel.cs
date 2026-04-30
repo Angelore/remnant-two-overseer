@@ -104,7 +104,7 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
             if (nv is not null)
                 await Dispatcher.UIThread.InvokeAsync(() =>
                 {
-                    NotificationManager?.Show(new Notification("Information", string.Format(NotificationStrings.NewerVersionFound, nv), NotificationType.Information));
+                    NotificationManager?.Show(new Notification(LocalizationService.Get("Notification_TitleInformation"), LocalizationService.Format(nameof(NotificationStrings.NewerVersionFound), nv), NotificationType.Information));
                 });
         });
     }
@@ -133,21 +133,21 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
         Messenger.Register<MainWindowViewModel, NotificationErrorMessage>(this, async (r, m) => {
             await Dispatcher.UIThread.InvokeAsync(() =>
             {
-                NotificationManager?.Show(new Notification("Error", m.Value, NotificationType.Error, TimeSpan.Zero));
+                NotificationManager?.Show(new Notification(LocalizationService.Get("Notification_TitleError"), m.Value, NotificationType.Error, TimeSpan.Zero));
             });
         });
 
         Messenger.Register<MainWindowViewModel, NotificationWarningMessage>(this, async (r, m) => {
             await Dispatcher.UIThread.InvokeAsync(() =>
             {
-                NotificationManager?.Show(new Notification("Warning", m.Value, NotificationType.Warning));
+                NotificationManager?.Show(new Notification(LocalizationService.Get("Notification_TitleWarning"), m.Value, NotificationType.Warning));
             });
         });
 
         Messenger.Register<MainWindowViewModel, NotificationInfoMessage>(this, async (r, m) => {
             await Dispatcher.UIThread.InvokeAsync(() =>
             {
-                NotificationManager?.Show(new Notification("Information", m.Value, NotificationType.Information));
+                NotificationManager?.Show(new Notification(LocalizationService.Get("Notification_TitleInformation"), m.Value, NotificationType.Information));
             });
         });
     }

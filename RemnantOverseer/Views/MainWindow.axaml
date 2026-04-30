@@ -6,6 +6,7 @@
         xmlns:sys="clr-namespace:System;assembly=System.Runtime"
         xmlns:views="clr-namespace:RemnantOverseer.Views"
         xmlns:util="using:RemnantOverseer.Utilities"
+        xmlns:loc="using:RemnantOverseer.Services"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="RemnantOverseer.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -120,25 +121,25 @@
       <Border Grid.Column="0" Padding="10">
         <Grid Background="{StaticResource GlobalBackroundBrush}" RowDefinitions="Auto, Auto, Auto, *, Auto, Auto">
           <RadioButton Grid.Row="0" Classes="SidebarButton" GroupName="SideMenuButtons" Theme="{StaticResource ButtonWithBorder}" Command="{Binding SwitchToCharacterViewCommand}" IsChecked="{Binding IsCharacterViewSelected}"
-                       ToolTip.Tip="Characters" ToolTip.ShowDelay="700" ToolTip.Placement="RightEdgeAlignedTop">
+                       ToolTip.Tip="{loc:Loc MainWindow_Characters}" ToolTip.ShowDelay="700" ToolTip.Placement="RightEdgeAlignedTop">
             <PathIcon Height="{StaticResource IconSize}" Width="{StaticResource IconSize}" Foreground="{StaticResource BaseTextColor}"
                 Data="{StaticResource CharacterIcon}"/>
           </RadioButton>
 
           <RadioButton Grid.Row="1" Classes="SidebarButton"  GroupName="SideMenuButtons" Theme="{StaticResource ButtonWithBorder}" Command="{Binding SwitchToWorldViewCommand}" IsChecked="{Binding IsWorldViewSelected}"
-                       ToolTip.Tip="Items" ToolTip.ShowDelay="700" ToolTip.Placement="RightEdgeAlignedTop">
+                       ToolTip.Tip="{loc:Loc MainWindow_Items}" ToolTip.ShowDelay="700" ToolTip.Placement="RightEdgeAlignedTop">
             <PathIcon Height="{StaticResource IconSize}" Width="{StaticResource IconSize}" Foreground="{StaticResource BaseTextColor}"
                 Data="{StaticResource WorldIcon}"/>
           </RadioButton>
 
           <RadioButton Grid.Row="2" Classes="SidebarButton"  GroupName="SideMenuButtons" Theme="{StaticResource ButtonWithBorder}" Command="{Binding SwitchToMissingItemsViewCommand}" IsChecked="{Binding IsMissingItemsViewSelected}"
-                       ToolTip.Tip="Missing Items" ToolTip.ShowDelay="700" ToolTip.Placement="RightEdgeAlignedTop">
+                       ToolTip.Tip="{loc:Loc MainWindow_MissingItems}" ToolTip.ShowDelay="700" ToolTip.Placement="RightEdgeAlignedTop">
             <PathIcon Height="{StaticResource IconSize}" Width="{StaticResource IconSize}" Foreground="{StaticResource BaseTextColor}"
                 Data="{StaticResource MissingItemsIcon}"/>
           </RadioButton>
 
           <RadioButton Grid.Row="5" Classes="SidebarButton"  GroupName="SideMenuButtons" Theme="{StaticResource ButtonWithBorder}" Command="{Binding SwitchToSettingsViewCommand}" IsChecked="{Binding IsSettingsViewSelected}"
-                       ToolTip.Tip="Settings" ToolTip.ShowDelay="700" ToolTip.Placement="RightEdgeAlignedTop">
+                       ToolTip.Tip="{loc:Loc MainWindow_Settings}" ToolTip.ShowDelay="700" ToolTip.Placement="RightEdgeAlignedTop">
             <PathIcon Height="{StaticResource IconSize}" Width="{StaticResource IconSize}" Foreground="{StaticResource BaseTextColor}"
                 Data="{StaticResource GearIcon}"/>
           </RadioButton>
@@ -151,10 +152,7 @@
       <!-- Content -->
       <TransitioningContentControl Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{Binding ContentViewModel}" />
       <Border Grid.Column="2" IsVisible="{Binding !CanDisplayContent}" Background="{StaticResource GlobalBackroundBrush}">
-        <TextBlock FontSize="18" xml:space="preserve" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center">
-        It looks like we've encountered an error.
-        Make sure that settings are accurate and restart the application
-      </TextBlock>
+        <TextBlock FontSize="18" Text="{loc:Loc MainWindow_ErrorState}" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
       </Border>
     </Grid>
   </Grid>

@@ -8,6 +8,7 @@
              xmlns:models="using:RemnantOverseer.Models"
              xmlns:controls="using:RemnantOverseer.Controls"
              xmlns:util="using:RemnantOverseer.Utilities"
+             xmlns:loc="using:RemnantOverseer.Services"
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
              x:Class="RemnantOverseer.Views.WorldView"
              x:DataType="vm:WorldViewModel">
@@ -63,8 +64,8 @@
               <Grid ColumnDefinitions="30, *">
                 <PathIcon Grid.Column="0" Data="{StaticResource CampaignIcon}" IsVisible="{Binding $parent[ToggleButton].IsChecked}" Width="20" Margin="5 0"/>
                 <PathIcon Grid.Column="0" Data="{StaticResource AdventureIcon}" IsVisible="{Binding !$parent[ToggleButton].IsChecked}" Width="20" Margin="5 0"/>
-                <TextBlock Grid.Column="1" Text="Campaign" IsVisible="{Binding $parent[ToggleButton].IsChecked}"/>
-                <TextBlock Grid.Column="1" Text="Adventure" IsVisible="{Binding !$parent[ToggleButton].IsChecked}"/>
+                <TextBlock Grid.Column="1" Text="{loc:Loc World_Campaign}" IsVisible="{Binding $parent[ToggleButton].IsChecked}"/>
+                <TextBlock Grid.Column="1" Text="{loc:Loc World_Adventure}" IsVisible="{Binding !$parent[ToggleButton].IsChecked}"/>
               </Grid>
             </ToggleButton>
           </StackPanel>
@@ -96,8 +97,8 @@
               <Grid ColumnDefinitions="Auto, *">
               <PathIcon Grid.Column="0" Data="{StaticResource SquareMinusIcon}" IsVisible="{Binding IsGlobalExpandOn}" Width="14" Margin="5 0"/>
               <PathIcon Grid.Column="0" Data="{StaticResource SquarePlusIcon}" IsVisible="{Binding !IsGlobalExpandOn}" Width="14" Margin="5 0"/>
-              <TextBlock Grid.Column="1" Text="Collapse All" IsVisible="{Binding IsGlobalExpandOn}" Margin="0 0 5 0"/>
-              <TextBlock Grid.Column="1" Text="Expand All" IsVisible="{Binding !IsGlobalExpandOn}" Margin="0 0 5 0"/>
+              <TextBlock Grid.Column="1" Text="{loc:Loc Common_CollapseAll}" IsVisible="{Binding IsGlobalExpandOn}" Margin="0 0 5 0"/>
+              <TextBlock Grid.Column="1" Text="{loc:Loc Common_ExpandAll}" IsVisible="{Binding !IsGlobalExpandOn}" Margin="0 0 5 0"/>
               </Grid>
             </Button>
           </StackPanel>
@@ -106,8 +107,8 @@
             <ToggleButton Grid.Column="0" IsChecked="{Binding HideDuplicates}">
               <ToolTip.Tip>
                 <Panel>
-                <TextBlock IsVisible="{Binding HideDuplicates}" Text="Toggle Duplicates (Hiding)" />
-                <TextBlock IsVisible="{Binding !HideDuplicates}" Text="Toggle Duplicates (Showing)" />
+                <TextBlock IsVisible="{Binding HideDuplicates}" Text="{loc:Loc World_ToggleDuplicatesHiding}" />
+                <TextBlock IsVisible="{Binding !HideDuplicates}" Text="{loc:Loc World_ToggleDuplicatesShowing}" />
                 </Panel>
               </ToolTip.Tip>
               <Grid ColumnDefinitions="Auto">
@@ -115,7 +116,7 @@
                 <PathIcon Data="{StaticResource ShowingDuplicatesIcon}" IsVisible="{Binding !HideDuplicates}" Width="14" Margin="5 0"/>
               </Grid>
             </ToggleButton>
-            <Button Grid.Column="1" PointerPressed="FiltersButton_PointerPressed" ToolTip.Tip="More Filters">
+            <Button Grid.Column="1" PointerPressed="FiltersButton_PointerPressed" ToolTip.Tip="{loc:Loc World_MoreFilters}">
               <Grid ColumnDefinitions="Auto">
                 <PathIcon Grid.Column="0" Data="{StaticResource FiltersIcon}" Width="14" Margin="5 0"/>
               </Grid>
@@ -134,23 +135,21 @@
                         <Setter Property="FontSize" Value="14"/>
                       </Style>
                     </StackPanel.Styles>
-                    <ToggleButton IsChecked="{Binding !HideLootedItems}">Looted items</ToggleButton>
-                    <ToggleButton IsChecked="{Binding !HideMissingPrerequisiteItems}">Items with missing Prerequisites</ToggleButton>
+                    <ToggleButton IsChecked="{Binding !HideLootedItems}" Content="{loc:Loc World_FilterLootedItems}"/>
+                    <ToggleButton IsChecked="{Binding !HideMissingPrerequisiteItems}" Content="{loc:Loc World_FilterMissingPrerequisites}"/>
                     <ToggleButton IsChecked="{Binding !HideHasRequiredMaterialItems}">
-                      <TextBlock>
-                        Uncrafted items with the<LineBreak />required material in possession
-                      </TextBlock>
+                      <TextBlock Text="{loc:Loc World_FilterUncraftedWithRequiredMaterial}"/>
                     </ToggleButton>
                   </StackPanel>
                 </Flyout>
               </Button.Flyout>
             </Button>
-            <Button Grid.Column="2"  Command="{Binding ResetFiltersCommand}" ToolTip.Tip="Reset Filters">
+            <Button Grid.Column="2"  Command="{Binding ResetFiltersCommand}" ToolTip.Tip="{loc:Loc Common_ResetFilters}">
               <Grid ColumnDefinitions="Auto">
                 <PathIcon Grid.Column="0" Data="{StaticResource ResetIcon}" Width="14" Margin="5 0"/>
               </Grid>
             </Button>
-            <TextBox Grid.Column="3" Name="FilterBox" Text="{Binding FilterText}" MinWidth="250" MaxWidth="450" Watermark="Find items or events" />
+            <TextBox Grid.Column="3" Name="FilterBox" Text="{Binding FilterText}" MinWidth="250" MaxWidth="450" Watermark="{loc:Loc Common_SearchWatermark}" />
           </Grid>
         </Grid>
 
@@ -220,12 +219,12 @@
                   <!--<PathIcon Grid.Column="1" Data="{StaticResource ImageIcon}" Margin="5 0"/>-->
                 </Grid>
                 <Grid Grid.Column="1" ColumnDefinitions="Auto, Auto, Auto, Auto">
-                  <PathIcon Grid.Column="0" Data="{StaticResource TraitBookIcon}" IsVisible="{Binding IsTraitBookPresent}" IsEnabled="{Binding !IsTraitBookLooted}" ToolTip.Tip="Trait Book Available" Margin="5 0"/>
-                  <PathIcon Grid.Column="1" Data="{StaticResource SimulacrumIcon2}" IsVisible="{Binding IsSimulacrumPresent}" IsEnabled="{Binding !IsSimulacrumLooted}" ToolTip.Tip="Simulacrum Available" Margin="5 0"/>
+                  <PathIcon Grid.Column="0" Data="{StaticResource TraitBookIcon}" IsVisible="{Binding IsTraitBookPresent}" IsEnabled="{Binding !IsTraitBookLooted}" ToolTip.Tip="{loc:Loc World_TraitBookAvailable}" Margin="5 0"/>
+                  <PathIcon Grid.Column="1" Data="{StaticResource SimulacrumIcon2}" IsVisible="{Binding IsSimulacrumPresent}" IsEnabled="{Binding !IsSimulacrumLooted}" ToolTip.Tip="{loc:Loc World_SimulacrumAvailable}" Margin="5 0"/>
                   <PathIcon Grid.Column="2" Data="{StaticResource CurrentLocationIcon}" IsVisible="{Binding IsRespawnLocation}" Foreground="{StaticResource ZoneTransitionColor}" ToolTip.Tip="{Binding FormattedRespawnPointName}" Margin="5 0"/>
 
                   <!-- Hints -->
-                  <Button Classes="hint" Grid.Column="3" Margin="5 0" ToolTip.Tip="Hint: Genesis" Click="GenesisHintButton_Click">
+                  <Button Classes="hint" Grid.Column="3" Margin="5 0" ToolTip.Tip="{loc:Loc Hint_Genesis}" Click="GenesisHintButton_Click">
                     <Button.IsVisible>
                       <MultiBinding Converter="{x:Static BoolConverters.And}">
                         <Binding Path="IsGenesisLocation" Mode="OneWay" />
@@ -234,7 +233,7 @@
                     </Button.IsVisible>
                     <PathIcon Data="{StaticResource LocationSecretIcon}" Foreground="{StaticResource RequiredGlyphColor}"/>
                   </Button>
-                  <Button Classes="hint" Grid.Column="3" Margin="5 0" ToolTip.Tip="Hint: Thaen Tree" Click="ThaenHintButton_Click">
+                  <Button Classes="hint" Grid.Column="3" Margin="5 0" ToolTip.Tip="{loc:Loc Hint_ThaenTree}" Click="ThaenHintButton_Click">
                     <Button.IsVisible>
                       <MultiBinding Converter="{x:Static BoolConverters.And}">
                         <Binding Path="IsWard13Location" Mode="OneWay" />
@@ -243,7 +242,7 @@
                     </Button.IsVisible>
                     <PathIcon Data="{StaticResource LocationSecretIcon}" Foreground="{StaticResource ThaenFruitColor}"/>
                   </Button>
-                  <Button Classes="hint" Grid.Column="3" Margin="5 0" ToolTip.Tip="Hint: Oracle's Quilt" Click="QuiltHintButton_Click">
+                  <Button Classes="hint" Grid.Column="3" Margin="5 0" ToolTip.Tip="{loc:Loc Hint_OraclesQuilt}" Click="QuiltHintButton_Click">
                     <Button.IsVisible>
                       <MultiBinding Converter="{x:Static BoolConverters.And}">
                         <Binding Path="IsOracleLocation" Mode="OneWay" />
@@ -267,7 +266,7 @@
                 <!-- Could put these two in a container -->
                 <PathIcon Grid.Column="0" Height="20" Width="20" Margin="0 0 10 0"
                           Data="{Binding Type, Converter={StaticResource ItemTypeToIconConverter}}"
-                          ToolTip.Tip="{Binding Type}"
+                          ToolTip.Tip="{Binding TypeName}"
                           IsEnabled="{Binding !IsLooted}"/>
 
                 <Grid Grid.Column="1" ColumnDefinitions="Auto, Auto">
@@ -282,9 +281,9 @@
                     </TextBlock>
                     <ToolTip.Tip>
                       <StackPanel Orientation="Vertical">
-                        <TextBlock Text="Can't be looted in the current world state. One or more prerequisites are unavailable" Margin="0 0 0 10"
+                        <TextBlock Text="{loc:Loc Item_CannotBeLootedPrerequisites}" Margin="0 0 0 10"
                                    IsVisible="{Binding IsPrerequisiteMissing}"/>
-                        <TextBlock Text="Can't be looted in the current world state. For example, if the quest has already been completed and an alternative reward was chosen" Margin="0 0 0 10">
+                        <TextBlock Text="{loc:Loc Item_CannotBeLootedWorldState}" Margin="0 0 0 10">
                           <TextBlock.IsVisible>
                             <MultiBinding Converter="{x:Static BoolConverters.And}">
                               <Binding  Path="IsLooted" />
@@ -294,7 +293,7 @@
                         </TextBlock>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                           <PathIcon Height="16" Width="16" Margin="0 0 3 0" Data="{StaticResource RemnantWikiIcon}"/>
-                          <TextBlock FontSize="12" TextDecorations="{x:Null}">Click to go to wiki</TextBlock>
+                          <TextBlock FontSize="12" TextDecorations="{x:Null}" Text="{loc:Loc Item_ClickWiki}"/>
                         </StackPanel>
                       </StackPanel>
                     </ToolTip.Tip>
@@ -332,13 +331,13 @@
                     <ToolTip.Placement>LeftEdgeAlignedTop</ToolTip.Placement>
                     <ToolTip.Tip>
                       <StackPanel Orientation="Vertical">
-                        <TextBlock TextDecorations="{x:Null}" Margin="0 0 0 5">Click to find builds with this item</TextBlock>
+                        <TextBlock TextDecorations="{x:Null}" Margin="0 0 0 5" Text="{loc:Loc Item_ClickToolkit}"/>
                         <TextBlock FontSize="12" TextDecorations="{x:Null}" Text="{Binding ToolkitLink}"/>
                       </StackPanel>
                     </ToolTip.Tip>
                   </HyperlinkButton>
-                  <PathIcon Data="{StaticResource CoopIcon}" IsVisible="{Binding IsCoop}" ToolTip.Tip="Co-op required" ToolTip.Placement="LeftEdgeAlignedTop"/>
-                  <PathIcon Data="{StaticResource AccountAwardIcon}" IsVisible="{Binding IsAccountAward}" ToolTip.Tip="Account-wide unlock" ToolTip.Placement="LeftEdgeAlignedTop"/>
+                  <PathIcon Data="{StaticResource CoopIcon}" IsVisible="{Binding IsCoop}" ToolTip.Tip="{loc:Loc Item_CoopRequired}" ToolTip.Placement="LeftEdgeAlignedTop"/>
+                  <PathIcon Data="{StaticResource AccountAwardIcon}" IsVisible="{Binding IsAccountAward}" ToolTip.Tip="{loc:Loc Item_AccountWideUnlock}" ToolTip.Placement="LeftEdgeAlignedTop"/>
                 </StackPanel>
               </Grid>
             </TreeDataTemplate>

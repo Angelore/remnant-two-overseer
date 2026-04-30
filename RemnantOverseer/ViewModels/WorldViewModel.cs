@@ -72,7 +72,9 @@ public partial class WorldViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(BloodmoonChanceString))]
     private float? _bloodmoonChance = null;
 
-    public string BloodmoonChanceString => BloodmoonChance.HasValue ? $"Blood moon chance: {BloodmoonChance.Value}%" : "Unknown";
+    public string BloodmoonChanceString => BloodmoonChance.HasValue
+        ? LocalizationService.Format("World_BloodmoonChance", BloodmoonChance.Value)
+        : LocalizationService.Get("Common_Unknown");
 
     [ObservableProperty]
     private bool _hideTips;

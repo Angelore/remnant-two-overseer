@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:RemnantOverseer.ViewModels"
+             xmlns:loc="using:RemnantOverseer.Services"
              mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="500"
              x:Class="RemnantOverseer.Views.ThaenProgressView"
              x:DataType="vm:ThaenProgressViewModel">
@@ -13,9 +14,8 @@
 
   <Grid RowDefinitions="Auto, Auto, Auto">
     <TextBlock Grid.Row="0" HorizontalAlignment="Center"
-               FontWeight="DemiBold" FontSize="16" Margin="10 10 10 0">
-      Thaen Fruit Tree
-    </TextBlock>
+               FontWeight="DemiBold" FontSize="16" Margin="10 10 10 0"
+               Text="{loc:Loc Thaen_Title}"/>
     <Image Grid.Row="1" Source="{Binding GrowthStageImage}" RenderOptions.BitmapInterpolationMode="HighQuality"
            Height="384" Margin="10 10 10 0">
       <Image.Clip>
@@ -26,14 +26,14 @@
       </Image.Effect>
     </Image>
     <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10 10 10 0" HorizontalAlignment="Center"
-                ToolTip.Tip="Time left until the next stage. After the timer hits zero, travel to somewhere and then back to Ward">
+                ToolTip.Tip="{loc:Loc Thaen_TimeToNextStageTooltip}">
       <PathIcon Data="{StaticResource PlaytimeIcon}" Height="14" Width="12" />
       <!-- https://www.reddit.com/r/graphic_design/comments/sjrk1t/monospace_font_that_works_with_monsterrat/ -->
       <TextBlock FontWeight="Regular" FontFeatures="tnum" FontSize="14" Margin="5 0 0 0" Text="{Binding TimeToNextStage}" VerticalAlignment="Center">
       </TextBlock>
       <PathIcon Data="{StaticResource StarThreeIcon}" IsVisible="{Binding HasFruit}" Foreground="{StaticResource ThaenFruitColor}"
                 Height="12" Width="12" Margin="5 0 0 0"
-                ToolTip.Tip="A fruit is available"/>
+                ToolTip.Tip="{loc:Loc Thaen_FruitAvailable}"/>
     </StackPanel>
   </Grid>
 

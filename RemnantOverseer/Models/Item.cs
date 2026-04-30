@@ -1,4 +1,5 @@
-﻿using RemnantOverseer.Models.Enums;
+using RemnantOverseer.Models.Enums;
+using RemnantOverseer.Services;
 using RemnantOverseer.Utilities;
 using System;
 
@@ -7,6 +8,7 @@ public class Item
 {
     public string Id { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
+    public string CanonicalName { get; set; } = string.Empty;
     public ItemTypes Type { get; set; }
     public WeaponSubtypes? WeaponSubtype { get; set; }
     public string Description { get; set; } = string.Empty;
@@ -19,6 +21,8 @@ public class Item
     public bool IsCoop { get; set; }
     public bool IsAccountAward { get; set; }
 
+    public string TypeName => LocalizationService.ItemTypeName(Type);
+
     // We are only interested in a couple of types to display
     public string? OriginNameFormatted
     {
@@ -29,13 +33,15 @@ public class Item
             {
                 // Extra spaces are a temporary workaround to https://github.com/AvaloniaUI/Avalonia/issues/17862, remove when fixed
                 // It's not fixed yet, but I moved this text out of the tooltip. Removing spaces, keeping comment
-                OriginTypes.Injectable or OriginTypes.Dungeon or OriginTypes.Vendor => $"{OriginType}: {OriginName}",
+                OriginTypes.Injectable or OriginTypes.Dungeon or OriginTypes.Vendor => LocalizationService.Format("Item_OriginNameFormat", LocalizationService.OriginTypeName(OriginType), OriginName),
                 _ => null
             };
         }
     }
 
-    public string? WikiLink => $"{UrlStrings.WikiUrl}/{Name}";
+    private string LinkName => string.IsNullOrWhiteSpace(CanonicalName) ? Name : CanonicalName;
+
+    public string? WikiLink => $"{UrlStrings.WikiUrl}/{LinkName}";
 
     public string? ToolkitLink => GetToolkitLink();
 
@@ -68,7 +74,7 @@ public class Item
             default:
                 return null;
         }
-        var itemName = Name.Replace(" ", "+");
+        var itemName = LinkName.Replace(" ", "+");
         return $"{UrlStrings.ToolkitUrl}?{querySubstring}={itemName}";
     }
 }

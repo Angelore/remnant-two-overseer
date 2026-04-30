@@ -185,6 +185,7 @@ internal class DatasetMapper
         {
             Id = lootItem.Id,
             Name = lootItem.Name,
+            CanonicalName = lootItem.Name,
             Description = lootItem.ItemNotes,
             IsLooted = lootItem.IsLooted,
             IsPrerequisiteMissing = lootItem.IsPrerequisiteMissing,

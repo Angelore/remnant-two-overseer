@@ -1,4 +1,5 @@
-﻿using RemnantOverseer.Models.Enums;
+using RemnantOverseer.Models.Enums;
+using RemnantOverseer.Services;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,8 +24,8 @@ public class Location
             if (!IsRespawnLocation) return null;
             return RespawnPointType switch
             {
-                RespawnPointType.WorldStone => $"World Stone: {RespawnPointName}",
-                RespawnPointType.Checkpoint => $"Checkpoint: {RespawnPointName}",
+                RespawnPointType.WorldStone => LocalizationService.Format("Location_WorldStoneRespawn", RespawnPointName),
+                RespawnPointType.Checkpoint => LocalizationService.Format("Location_CheckpointRespawn", RespawnPointName),
                 RespawnPointType.ZoneTransition => GetFormattedZoneTransition(),
                 _ => null
             };
@@ -34,7 +35,7 @@ public class Location
     private string GetFormattedZoneTransition()
     {
         var split = RespawnPointName.Split('/');
-        return $"Transition between {split[0]} and {split[1]}";
+        return LocalizationService.Format("Location_ZoneTransitionRespawn", split[0], split[1]);
     }
 
     public bool IsGenesisLocation => Name.Equals("Withered Necropolis");

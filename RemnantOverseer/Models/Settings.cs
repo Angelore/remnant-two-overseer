@@ -57,4 +57,9 @@ public class Settings
         get { return Config.HideToolkitLinks ?? false; }
         set { Config.HideToolkitLinks = value; }
     }
+    public string CultureName
+    {
+        get { return string.IsNullOrWhiteSpace(Config.CultureName) ? LocalizationConstants.DefaultCultureName : Config.CultureName; }
+        set { Config.CultureName = string.IsNullOrWhiteSpace(value) ? LocalizationConstants.DefaultCultureName : value; }
+    }
 }

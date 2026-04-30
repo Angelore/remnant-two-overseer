@@ -7,8 +7,10 @@ using RemnantOverseer.Models.Messages;
 using RemnantOverseer.Services;
 using RemnantOverseer.Utilities;
 using RemnantOverseer.Models;
+using System.Collections.Generic;
 using System;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace RemnantOverseer.ViewModels;
@@ -29,6 +31,11 @@ public partial class SettingsViewModel : ViewModelBase
     [ObservableProperty]
     private bool _showToolkitLinks;
 
+    [ObservableProperty]
+    private CultureOption? _selectedCulture;
+
+    public IReadOnlyList<CultureOption> SupportedCultures { get; } = LocalizationService.SupportedCultures;
+
     public SettingsViewModel(SettingsService settingsService, SaveDataService saveDataService)
     {
         _settingsService = settingsService;
@@ -38,6 +45,7 @@ public partial class SettingsViewModel : ViewModelBase
         _showTips = !settings.HideTips;
         _showToolkitLinks = !settings.HideToolkitLinks;
         _enableVersionCheck = !settings.DisableVersionCheck;
+        _selectedCulture = SupportedCultures.FirstOrDefault(c => c.CultureName == settings.CultureName) ?? SupportedCultures[0];
 
         if (Design.IsDesignMode)
         {
@@ -56,7 +64,7 @@ public partial class SettingsViewModel : ViewModelBase
                         {
                             FileTypeFilter = [Saves],
                             AllowMultiple = false,
-                            Title = "Select the profile file. Can be either 'profile.sav' or 'containers.index'"
+                            Title = LocalizationService.Get("Settings_ProfileFilePickerTitle")
                         });
 
         if (storageFiles.Count > 0)
@@ -111,7 +119,7 @@ public partial class SettingsViewModel : ViewModelBase
         var storageDir = await topLevel.StorageProvider.OpenFolderPickerAsync(
             new FolderPickerOpenOptions()
             {
-                Title = "Select a folder to export save data to",
+                Title = LocalizationService.Get("Settings_ExportFolderPickerTitle"),
                 SuggestedStartLocation = documents,
                 SuggestedFileName = $"Remnant2_export_{DateTime.Now:yyyy-MM-dd}",
                 AllowMultiple = false,
@@ -151,7 +159,28 @@ public partial class SettingsViewModel : ViewModelBase
         });
     }
 
-    public static FilePickerFileType Saves { get; } = new("Remnant 2 save files")
+    partial void OnSelectedCultureChanged(CultureOption? value)
+    {
+        if (value is null)
+        {
+            return;
+        }
+
+        Task.Run(async () =>
+        {
+            var settings = _settingsService.Get();
+            if (settings.CultureName == value.CultureName)
+            {
+                return;
+            }
+
+            settings.CultureName = value.CultureName;
+            await _settingsService.Sync();
+            WeakReferenceMessenger.Default.Send(new NotificationInfoMessage(LocalizationService.Get("Settings_LanguageRestartRequired")));
+        });
+    }
+
+    public static FilePickerFileType Saves { get; } = new(LocalizationService.Get("FilePicker_SaveFileTypeName"))
     {
         Patterns = ["profile.sav", "containers.index"],
     };

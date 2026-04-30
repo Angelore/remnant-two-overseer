@@ -5,6 +5,7 @@
              xmlns:vm="using:RemnantOverseer.ViewModels"
              xmlns:local="using:RemnantOverseer"
              xmlns:util="using:RemnantOverseer.Utilities"
+             xmlns:loc="using:RemnantOverseer.Services"
              mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="400"
              x:Class="RemnantOverseer.Views.GenesisTipView"
              x:DataType="vm:GenesisTipViewModel">
@@ -41,13 +42,11 @@
 
   <Grid RowDefinitions="Auto, Auto, Auto, Auto">
     <TextBlock Grid.Row="0" HorizontalAlignment="Center"
-               FontWeight="DemiBold" FontSize="16" Margin="10 10 10 0">
-      Genesis Vault
-    </TextBlock>
+               FontWeight="DemiBold" FontSize="16" Margin="10 10 10 0"
+               Text="{loc:Loc Genesis_Title}"/>
     <ItemsControl Grid.Row="1" Classes="glyphs-list current" ItemsSource="{Binding CurrentGlyphs, Mode=OneWay}" Margin="10 10 10 0"/>
     <ItemsControl Grid.Row="2" Classes="glyphs-list required" ItemsSource="{Binding RequiredGlyphs, Mode=OneWay}" Margin="10 10 10 0"/>
-    <TextBlock Grid.Row="3" HorizontalAlignment="Center" TextAlignment="Center" FontSize="11" Opacity="0.7" Margin="10 10 10 10">
-      Codes can mismatch during long play sessions<LineBreak />Restart the game if that happens
-    </TextBlock>
+    <TextBlock Grid.Row="3" HorizontalAlignment="Center" TextAlignment="Center" FontSize="11" Opacity="0.7" Margin="10 10 10 10"
+               Text="{loc:Loc Genesis_CodeMismatchHint}"/>
   </Grid>
 </UserControl>

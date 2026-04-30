@@ -1,4 +1,5 @@
-﻿using RemnantOverseer.Models.Enums;
+using RemnantOverseer.Models.Enums;
+using RemnantOverseer.Services;
 using System.Collections.Generic;
 
 namespace RemnantOverseer.Models;
@@ -11,25 +12,7 @@ public class ItemCategory
     {
         get
         {
-            return Type switch
-            {
-                ItemTypes.Unknown => "Unknown",
-                ItemTypes.Amulet => "Amulets",
-                ItemTypes.Armor => "Armors",
-                ItemTypes.Concoction => "Concoctions",
-                ItemTypes.Consumable => "Consumables",
-                ItemTypes.Dream => "Dreams",
-                ItemTypes.Engram => "Engrams",
-                ItemTypes.Mod => "Mods",
-                ItemTypes.Mutator => "Mutators",
-                ItemTypes.QuestItem => "Quest Items",
-                ItemTypes.Relic => "Relics",
-                ItemTypes.Ring => "Rings",
-                ItemTypes.Trait => "Traits",
-                ItemTypes.Weapon => "Weapons",
-                ItemTypes.Prism => "Prisms",
-                _ => throw new System.NotImplementedException(),
-            };
+            return LocalizationService.ItemTypePluralName(Type);
         }
     }
 
@@ -38,4 +21,3 @@ public class ItemCategory
         return (ItemCategory)MemberwiseClone();
     }
 }
-
