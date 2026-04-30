@@ -1,9 +1,10 @@
+using CommunityToolkit.Mvvm.ComponentModel;
 using RemnantOverseer.Models.Enums;
 using RemnantOverseer.Services;
 using System.Collections.Generic;
 
 namespace RemnantOverseer.Models;
-public class ItemCategory
+public class ItemCategory : ObservableObject
 {
     public ItemTypes Type { get; set; }
     public List<Item> Items { get; set; } = [];
@@ -19,5 +20,10 @@ public class ItemCategory
     public ItemCategory ShallowCopy()
     {
         return (ItemCategory)MemberwiseClone();
+    }
+
+    public void RefreshLocalizedProperties()
+    {
+        OnPropertyChanged(nameof(Name));
     }
 }

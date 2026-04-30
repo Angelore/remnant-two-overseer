@@ -381,6 +381,28 @@ public partial class WorldViewModel : ViewModelBase
         Messenger.Register<WorldViewModel, HideToolkitLinksChangedMessage>(this, (r, m) => {
             HideToolkitLinks = m.Value;
         });
+
+        Messenger.Register<WorldViewModel, CultureChangedMessage>(this, (r, m) => {
+            r.ApplyFilter();
+            r.OnPropertyChanged(nameof(BloodmoonChanceString));
+            r.RefreshLocalizedTreeProperties();
+        });
     }
     #endregion Messages
+
+    private void RefreshLocalizedTreeProperties()
+    {
+        foreach (var zone in FilteredZones)
+        {
+            foreach (var location in zone.Locations)
+            {
+                location.RefreshLocalizedProperties();
+
+                foreach (var item in location.Items)
+                {
+                    item.RefreshLocalizedProperties();
+                }
+            }
+        }
+    }
 }

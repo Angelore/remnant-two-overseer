@@ -1,10 +1,11 @@
+using CommunityToolkit.Mvvm.ComponentModel;
 using RemnantOverseer.Models.Enums;
 using RemnantOverseer.Services;
 using RemnantOverseer.Utilities;
 using System;
 
 namespace RemnantOverseer.Models;
-public class Item
+public class Item : ObservableObject
 {
     public string Id { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
@@ -48,6 +49,12 @@ public class Item
     public Item ShallowCopy()
     {
         return (Item)MemberwiseClone();
+    }
+
+    public void RefreshLocalizedProperties()
+    {
+        OnPropertyChanged(nameof(TypeName));
+        OnPropertyChanged(nameof(OriginNameFormatted));
     }
 
     private string? GetToolkitLink()

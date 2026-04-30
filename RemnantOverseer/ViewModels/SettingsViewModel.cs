@@ -166,21 +166,19 @@ public partial class SettingsViewModel : ViewModelBase
             return;
         }
 
-        Task.Run(async () =>
+        var settings = _settingsService.Get();
+        if (settings.CultureName == value.CultureName)
         {
-            var settings = _settingsService.Get();
-            if (settings.CultureName == value.CultureName)
-            {
-                return;
-            }
+            return;
+        }
 
-            settings.CultureName = value.CultureName;
-            await _settingsService.Sync();
-            WeakReferenceMessenger.Default.Send(new NotificationInfoMessage(LocalizationService.Get("Settings_LanguageRestartRequired")));
-        });
+        settings.CultureName = value.CultureName;
+        LocalizationService.ApplyCulture(value.CultureName);
+        WeakReferenceMessenger.Default.Send(new CultureChangedMessage());
+        _ = Task.Run(_settingsService.Sync);
     }
 
-    public static FilePickerFileType Saves { get; } = new(LocalizationService.Get("FilePicker_SaveFileTypeName"))
+    public static FilePickerFileType Saves => new(LocalizationService.Get("FilePicker_SaveFileTypeName"))
     {
         Patterns = ["profile.sav", "containers.index"],
     };

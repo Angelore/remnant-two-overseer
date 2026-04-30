@@ -41,7 +41,7 @@
           <Separator Background="{StaticResource OuterBorderInactiveColor}" Height="2" Margin="0 15 0 0"/>
 
           <!-- Language -->
-          <Grid RowDefinitions="Auto, Auto, Auto" Margin="0 20 0 0">
+          <Grid RowDefinitions="Auto, Auto" Margin="0 20 0 0">
             <TextBlock Grid.Row="0" Text="{loc:Loc Settings_Language}" FontWeight="DemiBold" FontSize="16" Margin="5 5 5 10"/>
             <ComboBox Grid.Row="1" ItemsSource="{Binding SupportedCultures}" SelectedItem="{Binding SelectedCulture, Mode=TwoWay}" MinWidth="220" HorizontalAlignment="Left" Margin="5 0 0 0">
               <ComboBox.ItemTemplate>
@@ -50,7 +50,6 @@
                 </DataTemplate>
               </ComboBox.ItemTemplate>
             </ComboBox>
-            <TextBlock Grid.Row="2" Text="{loc:Loc Settings_LanguageRestartHint}" Opacity="0.7" Margin="5 8 5 0"/>
           </Grid>
 
           <Separator Background="{StaticResource OuterBorderInactiveColor}" Height="2" Margin="0 15 0 0"/>

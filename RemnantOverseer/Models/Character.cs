@@ -36,4 +36,11 @@ public partial class Character: ObservableObject
     // Viewmodel specific
     [ObservableProperty]
     private bool _isSelected;
+
+    public void RefreshLocalizedProperties()
+    {
+        OnPropertyChanged(nameof(ArchetypeName));
+        OnPropertyChanged(nameof(SubArchetypeName));
+        OnPropertyChanged(nameof(Summary));
+    }
 }

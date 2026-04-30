@@ -66,9 +66,6 @@
   <data name="FilePicker_SaveFileTypeName" xml:space="preserve">
     <value>Archivos guardados de Remnant 2</value>
   </data>
-  <data name="Settings_LanguageRestartRequired" xml:space="preserve">
-    <value>Los cambios de idioma se aplicarán después de reiniciar la aplicación</value>
-  </data>
   <data name="MainWindow_Characters" xml:space="preserve">
     <value>Personajes</value>
   </data>
@@ -101,9 +98,6 @@
   </data>
   <data name="Settings_Language" xml:space="preserve">
     <value>Idioma</value>
-  </data>
-  <data name="Settings_LanguageRestartHint" xml:space="preserve">
-    <value>Reinicia la aplicación para aplicar los cambios de idioma.</value>
   </data>
   <data name="Settings_LoggingAndDebug" xml:space="preserve">
     <value>Registro y depuración</value>

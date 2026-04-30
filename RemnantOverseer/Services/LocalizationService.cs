@@ -2,6 +2,7 @@ using RemnantOverseer.Models.Enums;
 using RemnantOverseer.Utilities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
@@ -18,6 +19,8 @@ internal static class LocalizationService
         Assembly.GetExecutingAssembly());
 
     private static readonly CultureInfo EnglishCulture = CultureInfo.GetCultureInfo(LocalizationConstants.DefaultCultureName);
+
+    public static LocalizationBindingSource BindingSource { get; } = new();
 
     public static IReadOnlyList<CultureOption> SupportedCultures =>
     [
@@ -36,11 +39,17 @@ internal static class LocalizationService
     public static void ApplyCulture(string? cultureName)
     {
         var culture = GetCultureOrDefault(cultureName);
+        var isCultureChanged = !string.Equals(CultureInfo.CurrentUICulture.Name, culture.Name, StringComparison.OrdinalIgnoreCase);
 
         CultureInfo.DefaultThreadCurrentCulture = culture;
         CultureInfo.DefaultThreadCurrentUICulture = culture;
         Thread.CurrentThread.CurrentCulture = culture;
         Thread.CurrentThread.CurrentUICulture = culture;
+
+        if (isCultureChanged)
+        {
+            BindingSource.NotifyCultureChanged();
+        }
     }
 
     public static string Get(string key)
@@ -118,5 +127,32 @@ internal static class LocalizationService
         {
             return EnglishCulture;
         }
+    }
+}
+
+public sealed class LocalizationBindingSource : INotifyPropertyChanged
+{
+    private int _cultureVersion;
+
+    public int CultureVersion
+    {
+        get => _cultureVersion;
+        private set
+        {
+            if (_cultureVersion == value)
+            {
+                return;
+            }
+
+            _cultureVersion = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CultureVersion)));
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    internal void NotifyCultureChanged()
+    {
+        CultureVersion++;
     }
 }

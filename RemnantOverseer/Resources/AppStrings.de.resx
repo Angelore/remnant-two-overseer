@@ -66,9 +66,6 @@
   <data name="FilePicker_SaveFileTypeName" xml:space="preserve">
     <value>Remnant 2-Speicherdateien</value>
   </data>
-  <data name="Settings_LanguageRestartRequired" xml:space="preserve">
-    <value>Sprachänderungen werden nach dem Neustart der Anwendung angewendet</value>
-  </data>
   <data name="MainWindow_Characters" xml:space="preserve">
     <value>Charaktere</value>
   </data>
@@ -101,9 +98,6 @@
   </data>
   <data name="Settings_Language" xml:space="preserve">
     <value>Sprache</value>
-  </data>
-  <data name="Settings_LanguageRestartHint" xml:space="preserve">
-    <value>Starte die Anwendung neu, um Sprachänderungen anzuwenden.</value>
   </data>
   <data name="Settings_LoggingAndDebug" xml:space="preserve">
     <value>Protokollierung und Debug</value>

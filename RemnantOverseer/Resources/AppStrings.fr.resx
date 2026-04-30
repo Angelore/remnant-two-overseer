@@ -66,9 +66,6 @@
   <data name="FilePicker_SaveFileTypeName" xml:space="preserve">
     <value>Fichiers de sauvegarde Remnant 2</value>
   </data>
-  <data name="Settings_LanguageRestartRequired" xml:space="preserve">
-    <value>Les changements de langue s’appliqueront après le redémarrage de l’application</value>
-  </data>
   <data name="MainWindow_Characters" xml:space="preserve">
     <value>Personnages</value>
   </data>
@@ -101,9 +98,6 @@
   </data>
   <data name="Settings_Language" xml:space="preserve">
     <value>Langue</value>
-  </data>
-  <data name="Settings_LanguageRestartHint" xml:space="preserve">
-    <value>Redémarrez l’application pour appliquer les changements de langue.</value>
   </data>
   <data name="Settings_LoggingAndDebug" xml:space="preserve">
     <value>Journalisation et débogage</value>

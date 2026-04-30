@@ -122,6 +122,13 @@ public partial class CharacterSelectViewModel: ViewModelBase
             IsLoading = true;
             Task.Run(async () => await ReadSave(m.CharacterCountChanged));
         });
+
+        Messenger.Register<CharacterSelectViewModel, CultureChangedMessage>(this, (r, m) => {
+            foreach (var character in r.Characters)
+            {
+                character.RefreshLocalizedProperties();
+            }
+        });
     }
     #endregion Messages
 }

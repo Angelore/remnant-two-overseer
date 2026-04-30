@@ -66,9 +66,6 @@
   <data name="FilePicker_SaveFileTypeName" xml:space="preserve">
     <value>Remnant 2 セーブファイル</value>
   </data>
-  <data name="Settings_LanguageRestartRequired" xml:space="preserve">
-    <value>言語の変更はアプリケーションの再起動後に適用されます</value>
-  </data>
   <data name="MainWindow_Characters" xml:space="preserve">
     <value>キャラクター</value>
   </data>
@@ -101,9 +98,6 @@
   </data>
   <data name="Settings_Language" xml:space="preserve">
     <value>言語</value>
-  </data>
-  <data name="Settings_LanguageRestartHint" xml:space="preserve">
-    <value>言語の変更を適用するにはアプリケーションを再起動してください。</value>
   </data>
   <data name="Settings_LoggingAndDebug" xml:space="preserve">
     <value>ログとデバッグ</value>

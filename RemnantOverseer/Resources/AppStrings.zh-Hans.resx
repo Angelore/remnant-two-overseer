@@ -66,9 +66,6 @@
   <data name="FilePicker_SaveFileTypeName" xml:space="preserve">
     <value>Remnant 2 存档文件</value>
   </data>
-  <data name="Settings_LanguageRestartRequired" xml:space="preserve">
-    <value>语言更改将在重启应用程序后生效</value>
-  </data>
   <data name="MainWindow_Characters" xml:space="preserve">
     <value>角色</value>
   </data>
@@ -101,9 +98,6 @@
   </data>
   <data name="Settings_Language" xml:space="preserve">
     <value>语言</value>
-  </data>
-  <data name="Settings_LanguageRestartHint" xml:space="preserve">
-    <value>重启应用程序以应用语言更改。</value>
   </data>
   <data name="Settings_LoggingAndDebug" xml:space="preserve">
     <value>日志与调试</value>

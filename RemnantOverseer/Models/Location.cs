@@ -1,10 +1,11 @@
+using CommunityToolkit.Mvvm.ComponentModel;
 using RemnantOverseer.Models.Enums;
 using RemnantOverseer.Services;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace RemnantOverseer.Models;
-public class Location
+public class Location : ObservableObject
 {
     public string Name { get; set; } = string.Empty;
     public List<Item> Items { get; set; } = [];
@@ -49,5 +50,10 @@ public class Location
     public Location ShallowCopy()
     {
         return (Location)MemberwiseClone();
+    }
+
+    public void RefreshLocalizedProperties()
+    {
+        OnPropertyChanged(nameof(FormattedRespawnPointName));
     }
 }

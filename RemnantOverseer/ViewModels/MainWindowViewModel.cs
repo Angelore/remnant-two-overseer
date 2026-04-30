@@ -150,6 +150,10 @@ public partial class MainWindowViewModel : ViewModelBase, IDisposable
                 NotificationManager?.Show(new Notification(LocalizationService.Get("Notification_TitleInformation"), m.Value, NotificationType.Information));
             });
         });
+
+        Messenger.Register<MainWindowViewModel, CultureChangedMessage>(this, (r, m) => {
+            r.SelectedCharacter?.RefreshLocalizedProperties();
+        });
     }
 
     private void CharacterUpdatedHandler(int index)

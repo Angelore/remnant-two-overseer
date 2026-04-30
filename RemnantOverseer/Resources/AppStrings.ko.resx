@@ -66,9 +66,6 @@
   <data name="FilePicker_SaveFileTypeName" xml:space="preserve">
     <value>Remnant 2 저장 파일</value>
   </data>
-  <data name="Settings_LanguageRestartRequired" xml:space="preserve">
-    <value>언어 변경은 애플리케이션을 다시 시작한 후 적용됩니다</value>
-  </data>
   <data name="MainWindow_Characters" xml:space="preserve">
     <value>캐릭터</value>
   </data>
@@ -101,9 +98,6 @@
   </data>
   <data name="Settings_Language" xml:space="preserve">
     <value>언어</value>
-  </data>
-  <data name="Settings_LanguageRestartHint" xml:space="preserve">
-    <value>언어 변경을 적용하려면 애플리케이션을 다시 시작하세요.</value>
   </data>
   <data name="Settings_LoggingAndDebug" xml:space="preserve">
     <value>로그 및 디버그</value>

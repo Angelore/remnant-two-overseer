@@ -148,6 +148,10 @@ public partial class MissingItemsViewModel : ViewModelBase
             IsLoading = true;
             Task.Run(async () => await ReadSave(m.CharacterCountChanged));
         });
+
+        Messenger.Register<MissingItemsViewModel, CultureChangedMessage>(this, (r, m) => {
+            r.ApplyFilter();
+        });
     }
     #endregion Messages
 }
