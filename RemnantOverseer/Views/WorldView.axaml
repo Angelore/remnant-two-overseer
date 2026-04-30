@@ -49,7 +49,7 @@
 
           <StackPanel Grid.Column="0" Orientation="Horizontal" >
             <!-- CampaignAdventureToggle -->
-            <ToggleButton Width="140" IsChecked="{Binding IsCampaignSelected, Mode=TwoWay}">
+            <ToggleButton MinWidth="90" IsChecked="{Binding IsCampaignSelected, Mode=TwoWay}">
               <!-- Reference: https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Themes.Fluent/Controls/ToggleButton.xaml -->
               <ToggleButton.Styles>
                 <Style Selector="ToggleButton:not(:checked) /template/ ContentPresenter">
@@ -61,11 +61,18 @@
                   <Setter Property="Foreground" Value="{DynamicResource ToggleButtonForeground}" />
                 </Style>
               </ToggleButton.Styles>
-              <Grid ColumnDefinitions="30, *">
-                <PathIcon Grid.Column="0" Data="{StaticResource CampaignIcon}" IsVisible="{Binding $parent[ToggleButton].IsChecked}" Width="20" Margin="5 0"/>
-                <PathIcon Grid.Column="0" Data="{StaticResource AdventureIcon}" IsVisible="{Binding !$parent[ToggleButton].IsChecked}" Width="20" Margin="5 0"/>
-                <TextBlock Grid.Column="1" Text="{loc:Loc World_Campaign}" IsVisible="{Binding $parent[ToggleButton].IsChecked}"/>
-                <TextBlock Grid.Column="1" Text="{loc:Loc World_Adventure}" IsVisible="{Binding !$parent[ToggleButton].IsChecked}"/>
+              <Grid>
+                <Grid ColumnDefinitions="30, Auto" Opacity="0" IsHitTestVisible="False" HorizontalAlignment="Center">
+                  <PathIcon Grid.Column="0" Data="{StaticResource CampaignIcon}" Width="20" Margin="5 0"/>
+                  <TextBlock Grid.Column="1" Text="{loc:Loc World_Campaign}"/>
+                  <TextBlock Grid.Column="1" Text="{loc:Loc World_Adventure}"/>
+                </Grid>
+                <Grid ColumnDefinitions="30, Auto" HorizontalAlignment="Center">
+                  <PathIcon Grid.Column="0" Data="{StaticResource CampaignIcon}" IsVisible="{Binding $parent[ToggleButton].IsChecked}" Width="20" Margin="5 0"/>
+                  <PathIcon Grid.Column="0" Data="{StaticResource AdventureIcon}" IsVisible="{Binding !$parent[ToggleButton].IsChecked}" Width="20" Margin="5 0"/>
+                  <TextBlock Grid.Column="1" Text="{loc:Loc World_Campaign}" IsVisible="{Binding $parent[ToggleButton].IsChecked}"/>
+                  <TextBlock Grid.Column="1" Text="{loc:Loc World_Adventure}" IsVisible="{Binding !$parent[ToggleButton].IsChecked}"/>
+                </Grid>
               </Grid>
             </ToggleButton>
           </StackPanel>
