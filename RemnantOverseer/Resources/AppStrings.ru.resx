@@ -166,22 +166,22 @@
     <value>Несозданные предметы с&#x0a;нужным материалом в наличии</value>
   </data>
   <data name="World_BloodmoonChance" xml:space="preserve">
-    <value>Шанс кровавой луны: {0}%</value>
+    <value>Шанс Кровавой Луны: {0}%</value>
   </data>
   <data name="World_TraitBookAvailable" xml:space="preserve">
-    <value>Доступна книга черты</value>
+    <value>Доступен талант</value>
   </data>
   <data name="World_SimulacrumAvailable" xml:space="preserve">
     <value>Доступен симулякр</value>
   </data>
   <data name="Hint_Genesis" xml:space="preserve">
-    <value>Подсказка: Genesis</value>
+    <value>Подсказка: Генезис</value>
   </data>
   <data name="Hint_ThaenTree" xml:space="preserve">
-    <value>Подсказка: дерево Thaen</value>
+    <value>Подсказка: дерево Тейна</value>
   </data>
   <data name="Hint_OraclesQuilt" xml:space="preserve">
-    <value>Подсказка: одеяло Oracle</value>
+    <value>Подсказка: одеяло Вещуньи</value>
   </data>
   <data name="Item_CannotBeLootedPrerequisites" xml:space="preserve">
     <value>Нельзя получить в текущем состоянии мира. Одно или несколько требований недоступны</value>
@@ -208,7 +208,7 @@
     <value>Уровень силы</value>
   </data>
   <data name="Character_Hardcore" xml:space="preserve">
-    <value>Хардкор</value>
+    <value>Героический режим</value>
   </data>
   <data name="Character_LevelFormat" xml:space="preserve">
     <value>Уровень {0}</value>
@@ -220,7 +220,7 @@
     <value>{0}/{1} :: Уровень {2}</value>
   </data>
   <data name="Genesis_Title" xml:space="preserve">
-    <value>Хранилище Genesis</value>
+    <value>Хранилище Генезиса</value>
   </data>
   <data name="Genesis_CodeMismatchHint" xml:space="preserve">
     <value>Коды могут рассинхронизироваться во время долгих игровых сессий&#x0a;Если это произошло, перезапустите игру</value>
@@ -229,7 +229,7 @@
     <value>Плодовое дерево Thaen</value>
   </data>
   <data name="Thaen_TimeToNextStageTooltip" xml:space="preserve">
-    <value>Время до следующей стадии. Когда таймер дойдет до нуля, переместитесь куда-нибудь и вернитесь в Ward</value>
+    <value>Время до следующей стадии. Когда таймер дойдет до нуля, переместитесь куда-нибудь и вернитесь в Блок 13</value>
   </data>
   <data name="Thaen_FruitAvailable" xml:space="preserve">
     <value>Плод доступен</value>
@@ -271,10 +271,10 @@
     <value>Отвары</value>
   </data>
   <data name="ItemType_Consumable" xml:space="preserve">
-    <value>Расходник</value>
+    <value>Расходуемый предмет</value>
   </data>
   <data name="ItemType_Consumable_Plural" xml:space="preserve">
-    <value>Расходники</value>
+    <value>Расходуемые предметы</value>
   </data>
   <data name="ItemType_Dream" xml:space="preserve">
     <value>Сон</value>
@@ -295,10 +295,10 @@
     <value>Материалы</value>
   </data>
   <data name="ItemType_Mod" xml:space="preserve">
-    <value>Мод</value>
+    <value>Модуль</value>
   </data>
   <data name="ItemType_Mod_Plural" xml:space="preserve">
-    <value>Моды</value>
+    <value>Модули</value>
   </data>
   <data name="ItemType_Mutator" xml:space="preserve">
     <value>Мутатор</value>
@@ -313,10 +313,10 @@
     <value>Призмы</value>
   </data>
   <data name="ItemType_QuestItem" xml:space="preserve">
-    <value>Квестовый предмет</value>
+    <value>Вещь для задания</value>
   </data>
   <data name="ItemType_QuestItem_Plural" xml:space="preserve">
-    <value>Квестовые предметы</value>
+    <value>Вещи для заданий</value>
   </data>
   <data name="ItemType_Relic" xml:space="preserve">
     <value>Реликвия</value>
@@ -331,10 +331,10 @@
     <value>Кольца</value>
   </data>
   <data name="ItemType_Trait" xml:space="preserve">
-    <value>Черта</value>
+    <value>Талант</value>
   </data>
   <data name="ItemType_Trait_Plural" xml:space="preserve">
-    <value>Черты</value>
+    <value>Таланты</value>
   </data>
   <data name="ItemType_Weapon" xml:space="preserve">
     <value>Оружие</value>
@@ -343,10 +343,10 @@
     <value>Оружие</value>
   </data>
   <data name="WeaponSubtype_LongGun" xml:space="preserve">
-    <value>Длинноствольное оружие</value>
+    <value>Винтовка</value>
   </data>
   <data name="WeaponSubtype_HandGun" xml:space="preserve">
-    <value>Короткоствольное оружие</value>
+    <value>Пистолет</value>
   </data>
   <data name="WeaponSubtype_MeleeWeapon" xml:space="preserve">
     <value>Оружие ближнего боя</value>
@@ -355,7 +355,7 @@
     <value>Нет</value>
   </data>
   <data name="OriginType_Location" xml:space="preserve">
-    <value>Локация</value>
+    <value>Зона</value>
   </data>
   <data name="OriginType_Vendor" xml:space="preserve">
     <value>Торговец</value>
@@ -388,7 +388,7 @@
     <value>Архонт</value>
   </data>
   <data name="Archetype_Challenger" xml:space="preserve">
-    <value>Претендент</value>
+    <value>Боец</value>
   </data>
   <data name="Archetype_Engineer" xml:space="preserve">
     <value>Инженер</value>
@@ -409,18 +409,18 @@
     <value>Захватчик</value>
   </data>
   <data name="Archetype_Invoker" xml:space="preserve">
-    <value>Заклинатель</value>
+    <value>Колдун</value>
   </data>
   <data name="Archetype_Medic" xml:space="preserve">
     <value>Медик</value>
   </data>
   <data name="Archetype_Ritualist" xml:space="preserve">
-    <value>Ритуалист</value>
+    <value>Мастер обрядов</value>
   </data>
   <data name="Archetype_Summoner" xml:space="preserve">
     <value>Призыватель</value>
   </data>
   <data name="Archetype_Warden" xml:space="preserve">
-    <value>Страж</value>
+    <value>Смотритель</value>
   </data>
 </root>
