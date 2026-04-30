@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Notification_TitleInformation" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="Notification_TitleWarning" xml:space="preserve">
+    <value>Warnung</value>
+  </data>
+  <data name="Notification_TitleError" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="DefaultLocationFound" xml:space="preserve">
+    <value>Speicherdatei-Speicherort wurde gefunden und festgelegt</value>
+  </data>
+  <data name="DefaultLocationNotFound" xml:space="preserve">
+    <value>Speicherordner konnte nicht erkannt werden. Lege ihn in den Einstellungen manuell fest</value>
+  </data>
+  <data name="ErrorWhenLoadingSettings" xml:space="preserve">
+    <value>Einstellungsdatei konnte nicht gelesen werden</value>
+  </data>
+  <data name="ErrorWhenUpdatingSettings" xml:space="preserve">
+    <value>Beim Speichern der Einstellungen ist ein Fehler aufgetreten</value>
+  </data>
+  <data name="SaveFileParsingError" xml:space="preserve">
+    <value>Beim Verarbeiten der Speicherdatei ist ein Fehler aufgetreten. Meldung:</value>
+  </data>
+  <data name="FileWatcherFolderNotFound" xml:space="preserve">
+    <value>Der Ordner mit der angeforderten Datei wurde nicht gefunden. Prüfe den Pfad und starte die Anwendung neu</value>
+  </data>
+  <data name="FileWatcherFileNotFound" xml:space="preserve">
+    <value>Das Profil wurde nicht gefunden. Prüfe den Pfad und starte die Anwendung neu</value>
+  </data>
+  <data name="SaveFileLocationChanged" xml:space="preserve">
+    <value>Speicherdatei-Speicherort wurde erfolgreich geändert</value>
+  </data>
+  <data name="SelectedCharacterNotValid" xml:space="preserve">
+    <value>Beim Auswählen des aktiven Charakters ist ein Problem aufgetreten. Wähle einen Charakter manuell aus</value>
+  </data>
+  <data name="NewerVersionFound" xml:space="preserve">
+    <value>Eine neue Version ({0}) ist verfügbar</value>
+  </data>
+  <data name="PlayerInfoNotAvailable" xml:space="preserve">
+    <value>Spielerinformationen sind erst verfügbar, nachdem eine Speicherdatei geladen wurde</value>
+  </data>
+  <data name="Character_LoadError" xml:space="preserve">
+    <value>Charaktere konnten nicht geladen werden. Melde diesen Fehler bitte mit angehängtem ZIP-Archiv des Speicherordners</value>
+  </data>
+  <data name="Settings_ProfileFilePickerTitle" xml:space="preserve">
+    <value>Wähle die Profildatei aus. Das kann entweder 'profile.sav' oder 'containers.index' sein</value>
+  </data>
+  <data name="Settings_ExportFolderPickerTitle" xml:space="preserve">
+    <value>Wähle einen Ordner für den Export der Speicherdaten aus</value>
+  </data>
+  <data name="FilePicker_SaveFileTypeName" xml:space="preserve">
+    <value>Remnant 2-Speicherdateien</value>
+  </data>
+  <data name="Settings_LanguageRestartRequired" xml:space="preserve">
+    <value>Sprachänderungen werden nach dem Neustart der Anwendung angewendet</value>
+  </data>
+  <data name="MainWindow_Characters" xml:space="preserve">
+    <value>Charaktere</value>
+  </data>
+  <data name="MainWindow_Items" xml:space="preserve">
+    <value>Gegenstände</value>
+  </data>
+  <data name="MainWindow_MissingItems" xml:space="preserve">
+    <value>Fehlende Gegenstände</value>
+  </data>
+  <data name="MainWindow_Settings" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="MainWindow_ErrorState" xml:space="preserve">
+    <value>Es sieht so aus, als wäre ein Fehler aufgetreten.&#x0a;Prüfe, ob die Einstellungen korrekt sind, und starte die Anwendung neu</value>
+  </data>
+  <data name="Settings_SaveFileLocation" xml:space="preserve">
+    <value>Speicherdatei-Speicherort</value>
+  </data>
+  <data name="Settings_ChooseSaveFile" xml:space="preserve">
+    <value>Speicherdatei auswählen</value>
+  </data>
+  <data name="Settings_EnableVersionChecking" xml:space="preserve">
+    <value>Versionsprüfung aktivieren</value>
+  </data>
+  <data name="Settings_EnableLocationSpecificHints" xml:space="preserve">
+    <value>Ortsspezifische Hinweise aktivieren</value>
+  </data>
+  <data name="Settings_DisplayToolkitLinks" xml:space="preserve">
+    <value>Links zu Remnant Toolkit für passende Gegenstände anzeigen</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="Settings_LanguageRestartHint" xml:space="preserve">
+    <value>Starte die Anwendung neu, um Sprachänderungen anzuwenden.</value>
+  </data>
+  <data name="Settings_LoggingAndDebug" xml:space="preserve">
+    <value>Protokollierung und Debug</value>
+  </data>
+  <data name="Settings_OpenLog" xml:space="preserve">
+    <value>Protokoll öffnen</value>
+  </data>
+  <data name="Settings_DumpPlayerInfoToLog" xml:space="preserve">
+    <value>Spielerinformationen ins Protokoll schreiben</value>
+  </data>
+  <data name="Settings_ExportSaveData" xml:space="preserve">
+    <value>Speicherdaten exportieren</value>
+  </data>
+  <data name="World_NothingLeftToCollect" xml:space="preserve">
+    <value>Nichts mehr zu sammeln</value>
+  </data>
+  <data name="World_Campaign" xml:space="preserve">
+    <value>Kampagne</value>
+  </data>
+  <data name="World_Adventure" xml:space="preserve">
+    <value>Abenteuer</value>
+  </data>
+  <data name="Common_CollapseAll" xml:space="preserve">
+    <value>Alle einklappen</value>
+  </data>
+  <data name="Common_ExpandAll" xml:space="preserve">
+    <value>Alle ausklappen</value>
+  </data>
+  <data name="Common_ResetFilters" xml:space="preserve">
+    <value>Filter zurücksetzen</value>
+  </data>
+  <data name="Common_SearchWatermark" xml:space="preserve">
+    <value>Gegenstände oder Ereignisse suchen</value>
+  </data>
+  <data name="Common_Unknown" xml:space="preserve">
+    <value>Unbekannt</value>
+  </data>
+  <data name="World_ToggleDuplicatesHiding" xml:space="preserve">
+    <value>Duplikate umschalten (ausgeblendet)</value>
+  </data>
+  <data name="World_ToggleDuplicatesShowing" xml:space="preserve">
+    <value>Duplikate umschalten (angezeigt)</value>
+  </data>
+  <data name="World_MoreFilters" xml:space="preserve">
+    <value>Weitere Filter</value>
+  </data>
+  <data name="World_FilterLootedItems" xml:space="preserve">
+    <value>Gesammelte Gegenstände</value>
+  </data>
+  <data name="World_FilterMissingPrerequisites" xml:space="preserve">
+    <value>Gegenstände mit fehlenden Voraussetzungen</value>
+  </data>
+  <data name="World_FilterUncraftedWithRequiredMaterial" xml:space="preserve">
+    <value>Nicht hergestellte Gegenstände mit dem&#x0a;benötigten Material im Besitz</value>
+  </data>
+  <data name="World_BloodmoonChance" xml:space="preserve">
+    <value>Blutmond-Chance: {0}%</value>
+  </data>
+  <data name="World_TraitBookAvailable" xml:space="preserve">
+    <value>Eigenschaft verfügbar</value>
+  </data>
+  <data name="World_SimulacrumAvailable" xml:space="preserve">
+    <value>Simulakrum verfügbar</value>
+  </data>
+  <data name="Hint_Genesis" xml:space="preserve">
+    <value>Hinweis: Genesis</value>
+  </data>
+  <data name="Hint_ThaenTree" xml:space="preserve">
+    <value>Hinweis: Thaenfruchtbaum</value>
+  </data>
+  <data name="Hint_OraclesQuilt" xml:space="preserve">
+    <value>Hinweis: Quilt des Orakels</value>
+  </data>
+  <data name="Item_CannotBeLootedPrerequisites" xml:space="preserve">
+    <value>Kann im aktuellen Weltzustand nicht gesammelt werden. Eine oder mehrere Voraussetzungen sind nicht verfügbar</value>
+  </data>
+  <data name="Item_CannotBeLootedWorldState" xml:space="preserve">
+    <value>Kann im aktuellen Weltzustand nicht gesammelt werden. Zum Beispiel, wenn die Quest bereits abgeschlossen wurde und eine andere Belohnung gewählt wurde</value>
+  </data>
+  <data name="Item_ClickWiki" xml:space="preserve">
+    <value>Klicken, um das Wiki zu öffnen</value>
+  </data>
+  <data name="Item_ClickToolkit" xml:space="preserve">
+    <value>Klicken, um Builds mit diesem Gegenstand zu finden</value>
+  </data>
+  <data name="Item_CoopRequired" xml:space="preserve">
+    <value>Koop erforderlich</value>
+  </data>
+  <data name="Item_AccountWideUnlock" xml:space="preserve">
+    <value>Kontoweite Freischaltung</value>
+  </data>
+  <data name="Item_OriginNameFormat" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="Character_PowerLevel" xml:space="preserve">
+    <value>Machtstufe</value>
+  </data>
+  <data name="Character_Hardcore" xml:space="preserve">
+    <value>Hardcore</value>
+  </data>
+  <data name="Character_LevelFormat" xml:space="preserve">
+    <value>Stufe {0}</value>
+  </data>
+  <data name="Character_SummarySingle" xml:space="preserve">
+    <value>{0} :: Stufe {1}</value>
+  </data>
+  <data name="Character_SummaryDual" xml:space="preserve">
+    <value>{0}/{1} :: Stufe {2}</value>
+  </data>
+  <data name="Genesis_Title" xml:space="preserve">
+    <value>Genesis-Gewölbe</value>
+  </data>
+  <data name="Genesis_CodeMismatchHint" xml:space="preserve">
+    <value>Codes können während langer Spielsitzungen abweichen&#x0a;Starte das Spiel neu, falls das passiert</value>
+  </data>
+  <data name="Thaen_Title" xml:space="preserve">
+    <value>Thaenfruchtbaum</value>
+  </data>
+  <data name="Thaen_TimeToNextStageTooltip" xml:space="preserve">
+    <value>Zeit bis zur nächsten Stufe. Wenn der Timer null erreicht, reise irgendwohin und dann zurück zu Station 13</value>
+  </data>
+  <data name="Thaen_FruitAvailable" xml:space="preserve">
+    <value>Eine Frucht ist verfügbar</value>
+  </data>
+  <data name="Patchwork_Title" xml:space="preserve">
+    <value>Patchwork-Quilt</value>
+  </data>
+  <data name="Location_WorldStoneRespawn" xml:space="preserve">
+    <value>Weltenstein: {0}</value>
+  </data>
+  <data name="Location_CheckpointRespawn" xml:space="preserve">
+    <value>Checkpoint: {0}</value>
+  </data>
+  <data name="Location_ZoneTransitionRespawn" xml:space="preserve">
+    <value>Übergang zwischen {0} und {1}</value>
+  </data>
+  <data name="ItemType_Unknown" xml:space="preserve">
+    <value>Unbekannt</value>
+  </data>
+  <data name="ItemType_Unknown_Plural" xml:space="preserve">
+    <value>Unbekannt</value>
+  </data>
+  <data name="ItemType_Amulet" xml:space="preserve">
+    <value>Amulett</value>
+  </data>
+  <data name="ItemType_Amulet_Plural" xml:space="preserve">
+    <value>Amulette</value>
+  </data>
+  <data name="ItemType_Armor" xml:space="preserve">
+    <value>Rüstung</value>
+  </data>
+  <data name="ItemType_Armor_Plural" xml:space="preserve">
+    <value>Rüstungen</value>
+  </data>
+  <data name="ItemType_Concoction" xml:space="preserve">
+    <value>Mixtur</value>
+  </data>
+  <data name="ItemType_Concoction_Plural" xml:space="preserve">
+    <value>Mixturen</value>
+  </data>
+  <data name="ItemType_Consumable" xml:space="preserve">
+    <value>Verbrauchsgut</value>
+  </data>
+  <data name="ItemType_Consumable_Plural" xml:space="preserve">
+    <value>Verbrauchsgüter</value>
+  </data>
+  <data name="ItemType_Dream" xml:space="preserve">
+    <value>Traum</value>
+  </data>
+  <data name="ItemType_Dream_Plural" xml:space="preserve">
+    <value>Träume</value>
+  </data>
+  <data name="ItemType_Engram" xml:space="preserve">
+    <value>Engramm</value>
+  </data>
+  <data name="ItemType_Engram_Plural" xml:space="preserve">
+    <value>Engramme</value>
+  </data>
+  <data name="ItemType_Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="ItemType_Material_Plural" xml:space="preserve">
+    <value>Materialien</value>
+  </data>
+  <data name="ItemType_Mod" xml:space="preserve">
+    <value>Mod</value>
+  </data>
+  <data name="ItemType_Mod_Plural" xml:space="preserve">
+    <value>Mods</value>
+  </data>
+  <data name="ItemType_Mutator" xml:space="preserve">
+    <value>Umwandlung</value>
+  </data>
+  <data name="ItemType_Mutator_Plural" xml:space="preserve">
+    <value>Umwandlungen</value>
+  </data>
+  <data name="ItemType_Prism" xml:space="preserve">
+    <value>Prisma</value>
+  </data>
+  <data name="ItemType_Prism_Plural" xml:space="preserve">
+    <value>Prismen</value>
+  </data>
+  <data name="ItemType_QuestItem" xml:space="preserve">
+    <value>Questgegenstand</value>
+  </data>
+  <data name="ItemType_QuestItem_Plural" xml:space="preserve">
+    <value>Questgegenstände</value>
+  </data>
+  <data name="ItemType_Relic" xml:space="preserve">
+    <value>Relikt</value>
+  </data>
+  <data name="ItemType_Relic_Plural" xml:space="preserve">
+    <value>Relikte</value>
+  </data>
+  <data name="ItemType_Ring" xml:space="preserve">
+    <value>Ring</value>
+  </data>
+  <data name="ItemType_Ring_Plural" xml:space="preserve">
+    <value>Ringe</value>
+  </data>
+  <data name="ItemType_Trait" xml:space="preserve">
+    <value>Eigenschaft</value>
+  </data>
+  <data name="ItemType_Trait_Plural" xml:space="preserve">
+    <value>Eigenschaften</value>
+  </data>
+  <data name="ItemType_Weapon" xml:space="preserve">
+    <value>Waffe</value>
+  </data>
+  <data name="ItemType_Weapon_Plural" xml:space="preserve">
+    <value>Waffen</value>
+  </data>
+  <data name="WeaponSubtype_LongGun" xml:space="preserve">
+    <value>Gewehr</value>
+  </data>
+  <data name="WeaponSubtype_HandGun" xml:space="preserve">
+    <value>Handfeuerwaffe</value>
+  </data>
+  <data name="WeaponSubtype_MeleeWeapon" xml:space="preserve">
+    <value>Nahkampfwaffe</value>
+  </data>
+  <data name="OriginType_None" xml:space="preserve">
+    <value>Keine</value>
+  </data>
+  <data name="OriginType_Location" xml:space="preserve">
+    <value>Ort</value>
+  </data>
+  <data name="OriginType_Vendor" xml:space="preserve">
+    <value>Händler</value>
+  </data>
+  <data name="OriginType_Boss" xml:space="preserve">
+    <value>Boss</value>
+  </data>
+  <data name="OriginType_Dungeon" xml:space="preserve">
+    <value>Dungeon</value>
+  </data>
+  <data name="OriginType_Injectable" xml:space="preserve">
+    <value>Einfügung</value>
+  </data>
+  <data name="OriginType_WorldDrop" xml:space="preserve">
+    <value>Welt-Drop</value>
+  </data>
+  <data name="OriginType_Miniboss" xml:space="preserve">
+    <value>Miniboss</value>
+  </data>
+  <data name="OriginType_OverworldPOI" xml:space="preserve">
+    <value>Oberwelt-POI</value>
+  </data>
+  <data name="Archetype_Unknown" xml:space="preserve">
+    <value>Unbekannt</value>
+  </data>
+  <data name="Archetype_Alchemist" xml:space="preserve">
+    <value>Alchemist</value>
+  </data>
+  <data name="Archetype_Archon" xml:space="preserve">
+    <value>Archon</value>
+  </data>
+  <data name="Archetype_Challenger" xml:space="preserve">
+    <value>Draufgänger</value>
+  </data>
+  <data name="Archetype_Engineer" xml:space="preserve">
+    <value>Ingenieur</value>
+  </data>
+  <data name="Archetype_Explorer" xml:space="preserve">
+    <value>Entdecker</value>
+  </data>
+  <data name="Archetype_Gunslinger" xml:space="preserve">
+    <value>Revolverheld</value>
+  </data>
+  <data name="Archetype_Handler" xml:space="preserve">
+    <value>Helfer</value>
+  </data>
+  <data name="Archetype_Hunter" xml:space="preserve">
+    <value>Jäger</value>
+  </data>
+  <data name="Archetype_Invader" xml:space="preserve">
+    <value>Pirscher</value>
+  </data>
+  <data name="Archetype_Invoker" xml:space="preserve">
+    <value>Aufrufer</value>
+  </data>
+  <data name="Archetype_Medic" xml:space="preserve">
+    <value>Doktor</value>
+  </data>
+  <data name="Archetype_Ritualist" xml:space="preserve">
+    <value>Ritualist</value>
+  </data>
+  <data name="Archetype_Summoner" xml:space="preserve">
+    <value>Beschwörer</value>
+  </data>
+  <data name="Archetype_Warden" xml:space="preserve">
+    <value>Aufseher</value>
+  </data>
+</root>

@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Notification_TitleInformation" xml:space="preserve">
+    <value>情報</value>
+  </data>
+  <data name="Notification_TitleWarning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="Notification_TitleError" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="DefaultLocationFound" xml:space="preserve">
+    <value>セーブファイルの場所を検出して設定しました</value>
+  </data>
+  <data name="DefaultLocationNotFound" xml:space="preserve">
+    <value>セーブフォルダーの場所を検出できませんでした。設定で手動指定してください</value>
+  </data>
+  <data name="ErrorWhenLoadingSettings" xml:space="preserve">
+    <value>設定ファイルを読み取れませんでした</value>
+  </data>
+  <data name="ErrorWhenUpdatingSettings" xml:space="preserve">
+    <value>設定の保存中にエラーが発生しました</value>
+  </data>
+  <data name="SaveFileParsingError" xml:space="preserve">
+    <value>セーブファイルの解析中にエラーが発生しました。メッセージ:</value>
+  </data>
+  <data name="FileWatcherFolderNotFound" xml:space="preserve">
+    <value>指定されたファイルを含むフォルダーが見つかりませんでした。パスを確認してアプリケーションを再起動してください</value>
+  </data>
+  <data name="FileWatcherFileNotFound" xml:space="preserve">
+    <value>プロフィールが見つかりませんでした。パスを確認してアプリケーションを再起動してください</value>
+  </data>
+  <data name="SaveFileLocationChanged" xml:space="preserve">
+    <value>セーブファイルの場所を変更しました</value>
+  </data>
+  <data name="SelectedCharacterNotValid" xml:space="preserve">
+    <value>アクティブなキャラクターの選択中に問題が発生しました。手動でキャラクターを選択してください</value>
+  </data>
+  <data name="NewerVersionFound" xml:space="preserve">
+    <value>新しいバージョン ({0}) が利用可能です</value>
+  </data>
+  <data name="PlayerInfoNotAvailable" xml:space="preserve">
+    <value>セーブファイルを読み込むまでプレイヤー情報は利用できません</value>
+  </data>
+  <data name="Character_LoadError" xml:space="preserve">
+    <value>キャラクターを読み込めませんでした。このエラーを報告し、セーブフォルダーのZIPを添付してください</value>
+  </data>
+  <data name="Settings_ProfileFilePickerTitle" xml:space="preserve">
+    <value>プロフィールファイルを選択してください。'profile.sav' または 'containers.index' を使用できます</value>
+  </data>
+  <data name="Settings_ExportFolderPickerTitle" xml:space="preserve">
+    <value>セーブデータのエクスポート先フォルダーを選択してください</value>
+  </data>
+  <data name="FilePicker_SaveFileTypeName" xml:space="preserve">
+    <value>Remnant 2 セーブファイル</value>
+  </data>
+  <data name="Settings_LanguageRestartRequired" xml:space="preserve">
+    <value>言語の変更はアプリケーションの再起動後に適用されます</value>
+  </data>
+  <data name="MainWindow_Characters" xml:space="preserve">
+    <value>キャラクター</value>
+  </data>
+  <data name="MainWindow_Items" xml:space="preserve">
+    <value>アイテム</value>
+  </data>
+  <data name="MainWindow_MissingItems" xml:space="preserve">
+    <value>未取得アイテム</value>
+  </data>
+  <data name="MainWindow_Settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="MainWindow_ErrorState" xml:space="preserve">
+    <value>エラーが発生したようです。&#x0a;設定が正しいことを確認してアプリケーションを再起動してください</value>
+  </data>
+  <data name="Settings_SaveFileLocation" xml:space="preserve">
+    <value>セーブファイルの場所</value>
+  </data>
+  <data name="Settings_ChooseSaveFile" xml:space="preserve">
+    <value>セーブファイルを選択</value>
+  </data>
+  <data name="Settings_EnableVersionChecking" xml:space="preserve">
+    <value>バージョン確認を有効にする</value>
+  </data>
+  <data name="Settings_EnableLocationSpecificHints" xml:space="preserve">
+    <value>ロケーション固有のヒントを有効にする</value>
+  </data>
+  <data name="Settings_DisplayToolkitLinks" xml:space="preserve">
+    <value>該当アイテムに Remnant Toolkit のリンクを表示する</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>言語</value>
+  </data>
+  <data name="Settings_LanguageRestartHint" xml:space="preserve">
+    <value>言語の変更を適用するにはアプリケーションを再起動してください。</value>
+  </data>
+  <data name="Settings_LoggingAndDebug" xml:space="preserve">
+    <value>ログとデバッグ</value>
+  </data>
+  <data name="Settings_OpenLog" xml:space="preserve">
+    <value>ログを開く</value>
+  </data>
+  <data name="Settings_DumpPlayerInfoToLog" xml:space="preserve">
+    <value>プレイヤー情報をログに出力</value>
+  </data>
+  <data name="Settings_ExportSaveData" xml:space="preserve">
+    <value>セーブデータをエクスポート</value>
+  </data>
+  <data name="World_NothingLeftToCollect" xml:space="preserve">
+    <value>もう収集するものはありません</value>
+  </data>
+  <data name="World_Campaign" xml:space="preserve">
+    <value>キャンペーン</value>
+  </data>
+  <data name="World_Adventure" xml:space="preserve">
+    <value>アドベンチャー</value>
+  </data>
+  <data name="Common_CollapseAll" xml:space="preserve">
+    <value>すべて折りたたむ</value>
+  </data>
+  <data name="Common_ExpandAll" xml:space="preserve">
+    <value>すべて展開</value>
+  </data>
+  <data name="Common_ResetFilters" xml:space="preserve">
+    <value>フィルターをリセット</value>
+  </data>
+  <data name="Common_SearchWatermark" xml:space="preserve">
+    <value>アイテムまたはイベントを検索</value>
+  </data>
+  <data name="Common_Unknown" xml:space="preserve">
+    <value>不明</value>
+  </data>
+  <data name="World_ToggleDuplicatesHiding" xml:space="preserve">
+    <value>重複を切り替え（非表示）</value>
+  </data>
+  <data name="World_ToggleDuplicatesShowing" xml:space="preserve">
+    <value>重複を切り替え（表示）</value>
+  </data>
+  <data name="World_MoreFilters" xml:space="preserve">
+    <value>その他のフィルター</value>
+  </data>
+  <data name="World_FilterLootedItems" xml:space="preserve">
+    <value>取得済みアイテム</value>
+  </data>
+  <data name="World_FilterMissingPrerequisites" xml:space="preserve">
+    <value>前提条件が不足しているアイテム</value>
+  </data>
+  <data name="World_FilterUncraftedWithRequiredMaterial" xml:space="preserve">
+    <value>必要素材を所持している&#x0a;未クラフトのアイテム</value>
+  </data>
+  <data name="World_BloodmoonChance" xml:space="preserve">
+    <value>ブラッドムーン確率: {0}%</value>
+  </data>
+  <data name="World_TraitBookAvailable" xml:space="preserve">
+    <value>特性入手可能</value>
+  </data>
+  <data name="World_SimulacrumAvailable" xml:space="preserve">
+    <value>シミュラークラム入手可能</value>
+  </data>
+  <data name="Hint_Genesis" xml:space="preserve">
+    <value>ヒント: ジェネシス</value>
+  </data>
+  <data name="Hint_ThaenTree" xml:space="preserve">
+    <value>ヒント: テーンの果樹</value>
+  </data>
+  <data name="Hint_OraclesQuilt" xml:space="preserve">
+    <value>ヒント: 予言者のキルト</value>
+  </data>
+  <data name="Item_CannotBeLootedPrerequisites" xml:space="preserve">
+    <value>現在のワールド状態では取得できません。1つ以上の前提条件が利用できません</value>
+  </data>
+  <data name="Item_CannotBeLootedWorldState" xml:space="preserve">
+    <value>現在のワールド状態では取得できません。たとえば、クエストが完了済みで別の報酬を選んだ場合などです</value>
+  </data>
+  <data name="Item_ClickWiki" xml:space="preserve">
+    <value>クリックしてwikiを開く</value>
+  </data>
+  <data name="Item_ClickToolkit" xml:space="preserve">
+    <value>クリックしてこのアイテムを使ったビルドを検索</value>
+  </data>
+  <data name="Item_CoopRequired" xml:space="preserve">
+    <value>協力プレイが必要</value>
+  </data>
+  <data name="Item_AccountWideUnlock" xml:space="preserve">
+    <value>アカウント全体で解除</value>
+  </data>
+  <data name="Item_OriginNameFormat" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="Character_PowerLevel" xml:space="preserve">
+    <value>パワーレベル</value>
+  </data>
+  <data name="Character_Hardcore" xml:space="preserve">
+    <value>ハードコア</value>
+  </data>
+  <data name="Character_LevelFormat" xml:space="preserve">
+    <value>レベル {0}</value>
+  </data>
+  <data name="Character_SummarySingle" xml:space="preserve">
+    <value>{0} :: レベル {1}</value>
+  </data>
+  <data name="Character_SummaryDual" xml:space="preserve">
+    <value>{0}/{1} :: レベル {2}</value>
+  </data>
+  <data name="Genesis_Title" xml:space="preserve">
+    <value>ジェネシス保管庫</value>
+  </data>
+  <data name="Genesis_CodeMismatchHint" xml:space="preserve">
+    <value>長時間のプレイ中にコードがずれることがあります&#x0a;その場合はゲームを再起動してください</value>
+  </data>
+  <data name="Thaen_Title" xml:space="preserve">
+    <value>テーンの果樹</value>
+  </data>
+  <data name="Thaen_TimeToNextStageTooltip" xml:space="preserve">
+    <value>次の段階までの残り時間。タイマーがゼロになったら、どこかへ移動してからセクター13へ戻ってください</value>
+  </data>
+  <data name="Thaen_FruitAvailable" xml:space="preserve">
+    <value>果実があります</value>
+  </data>
+  <data name="Patchwork_Title" xml:space="preserve">
+    <value>パッチワークキルト</value>
+  </data>
+  <data name="Location_WorldStoneRespawn" xml:space="preserve">
+    <value>ワールドストーン: {0}</value>
+  </data>
+  <data name="Location_CheckpointRespawn" xml:space="preserve">
+    <value>チェックポイント: {0}</value>
+  </data>
+  <data name="Location_ZoneTransitionRespawn" xml:space="preserve">
+    <value>{0} と {1} の間の遷移</value>
+  </data>
+  <data name="ItemType_Unknown" xml:space="preserve">
+    <value>不明</value>
+  </data>
+  <data name="ItemType_Unknown_Plural" xml:space="preserve">
+    <value>不明</value>
+  </data>
+  <data name="ItemType_Amulet" xml:space="preserve">
+    <value>アミュレット</value>
+  </data>
+  <data name="ItemType_Amulet_Plural" xml:space="preserve">
+    <value>アミュレット</value>
+  </data>
+  <data name="ItemType_Armor" xml:space="preserve">
+    <value>アーマー</value>
+  </data>
+  <data name="ItemType_Armor_Plural" xml:space="preserve">
+    <value>アーマー</value>
+  </data>
+  <data name="ItemType_Concoction" xml:space="preserve">
+    <value>調合</value>
+  </data>
+  <data name="ItemType_Concoction_Plural" xml:space="preserve">
+    <value>調合</value>
+  </data>
+  <data name="ItemType_Consumable" xml:space="preserve">
+    <value>消費アイテム</value>
+  </data>
+  <data name="ItemType_Consumable_Plural" xml:space="preserve">
+    <value>消費アイテム</value>
+  </data>
+  <data name="ItemType_Dream" xml:space="preserve">
+    <value>夢</value>
+  </data>
+  <data name="ItemType_Dream_Plural" xml:space="preserve">
+    <value>夢</value>
+  </data>
+  <data name="ItemType_Engram" xml:space="preserve">
+    <value>エングラム</value>
+  </data>
+  <data name="ItemType_Engram_Plural" xml:space="preserve">
+    <value>エングラム</value>
+  </data>
+  <data name="ItemType_Material" xml:space="preserve">
+    <value>素材</value>
+  </data>
+  <data name="ItemType_Material_Plural" xml:space="preserve">
+    <value>素材</value>
+  </data>
+  <data name="ItemType_Mod" xml:space="preserve">
+    <value>モッド</value>
+  </data>
+  <data name="ItemType_Mod_Plural" xml:space="preserve">
+    <value>Mod</value>
+  </data>
+  <data name="ItemType_Mutator" xml:space="preserve">
+    <value>ミューテーター</value>
+  </data>
+  <data name="ItemType_Mutator_Plural" xml:space="preserve">
+    <value>変異誘発物</value>
+  </data>
+  <data name="ItemType_Prism" xml:space="preserve">
+    <value>プリズム</value>
+  </data>
+  <data name="ItemType_Prism_Plural" xml:space="preserve">
+    <value>プリズム</value>
+  </data>
+  <data name="ItemType_QuestItem" xml:space="preserve">
+    <value>クエストアイテム</value>
+  </data>
+  <data name="ItemType_QuestItem_Plural" xml:space="preserve">
+    <value>クエストアイテム</value>
+  </data>
+  <data name="ItemType_Relic" xml:space="preserve">
+    <value>遺物</value>
+  </data>
+  <data name="ItemType_Relic_Plural" xml:space="preserve">
+    <value>遺物</value>
+  </data>
+  <data name="ItemType_Ring" xml:space="preserve">
+    <value>指輪</value>
+  </data>
+  <data name="ItemType_Ring_Plural" xml:space="preserve">
+    <value>リング</value>
+  </data>
+  <data name="ItemType_Trait" xml:space="preserve">
+    <value>特性</value>
+  </data>
+  <data name="ItemType_Trait_Plural" xml:space="preserve">
+    <value>特性</value>
+  </data>
+  <data name="ItemType_Weapon" xml:space="preserve">
+    <value>武器</value>
+  </data>
+  <data name="ItemType_Weapon_Plural" xml:space="preserve">
+    <value>武器</value>
+  </data>
+  <data name="WeaponSubtype_LongGun" xml:space="preserve">
+    <value>ロングガン</value>
+  </data>
+  <data name="WeaponSubtype_HandGun" xml:space="preserve">
+    <value>ハンドガン</value>
+  </data>
+  <data name="WeaponSubtype_MeleeWeapon" xml:space="preserve">
+    <value>近接武器</value>
+  </data>
+  <data name="OriginType_None" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="OriginType_Location" xml:space="preserve">
+    <value>場所</value>
+  </data>
+  <data name="OriginType_Vendor" xml:space="preserve">
+    <value>商人</value>
+  </data>
+  <data name="OriginType_Boss" xml:space="preserve">
+    <value>ボス</value>
+  </data>
+  <data name="OriginType_Dungeon" xml:space="preserve">
+    <value>ダンジョン</value>
+  </data>
+  <data name="OriginType_Injectable" xml:space="preserve">
+    <value>インジェクタブル</value>
+  </data>
+  <data name="OriginType_WorldDrop" xml:space="preserve">
+    <value>ワールドドロップ</value>
+  </data>
+  <data name="OriginType_Miniboss" xml:space="preserve">
+    <value>ミニボス</value>
+  </data>
+  <data name="OriginType_OverworldPOI" xml:space="preserve">
+    <value>オーバーワールドPOI</value>
+  </data>
+  <data name="Archetype_Unknown" xml:space="preserve">
+    <value>不明</value>
+  </data>
+  <data name="Archetype_Alchemist" xml:space="preserve">
+    <value>錬金術師</value>
+  </data>
+  <data name="Archetype_Archon" xml:space="preserve">
+    <value>アルコーン</value>
+  </data>
+  <data name="Archetype_Challenger" xml:space="preserve">
+    <value>チャレンジャー</value>
+  </data>
+  <data name="Archetype_Engineer" xml:space="preserve">
+    <value>エンジニア</value>
+  </data>
+  <data name="Archetype_Explorer" xml:space="preserve">
+    <value>探検家</value>
+  </data>
+  <data name="Archetype_Gunslinger" xml:space="preserve">
+    <value>ガンスリンガー</value>
+  </data>
+  <data name="Archetype_Handler" xml:space="preserve">
+    <value>調教師</value>
+  </data>
+  <data name="Archetype_Hunter" xml:space="preserve">
+    <value>ハンター</value>
+  </data>
+  <data name="Archetype_Invader" xml:space="preserve">
+    <value>侵入者</value>
+  </data>
+  <data name="Archetype_Invoker" xml:space="preserve">
+    <value>起動者</value>
+  </data>
+  <data name="Archetype_Medic" xml:space="preserve">
+    <value>メディック</value>
+  </data>
+  <data name="Archetype_Ritualist" xml:space="preserve">
+    <value>儀式師</value>
+  </data>
+  <data name="Archetype_Summoner" xml:space="preserve">
+    <value>召喚士</value>
+  </data>
+  <data name="Archetype_Warden" xml:space="preserve">
+    <value>看守</value>
+  </data>
+</root>

@@ -21,8 +21,16 @@ internal static class LocalizationService
 
     public static IReadOnlyList<CultureOption> SupportedCultures =>
     [
-        new CultureOption(LocalizationConstants.DefaultCultureName, Get("Language_English")),
-        new CultureOption("ru", Get("Language_Russian"))
+        new CultureOption(LocalizationConstants.DefaultCultureName, "English"),
+        new CultureOption("de", "Deutsch"),
+        new CultureOption("es", "Español"),
+        new CultureOption("fr", "Français"),
+        new CultureOption("it", "Italiano"),
+        new CultureOption("ja", "日本語"),
+        new CultureOption("ko", "한국어"),
+        new CultureOption("pt-BR", "Português (Brasil)"),
+        new CultureOption("ru", "Русский"),
+        new CultureOption("zh-Hans", "简体中文")
     ];
 
     public static void ApplyCulture(string? cultureName)

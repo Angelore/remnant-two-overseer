@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Notification_TitleInformation" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="Notification_TitleWarning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="Notification_TitleError" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="DefaultLocationFound" xml:space="preserve">
+    <value>已找到并设置存档文件位置</value>
+  </data>
+  <data name="DefaultLocationNotFound" xml:space="preserve">
+    <value>无法检测存档文件夹位置。请在设置中手动指定</value>
+  </data>
+  <data name="ErrorWhenLoadingSettings" xml:space="preserve">
+    <value>无法读取设置文件</value>
+  </data>
+  <data name="ErrorWhenUpdatingSettings" xml:space="preserve">
+    <value>保存设置时遇到错误</value>
+  </data>
+  <data name="SaveFileParsingError" xml:space="preserve">
+    <value>解析存档文件时遇到错误。消息：</value>
+  </data>
+  <data name="FileWatcherFolderNotFound" xml:space="preserve">
+    <value>未找到包含所请求文件的文件夹。请确认路径正确并重启应用程序</value>
+  </data>
+  <data name="FileWatcherFileNotFound" xml:space="preserve">
+    <value>未找到配置文件。请确认路径正确并重启应用程序</value>
+  </data>
+  <data name="SaveFileLocationChanged" xml:space="preserve">
+    <value>存档文件位置已成功更改</value>
+  </data>
+  <data name="SelectedCharacterNotValid" xml:space="preserve">
+    <value>尝试选择当前角色时遇到问题。请手动选择角色</value>
+  </data>
+  <data name="NewerVersionFound" xml:space="preserve">
+    <value>有新版本（{0}）可用</value>
+  </data>
+  <data name="PlayerInfoNotAvailable" xml:space="preserve">
+    <value>加载存档文件之前无法查看玩家信息</value>
+  </data>
+  <data name="Character_LoadError" xml:space="preserve">
+    <value>无法加载角色。请报告此错误并附上压缩后的存档文件夹</value>
+  </data>
+  <data name="Settings_ProfileFilePickerTitle" xml:space="preserve">
+    <value>选择配置文件。可以是 'profile.sav' 或 'containers.index'</value>
+  </data>
+  <data name="Settings_ExportFolderPickerTitle" xml:space="preserve">
+    <value>选择用于导出存档数据的文件夹</value>
+  </data>
+  <data name="FilePicker_SaveFileTypeName" xml:space="preserve">
+    <value>Remnant 2 存档文件</value>
+  </data>
+  <data name="Settings_LanguageRestartRequired" xml:space="preserve">
+    <value>语言更改将在重启应用程序后生效</value>
+  </data>
+  <data name="MainWindow_Characters" xml:space="preserve">
+    <value>角色</value>
+  </data>
+  <data name="MainWindow_Items" xml:space="preserve">
+    <value>物品</value>
+  </data>
+  <data name="MainWindow_MissingItems" xml:space="preserve">
+    <value>缺失物品</value>
+  </data>
+  <data name="MainWindow_Settings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="MainWindow_ErrorState" xml:space="preserve">
+    <value>看起来发生了错误。&#x0a;请确认设置正确并重启应用程序</value>
+  </data>
+  <data name="Settings_SaveFileLocation" xml:space="preserve">
+    <value>存档文件位置</value>
+  </data>
+  <data name="Settings_ChooseSaveFile" xml:space="preserve">
+    <value>选择存档文件</value>
+  </data>
+  <data name="Settings_EnableVersionChecking" xml:space="preserve">
+    <value>启用版本检查</value>
+  </data>
+  <data name="Settings_EnableLocationSpecificHints" xml:space="preserve">
+    <value>启用特定地点提示</value>
+  </data>
+  <data name="Settings_DisplayToolkitLinks" xml:space="preserve">
+    <value>为适用物品显示 Remnant Toolkit 链接</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="Settings_LanguageRestartHint" xml:space="preserve">
+    <value>重启应用程序以应用语言更改。</value>
+  </data>
+  <data name="Settings_LoggingAndDebug" xml:space="preserve">
+    <value>日志与调试</value>
+  </data>
+  <data name="Settings_OpenLog" xml:space="preserve">
+    <value>打开日志</value>
+  </data>
+  <data name="Settings_DumpPlayerInfoToLog" xml:space="preserve">
+    <value>将玩家信息写入日志</value>
+  </data>
+  <data name="Settings_ExportSaveData" xml:space="preserve">
+    <value>导出存档数据</value>
+  </data>
+  <data name="World_NothingLeftToCollect" xml:space="preserve">
+    <value>没有剩余可收集内容</value>
+  </data>
+  <data name="World_Campaign" xml:space="preserve">
+    <value>战役</value>
+  </data>
+  <data name="World_Adventure" xml:space="preserve">
+    <value>冒险</value>
+  </data>
+  <data name="Common_CollapseAll" xml:space="preserve">
+    <value>全部折叠</value>
+  </data>
+  <data name="Common_ExpandAll" xml:space="preserve">
+    <value>全部展开</value>
+  </data>
+  <data name="Common_ResetFilters" xml:space="preserve">
+    <value>重置筛选器</value>
+  </data>
+  <data name="Common_SearchWatermark" xml:space="preserve">
+    <value>查找物品或事件</value>
+  </data>
+  <data name="Common_Unknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="World_ToggleDuplicatesHiding" xml:space="preserve">
+    <value>切换重复项（隐藏）</value>
+  </data>
+  <data name="World_ToggleDuplicatesShowing" xml:space="preserve">
+    <value>切换重复项（显示）</value>
+  </data>
+  <data name="World_MoreFilters" xml:space="preserve">
+    <value>更多筛选器</value>
+  </data>
+  <data name="World_FilterLootedItems" xml:space="preserve">
+    <value>已获得物品</value>
+  </data>
+  <data name="World_FilterMissingPrerequisites" xml:space="preserve">
+    <value>缺少前置条件的物品</value>
+  </data>
+  <data name="World_FilterUncraftedWithRequiredMaterial" xml:space="preserve">
+    <value>拥有所需材料但&#x0a;尚未制作的物品</value>
+  </data>
+  <data name="World_BloodmoonChance" xml:space="preserve">
+    <value>血月概率：{0}%</value>
+  </data>
+  <data name="World_TraitBookAvailable" xml:space="preserve">
+    <value>特性可获取</value>
+  </data>
+  <data name="World_SimulacrumAvailable" xml:space="preserve">
+    <value>拟像可获取</value>
+  </data>
+  <data name="Hint_Genesis" xml:space="preserve">
+    <value>提示：起源</value>
+  </data>
+  <data name="Hint_ThaenTree" xml:space="preserve">
+    <value>提示：塞恩树</value>
+  </data>
+  <data name="Hint_OraclesQuilt" xml:space="preserve">
+    <value>提示：神思者的被子</value>
+  </data>
+  <data name="Item_CannotBeLootedPrerequisites" xml:space="preserve">
+    <value>无法在当前世界状态下获得。一个或多个前置条件不可用</value>
+  </data>
+  <data name="Item_CannotBeLootedWorldState" xml:space="preserve">
+    <value>无法在当前世界状态下获得。例如任务已经完成并选择了其他奖励</value>
+  </data>
+  <data name="Item_ClickWiki" xml:space="preserve">
+    <value>点击打开 wiki</value>
+  </data>
+  <data name="Item_ClickToolkit" xml:space="preserve">
+    <value>点击查找包含此物品的配装</value>
+  </data>
+  <data name="Item_CoopRequired" xml:space="preserve">
+    <value>需要合作模式</value>
+  </data>
+  <data name="Item_AccountWideUnlock" xml:space="preserve">
+    <value>账号范围解锁</value>
+  </data>
+  <data name="Item_OriginNameFormat" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="Character_PowerLevel" xml:space="preserve">
+    <value>强度等级</value>
+  </data>
+  <data name="Character_Hardcore" xml:space="preserve">
+    <value>硬核</value>
+  </data>
+  <data name="Character_LevelFormat" xml:space="preserve">
+    <value>等级 {0}</value>
+  </data>
+  <data name="Character_SummarySingle" xml:space="preserve">
+    <value>{0} :: 等级 {1}</value>
+  </data>
+  <data name="Character_SummaryDual" xml:space="preserve">
+    <value>{0}/{1} :: 等级 {2}</value>
+  </data>
+  <data name="Genesis_Title" xml:space="preserve">
+    <value>起源宝库</value>
+  </data>
+  <data name="Genesis_CodeMismatchHint" xml:space="preserve">
+    <value>长时间游戏会话期间代码可能不同步&#x0a;如果发生这种情况，请重启游戏</value>
+  </data>
+  <data name="Thaen_Title" xml:space="preserve">
+    <value>塞恩果树</value>
+  </data>
+  <data name="Thaen_TimeToNextStageTooltip" xml:space="preserve">
+    <value>距离下一阶段的剩余时间。计时器归零后，传送到其他地方，然后返回 13 号实验区</value>
+  </data>
+  <data name="Thaen_FruitAvailable" xml:space="preserve">
+    <value>有果实可用</value>
+  </data>
+  <data name="Patchwork_Title" xml:space="preserve">
+    <value>拼布被</value>
+  </data>
+  <data name="Location_WorldStoneRespawn" xml:space="preserve">
+    <value>世界之石：{0}</value>
+  </data>
+  <data name="Location_CheckpointRespawn" xml:space="preserve">
+    <value>存档点：{0}</value>
+  </data>
+  <data name="Location_ZoneTransitionRespawn" xml:space="preserve">
+    <value>{0} 和 {1} 之间的过渡</value>
+  </data>
+  <data name="ItemType_Unknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="ItemType_Unknown_Plural" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="ItemType_Amulet" xml:space="preserve">
+    <value>项链</value>
+  </data>
+  <data name="ItemType_Amulet_Plural" xml:space="preserve">
+    <value>护符</value>
+  </data>
+  <data name="ItemType_Armor" xml:space="preserve">
+    <value>护甲</value>
+  </data>
+  <data name="ItemType_Armor_Plural" xml:space="preserve">
+    <value>护甲</value>
+  </data>
+  <data name="ItemType_Concoction" xml:space="preserve">
+    <value>合剂</value>
+  </data>
+  <data name="ItemType_Concoction_Plural" xml:space="preserve">
+    <value>合剂</value>
+  </data>
+  <data name="ItemType_Consumable" xml:space="preserve">
+    <value>消耗品</value>
+  </data>
+  <data name="ItemType_Consumable_Plural" xml:space="preserve">
+    <value>消耗品</value>
+  </data>
+  <data name="ItemType_Dream" xml:space="preserve">
+    <value>梦境</value>
+  </data>
+  <data name="ItemType_Dream_Plural" xml:space="preserve">
+    <value>梦境</value>
+  </data>
+  <data name="ItemType_Engram" xml:space="preserve">
+    <value>心痕</value>
+  </data>
+  <data name="ItemType_Engram_Plural" xml:space="preserve">
+    <value>心痕</value>
+  </data>
+  <data name="ItemType_Material" xml:space="preserve">
+    <value>材料</value>
+  </data>
+  <data name="ItemType_Material_Plural" xml:space="preserve">
+    <value>材料</value>
+  </data>
+  <data name="ItemType_Mod" xml:space="preserve">
+    <value>改装配件</value>
+  </data>
+  <data name="ItemType_Mod_Plural" xml:space="preserve">
+    <value>改装配件</value>
+  </data>
+  <data name="ItemType_Mutator" xml:space="preserve">
+    <value>突变因子</value>
+  </data>
+  <data name="ItemType_Mutator_Plural" xml:space="preserve">
+    <value>突变因子</value>
+  </data>
+  <data name="ItemType_Prism" xml:space="preserve">
+    <value>棱晶</value>
+  </data>
+  <data name="ItemType_Prism_Plural" xml:space="preserve">
+    <value>棱晶</value>
+  </data>
+  <data name="ItemType_QuestItem" xml:space="preserve">
+    <value>任务物品</value>
+  </data>
+  <data name="ItemType_QuestItem_Plural" xml:space="preserve">
+    <value>任务物品</value>
+  </data>
+  <data name="ItemType_Relic" xml:space="preserve">
+    <value>圣物</value>
+  </data>
+  <data name="ItemType_Relic_Plural" xml:space="preserve">
+    <value>圣物</value>
+  </data>
+  <data name="ItemType_Ring" xml:space="preserve">
+    <value>戒指</value>
+  </data>
+  <data name="ItemType_Ring_Plural" xml:space="preserve">
+    <value>戒指</value>
+  </data>
+  <data name="ItemType_Trait" xml:space="preserve">
+    <value>特性</value>
+  </data>
+  <data name="ItemType_Trait_Plural" xml:space="preserve">
+    <value>特性</value>
+  </data>
+  <data name="ItemType_Weapon" xml:space="preserve">
+    <value>武器</value>
+  </data>
+  <data name="ItemType_Weapon_Plural" xml:space="preserve">
+    <value>武器</value>
+  </data>
+  <data name="WeaponSubtype_LongGun" xml:space="preserve">
+    <value>长枪</value>
+  </data>
+  <data name="WeaponSubtype_HandGun" xml:space="preserve">
+    <value>手枪</value>
+  </data>
+  <data name="WeaponSubtype_MeleeWeapon" xml:space="preserve">
+    <value>近战武器</value>
+  </data>
+  <data name="OriginType_None" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="OriginType_Location" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="OriginType_Vendor" xml:space="preserve">
+    <value>商人</value>
+  </data>
+  <data name="OriginType_Boss" xml:space="preserve">
+    <value>头目</value>
+  </data>
+  <data name="OriginType_Dungeon" xml:space="preserve">
+    <value>地下城</value>
+  </data>
+  <data name="OriginType_Injectable" xml:space="preserve">
+    <value>注入点</value>
+  </data>
+  <data name="OriginType_WorldDrop" xml:space="preserve">
+    <value>世界掉落</value>
+  </data>
+  <data name="OriginType_Miniboss" xml:space="preserve">
+    <value>小头目</value>
+  </data>
+  <data name="OriginType_OverworldPOI" xml:space="preserve">
+    <value>大世界兴趣点</value>
+  </data>
+  <data name="Archetype_Unknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="Archetype_Alchemist" xml:space="preserve">
+    <value>炼金术师</value>
+  </data>
+  <data name="Archetype_Archon" xml:space="preserve">
+    <value>执政官</value>
+  </data>
+  <data name="Archetype_Challenger" xml:space="preserve">
+    <value>挑战者</value>
+  </data>
+  <data name="Archetype_Engineer" xml:space="preserve">
+    <value>工程师</value>
+  </data>
+  <data name="Archetype_Explorer" xml:space="preserve">
+    <value>探索者</value>
+  </data>
+  <data name="Archetype_Gunslinger" xml:space="preserve">
+    <value>枪手</value>
+  </data>
+  <data name="Archetype_Handler" xml:space="preserve">
+    <value>驯兽师</value>
+  </data>
+  <data name="Archetype_Hunter" xml:space="preserve">
+    <value>猎人</value>
+  </data>
+  <data name="Archetype_Invader" xml:space="preserve">
+    <value>入侵者</value>
+  </data>
+  <data name="Archetype_Invoker" xml:space="preserve">
+    <value>祈求者</value>
+  </data>
+  <data name="Archetype_Medic" xml:space="preserve">
+    <value>医务兵</value>
+  </data>
+  <data name="Archetype_Ritualist" xml:space="preserve">
+    <value>祭祀者</value>
+  </data>
+  <data name="Archetype_Summoner" xml:space="preserve">
+    <value>召唤师</value>
+  </data>
+  <data name="Archetype_Warden" xml:space="preserve">
+    <value>护卫者</value>
+  </data>
+</root>

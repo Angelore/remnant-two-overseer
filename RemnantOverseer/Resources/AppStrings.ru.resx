@@ -12,12 +12,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Language_English" xml:space="preserve">
-    <value>Английский</value>
-  </data>
-  <data name="Language_Russian" xml:space="preserve">
-    <value>Русский</value>
-  </data>
   <data name="Notification_TitleInformation" xml:space="preserve">
     <value>Информация</value>
   </data>
