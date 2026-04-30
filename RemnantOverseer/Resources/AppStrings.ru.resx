@@ -217,7 +217,7 @@
     <value>Коды могут рассинхронизироваться во время долгих игровых сессий&#x0a;Если это произошло, перезапустите игру</value>
   </data>
   <data name="Thaen_Title" xml:space="preserve">
-    <value>Плодовое дерево Thaen</value>
+    <value>Плодовое дерево Тейна</value>
   </data>
   <data name="Thaen_TimeToNextStageTooltip" xml:space="preserve">
     <value>Время до следующей стадии. Когда таймер дойдет до нуля, переместитесь куда-нибудь и вернитесь в Блок 13</value>
