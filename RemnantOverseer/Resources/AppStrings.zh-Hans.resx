@@ -130,6 +130,9 @@
     <value>重置筛选器</value>
   </data>
   <data name="Common_SearchWatermark" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="Common_SearchTooltip" xml:space="preserve">
     <value>查找物品或事件</value>
   </data>
   <data name="Common_Unknown" xml:space="preserve">

@@ -130,6 +130,9 @@
     <value>필터 초기화</value>
   </data>
   <data name="Common_SearchWatermark" xml:space="preserve">
+    <value>검색</value>
+  </data>
+  <data name="Common_SearchTooltip" xml:space="preserve">
     <value>아이템 또는 이벤트 찾기</value>
   </data>
   <data name="Common_Unknown" xml:space="preserve">

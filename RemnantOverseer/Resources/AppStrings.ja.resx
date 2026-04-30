@@ -130,6 +130,9 @@
     <value>フィルターをリセット</value>
   </data>
   <data name="Common_SearchWatermark" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="Common_SearchTooltip" xml:space="preserve">
     <value>アイテムまたはイベントを検索</value>
   </data>
   <data name="Common_Unknown" xml:space="preserve">

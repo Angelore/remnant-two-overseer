@@ -130,6 +130,9 @@
     <value>Reset Filters</value>
   </data>
   <data name="Common_SearchWatermark" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Common_SearchTooltip" xml:space="preserve">
     <value>Find items or events</value>
   </data>
   <data name="Common_Unknown" xml:space="preserve">

@@ -130,6 +130,9 @@
     <value>Réinitialiser les filtres</value>
   </data>
   <data name="Common_SearchWatermark" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="Common_SearchTooltip" xml:space="preserve">
     <value>Rechercher des objets ou des événements</value>
   </data>
   <data name="Common_Unknown" xml:space="preserve">
