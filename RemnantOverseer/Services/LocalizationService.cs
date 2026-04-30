@@ -19,9 +19,10 @@ internal static class LocalizationService
 
     private static readonly CultureInfo EnglishCulture = CultureInfo.GetCultureInfo(LocalizationConstants.DefaultCultureName);
 
-    public static IReadOnlyList<CultureOption> SupportedCultures { get; } =
+    public static IReadOnlyList<CultureOption> SupportedCultures =>
     [
-        new CultureOption(LocalizationConstants.DefaultCultureName, Get("Language_English"))
+        new CultureOption(LocalizationConstants.DefaultCultureName, Get("Language_English")),
+        new CultureOption("ru", Get("Language_Russian"))
     ];
 
     public static void ApplyCulture(string? cultureName)
