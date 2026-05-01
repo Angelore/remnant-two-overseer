@@ -414,4 +414,49 @@
   <data name="Archetype_Warden" xml:space="preserve">
     <value>Aufseher</value>
   </data>
+  <data name="Patchwork_Quest_Miniboss_DranGrenadier" xml:space="preserve">
+    <value>Gwendil: Die Unverbrannte</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_NightWeaver" xml:space="preserve">
+    <value>Die Nachtweberin</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_ThreeMenMorris" xml:space="preserve">
+    <value>Salon des Postulanten</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_RedPrince" xml:space="preserve">
+    <value>Der Rote Prinz</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_BloatKing" xml:space="preserve">
+    <value>Blähkönig</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_Faelin" xml:space="preserve">
+    <value>Schwindlerkönig</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_FaeArchon" xml:space="preserve">
+    <value>Magister Dullain</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_Ravenous" xml:space="preserve">
+    <value>Die große Halle</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_TownTurnToDust" xml:space="preserve">
+    <value>Tillers Ruhestätte</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CharnelHouse" xml:space="preserve">
+    <value>Reichweite des Ernters</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_FaeCouncil" xml:space="preserve">
+    <value>Tribunal des Rates</value>
+  </data>
+  <data name="World_FilterNerud" xml:space="preserve">
+    <value>N’erud</value>
+  </data>
+  <data name="World_FilterLosomn" xml:space="preserve">
+    <value>Losomn</value>
+  </data>
+  <data name="World_FilterYaesha" xml:space="preserve">
+    <value>Yaesha</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CrimsonHarvest" xml:space="preserve">
+    <value>Schlächterviertel</value>
+  </data>
 </root>

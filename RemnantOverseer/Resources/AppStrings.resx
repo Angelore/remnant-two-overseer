@@ -414,4 +414,49 @@
   <data name="Archetype_Warden" xml:space="preserve">
     <value>Warden</value>
   </data>
+  <data name="Patchwork_Quest_Miniboss_DranGrenadier" xml:space="preserve">
+    <value>Gwendil: The Unburnt</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_NightWeaver" xml:space="preserve">
+    <value>The Nightweaver</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_ThreeMenMorris" xml:space="preserve">
+    <value>Postulant&apos;s Parlor</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_RedPrince" xml:space="preserve">
+    <value>The Red Prince</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_BloatKing" xml:space="preserve">
+    <value>Bloat King</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_Faelin" xml:space="preserve">
+    <value>Imposter King</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_FaeArchon" xml:space="preserve">
+    <value>Magister Dullain</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_Ravenous" xml:space="preserve">
+    <value>The Great Hall</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_TownTurnToDust" xml:space="preserve">
+    <value>Tiller&apos;s Rest</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CharnelHouse" xml:space="preserve">
+    <value>Harvester&apos;s Reach</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_FaeCouncil" xml:space="preserve">
+    <value>Council Tribunal</value>
+  </data>
+  <data name="World_FilterNerud" xml:space="preserve">
+    <value>N&apos;Erud</value>
+  </data>
+  <data name="World_FilterLosomn" xml:space="preserve">
+    <value>Losomn</value>
+  </data>
+  <data name="World_FilterYaesha" xml:space="preserve">
+    <value>Yaesha</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CrimsonHarvest" xml:space="preserve">
+    <value>Butcher&apos;s Quarter</value>
+  </data>
 </root>

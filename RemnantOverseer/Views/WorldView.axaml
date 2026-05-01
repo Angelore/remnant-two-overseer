@@ -84,19 +84,19 @@
               <!-- This is a secret tool that will help us later: CommandParameter="{Binding $self.IsChecked}" -->
               <Grid ColumnDefinitions="Auto, *">
                 <PathIcon Grid.Column="0" Data="{StaticResource NerudIcon}" Width="18" Margin="5 0"/>
-                <TextBlock Grid.Column="1" Text="N'Erud" Margin="0 0 5 0"/>
+                <TextBlock Grid.Column="1" Text="{loc:Loc World_FilterNerud}" Margin="0 0 5 0"/>
               </Grid>
             </ToggleButton>
             <ToggleButton IsVisible="{Binding IsCampaignSelected}" IsChecked="{Binding IsYaeshaFilterChecked}" Command="{Binding YaeshaFilterToggledCommand}">
               <Grid ColumnDefinitions="Auto, *">
                 <PathIcon Grid.Column="0" Data="{StaticResource YaeshaIcon}" Width="18" Margin="5 0"/>
-                <TextBlock Grid.Column="1" Text="Yaesha" Margin="0 0 5 0"/>
+                <TextBlock Grid.Column="1" Text="{loc:Loc World_FilterYaesha}" Margin="0 0 5 0"/>
               </Grid>
             </ToggleButton>
             <ToggleButton IsVisible="{Binding IsCampaignSelected}" IsChecked="{Binding IsLosomnFilterChecked}" Command="{Binding LosomnFilterToggledCommand}">
               <Grid ColumnDefinitions="Auto, *">
                 <PathIcon Grid.Column="0" Data="{StaticResource LosomnIcon}" Width="18" Margin="5 0"/>
-                <TextBlock Grid.Column="1" Text="Losomn" Margin="0 0 5 0"/>
+                <TextBlock Grid.Column="1" Text="{loc:Loc World_FilterLosomn}" Margin="0 0 5 0"/>
               </Grid>
             </ToggleButton>
 

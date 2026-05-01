@@ -414,4 +414,49 @@
   <data name="Archetype_Warden" xml:space="preserve">
     <value>Guardia</value>
   </data>
+  <data name="Patchwork_Quest_Miniboss_DranGrenadier" xml:space="preserve">
+    <value>Gwendil, la non bruciata</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_NightWeaver" xml:space="preserve">
+    <value>La Tessitenebre</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_ThreeMenMorris" xml:space="preserve">
+    <value>Salotto del Postulante</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_RedPrince" xml:space="preserve">
+    <value>Il Principe rosso</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_BloatKing" xml:space="preserve">
+    <value>Re gonfio</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_Faelin" xml:space="preserve">
+    <value>Re impostore</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_FaeArchon" xml:space="preserve">
+    <value>Magistro Dullain</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_Ravenous" xml:space="preserve">
+    <value>La grande sala</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_TownTurnToDust" xml:space="preserve">
+    <value>Rifugio del coltivatore</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CharnelHouse" xml:space="preserve">
+    <value>Distesa della mietitrice</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_FaeCouncil" xml:space="preserve">
+    <value>Tribunale del Consiglio</value>
+  </data>
+  <data name="World_FilterNerud" xml:space="preserve">
+    <value>N&apos;erud</value>
+  </data>
+  <data name="World_FilterLosomn" xml:space="preserve">
+    <value>Losomn</value>
+  </data>
+  <data name="World_FilterYaesha" xml:space="preserve">
+    <value>Yaesha</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CrimsonHarvest" xml:space="preserve">
+    <value>Distretto del macellaio</value>
+  </data>
 </root>

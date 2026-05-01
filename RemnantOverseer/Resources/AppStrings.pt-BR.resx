@@ -414,4 +414,49 @@
   <data name="Archetype_Warden" xml:space="preserve">
     <value>Guarda</value>
   </data>
+  <data name="Patchwork_Quest_Miniboss_DranGrenadier" xml:space="preserve">
+    <value>Gwendil: A Não Queimada</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_NightWeaver" xml:space="preserve">
+    <value>A Tecelã da Noite</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_ThreeMenMorris" xml:space="preserve">
+    <value>Sala do Postulante</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_RedPrince" xml:space="preserve">
+    <value>O Príncipe Vermelho</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_BloatKing" xml:space="preserve">
+    <value>Rei Inchado</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_Faelin" xml:space="preserve">
+    <value>Rei impostor</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_FaeArchon" xml:space="preserve">
+    <value>Magíster Dullain</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_Ravenous" xml:space="preserve">
+    <value>O Grande Salão</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_TownTurnToDust" xml:space="preserve">
+    <value>Descanso do Lavrador</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CharnelHouse" xml:space="preserve">
+    <value>Alcance do Coletor</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_FaeCouncil" xml:space="preserve">
+    <value>Tribunal do Conselho</value>
+  </data>
+  <data name="World_FilterNerud" xml:space="preserve">
+    <value>N&apos;erud</value>
+  </data>
+  <data name="World_FilterLosomn" xml:space="preserve">
+    <value>Losomn</value>
+  </data>
+  <data name="World_FilterYaesha" xml:space="preserve">
+    <value>Yaesha</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CrimsonHarvest" xml:space="preserve">
+    <value>Distrito do Açougueiro</value>
+  </data>
 </root>

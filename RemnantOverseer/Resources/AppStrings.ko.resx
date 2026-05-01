@@ -414,4 +414,49 @@
   <data name="Archetype_Warden" xml:space="preserve">
     <value>관리인</value>
   </data>
+  <data name="Patchwork_Quest_Miniboss_DranGrenadier" xml:space="preserve">
+    <value>불타지 않는 그웬딜</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_NightWeaver" xml:space="preserve">
+    <value>나이트위버</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_ThreeMenMorris" xml:space="preserve">
+    <value>성직 청원자의 객실</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_RedPrince" xml:space="preserve">
+    <value>붉은 왕자</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_BloatKing" xml:space="preserve">
+    <value>블로트 킹</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_Faelin" xml:space="preserve">
+    <value>참칭왕</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_FaeArchon" xml:space="preserve">
+    <value>마지스터 덜레인</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_Ravenous" xml:space="preserve">
+    <value>대회당</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_TownTurnToDust" xml:space="preserve">
+    <value>틸러의 휴식</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CharnelHouse" xml:space="preserve">
+    <value>수확자의 구역</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_FaeCouncil" xml:space="preserve">
+    <value>의회 재판소</value>
+  </data>
+  <data name="World_FilterNerud" xml:space="preserve">
+    <value>네루드</value>
+  </data>
+  <data name="World_FilterLosomn" xml:space="preserve">
+    <value>로솜</value>
+  </data>
+  <data name="World_FilterYaesha" xml:space="preserve">
+    <value>야에샤</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CrimsonHarvest" xml:space="preserve">
+    <value>도살업자 구역</value>
+  </data>
 </root>
