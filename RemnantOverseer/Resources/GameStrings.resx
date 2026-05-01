@@ -2224,13 +2224,13 @@
     <value>Handler</value>
   </data>
   <data name="Engram_Hunter" xml:space="preserve">
-    <value>HUNTER</value>
+    <value>Hunter</value>
   </data>
   <data name="Engram_Invader" xml:space="preserve">
     <value>Invader</value>
   </data>
   <data name="Engram_Medic" xml:space="preserve">
-    <value>MEDIC</value>
+    <value>Medic</value>
   </data>
   <data name="Engram_Summoner" xml:space="preserve">
     <value>Summoner</value>

@@ -2224,13 +2224,13 @@
     <value>Domador</value>
   </data>
   <data name="Engram_Hunter" xml:space="preserve">
-    <value>CAZADOR</value>
+    <value>Cazador</value>
   </data>
   <data name="Engram_Invader" xml:space="preserve">
     <value>Invasor</value>
   </data>
   <data name="Engram_Medic" xml:space="preserve">
-    <value>MÉDICO</value>
+    <value>Médico</value>
   </data>
   <data name="Engram_Summoner" xml:space="preserve">
     <value>Invocador</value>

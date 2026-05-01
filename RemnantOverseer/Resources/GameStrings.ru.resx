@@ -2224,13 +2224,13 @@
     <value>Кинолог</value>
   </data>
   <data name="Engram_Hunter" xml:space="preserve">
-    <value>ОХОТНИК</value>
+    <value>Охотник</value>
   </data>
   <data name="Engram_Invader" xml:space="preserve">
     <value>Захватчик</value>
   </data>
   <data name="Engram_Medic" xml:space="preserve">
-    <value>МЕДИК</value>
+    <value>Медик</value>
   </data>
   <data name="Engram_Summoner" xml:space="preserve">
     <value>Призыватель</value>

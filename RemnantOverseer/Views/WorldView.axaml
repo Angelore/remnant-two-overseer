@@ -310,8 +310,8 @@
                 <!-- Column 2 is reserved for spacing-->
 
                 <Grid Grid.Column="3" ColumnDefinitions="Auto, *" Width="350" IsVisible="{Binding OriginNameFormatted, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" >
-                  <PathIcon Grid.Column="0" Margin="10 0 10 0" Data="{StaticResource InjectableIcon}" Height="{StaticResource IconSize}" Width="{StaticResource IconSize}"/>
-                  <TextBlock Grid.Column="1" Text="{Binding OriginNameFormatted}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                  <PathIcon Grid.Column="0" Margin="10 0 10 0" Data="{StaticResource InjectableIcon}" Height="{StaticResource IconSize}" Width="{StaticResource IconSize}" VerticalAlignment="Center"/>
+                  <TextBlock Grid.Column="1" Text="{Binding OriginNameFormatted}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" util:TextBlockTrimmedToolTip.Tip="{Binding OriginNameFormatted}"/>
                 </Grid>
 
                 <StackPanel Grid.Column="4" Orientation="Horizontal" Margin="20 0 20 0">
