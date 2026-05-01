@@ -186,6 +186,9 @@
   <data name="Item_ClickToolkit" xml:space="preserve">
     <value>Haz clic para buscar builds con este objeto</value>
   </data>
+  <data name="Item_ClickTranslateNote" xml:space="preserve">
+    <value>Haz clic para abrir la traducción</value>
+  </data>
   <data name="Item_CoopRequired" xml:space="preserve">
     <value>Requiere cooperativo</value>
   </data>

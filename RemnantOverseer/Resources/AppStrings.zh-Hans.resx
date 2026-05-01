@@ -186,6 +186,9 @@
   <data name="Item_ClickToolkit" xml:space="preserve">
     <value>点击查找包含此物品的配装</value>
   </data>
+  <data name="Item_ClickTranslateNote" xml:space="preserve">
+    <value>点击打开翻译</value>
+  </data>
   <data name="Item_CoopRequired" xml:space="preserve">
     <value>需要合作模式</value>
   </data>

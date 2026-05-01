@@ -83,6 +83,17 @@ internal static class LocalizationService
             ?? fallback;
     }
 
+    public static string? ExternalTranslationUrl(string text)
+    {
+        if (string.IsNullOrWhiteSpace(text) || IsEnglishCulture(CultureInfo.CurrentUICulture))
+        {
+            return null;
+        }
+
+        var targetLanguage = GetGoogleTranslateTargetLanguage(CultureInfo.CurrentUICulture);
+        return $"https://translate.google.com/?sl=en&tl={targetLanguage}&text={Uri.EscapeDataString(text)}&op=translate";
+    }
+
     public static string Format(string key, params object?[] args)
     {
         return string.Format(CultureInfo.CurrentCulture, Get(key), args);
@@ -153,6 +164,27 @@ internal static class LocalizationService
     {
         var value = resourceManager.GetString(key, culture);
         return string.IsNullOrWhiteSpace(value) ? null : value;
+    }
+
+    private static bool IsEnglishCulture(CultureInfo culture)
+    {
+        return string.Equals(culture.TwoLetterISOLanguageName, "en", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static string GetGoogleTranslateTargetLanguage(CultureInfo culture)
+    {
+        if (string.Equals(culture.Name, "pt-BR", StringComparison.OrdinalIgnoreCase))
+        {
+            return "pt";
+        }
+
+        if (string.Equals(culture.Name, "zh-Hans", StringComparison.OrdinalIgnoreCase)
+            || string.Equals(culture.Name, "zh-CN", StringComparison.OrdinalIgnoreCase))
+        {
+            return "zh-CN";
+        }
+
+        return culture.TwoLetterISOLanguageName;
     }
 }
 

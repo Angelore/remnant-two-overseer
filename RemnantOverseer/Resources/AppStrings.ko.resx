@@ -186,6 +186,9 @@
   <data name="Item_ClickToolkit" xml:space="preserve">
     <value>클릭하여 이 아이템을 사용하는 빌드 찾기</value>
   </data>
+  <data name="Item_ClickTranslateNote" xml:space="preserve">
+    <value>번역을 열려면 클릭</value>
+  </data>
   <data name="Item_CoopRequired" xml:space="preserve">
     <value>협동 플레이 필요</value>
   </data>

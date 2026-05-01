@@ -186,6 +186,9 @@
   <data name="Item_ClickToolkit" xml:space="preserve">
     <value>Нажмите, чтобы найти сборки с этим предметом</value>
   </data>
+  <data name="Item_ClickTranslateNote" xml:space="preserve">
+    <value>Нажмите, чтобы открыть перевод</value>
+  </data>
   <data name="Item_CoopRequired" xml:space="preserve">
     <value>Требуется совместная игра</value>
   </data>

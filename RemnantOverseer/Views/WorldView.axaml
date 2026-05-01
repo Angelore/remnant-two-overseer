@@ -325,7 +325,17 @@
                   </StackPanel.Styles>
                   <!-- consider always showing icons, but very faint if not applicable for layout consistency -->
                   <!--<PathIcon Height="{StaticResource IconSize}" Width="{StaticResource IconSize}" Margin="5 0" Foreground="{StaticResource BaseTextColor}" Data="{StaticResource CoopIcon}"/>-->
-                  <PathIcon Data="{StaticResource RoundInfoIcon}" IsVisible="{Binding Description, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" ToolTip.Tip="{Binding Description}" ToolTip.Placement="LeftEdgeAlignedTop"/>
+                  <HyperlinkButton Classes="plain" Margin="0" Padding="0" NavigateUri="{Binding NoteTranslationLink}" IsVisible="{Binding HasNoteTranslationLink}">
+                    <PathIcon Data="{StaticResource RoundInfoIcon}"/>
+                    <ToolTip.Placement>LeftEdgeAlignedTop</ToolTip.Placement>
+                    <ToolTip.Tip>
+                      <StackPanel Orientation="Vertical">
+                        <TextBlock TextDecorations="{x:Null}" Margin="0 0 0 5" Text="{loc:Loc Item_ClickTranslateNote}"/>
+                        <TextBlock TextDecorations="{x:Null}" Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="450"/>
+                      </StackPanel>
+                    </ToolTip.Tip>
+                  </HyperlinkButton>
+                  <PathIcon Data="{StaticResource RoundInfoIcon}" IsVisible="{Binding HasPlainDescriptionIcon}" ToolTip.Tip="{Binding Description}" ToolTip.Placement="LeftEdgeAlignedTop"/>
                   <HyperlinkButton Classes="plain" Margin="5 0" Padding="0" NavigateUri="{Binding ToolkitLink}">
                     <HyperlinkButton.IsVisible>
                       <MultiBinding Converter="{x:Static BoolConverters.And}">
