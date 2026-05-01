@@ -8,13 +8,15 @@ namespace RemnantOverseer.Models;
 public class Item : ObservableObject
 {
     public string Id { get; set; } = string.Empty;
-    public string Name { get; set; } = string.Empty;
     public string CanonicalName { get; set; } = string.Empty;
+    public string Name => LocalizationService.GameString(Id, CanonicalName);
     public ItemTypes Type { get; set; }
     public WeaponSubtypes? WeaponSubtype { get; set; }
     public string Description { get; set; } = string.Empty;
     public OriginTypes OriginType { get; set; }
-    public string OriginName { get; set; } = string.Empty;
+    public string OriginId { get; set; } = string.Empty;
+    public string CanonicalOriginName { get; set; } = string.Empty;
+    public string OriginName => LocalizationService.GameString(OriginId, CanonicalOriginName);
     public bool IsDuplicate { get; set; }
     public bool IsLooted { get; set; }
     public bool IsPrerequisiteMissing { get; set; }
@@ -40,7 +42,7 @@ public class Item : ObservableObject
         }
     }
 
-    private string LinkName => string.IsNullOrWhiteSpace(CanonicalName) ? Name : CanonicalName;
+    private string LinkName => CanonicalName;
 
     public string? WikiLink => $"{UrlStrings.WikiUrl}/{LinkName}";
 
@@ -53,6 +55,8 @@ public class Item : ObservableObject
 
     public void RefreshLocalizedProperties()
     {
+        OnPropertyChanged(nameof(Name));
+        OnPropertyChanged(nameof(OriginName));
         OnPropertyChanged(nameof(TypeName));
         OnPropertyChanged(nameof(OriginNameFormatted));
     }

@@ -44,7 +44,7 @@ public class Location : ObservableObject
 
     // Trying this out. Should not be a big performance hit since it's just ~10 calls
     private string[] _possibleOracleSpawns = ["Morrow Parish", "Forsaken Quarter", "Ironborough", "Brocwithe Quarter"];
-    public bool IsOracleLocation => _possibleOracleSpawns.Contains(Name) && Items.Any(i => i.OriginName.Equals("Oracle's Refuge", System.StringComparison.Ordinal));
+    public bool IsOracleLocation => _possibleOracleSpawns.Contains(Name) && Items.Any(i => i.CanonicalOriginName.Equals("Oracle's Refuge", System.StringComparison.Ordinal));
 
 
     public Location ShallowCopy()

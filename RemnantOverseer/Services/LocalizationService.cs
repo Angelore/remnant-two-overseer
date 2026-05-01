@@ -20,6 +20,10 @@ internal static class LocalizationService
         $"{ResourcesAssembly.GetName().Name}.Resources.AppStrings",
         ResourcesAssembly);
 
+    private static readonly ResourceManager GameResourceManager = new(
+        $"{ResourcesAssembly.GetName().Name}.Resources.GameStrings",
+        ResourcesAssembly);
+
     private static readonly CultureInfo EnglishCulture = CultureInfo.GetCultureInfo(LocalizationConstants.DefaultCultureName);
 
     public static LocalizationBindingSource BindingSource { get; } = new();
@@ -63,6 +67,20 @@ internal static class LocalizationService
         }
 
         return ResourceManager.GetString(key, EnglishCulture) ?? key;
+    }
+
+    public static string GameString(string key, string fallback)
+    {
+        if (string.IsNullOrWhiteSpace(key))
+        {
+            return fallback;
+        }
+
+        return GetResourceString(GameResourceManager, key, CultureInfo.CurrentUICulture)
+            ?? GetResourceString(GameResourceManager, key, EnglishCulture)
+            ?? GetResourceString(ResourceManager, key, CultureInfo.CurrentUICulture)
+            ?? GetResourceString(ResourceManager, key, EnglishCulture)
+            ?? fallback;
     }
 
     public static string Format(string key, params object?[] args)
@@ -129,6 +147,12 @@ internal static class LocalizationService
         {
             return EnglishCulture;
         }
+    }
+
+    private static string? GetResourceString(ResourceManager resourceManager, string key, CultureInfo culture)
+    {
+        var value = resourceManager.GetString(key, culture);
+        return string.IsNullOrWhiteSpace(value) ? null : value;
     }
 }
 
