@@ -228,9 +228,9 @@ public partial class WorldViewModel : ViewModelBase
             // Toggles only applicable to campaign
             if (IsCampaignSelected)
             {
-                if (IsNerudFilterChecked && zone.Name != LocationStrings.Nerud) continue;
-                if (IsYaeshaFilterChecked && zone.Name != LocationStrings.Yaesha) continue;
-                if (IsLosomnFilterChecked && zone.Name != LocationStrings.Losomn) continue;
+                if (IsNerudFilterChecked && zone.CanonicalName != LocationStrings.Nerud) continue;
+                if (IsYaeshaFilterChecked && zone.CanonicalName != LocationStrings.Yaesha) continue;
+                if (IsLosomnFilterChecked && zone.CanonicalName != LocationStrings.Losomn) continue;
             }
 
             var tempZone = zone.ShallowCopy();

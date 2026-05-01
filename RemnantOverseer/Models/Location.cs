@@ -7,7 +7,12 @@ using System.Linq;
 namespace RemnantOverseer.Models;
 public class Location : ObservableObject
 {
-    public string Name { get; set; } = string.Empty;
+    public string CanonicalName { get; set; } = string.Empty;
+    public string Name
+    {
+        get => LocalizationService.GameString(CanonicalName, CanonicalName);
+        set => CanonicalName = value.Trim();
+    }
     public List<Item> Items { get; set; } = [];
     public bool IsTraitBookPresent { get; set; }
     public bool IsSimulacrumPresent { get; set; }
@@ -25,8 +30,8 @@ public class Location : ObservableObject
             if (!IsRespawnLocation) return null;
             return RespawnPointType switch
             {
-                RespawnPointType.WorldStone => LocalizationService.Format("Location_WorldStoneRespawn", RespawnPointName),
-                RespawnPointType.Checkpoint => LocalizationService.Format("Location_CheckpointRespawn", RespawnPointName),
+                RespawnPointType.WorldStone => LocalizationService.Format("Location_WorldStoneRespawn", LocalizeLocationName(RespawnPointName)),
+                RespawnPointType.Checkpoint => LocalizationService.Format("Location_CheckpointRespawn", LocalizeLocationName(RespawnPointName)),
                 RespawnPointType.ZoneTransition => GetFormattedZoneTransition(),
                 _ => null
             };
@@ -36,15 +41,21 @@ public class Location : ObservableObject
     private string GetFormattedZoneTransition()
     {
         var split = RespawnPointName.Split('/');
-        return LocalizationService.Format("Location_ZoneTransitionRespawn", split[0], split[1]);
+        return LocalizationService.Format("Location_ZoneTransitionRespawn", LocalizeLocationName(split[0]), LocalizeLocationName(split[1]));
     }
 
-    public bool IsGenesisLocation => Name.Equals("Withered Necropolis");
-    public bool IsWard13Location => Name.Equals("Ward 13");
+    private static string LocalizeLocationName(string value)
+    {
+        var canonical = value.Trim();
+        return LocalizationService.GameString(canonical, canonical);
+    }
+
+    public bool IsGenesisLocation => CanonicalName.Equals("Withered Necropolis");
+    public bool IsWard13Location => CanonicalName.Equals("Ward 13");
 
     // Trying this out. Should not be a big performance hit since it's just ~10 calls
     private string[] _possibleOracleSpawns = ["Morrow Parish", "Forsaken Quarter", "Ironborough", "Brocwithe Quarter"];
-    public bool IsOracleLocation => _possibleOracleSpawns.Contains(Name) && Items.Any(i => i.CanonicalOriginName.Equals("Oracle's Refuge", System.StringComparison.Ordinal));
+    public bool IsOracleLocation => _possibleOracleSpawns.Contains(CanonicalName) && Items.Any(i => i.CanonicalOriginName.Equals("Oracle's Refuge", System.StringComparison.Ordinal));
 
 
     public Location ShallowCopy()
@@ -54,6 +65,7 @@ public class Location : ObservableObject
 
     public void RefreshLocalizedProperties()
     {
+        OnPropertyChanged(nameof(Name));
         OnPropertyChanged(nameof(FormattedRespawnPointName));
     }
 }

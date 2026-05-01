@@ -2832,4 +2832,286 @@
   <data name="PrismOfVoracity" xml:space="preserve">
     <value>Призма обжорства</value>
   </data>
+  <data name="Labyrinth" xml:space="preserve">
+    <value>Лабиринт</value>
+  </data>
+  <data name="Losomn" xml:space="preserve">
+    <value>Лосом</value>
+  </data>
+  <data name="N&apos;Erud" xml:space="preserve">
+    <value>Н&apos;еруд</value>
+  </data>
+  <data name="Root Earth" xml:space="preserve">
+    <value>Мир Корня</value>
+  </data>
+  <data name="Ward 13" xml:space="preserve">
+    <value>Блок 13</value>
+  </data>
+  <data name="Yaesha" xml:space="preserve">
+    <value>Йаэша</value>
+  </data>
+  <data name="The Labyrinth" xml:space="preserve">
+    <value>Лабиринт</value>
+  </data>
+  <data name="Ashen Wasteland" xml:space="preserve">
+    <value>Пепельные пустоши</value>
+  </data>
+  <data name="Blackened Citadel" xml:space="preserve">
+    <value>Почерневшая цитадель</value>
+  </data>
+  <data name="Corrupted Harbor" xml:space="preserve">
+    <value>Искаженное убежище</value>
+  </data>
+  <data name="Beatific Gallery" xml:space="preserve">
+    <value>Галерея блаженства</value>
+  </data>
+  <data name="Beatific Palace" xml:space="preserve">
+    <value>Дворец блаженства</value>
+  </data>
+  <data name="Brocwithe Quarter" xml:space="preserve">
+    <value>Квартал Броквит</value>
+  </data>
+  <data name="Butcher&apos;s Quarter" xml:space="preserve">
+    <value>Квартал мясника</value>
+  </data>
+  <data name="Chamber of the Faithless" xml:space="preserve">
+    <value>Палата Неверующих</value>
+  </data>
+  <data name="Cotton&apos;s Kiln" xml:space="preserve">
+    <value>Печь для сушки</value>
+  </data>
+  <data name="Council Chamber" xml:space="preserve">
+    <value>Зал Совета</value>
+  </data>
+  <data name="Council Tribunal" xml:space="preserve">
+    <value>Суд Совета</value>
+  </data>
+  <data name="Derelict Lighthouse" xml:space="preserve">
+    <value>Старинный маяк</value>
+  </data>
+  <data name="Forlorn Coast" xml:space="preserve">
+    <value>Заброшенный берег</value>
+  </data>
+  <data name="Forsaken Quarter" xml:space="preserve">
+    <value>Забытый квартал</value>
+  </data>
+  <data name="Gilded Chambers" xml:space="preserve">
+    <value>Золотые покои</value>
+  </data>
+  <data name="Glistering Cloister" xml:space="preserve">
+    <value>Сияющий затворник</value>
+  </data>
+  <data name="Harvester&apos;s Reach" xml:space="preserve">
+    <value>Предел жнеца</value>
+  </data>
+  <data name="Ironborough" xml:space="preserve">
+    <value>Айронборо</value>
+  </data>
+  <data name="Lemark District" xml:space="preserve">
+    <value>Квартал Лемарков</value>
+  </data>
+  <data name="Malefic Gallery" xml:space="preserve">
+    <value>Галерея пагубы</value>
+  </data>
+  <data name="Malefic Palace" xml:space="preserve">
+    <value>Дворец пагубы</value>
+  </data>
+  <data name="Morrow Parish" xml:space="preserve">
+    <value>Дом Морроу</value>
+  </data>
+  <data name="Nimue&apos;s Retreat" xml:space="preserve">
+    <value>Убежище Нимуэ</value>
+  </data>
+  <data name="Palace of the One True King" xml:space="preserve">
+    <value>Дворец Истинного короля</value>
+  </data>
+  <data name="Pathway of the Fallen" xml:space="preserve">
+    <value>Дорога павших</value>
+  </data>
+  <data name="Postulant&apos;s Parlor" xml:space="preserve">
+    <value>Зал Послушника</value>
+  </data>
+  <data name="Shattered Gallery" xml:space="preserve">
+    <value>Разрушенная галерея</value>
+  </data>
+  <data name="Sunken Haunt" xml:space="preserve">
+    <value>Затонувший призрак</value>
+  </data>
+  <data name="The Forgotten Commune" xml:space="preserve">
+    <value>Забытая община</value>
+  </data>
+  <data name="The Great Hall" xml:space="preserve">
+    <value>Большой зал</value>
+  </data>
+  <data name="The Great Sewers" xml:space="preserve">
+    <value>Большая канализация</value>
+  </data>
+  <data name="The Tormented Asylum" xml:space="preserve">
+    <value>Лечебница терзаний</value>
+  </data>
+  <data name="Tiller&apos;s Rest" xml:space="preserve">
+    <value>Убежище земледельца</value>
+  </data>
+  <data name="Walk of Remembrance" xml:space="preserve">
+    <value>Шествие памяти</value>
+  </data>
+  <data name="Abyssal Rift" xml:space="preserve">
+    <value>Разлом бездны</value>
+  </data>
+  <data name="Agronomy Sector" xml:space="preserve">
+    <value>Аграрный сектор</value>
+  </data>
+  <data name="Alepsis-Taura" xml:space="preserve">
+    <value>Алепсис-Таура</value>
+  </data>
+  <data name="Astropath&apos;s Respite" xml:space="preserve">
+    <value>Убежище астропата</value>
+  </data>
+  <data name="Athenaeum Wek" xml:space="preserve">
+    <value>Атенэй Вэк</value>
+  </data>
+  <data name="Detritus Foundry" xml:space="preserve">
+    <value>Детритный цех</value>
+  </data>
+  <data name="Dormant N&apos;Erudian Facility" xml:space="preserve">
+    <value>Спящий отдел Н&apos;еруда</value>
+  </data>
+  <data name="Forgotten Prison" xml:space="preserve">
+    <value>Забытая тюрьма</value>
+  </data>
+  <data name="Logistics Bridge" xml:space="preserve">
+    <value>Грузовой мост</value>
+  </data>
+  <data name="Mucid Terrarium" xml:space="preserve">
+    <value>Грибной террарий</value>
+  </data>
+  <data name="Phantom Wasteland" xml:space="preserve">
+    <value>Фантомная пустошь</value>
+  </data>
+  <data name="Seeker&apos;s Rest" xml:space="preserve">
+    <value>Покои искателя</value>
+  </data>
+  <data name="Sentinel&apos;s Keep" xml:space="preserve">
+    <value>Башня часового</value>
+  </data>
+  <data name="Spectrum Nexus" xml:space="preserve">
+    <value>Спектральное сплетение</value>
+  </data>
+  <data name="Stagnant Manufactory" xml:space="preserve">
+    <value>Остановленный завод</value>
+  </data>
+  <data name="Terminus Station" xml:space="preserve">
+    <value>Конечная станция</value>
+  </data>
+  <data name="The Convergence" xml:space="preserve">
+    <value>Слияние</value>
+  </data>
+  <data name="The Dark Conduit" xml:space="preserve">
+    <value>Тёмный проводник</value>
+  </data>
+  <data name="The Eon Vault" xml:space="preserve">
+    <value>Хранилище бесконечности</value>
+  </data>
+  <data name="The Hatchery" xml:space="preserve">
+    <value>Инкубатор</value>
+  </data>
+  <data name="The Putrid Domain" xml:space="preserve">
+    <value>Смрадное царство</value>
+  </data>
+  <data name="Timeless Horizon" xml:space="preserve">
+    <value>Вечный горизонт</value>
+  </data>
+  <data name="Tower of the Unseen" xml:space="preserve">
+    <value>Башня незримого</value>
+  </data>
+  <data name="Vault of the Formless" xml:space="preserve">
+    <value>Убежище бесформенных</value>
+  </data>
+  <data name="Void Vessel Facility" xml:space="preserve">
+    <value>Комплекс пустотного судна</value>
+  </data>
+  <data name="Withered Necropolis" xml:space="preserve">
+    <value>Обветшалый некрополь</value>
+  </data>
+  <data name="Ancient Canopy" xml:space="preserve">
+    <value>Древний навес</value>
+  </data>
+  <data name="Ancient Canopy/Luminous Vale" xml:space="preserve">
+    <value>Древний навес/Озарённая долина</value>
+  </data>
+  <data name="Cathedral of Omens" xml:space="preserve">
+    <value>Собор предзнаменований</value>
+  </data>
+  <data name="Deserted Atelier" xml:space="preserve">
+    <value>Заброшенная мастерская</value>
+  </data>
+  <data name="Earthen Coliseum" xml:space="preserve">
+    <value>Земляной стадион</value>
+  </data>
+  <data name="Endaira&apos;s End" xml:space="preserve">
+    <value>Тупик Эндайры</value>
+  </data>
+  <data name="Faithless Thicket" xml:space="preserve">
+    <value>Вероломные заросли</value>
+  </data>
+  <data name="Forgotten Field" xml:space="preserve">
+    <value>Забытое поле</value>
+  </data>
+  <data name="Goddess&apos;s Rest" xml:space="preserve">
+    <value>Приют богини</value>
+  </data>
+  <data name="Imperial Gardens" xml:space="preserve">
+    <value>Имперские сады</value>
+  </data>
+  <data name="Infested Abyss" xml:space="preserve">
+    <value>Заражённая бездна</value>
+  </data>
+  <data name="Kaeula&apos;s Rest" xml:space="preserve">
+    <value>Покой Кеулы</value>
+  </data>
+  <data name="Luminous Vale" xml:space="preserve">
+    <value>Озарённая долина</value>
+  </data>
+  <data name="Proving Grounds" xml:space="preserve">
+    <value>Истинный талант</value>
+  </data>
+  <data name="Ravager&apos;s Lair" xml:space="preserve">
+    <value>Логово Разорителя</value>
+  </data>
+  <data name="The Bloodless Throne" xml:space="preserve">
+    <value>Бескровный трон</value>
+  </data>
+  <data name="The Chimney" xml:space="preserve">
+    <value>Дымоход</value>
+  </data>
+  <data name="The Expanding Glade" xml:space="preserve">
+    <value>Просторная просека</value>
+  </data>
+  <data name="The Far Woods" xml:space="preserve">
+    <value>Дальний лес</value>
+  </data>
+  <data name="The Forbidden Grove" xml:space="preserve">
+    <value>Запретная роща</value>
+  </data>
+  <data name="The Great Bole" xml:space="preserve">
+    <value>Исполинский ствол</value>
+  </data>
+  <data name="The Lament" xml:space="preserve">
+    <value>Скорбь</value>
+  </data>
+  <data name="The Nameless Nest" xml:space="preserve">
+    <value>Безымянное гнездо</value>
+  </data>
+  <data name="The Red Throne" xml:space="preserve">
+    <value>Красный трон</value>
+  </data>
+  <data name="The Twisted Chantry" xml:space="preserve">
+    <value>Искаженная часовня</value>
+  </data>
+  <data name="The Widow&apos;s Court" xml:space="preserve">
+    <value>Вдовий двор</value>
+  </data>
+  <data name="The Withering Weald" xml:space="preserve">
+    <value>Увядающая пустошь</value>
+  </data>
 </root>

@@ -2832,4 +2832,286 @@
   <data name="PrismOfVoracity" xml:space="preserve">
     <value>Prisma da Voracidade</value>
   </data>
+  <data name="Labyrinth" xml:space="preserve">
+    <value>Labirinto</value>
+  </data>
+  <data name="Losomn" xml:space="preserve">
+    <value>Losomn</value>
+  </data>
+  <data name="N&apos;Erud" xml:space="preserve">
+    <value>N&apos;erud</value>
+  </data>
+  <data name="Root Earth" xml:space="preserve">
+    <value>Terra da Raiz</value>
+  </data>
+  <data name="Ward 13" xml:space="preserve">
+    <value>Setor 13</value>
+  </data>
+  <data name="Yaesha" xml:space="preserve">
+    <value>Yaesha</value>
+  </data>
+  <data name="The Labyrinth" xml:space="preserve">
+    <value>O Labirinto</value>
+  </data>
+  <data name="Ashen Wasteland" xml:space="preserve">
+    <value>Deserto de Cinzas</value>
+  </data>
+  <data name="Blackened Citadel" xml:space="preserve">
+    <value>Cidadela Enegrecida</value>
+  </data>
+  <data name="Corrupted Harbor" xml:space="preserve">
+    <value>Porto Corrompido</value>
+  </data>
+  <data name="Beatific Gallery" xml:space="preserve">
+    <value>Galeria Beatífica</value>
+  </data>
+  <data name="Beatific Palace" xml:space="preserve">
+    <value>Palácio Beatífico</value>
+  </data>
+  <data name="Brocwithe Quarter" xml:space="preserve">
+    <value>Distrito Brocwithe</value>
+  </data>
+  <data name="Butcher&apos;s Quarter" xml:space="preserve">
+    <value>Distrito do Açougueiro</value>
+  </data>
+  <data name="Chamber of the Faithless" xml:space="preserve">
+    <value>Câmara dos Ímpios</value>
+  </data>
+  <data name="Cotton&apos;s Kiln" xml:space="preserve">
+    <value>Estufa de Secar Algodão</value>
+  </data>
+  <data name="Council Chamber" xml:space="preserve">
+    <value>Câmara do Conselho</value>
+  </data>
+  <data name="Council Tribunal" xml:space="preserve">
+    <value>Tribunal do Conselho</value>
+  </data>
+  <data name="Derelict Lighthouse" xml:space="preserve">
+    <value>Farol Abandonado</value>
+  </data>
+  <data name="Forlorn Coast" xml:space="preserve">
+    <value>Costa Abandonada</value>
+  </data>
+  <data name="Forsaken Quarter" xml:space="preserve">
+    <value>Distrito Abandonado</value>
+  </data>
+  <data name="Gilded Chambers" xml:space="preserve">
+    <value>Câmaras Douradas</value>
+  </data>
+  <data name="Glistering Cloister" xml:space="preserve">
+    <value>Claustro Resplandecente</value>
+  </data>
+  <data name="Harvester&apos;s Reach" xml:space="preserve">
+    <value>Alcance do Coletor</value>
+  </data>
+  <data name="Ironborough" xml:space="preserve">
+    <value>Ironborough</value>
+  </data>
+  <data name="Lemark District" xml:space="preserve">
+    <value>Distrito dos Lemark</value>
+  </data>
+  <data name="Malefic Gallery" xml:space="preserve">
+    <value>Galeria Maléfica</value>
+  </data>
+  <data name="Malefic Palace" xml:space="preserve">
+    <value>Palácio Maléfico</value>
+  </data>
+  <data name="Morrow Parish" xml:space="preserve">
+    <value>Paróquia Morrow</value>
+  </data>
+  <data name="Nimue&apos;s Retreat" xml:space="preserve">
+    <value>Retiro da Nimue</value>
+  </data>
+  <data name="Palace of the One True King" xml:space="preserve">
+    <value>Palácio do Rei Legítimo</value>
+  </data>
+  <data name="Pathway of the Fallen" xml:space="preserve">
+    <value>Caminho dos Caídos</value>
+  </data>
+  <data name="Postulant&apos;s Parlor" xml:space="preserve">
+    <value>Sala do Postulante</value>
+  </data>
+  <data name="Shattered Gallery" xml:space="preserve">
+    <value>Galeria Estilhaçada</value>
+  </data>
+  <data name="Sunken Haunt" xml:space="preserve">
+    <value>Assombração Submersa</value>
+  </data>
+  <data name="The Forgotten Commune" xml:space="preserve">
+    <value>A Comunidade Esquecida</value>
+  </data>
+  <data name="The Great Hall" xml:space="preserve">
+    <value>O Grande Salão</value>
+  </data>
+  <data name="The Great Sewers" xml:space="preserve">
+    <value>O Grande Esgoto</value>
+  </data>
+  <data name="The Tormented Asylum" xml:space="preserve">
+    <value>O Hospício Atormentado</value>
+  </data>
+  <data name="Tiller&apos;s Rest" xml:space="preserve">
+    <value>Descanso do Lavrador</value>
+  </data>
+  <data name="Walk of Remembrance" xml:space="preserve">
+    <value>Caminhada da Recordação</value>
+  </data>
+  <data name="Abyssal Rift" xml:space="preserve">
+    <value>Fenda Abissal</value>
+  </data>
+  <data name="Agronomy Sector" xml:space="preserve">
+    <value>Setor de Agronomia</value>
+  </data>
+  <data name="Alepsis-Taura" xml:space="preserve">
+    <value>Alepsis-Taura</value>
+  </data>
+  <data name="Astropath&apos;s Respite" xml:space="preserve">
+    <value>Descanso do Astropata</value>
+  </data>
+  <data name="Athenaeum Wek" xml:space="preserve">
+    <value>Ateneu Wek</value>
+  </data>
+  <data name="Detritus Foundry" xml:space="preserve">
+    <value>Fundição de Detritos</value>
+  </data>
+  <data name="Dormant N&apos;Erudian Facility" xml:space="preserve">
+    <value>Instalação N&apos;erudiana Adormecida</value>
+  </data>
+  <data name="Forgotten Prison" xml:space="preserve">
+    <value>Prisão Esquecida</value>
+  </data>
+  <data name="Logistics Bridge" xml:space="preserve">
+    <value>Ponte de Logística</value>
+  </data>
+  <data name="Mucid Terrarium" xml:space="preserve">
+    <value>Terrário Lodoso</value>
+  </data>
+  <data name="Phantom Wasteland" xml:space="preserve">
+    <value>Deserto Fantasma</value>
+  </data>
+  <data name="Seeker&apos;s Rest" xml:space="preserve">
+    <value>Descanso do Buscador</value>
+  </data>
+  <data name="Sentinel&apos;s Keep" xml:space="preserve">
+    <value>Fortaleza do Vigia</value>
+  </data>
+  <data name="Spectrum Nexus" xml:space="preserve">
+    <value>Nexo de Espectro</value>
+  </data>
+  <data name="Stagnant Manufactory" xml:space="preserve">
+    <value>Manufatura Estagnada</value>
+  </data>
+  <data name="Terminus Station" xml:space="preserve">
+    <value>Estação Terminal</value>
+  </data>
+  <data name="The Convergence" xml:space="preserve">
+    <value>A Convergência</value>
+  </data>
+  <data name="The Dark Conduit" xml:space="preserve">
+    <value>O Canal das Trevas</value>
+  </data>
+  <data name="The Eon Vault" xml:space="preserve">
+    <value>A Câmara Eon</value>
+  </data>
+  <data name="The Hatchery" xml:space="preserve">
+    <value>O Criadouro</value>
+  </data>
+  <data name="The Putrid Domain" xml:space="preserve">
+    <value>O Domínio Pútrido</value>
+  </data>
+  <data name="Timeless Horizon" xml:space="preserve">
+    <value>Horizonte Eterno</value>
+  </data>
+  <data name="Tower of the Unseen" xml:space="preserve">
+    <value>Torre do Invisível</value>
+  </data>
+  <data name="Vault of the Formless" xml:space="preserve">
+    <value>Câmara do Desforme</value>
+  </data>
+  <data name="Void Vessel Facility" xml:space="preserve">
+    <value>Instalação do Receptáculo do Vazio</value>
+  </data>
+  <data name="Withered Necropolis" xml:space="preserve">
+    <value>Necrópole Definhada</value>
+  </data>
+  <data name="Ancient Canopy" xml:space="preserve">
+    <value>Copas Antigas</value>
+  </data>
+  <data name="Ancient Canopy/Luminous Vale" xml:space="preserve">
+    <value>Copas Antigas/Vale Luminoso</value>
+  </data>
+  <data name="Cathedral of Omens" xml:space="preserve">
+    <value>Catedral dos Presságios</value>
+  </data>
+  <data name="Deserted Atelier" xml:space="preserve">
+    <value>Ateliê Abandonado</value>
+  </data>
+  <data name="Earthen Coliseum" xml:space="preserve">
+    <value>Coliseu Terreno</value>
+  </data>
+  <data name="Endaira&apos;s End" xml:space="preserve">
+    <value>Fim de Endaira</value>
+  </data>
+  <data name="Faithless Thicket" xml:space="preserve">
+    <value>Mata Ímpia</value>
+  </data>
+  <data name="Forgotten Field" xml:space="preserve">
+    <value>Campo Esquecido</value>
+  </data>
+  <data name="Goddess&apos;s Rest" xml:space="preserve">
+    <value>Repouso da Deusa</value>
+  </data>
+  <data name="Imperial Gardens" xml:space="preserve">
+    <value>Jardins Imperiais</value>
+  </data>
+  <data name="Infested Abyss" xml:space="preserve">
+    <value>Abismo Infestado</value>
+  </data>
+  <data name="Kaeula&apos;s Rest" xml:space="preserve">
+    <value>Descanso de Kaeula</value>
+  </data>
+  <data name="Luminous Vale" xml:space="preserve">
+    <value>Vale Luminoso</value>
+  </data>
+  <data name="Proving Grounds" xml:space="preserve">
+    <value>Campos de Teste</value>
+  </data>
+  <data name="Ravager&apos;s Lair" xml:space="preserve">
+    <value>Covil do Devastador</value>
+  </data>
+  <data name="The Bloodless Throne" xml:space="preserve">
+    <value>O Trono Sem Sangue</value>
+  </data>
+  <data name="The Chimney" xml:space="preserve">
+    <value>A Chaminé</value>
+  </data>
+  <data name="The Expanding Glade" xml:space="preserve">
+    <value>A Clareira em Expansão</value>
+  </data>
+  <data name="The Far Woods" xml:space="preserve">
+    <value>As Florestas Distantes</value>
+  </data>
+  <data name="The Forbidden Grove" xml:space="preserve">
+    <value>A Floresta Proibida</value>
+  </data>
+  <data name="The Great Bole" xml:space="preserve">
+    <value>O Grande Tronco</value>
+  </data>
+  <data name="The Lament" xml:space="preserve">
+    <value>O Lamento</value>
+  </data>
+  <data name="The Nameless Nest" xml:space="preserve">
+    <value>O Ninho sem Nome</value>
+  </data>
+  <data name="The Red Throne" xml:space="preserve">
+    <value>O Trono Vermelho</value>
+  </data>
+  <data name="The Twisted Chantry" xml:space="preserve">
+    <value>A Capela Corrompida</value>
+  </data>
+  <data name="The Widow&apos;s Court" xml:space="preserve">
+    <value>A Corte da Viúva</value>
+  </data>
+  <data name="The Withering Weald" xml:space="preserve">
+    <value>A Mata Fenecida</value>
+  </data>
 </root>

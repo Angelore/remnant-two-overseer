@@ -210,7 +210,7 @@
                 <PathIcon Data="{StaticResource BloodmoonIcon}" Foreground="{StaticResource BloodmoonColor}" ToolTip.Tip="{Binding $parent[TreeView].((vm:WorldViewModel)DataContext).BloodmoonChanceString}" Margin="5 0" Height="16">
                   <PathIcon.IsVisible>
                     <MultiBinding Converter="{x:Static BoolConverters.And}">
-                      <Binding Path="Name" Converter="{StaticResource StringComparisonConverter}" ConverterParameter="{x:Static util:LocationStrings.Yaesha}" Mode="OneWay" />
+                      <Binding Path="CanonicalName" Converter="{StaticResource StringComparisonConverter}" ConverterParameter="{x:Static util:LocationStrings.Yaesha}" Mode="OneWay" />
                       <Binding Path="!$parent[TreeView].((vm:WorldViewModel)DataContext).BloodmoonChance" Converter="{x:Static ObjectConverters.IsNotNull}" Mode="OneWay" />
                     </MultiBinding>
                   </PathIcon.IsVisible>
