@@ -203,8 +203,8 @@ internal class DatasetMapper
 
         Enum.TryParse<OriginTypes>(lootGroup.Type.Replace(" ", ""), true, out var originType);
         itemModel.OriginType = originType;
-        itemModel.OriginId = lootGroup.EventDropReference ?? string.Empty;
         itemModel.CanonicalOriginName = lootGroup.Name ?? string.Empty;
+        itemModel.OriginId = originType == OriginTypes.Vendor ? itemModel.CanonicalOriginName : lootGroup.EventDropReference ?? string.Empty;
         itemModel.IsDuplicate = isDuplicate;
 
         if(itemModel.Type == ItemTypes.Weapon)

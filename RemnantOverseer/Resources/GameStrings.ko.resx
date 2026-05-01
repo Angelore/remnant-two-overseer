@@ -3114,4 +3114,49 @@
   <data name="The Withering Weald" xml:space="preserve">
     <value>시들어가는 삼림지대</value>
   </data>
+  <data name="Bedel" xml:space="preserve">
+    <value>바운트 베델</value>
+  </data>
+  <data name="Blood Moon Altar" xml:space="preserve">
+    <value>혈월 제단</value>
+  </data>
+  <data name="Brabus" xml:space="preserve">
+    <value>브라버스</value>
+  </data>
+  <data name="Cass" xml:space="preserve">
+    <value>캐스</value>
+  </data>
+  <data name="Drzyr Replicator" xml:space="preserve">
+    <value>드르지르 복제자</value>
+  </data>
+  <data name="Dwell" xml:space="preserve">
+    <value>드웰</value>
+  </data>
+  <data name="Leywise" xml:space="preserve">
+    <value>레이와이즈</value>
+  </data>
+  <data name="McCabe" xml:space="preserve">
+    <value>에이바 맥캐브</value>
+  </data>
+  <data name="Mudtooth" xml:space="preserve">
+    <value>머드투스</value>
+  </data>
+  <data name="Nimue" xml:space="preserve">
+    <value>니므에</value>
+  </data>
+  <data name="Norah" xml:space="preserve">
+    <value>노라</value>
+  </data>
+  <data name="Reggie" xml:space="preserve">
+    <value>레지</value>
+  </data>
+  <data name="Spark" xml:space="preserve">
+    <value>불꽃</value>
+  </data>
+  <data name="Walt" xml:space="preserve">
+    <value>월트</value>
+  </data>
+  <data name="Whispers" xml:space="preserve">
+    <value>위스퍼스</value>
+  </data>
 </root>

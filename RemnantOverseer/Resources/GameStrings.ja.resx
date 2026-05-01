@@ -3114,4 +3114,49 @@
   <data name="The Withering Weald" xml:space="preserve">
     <value>唸る森林地帯</value>
   </data>
+  <data name="Bedel" xml:space="preserve">
+    <value>ヴァーント族のベデル</value>
+  </data>
+  <data name="Blood Moon Altar" xml:space="preserve">
+    <value>ブラッドムーンの祭壇</value>
+  </data>
+  <data name="Brabus" xml:space="preserve">
+    <value>ブラバス</value>
+  </data>
+  <data name="Cass" xml:space="preserve">
+    <value>キャス</value>
+  </data>
+  <data name="Drzyr Replicator" xml:space="preserve">
+    <value>ドラジールのレプリケーター</value>
+  </data>
+  <data name="Dwell" xml:space="preserve">
+    <value>ドゥエル</value>
+  </data>
+  <data name="Leywise" xml:space="preserve">
+    <value>レイワイズ</value>
+  </data>
+  <data name="McCabe" xml:space="preserve">
+    <value>アヴァ・マッケイブ</value>
+  </data>
+  <data name="Mudtooth" xml:space="preserve">
+    <value>マッドトゥース</value>
+  </data>
+  <data name="Nimue" xml:space="preserve">
+    <value>ニムエ</value>
+  </data>
+  <data name="Norah" xml:space="preserve">
+    <value>ノーラ</value>
+  </data>
+  <data name="Reggie" xml:space="preserve">
+    <value>レジー</value>
+  </data>
+  <data name="Spark" xml:space="preserve">
+    <value>スパーク</value>
+  </data>
+  <data name="Walt" xml:space="preserve">
+    <value>ウォルト</value>
+  </data>
+  <data name="Whispers" xml:space="preserve">
+    <value>ウィスパー</value>
+  </data>
 </root>

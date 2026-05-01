@@ -3114,4 +3114,49 @@
   <data name="The Withering Weald" xml:space="preserve">
     <value>枯萎原野</value>
   </data>
+  <data name="Bedel" xml:space="preserve">
+    <value>沃恩特贝德</value>
+  </data>
+  <data name="Blood Moon Altar" xml:space="preserve">
+    <value>血月祭坛</value>
+  </data>
+  <data name="Brabus" xml:space="preserve">
+    <value>布拉巴斯</value>
+  </data>
+  <data name="Cass" xml:space="preserve">
+    <value>卡莎</value>
+  </data>
+  <data name="Drzyr Replicator" xml:space="preserve">
+    <value>泽厄尔复制品</value>
+  </data>
+  <data name="Dwell" xml:space="preserve">
+    <value>叨沃</value>
+  </data>
+  <data name="Leywise" xml:space="preserve">
+    <value>雷维斯</value>
+  </data>
+  <data name="McCabe" xml:space="preserve">
+    <value>艾娃·麦凯布</value>
+  </data>
+  <data name="Mudtooth" xml:space="preserve">
+    <value>泥牙</value>
+  </data>
+  <data name="Nimue" xml:space="preserve">
+    <value>尼姆埃</value>
+  </data>
+  <data name="Norah" xml:space="preserve">
+    <value>诺拉</value>
+  </data>
+  <data name="Reggie" xml:space="preserve">
+    <value>雷吉</value>
+  </data>
+  <data name="Spark" xml:space="preserve">
+    <value>史派克</value>
+  </data>
+  <data name="Walt" xml:space="preserve">
+    <value>沃尔特</value>
+  </data>
+  <data name="Whispers" xml:space="preserve">
+    <value>低语</value>
+  </data>
 </root>

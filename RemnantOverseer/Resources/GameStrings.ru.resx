@@ -3114,4 +3114,49 @@
   <data name="The Withering Weald" xml:space="preserve">
     <value>Увядающая пустошь</value>
   </data>
+  <data name="Bedel" xml:space="preserve">
+    <value>Бедель из вонтов</value>
+  </data>
+  <data name="Blood Moon Altar" xml:space="preserve">
+    <value>Алтарь Кровавой Луны</value>
+  </data>
+  <data name="Brabus" xml:space="preserve">
+    <value>Брабус</value>
+  </data>
+  <data name="Cass" xml:space="preserve">
+    <value>Кэсс</value>
+  </data>
+  <data name="Drzyr Replicator" xml:space="preserve">
+    <value>Репликатор джиров</value>
+  </data>
+  <data name="Dwell" xml:space="preserve">
+    <value>Двелл</value>
+  </data>
+  <data name="Leywise" xml:space="preserve">
+    <value>Лейвайз</value>
+  </data>
+  <data name="McCabe" xml:space="preserve">
+    <value>Ава Маккейб</value>
+  </data>
+  <data name="Mudtooth" xml:space="preserve">
+    <value>Мусорный Зуб</value>
+  </data>
+  <data name="Nimue" xml:space="preserve">
+    <value>Нимуэ</value>
+  </data>
+  <data name="Norah" xml:space="preserve">
+    <value>Нора</value>
+  </data>
+  <data name="Reggie" xml:space="preserve">
+    <value>Реджи</value>
+  </data>
+  <data name="Spark" xml:space="preserve">
+    <value>Искра</value>
+  </data>
+  <data name="Walt" xml:space="preserve">
+    <value>Вальт</value>
+  </data>
+  <data name="Whispers" xml:space="preserve">
+    <value>Шепот</value>
+  </data>
 </root>

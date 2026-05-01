@@ -3114,4 +3114,49 @@
   <data name="The Withering Weald" xml:space="preserve">
     <value>Der verwelkende Wald</value>
   </data>
+  <data name="Bedel" xml:space="preserve">
+    <value>Bedel von den Vaunnt</value>
+  </data>
+  <data name="Blood Moon Altar" xml:space="preserve">
+    <value>Blutmondaltar</value>
+  </data>
+  <data name="Brabus" xml:space="preserve">
+    <value>Brabus</value>
+  </data>
+  <data name="Cass" xml:space="preserve">
+    <value>Cass</value>
+  </data>
+  <data name="Drzyr Replicator" xml:space="preserve">
+    <value>Replikator der Drzyr</value>
+  </data>
+  <data name="Dwell" xml:space="preserve">
+    <value>Dwell</value>
+  </data>
+  <data name="Leywise" xml:space="preserve">
+    <value>Leywise</value>
+  </data>
+  <data name="McCabe" xml:space="preserve">
+    <value>Ava McCabe</value>
+  </data>
+  <data name="Mudtooth" xml:space="preserve">
+    <value>Matschzahn</value>
+  </data>
+  <data name="Nimue" xml:space="preserve">
+    <value>Nimue</value>
+  </data>
+  <data name="Norah" xml:space="preserve">
+    <value>Norah</value>
+  </data>
+  <data name="Reggie" xml:space="preserve">
+    <value>Reggie</value>
+  </data>
+  <data name="Spark" xml:space="preserve">
+    <value>Spark</value>
+  </data>
+  <data name="Walt" xml:space="preserve">
+    <value>Walt</value>
+  </data>
+  <data name="Whispers" xml:space="preserve">
+    <value>Whispers</value>
+  </data>
 </root>
