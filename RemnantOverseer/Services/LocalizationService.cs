@@ -14,9 +14,11 @@ public sealed record CultureOption(string CultureName, string DisplayName);
 
 internal static class LocalizationService
 {
+    private static readonly Assembly ResourcesAssembly = Assembly.GetExecutingAssembly();
+
     private static readonly ResourceManager ResourceManager = new(
-        "RemnantOverseer.Resources.AppStrings",
-        Assembly.GetExecutingAssembly());
+        $"{ResourcesAssembly.GetName().Name}.Resources.AppStrings",
+        ResourcesAssembly);
 
     private static readonly CultureInfo EnglishCulture = CultureInfo.GetCultureInfo(LocalizationConstants.DefaultCultureName);
 
