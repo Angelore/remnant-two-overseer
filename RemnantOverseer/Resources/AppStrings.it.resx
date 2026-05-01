@@ -459,4 +459,148 @@
   <data name="Patchwork_Quest_SideD_CrimsonHarvest" xml:space="preserve">
     <value>Distretto del macellaio</value>
   </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger1" xml:space="preserve">
+    <value>Pugnale dell&apos;assassino (gioiello turchese)</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger2" xml:space="preserve">
+    <value>Pugnale dell&apos;assassino (gioiello rosso)</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger3" xml:space="preserve">
+    <value>Pugnale dell&apos;assassino (gioiello viola)</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_1" xml:space="preserve">
+    <value>Statuetta di pietra intagliata I</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_2" xml:space="preserve">
+    <value>Statuetta di pietra intagliata II</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_3" xml:space="preserve">
+    <value>Statuetta di pietra intagliata III</value>
+  </data>
+  <data name="Quest_Item_Story_BicentennialManPart1_A" xml:space="preserve">
+    <value>Prototipo di nucleo mnemonico (rosso)</value>
+  </data>
+  <data name="Quest_Item_Story_BicentennialManPart1_B" xml:space="preserve">
+    <value>Prototipo di nucleo mnemonico (blu)</value>
+  </data>
+  <data name="Quest_Injectable_FieryGraveyard" xml:space="preserve">
+    <value>Casa in fiamme</value>
+  </data>
+  <data name="Quest_Injectable_BurningCity_Rookery" xml:space="preserve">
+    <value>Nido</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_LivingStone" xml:space="preserve">
+    <value>Quattro statue</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_Sarcophagus" xml:space="preserve">
+    <value>La bara</value>
+  </data>
+  <data name="Quest_Injectable_CryptHidden" xml:space="preserve">
+    <value>Tomba nascosta</value>
+  </data>
+  <data name="Quest_Injectable_FaeCity_BoneHarvesterLair" xml:space="preserve">
+    <value>Manticora dallo scarico</value>
+  </data>
+  <data name="Quest_Injectable_GoldenHall_BlackandWhite" xml:space="preserve">
+    <value>Enigma delle pedine fiammeggianti</value>
+  </data>
+  <data name="Quest_Injectable_GoldenHall_SilverGold" xml:space="preserve">
+    <value>Le statue</value>
+  </data>
+  <data name="Quest_Injectable_Island_BrokenTomb" xml:space="preserve">
+    <value>Arena del cecchino</value>
+  </data>
+  <data name="Quest_Injectable_IslandJump" xml:space="preserve">
+    <value>Rovine sospese</value>
+  </data>
+  <data name="Quest_Injectable_Islands_Tower" xml:space="preserve">
+    <value>Torre del codice</value>
+  </data>
+  <data name="Quest_Injectable_OverworldFog" xml:space="preserve">
+    <value>Nebbia</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_BoneHarvesterLair" xml:space="preserve">
+    <value>Mostro nello scarico</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_RisingTides" xml:space="preserve">
+    <value>Fognatura allagata</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_TheNest" xml:space="preserve">
+    <value>Gabbie sospese</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_TheSafe" xml:space="preserve">
+    <value>Cassaforte chiusa</value>
+  </data>
+  <data name="Quest_Injectable_Towers_ElevatorShaft" xml:space="preserve">
+    <value>Doppio ascensore</value>
+  </data>
+  <data name="Quest_Injectable_Towers_RemainsBelow" xml:space="preserve">
+    <value>Fossa dell&apos;occhio sentinella</value>
+  </data>
+  <data name="Quest_Injectable_Towers_Seeker" xml:space="preserve">
+    <value>Passaggio segreto</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_BlackHole" xml:space="preserve">
+    <value>Treno distrutto</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_LurkerVents" xml:space="preserve">
+    <value>Hangar dei robot</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_SewageFacility" xml:space="preserve">
+    <value>Camera allagata</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_Shockwire" xml:space="preserve">
+    <value>Cavo spezzato</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_StoreRoom" xml:space="preserve">
+    <value>Porta del glifo dell&apos;erario</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_TheClaw" xml:space="preserve">
+    <value>Torri con capsule di stasi</value>
+  </data>
+  <data name="Quest_Injectable_WindHollow" xml:space="preserve">
+    <value>Conca ventosa</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_HiddenChamber" xml:space="preserve">
+    <value>Stanza della cascata</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_Library" xml:space="preserve">
+    <value>Biblioteca nascosta</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_DLC" xml:space="preserve">
+    <value>Fossa del traditore</value>
+  </data>
+  <data name="Quest_Injectable_Halls_DLC" xml:space="preserve">
+    <value>Pavimento a specchio</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_DLC" xml:space="preserve">
+    <value>La stanza del tesoro</value>
+  </data>
+  <data name="Quest_Injectable_Island_DLC" xml:space="preserve">
+    <value>Boschetto delle cerve</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_DLC" xml:space="preserve">
+    <value>Stanza lunare</value>
+  </data>
+  <data name="Quest_Injectable_Tower_DLC" xml:space="preserve">
+    <value>Laboratorio colture</value>
+  </data>
+  <data name="Quest_Injectable_Overload_DLC" xml:space="preserve">
+    <value>Nodo energetico</value>
+  </data>
+  <data name="Quest_Injectable_SecurityDrone_DLC" xml:space="preserve">
+    <value>Labirinto del drone di sicurezza</value>
+  </data>
+  <data name="Quest_Miniboss_Amalgam" xml:space="preserve">
+    <value>Amalgama Kel&apos;Roth e Amalgama Relis</value>
+  </data>
+  <data name="Material_PrismaticStone_1" xml:space="preserve">
+    <value>Pietra prismatica (gialla)</value>
+  </data>
+  <data name="Material_PrismaticStone_2" xml:space="preserve">
+    <value>Pietra prismatica (blu)</value>
+  </data>
+  <data name="Material_PrismaticStone_3" xml:space="preserve">
+    <value>Pietra prismatica (rossa)</value>
+  </data>
 </root>

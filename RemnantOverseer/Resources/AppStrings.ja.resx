@@ -459,4 +459,148 @@
   <data name="Patchwork_Quest_SideD_CrimsonHarvest" xml:space="preserve">
     <value>肉屋の住居</value>
   </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger1" xml:space="preserve">
+    <value>アサシンダガー（青緑の宝石）</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger2" xml:space="preserve">
+    <value>アサシンダガー（赤い宝石）</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger3" xml:space="preserve">
+    <value>アサシンダガー（紫の宝石）</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_1" xml:space="preserve">
+    <value>石彫り人形 I</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_2" xml:space="preserve">
+    <value>石彫り人形 II</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_3" xml:space="preserve">
+    <value>石彫り人形 III</value>
+  </data>
+  <data name="Quest_Item_Story_BicentennialManPart1_A" xml:space="preserve">
+    <value>プロトタイプ・メモリーコア（赤）</value>
+  </data>
+  <data name="Quest_Item_Story_BicentennialManPart1_B" xml:space="preserve">
+    <value>プロトタイプ・メモリーコア（青）</value>
+  </data>
+  <data name="Quest_Injectable_FieryGraveyard" xml:space="preserve">
+    <value>燃える家</value>
+  </data>
+  <data name="Quest_Injectable_BurningCity_Rookery" xml:space="preserve">
+    <value>営巣地</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_LivingStone" xml:space="preserve">
+    <value>4体の像</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_Sarcophagus" xml:space="preserve">
+    <value>棺</value>
+  </data>
+  <data name="Quest_Injectable_CryptHidden" xml:space="preserve">
+    <value>隠された墓</value>
+  </data>
+  <data name="Quest_Injectable_FaeCity_BoneHarvesterLair" xml:space="preserve">
+    <value>排水口からのマンティコラ</value>
+  </data>
+  <data name="Quest_Injectable_GoldenHall_BlackandWhite" xml:space="preserve">
+    <value>燃えるポーンのパズル</value>
+  </data>
+  <data name="Quest_Injectable_GoldenHall_SilverGold" xml:space="preserve">
+    <value>像</value>
+  </data>
+  <data name="Quest_Injectable_Island_BrokenTomb" xml:space="preserve">
+    <value>スナイパーアリーナ</value>
+  </data>
+  <data name="Quest_Injectable_IslandJump" xml:space="preserve">
+    <value>浮遊遺跡</value>
+  </data>
+  <data name="Quest_Injectable_Islands_Tower" xml:space="preserve">
+    <value>コード塔</value>
+  </data>
+  <data name="Quest_Injectable_OverworldFog" xml:space="preserve">
+    <value>霧</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_BoneHarvesterLair" xml:space="preserve">
+    <value>排水口の怪物</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_RisingTides" xml:space="preserve">
+    <value>浸水した下水道</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_TheNest" xml:space="preserve">
+    <value>吊り下げられた檻</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_TheSafe" xml:space="preserve">
+    <value>施錠された金庫</value>
+  </data>
+  <data name="Quest_Injectable_Towers_ElevatorShaft" xml:space="preserve">
+    <value>二重エレベーター</value>
+  </data>
+  <data name="Quest_Injectable_Towers_RemainsBelow" xml:space="preserve">
+    <value>番兵の目の穴</value>
+  </data>
+  <data name="Quest_Injectable_Towers_Seeker" xml:space="preserve">
+    <value>秘密の通路</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_BlackHole" xml:space="preserve">
+    <value>壊れた列車</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_LurkerVents" xml:space="preserve">
+    <value>ロボット格納庫</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_SewageFacility" xml:space="preserve">
+    <value>浸水した部屋</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_Shockwire" xml:space="preserve">
+    <value>切断されたケーブル</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_StoreRoom" xml:space="preserve">
+    <value>エアラリー文字の扉</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_TheClaw" xml:space="preserve">
+    <value>ステイシスポッドの塔</value>
+  </data>
+  <data name="Quest_Injectable_WindHollow" xml:space="preserve">
+    <value>風の窪地</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_HiddenChamber" xml:space="preserve">
+    <value>滝の部屋</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_Library" xml:space="preserve">
+    <value>隠された図書館</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_DLC" xml:space="preserve">
+    <value>裏切り者の穴</value>
+  </data>
+  <data name="Quest_Injectable_Halls_DLC" xml:space="preserve">
+    <value>鏡の床</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_DLC" xml:space="preserve">
+    <value>宝物庫</value>
+  </data>
+  <data name="Quest_Injectable_Island_DLC" xml:space="preserve">
+    <value>雌鹿の木立</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_DLC" xml:space="preserve">
+    <value>月の部屋</value>
+  </data>
+  <data name="Quest_Injectable_Tower_DLC" xml:space="preserve">
+    <value>栽培研究所</value>
+  </data>
+  <data name="Quest_Injectable_Overload_DLC" xml:space="preserve">
+    <value>電力中枢</value>
+  </data>
+  <data name="Quest_Injectable_SecurityDrone_DLC" xml:space="preserve">
+    <value>警備ドローンの迷路</value>
+  </data>
+  <data name="Quest_Miniboss_Amalgam" xml:space="preserve">
+    <value>アマルガム・ケルロスとアマルガム・リリス</value>
+  </data>
+  <data name="Material_PrismaticStone_1" xml:space="preserve">
+    <value>プリズムストーン（黄）</value>
+  </data>
+  <data name="Material_PrismaticStone_2" xml:space="preserve">
+    <value>プリズムストーン（青）</value>
+  </data>
+  <data name="Material_PrismaticStone_3" xml:space="preserve">
+    <value>プリズムストーン（赤）</value>
+  </data>
 </root>

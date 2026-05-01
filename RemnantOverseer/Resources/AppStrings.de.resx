@@ -459,4 +459,148 @@
   <data name="Patchwork_Quest_SideD_CrimsonHarvest" xml:space="preserve">
     <value>Schlächterviertel</value>
   </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger1" xml:space="preserve">
+    <value>Dolch des Attentäters (türkises Juwel)</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger2" xml:space="preserve">
+    <value>Dolch des Attentäters (rotes Juwel)</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger3" xml:space="preserve">
+    <value>Dolch des Attentäters (violettes Juwel)</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_1" xml:space="preserve">
+    <value>Steingehauene Puppe I</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_2" xml:space="preserve">
+    <value>Steingehauene Puppe II</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_3" xml:space="preserve">
+    <value>Steingehauene Puppe III</value>
+  </data>
+  <data name="Quest_Item_Story_BicentennialManPart1_A" xml:space="preserve">
+    <value>Kernspeicher-Prototyp (rot)</value>
+  </data>
+  <data name="Quest_Item_Story_BicentennialManPart1_B" xml:space="preserve">
+    <value>Kernspeicher-Prototyp (blau)</value>
+  </data>
+  <data name="Quest_Injectable_FieryGraveyard" xml:space="preserve">
+    <value>Brennendes Haus</value>
+  </data>
+  <data name="Quest_Injectable_BurningCity_Rookery" xml:space="preserve">
+    <value>Brutstätte</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_LivingStone" xml:space="preserve">
+    <value>Vier Statuen</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_Sarcophagus" xml:space="preserve">
+    <value>Der Sarg</value>
+  </data>
+  <data name="Quest_Injectable_CryptHidden" xml:space="preserve">
+    <value>Verstecktes Grab</value>
+  </data>
+  <data name="Quest_Injectable_FaeCity_BoneHarvesterLair" xml:space="preserve">
+    <value>Mantikora aus dem Abfluss</value>
+  </data>
+  <data name="Quest_Injectable_GoldenHall_BlackandWhite" xml:space="preserve">
+    <value>Rätsel mit brennenden Bauern</value>
+  </data>
+  <data name="Quest_Injectable_GoldenHall_SilverGold" xml:space="preserve">
+    <value>Die Statuen</value>
+  </data>
+  <data name="Quest_Injectable_Island_BrokenTomb" xml:space="preserve">
+    <value>Scharfschützenarena</value>
+  </data>
+  <data name="Quest_Injectable_IslandJump" xml:space="preserve">
+    <value>Schwebende Ruinen</value>
+  </data>
+  <data name="Quest_Injectable_Islands_Tower" xml:space="preserve">
+    <value>Code-Turm</value>
+  </data>
+  <data name="Quest_Injectable_OverworldFog" xml:space="preserve">
+    <value>Nebel</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_BoneHarvesterLair" xml:space="preserve">
+    <value>Monster im Abfluss</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_RisingTides" xml:space="preserve">
+    <value>Überflutete Kanalisation</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_TheNest" xml:space="preserve">
+    <value>Hängende Käfige</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_TheSafe" xml:space="preserve">
+    <value>Verschlossener Safe</value>
+  </data>
+  <data name="Quest_Injectable_Towers_ElevatorShaft" xml:space="preserve">
+    <value>Doppellift</value>
+  </data>
+  <data name="Quest_Injectable_Towers_RemainsBelow" xml:space="preserve">
+    <value>Grube mit Wachauge</value>
+  </data>
+  <data name="Quest_Injectable_Towers_Seeker" xml:space="preserve">
+    <value>Geheimer Durchgang</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_BlackHole" xml:space="preserve">
+    <value>Zugwrack</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_LurkerVents" xml:space="preserve">
+    <value>Roboterhangar</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_SewageFacility" xml:space="preserve">
+    <value>Überflutete Kammer</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_Shockwire" xml:space="preserve">
+    <value>Gerissenes Kabel</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_StoreRoom" xml:space="preserve">
+    <value>Tür mit Glyphe der Aerary</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_TheClaw" xml:space="preserve">
+    <value>Türme mit Stasiskapseln</value>
+  </data>
+  <data name="Quest_Injectable_WindHollow" xml:space="preserve">
+    <value>Windmulde</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_HiddenChamber" xml:space="preserve">
+    <value>Wasserfallraum</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_Library" xml:space="preserve">
+    <value>Versteckte Bibliothek</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_DLC" xml:space="preserve">
+    <value>Grube des Verräters</value>
+  </data>
+  <data name="Quest_Injectable_Halls_DLC" xml:space="preserve">
+    <value>Spiegelboden</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_DLC" xml:space="preserve">
+    <value>Schatzkammer</value>
+  </data>
+  <data name="Quest_Injectable_Island_DLC" xml:space="preserve">
+    <value>Hain der Hirschkühe</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_DLC" xml:space="preserve">
+    <value>Mondraum</value>
+  </data>
+  <data name="Quest_Injectable_Tower_DLC" xml:space="preserve">
+    <value>Anbaulabor</value>
+  </data>
+  <data name="Quest_Injectable_Overload_DLC" xml:space="preserve">
+    <value>Energiezentrum</value>
+  </data>
+  <data name="Quest_Injectable_SecurityDrone_DLC" xml:space="preserve">
+    <value>Sicherheitsdrohnen-Labyrinth</value>
+  </data>
+  <data name="Quest_Miniboss_Amalgam" xml:space="preserve">
+    <value>Amalgam Kel&apos;Roth und Amalgam Relis</value>
+  </data>
+  <data name="Material_PrismaticStone_1" xml:space="preserve">
+    <value>Prismatischer Stein (gelb)</value>
+  </data>
+  <data name="Material_PrismaticStone_2" xml:space="preserve">
+    <value>Prismatischer Stein (blau)</value>
+  </data>
+  <data name="Material_PrismaticStone_3" xml:space="preserve">
+    <value>Prismatischer Stein (rot)</value>
+  </data>
 </root>
