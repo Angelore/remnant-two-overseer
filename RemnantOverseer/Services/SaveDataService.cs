@@ -21,9 +21,11 @@ public class SaveDataService
 {
     private readonly SettingsService _settingsService;
     private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
+    private readonly object _loadFailureNotificationLock = new();
     Subject<DateTime> _fileUpdateSubject = new Subject<DateTime>();
     private Dataset? _dataset;
     private int _lastCharacterCount = 0;
+    private string? _lastLoadFailureNotification;
     private string? FilePath { get { return _settingsService.Get().SaveFilePath; } }
     private static readonly FileSystemWatcher FileWatcher = new();
 
@@ -53,8 +55,12 @@ public class SaveDataService
             }
             catch
             {
-                WeakReferenceMessenger.Default.Send(new NotificationWarningMessage(NotificationStrings.DefaultLocationNotFound));
-                Log.Instance.Warning(NotificationStrings.DefaultLocationNotFound);
+                var message = NotificationStrings.DefaultLocationNotFound;
+                if (ShouldShowLoadFailureNotification(message))
+                {
+                    WeakReferenceMessenger.Default.Send(new NotificationWarningMessage(message));
+                }
+                Log.Instance.Warning(message);
                 return null;
             }
         }
@@ -77,6 +83,7 @@ public class SaveDataService
     public void Reset()
     {
         _dataset = null;
+        ResetLoadFailureNotification();
     }
 
     public bool StartWatching()
@@ -137,6 +144,7 @@ public class SaveDataService
     private async Task SaveFilePathChangedMessageHandler(SaveFilePathChangedMessage message)
     {
         PauseWatching();
+        ResetLoadFailureNotification();
         var dataset = await LoadSaveData(true, message.Value);
         StartWatching();
         if (dataset == null) return;
@@ -158,18 +166,44 @@ public class SaveDataService
 
             var dataset = await Task.Run(() => Analyzer.Analyze(filePath ?? FilePath));
             _dataset = dataset;
+            ResetLoadFailureNotification();
             return dataset;
         }
         catch (Exception ex)
         {
             var message = $"{NotificationStrings.SaveFileParsingError}{Environment.NewLine}{ex.Message}";
-            WeakReferenceMessenger.Default.Send(new NotificationErrorMessage(message));
+            if (ShouldShowLoadFailureNotification(message))
+            {
+                WeakReferenceMessenger.Default.Send(new NotificationErrorMessage(message));
+            }
             Log.Instance.Error(message);
             return null;
         }
         finally
         {
             _semaphore.Release();
+        }
+    }
+
+    private bool ShouldShowLoadFailureNotification(string message)
+    {
+        lock (_loadFailureNotificationLock)
+        {
+            if (_lastLoadFailureNotification == message)
+            {
+                return false;
+            }
+
+            _lastLoadFailureNotification = message;
+            return true;
+        }
+    }
+
+    private void ResetLoadFailureNotification()
+    {
+        lock (_loadFailureNotificationLock)
+        {
+            _lastLoadFailureNotification = null;
         }
     }
 
