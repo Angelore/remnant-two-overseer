@@ -62,6 +62,7 @@
                 </Style>
               </ToggleButton.Styles>
               <Grid>
+                <!-- Invisible measurement placeholder so the toggle reserves width for both localized labels. -->
                 <Grid ColumnDefinitions="30, Auto" Opacity="0" IsHitTestVisible="False" HorizontalAlignment="Center">
                   <PathIcon Grid.Column="0" Data="{StaticResource CampaignIcon}" Width="20" Margin="5 0"/>
                   <TextBlock Grid.Column="1" Text="{loc:Loc World_Campaign}"/>
