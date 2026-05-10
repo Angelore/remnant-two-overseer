@@ -119,6 +119,7 @@
                   <ToolTip.Tip>
                     <StackPanel Orientation="Vertical">
                       <TextBlock TextDecorations="{x:Null}" Margin="0 0 0 5" Text="{loc:Loc Item_ClickTranslateNote}"/>
+                      <Border Classes="toolTipDivider" />
                       <TextBlock TextDecorations="{x:Null}" Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="450"/>
                     </StackPanel>
                   </ToolTip.Tip>

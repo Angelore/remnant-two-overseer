@@ -312,7 +312,7 @@
 
                 <Grid Grid.Column="3" ColumnDefinitions="Auto, *" Width="350" IsVisible="{Binding OriginNameFormatted, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" >
                   <PathIcon Grid.Column="0" Margin="10 0 10 0" Data="{StaticResource InjectableIcon}" Height="{StaticResource IconSize}" Width="{StaticResource IconSize}" VerticalAlignment="Center"/>
-                  <TextBlock Grid.Column="1" Text="{Binding OriginNameFormatted}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" util:TextBlockTrimmedToolTip.Tip="{Binding OriginNameFormatted}"/>
+                  <controls:TextBlockWithTipWhenEllipsized Grid.Column="1" Text="{Binding OriginNameFormatted}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
                 </Grid>
 
                 <StackPanel Grid.Column="4" Orientation="Horizontal" Margin="20 0 20 0">
@@ -332,6 +332,7 @@
                     <ToolTip.Tip>
                       <StackPanel Orientation="Vertical">
                         <TextBlock TextDecorations="{x:Null}" Margin="0 0 0 5" Text="{loc:Loc Item_ClickTranslateNote}"/>
+                        <Border Classes="toolTipDivider" />
                         <TextBlock TextDecorations="{x:Null}" Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="450"/>
                       </StackPanel>
                     </ToolTip.Tip>
@@ -350,6 +351,7 @@
                     <ToolTip.Tip>
                       <StackPanel Orientation="Vertical">
                         <TextBlock TextDecorations="{x:Null}" Margin="0 0 0 5" Text="{loc:Loc Item_ClickToolkit}"/>
+                        <Border Classes="toolTipDivider" />
                         <TextBlock FontSize="12" TextDecorations="{x:Null}" Text="{Binding ToolkitLink}"/>
                       </StackPanel>
                     </ToolTip.Tip>
