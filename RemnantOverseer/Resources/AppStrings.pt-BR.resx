@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Notification_TitleInformation" xml:space="preserve">
+    <value>Informação</value>
+  </data>
+  <data name="Notification_TitleWarning" xml:space="preserve">
+    <value>Aviso</value>
+  </data>
+  <data name="Notification_TitleError" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="DefaultLocationFound" xml:space="preserve">
+    <value>O local do arquivo de salvamento foi encontrado e definido</value>
+  </data>
+  <data name="DefaultLocationNotFound" xml:space="preserve">
+    <value>Não foi possível detectar a pasta de salvamentos. Defina-a manualmente nas configurações</value>
+  </data>
+  <data name="ErrorWhenLoadingSettings" xml:space="preserve">
+    <value>Não foi possível ler o arquivo de configurações</value>
+  </data>
+  <data name="ErrorWhenUpdatingSettings" xml:space="preserve">
+    <value>Ocorreu um erro ao salvar as configurações</value>
+  </data>
+  <data name="SaveFileParsingError" xml:space="preserve">
+    <value>Ocorreu um erro ao analisar o arquivo de salvamento. Mensagem:</value>
+  </data>
+  <data name="FileWatcherFolderNotFound" xml:space="preserve">
+    <value>A pasta com o arquivo solicitado não foi encontrada. Verifique se o caminho está correto e reinicie o aplicativo</value>
+  </data>
+  <data name="FileWatcherFileNotFound" xml:space="preserve">
+    <value>O perfil não foi encontrado. Verifique se o caminho está correto e reinicie o aplicativo</value>
+  </data>
+  <data name="SaveFileLocationChanged" xml:space="preserve">
+    <value>O local do arquivo de salvamento foi alterado com sucesso</value>
+  </data>
+  <data name="SelectedCharacterNotValid" xml:space="preserve">
+    <value>Ocorreu um problema ao tentar selecionar o personagem ativo. Selecione um personagem manualmente</value>
+  </data>
+  <data name="NewerVersionFound" xml:space="preserve">
+    <value>Uma nova versão ({0}) está disponível</value>
+  </data>
+  <data name="PlayerInfoNotAvailable" xml:space="preserve">
+    <value>As informações do jogador não estarão disponíveis até que um arquivo de salvamento seja carregado</value>
+  </data>
+  <data name="Character_LoadError" xml:space="preserve">
+    <value>Não foi possível carregar os personagens. Relate este erro com a pasta de salvamentos compactada anexada</value>
+  </data>
+  <data name="Settings_ProfileFilePickerTitle" xml:space="preserve">
+    <value>Selecione o arquivo de perfil. Pode ser 'profile.sav' ou 'containers.index'</value>
+  </data>
+  <data name="Settings_ExportFolderPickerTitle" xml:space="preserve">
+    <value>Selecione uma pasta para exportar os dados de salvamento</value>
+  </data>
+  <data name="FilePicker_SaveFileTypeName" xml:space="preserve">
+    <value>Arquivos de salvamento do Remnant 2</value>
+  </data>
+  <data name="MainWindow_Characters" xml:space="preserve">
+    <value>Personagens</value>
+  </data>
+  <data name="MainWindow_Items" xml:space="preserve">
+    <value>Itens</value>
+  </data>
+  <data name="MainWindow_MissingItems" xml:space="preserve">
+    <value>Itens ausentes</value>
+  </data>
+  <data name="MainWindow_Settings" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="MainWindow_ErrorState" xml:space="preserve">
+    <value>Parece que encontramos um erro.&#x0a;Verifique se as configurações estão corretas e reinicie o aplicativo</value>
+  </data>
+  <data name="Settings_SaveFileLocation" xml:space="preserve">
+    <value>Local do arquivo de salvamento</value>
+  </data>
+  <data name="Settings_ChooseSaveFile" xml:space="preserve">
+    <value>Escolher arquivo de salvamento</value>
+  </data>
+  <data name="Settings_EnableVersionChecking" xml:space="preserve">
+    <value>Ativar verificação de versão</value>
+  </data>
+  <data name="Settings_EnableLocationSpecificHints" xml:space="preserve">
+    <value>Ativar dicas específicas de local</value>
+  </data>
+  <data name="Settings_DisplayToolkitLinks" xml:space="preserve">
+    <value>Exibir links para Remnant Toolkit nos itens aplicáveis</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="Settings_LoggingAndDebug" xml:space="preserve">
+    <value>Registro e depuração</value>
+  </data>
+  <data name="Settings_OpenLog" xml:space="preserve">
+    <value>Abrir registro</value>
+  </data>
+  <data name="Settings_DumpPlayerInfoToLog" xml:space="preserve">
+    <value>Gravar informações do jogador no registro</value>
+  </data>
+  <data name="Settings_ExportSaveData" xml:space="preserve">
+    <value>Exportar dados de salvamento</value>
+  </data>
+  <data name="World_NothingLeftToCollect" xml:space="preserve">
+    <value>Nada mais para coletar</value>
+  </data>
+  <data name="World_Campaign" xml:space="preserve">
+    <value>Campanha</value>
+  </data>
+  <data name="World_Adventure" xml:space="preserve">
+    <value>Aventura</value>
+  </data>
+  <data name="Common_CollapseAll" xml:space="preserve">
+    <value>Recolher tudo</value>
+  </data>
+  <data name="Common_ExpandAll" xml:space="preserve">
+    <value>Expandir tudo</value>
+  </data>
+  <data name="Common_ResetFilters" xml:space="preserve">
+    <value>Redefinir filtros</value>
+  </data>
+  <data name="Common_SearchWatermark" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="Common_SearchTooltip" xml:space="preserve">
+    <value>Encontrar itens ou eventos</value>
+  </data>
+  <data name="Common_Unknown" xml:space="preserve">
+    <value>Desconhecido</value>
+  </data>
+  <data name="World_ToggleDuplicatesHiding" xml:space="preserve">
+    <value>Alternar duplicatas (ocultas)</value>
+  </data>
+  <data name="World_ToggleDuplicatesShowing" xml:space="preserve">
+    <value>Alternar duplicatas (visíveis)</value>
+  </data>
+  <data name="World_MoreFilters" xml:space="preserve">
+    <value>Mais filtros</value>
+  </data>
+  <data name="World_FilterLootedItems" xml:space="preserve">
+    <value>Itens obtidos</value>
+  </data>
+  <data name="World_FilterMissingPrerequisites" xml:space="preserve">
+    <value>Itens com requisitos ausentes</value>
+  </data>
+  <data name="World_FilterUncraftedWithRequiredMaterial" xml:space="preserve">
+    <value>Itens não fabricados com o&#x0a;material necessário em posse</value>
+  </data>
+  <data name="World_BloodmoonChance" xml:space="preserve">
+    <value>Chance de Lua Sangrenta: {0}%</value>
+  </data>
+  <data name="World_TraitBookAvailable" xml:space="preserve">
+    <value>Característica disponível</value>
+  </data>
+  <data name="World_SimulacrumAvailable" xml:space="preserve">
+    <value>Simulacro disponível</value>
+  </data>
+  <data name="Hint_Genesis" xml:space="preserve">
+    <value>Dica: Gênesis</value>
+  </data>
+  <data name="Hint_ThaenTree" xml:space="preserve">
+    <value>Dica: árvore da Thaen</value>
+  </data>
+  <data name="Hint_OraclesQuilt" xml:space="preserve">
+    <value>Dica: colcha do Oráculo</value>
+  </data>
+  <data name="Item_CannotBeLootedPrerequisites" xml:space="preserve">
+    <value>Não pode ser obtido no estado atual do mundo. Um ou mais requisitos estão indisponíveis</value>
+  </data>
+  <data name="Item_CannotBeLootedWorldState" xml:space="preserve">
+    <value>Não pode ser obtido no estado atual do mundo. Por exemplo, se a missão já foi concluída e uma recompensa alternativa foi escolhida</value>
+  </data>
+  <data name="Item_ClickWiki" xml:space="preserve">
+    <value>Clique para abrir a wiki</value>
+  </data>
+  <data name="Item_ClickToolkit" xml:space="preserve">
+    <value>Clique para encontrar builds com este item</value>
+  </data>
+  <data name="Item_ClickTranslateNote" xml:space="preserve">
+    <value>Clique para abrir a tradução</value>
+  </data>
+  <data name="Item_CoopRequired" xml:space="preserve">
+    <value>Coop obrigatório</value>
+  </data>
+  <data name="Item_AccountWideUnlock" xml:space="preserve">
+    <value>Desbloqueio para toda a conta</value>
+  </data>
+  <data name="Item_OriginNameFormat" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="Character_PowerLevel" xml:space="preserve">
+    <value>Nível de poder</value>
+  </data>
+  <data name="Character_Hardcore" xml:space="preserve">
+    <value>Extremo</value>
+  </data>
+  <data name="Character_LevelFormat" xml:space="preserve">
+    <value>Nível {0}</value>
+  </data>
+  <data name="Character_SummarySingle" xml:space="preserve">
+    <value>{0} :: Nível {1}</value>
+  </data>
+  <data name="Character_SummaryDual" xml:space="preserve">
+    <value>{0}/{1} :: Nível {2}</value>
+  </data>
+  <data name="Genesis_Title" xml:space="preserve">
+    <value>Câmara do Gênesis</value>
+  </data>
+  <data name="Genesis_CodeMismatchHint" xml:space="preserve">
+    <value>Os códigos podem divergir durante sessões longas de jogo&#x0a;Reinicie o jogo se isso acontecer</value>
+  </data>
+  <data name="Thaen_Title" xml:space="preserve">
+    <value>Árvore do Fruto da Thaen</value>
+  </data>
+  <data name="Thaen_TimeToNextStageTooltip" xml:space="preserve">
+    <value>Tempo restante até o próximo estágio. Quando o temporizador chegar a zero, viaje para algum lugar e depois volte ao Setor 13</value>
+  </data>
+  <data name="Thaen_FruitAvailable" xml:space="preserve">
+    <value>Há um fruto disponível</value>
+  </data>
+  <data name="Patchwork_Title" xml:space="preserve">
+    <value>Colcha de retalhos</value>
+  </data>
+  <data name="Location_WorldStoneRespawn" xml:space="preserve">
+    <value>Pedra do Mundo: {0}</value>
+  </data>
+  <data name="Location_CheckpointRespawn" xml:space="preserve">
+    <value>Ponto de controle: {0}</value>
+  </data>
+  <data name="Location_ZoneTransitionRespawn" xml:space="preserve">
+    <value>Transição entre {0} e {1}</value>
+  </data>
+  <data name="ItemType_Unknown" xml:space="preserve">
+    <value>Desconhecido</value>
+  </data>
+  <data name="ItemType_Unknown_Plural" xml:space="preserve">
+    <value>Desconhecido</value>
+  </data>
+  <data name="ItemType_Amulet" xml:space="preserve">
+    <value>Amuleto</value>
+  </data>
+  <data name="ItemType_Amulet_Plural" xml:space="preserve">
+    <value>Amuletos</value>
+  </data>
+  <data name="ItemType_Armor" xml:space="preserve">
+    <value>Proteção</value>
+  </data>
+  <data name="ItemType_Armor_Plural" xml:space="preserve">
+    <value>Armaduras</value>
+  </data>
+  <data name="ItemType_Concoction" xml:space="preserve">
+    <value>Mistura</value>
+  </data>
+  <data name="ItemType_Concoction_Plural" xml:space="preserve">
+    <value>Misturas</value>
+  </data>
+  <data name="ItemType_Consumable" xml:space="preserve">
+    <value>Consumível</value>
+  </data>
+  <data name="ItemType_Consumable_Plural" xml:space="preserve">
+    <value>Consumíveis</value>
+  </data>
+  <data name="ItemType_Dream" xml:space="preserve">
+    <value>Sonho</value>
+  </data>
+  <data name="ItemType_Dream_Plural" xml:space="preserve">
+    <value>Sonhos</value>
+  </data>
+  <data name="ItemType_Engram" xml:space="preserve">
+    <value>Engrama</value>
+  </data>
+  <data name="ItemType_Engram_Plural" xml:space="preserve">
+    <value>Engramas</value>
+  </data>
+  <data name="ItemType_Material" xml:space="preserve">
+    <value>Matéria-Prima</value>
+  </data>
+  <data name="ItemType_Material_Plural" xml:space="preserve">
+    <value>Matérias-primas</value>
+  </data>
+  <data name="ItemType_Mod" xml:space="preserve">
+    <value>Mod de Arma</value>
+  </data>
+  <data name="ItemType_Mod_Plural" xml:space="preserve">
+    <value>Mods</value>
+  </data>
+  <data name="ItemType_Mutator" xml:space="preserve">
+    <value>Mutador</value>
+  </data>
+  <data name="ItemType_Mutator_Plural" xml:space="preserve">
+    <value>Mutadores</value>
+  </data>
+  <data name="ItemType_Prism" xml:space="preserve">
+    <value>Prisma</value>
+  </data>
+  <data name="ItemType_Prism_Plural" xml:space="preserve">
+    <value>Prismas</value>
+  </data>
+  <data name="ItemType_QuestItem" xml:space="preserve">
+    <value>Item de Missão</value>
+  </data>
+  <data name="ItemType_QuestItem_Plural" xml:space="preserve">
+    <value>Itens de Missão</value>
+  </data>
+  <data name="ItemType_Relic" xml:space="preserve">
+    <value>Relíquia</value>
+  </data>
+  <data name="ItemType_Relic_Plural" xml:space="preserve">
+    <value>Relíquias</value>
+  </data>
+  <data name="ItemType_Ring" xml:space="preserve">
+    <value>Anel</value>
+  </data>
+  <data name="ItemType_Ring_Plural" xml:space="preserve">
+    <value>Anéis</value>
+  </data>
+  <data name="ItemType_Trait" xml:space="preserve">
+    <value>Característica</value>
+  </data>
+  <data name="ItemType_Trait_Plural" xml:space="preserve">
+    <value>Características</value>
+  </data>
+  <data name="ItemType_Weapon" xml:space="preserve">
+    <value>Arma</value>
+  </data>
+  <data name="ItemType_Weapon_Plural" xml:space="preserve">
+    <value>Armas</value>
+  </data>
+  <data name="WeaponSubtype_LongGun" xml:space="preserve">
+    <value>Arma Longa</value>
+  </data>
+  <data name="WeaponSubtype_HandGun" xml:space="preserve">
+    <value>Pistola</value>
+  </data>
+  <data name="WeaponSubtype_MeleeWeapon" xml:space="preserve">
+    <value>Arma Corpo a Corpo</value>
+  </data>
+  <data name="OriginType_None" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="OriginType_Location" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="OriginType_Vendor" xml:space="preserve">
+    <value>Comerciante</value>
+  </data>
+  <data name="OriginType_Boss" xml:space="preserve">
+    <value>Chefe</value>
+  </data>
+  <data name="OriginType_Dungeon" xml:space="preserve">
+    <value>Masmorra</value>
+  </data>
+  <data name="OriginType_Injectable" xml:space="preserve">
+    <value>Injetável</value>
+  </data>
+  <data name="OriginType_WorldDrop" xml:space="preserve">
+    <value>Drop do mundo</value>
+  </data>
+  <data name="OriginType_Miniboss" xml:space="preserve">
+    <value>Minichefe</value>
+  </data>
+  <data name="OriginType_OverworldPOI" xml:space="preserve">
+    <value>Ponto de interesse do mundo aberto</value>
+  </data>
+  <data name="Archetype_Unknown" xml:space="preserve">
+    <value>Desconhecido</value>
+  </data>
+  <data name="Archetype_Alchemist" xml:space="preserve">
+    <value>Alquimista</value>
+  </data>
+  <data name="Archetype_Archon" xml:space="preserve">
+    <value>Arconte</value>
+  </data>
+  <data name="Archetype_Challenger" xml:space="preserve">
+    <value>Desafiante</value>
+  </data>
+  <data name="Archetype_Engineer" xml:space="preserve">
+    <value>Engenheiro</value>
+  </data>
+  <data name="Archetype_Explorer" xml:space="preserve">
+    <value>Explorador</value>
+  </data>
+  <data name="Archetype_Gunslinger" xml:space="preserve">
+    <value>Pistoleiro</value>
+  </data>
+  <data name="Archetype_Handler" xml:space="preserve">
+    <value>Domador</value>
+  </data>
+  <data name="Archetype_Hunter" xml:space="preserve">
+    <value>Caçador</value>
+  </data>
+  <data name="Archetype_Invader" xml:space="preserve">
+    <value>Errante</value>
+  </data>
+  <data name="Archetype_Invoker" xml:space="preserve">
+    <value>Invocador</value>
+  </data>
+  <data name="Archetype_Medic" xml:space="preserve">
+    <value>Médico</value>
+  </data>
+  <data name="Archetype_Ritualist" xml:space="preserve">
+    <value>Ritualista</value>
+  </data>
+  <data name="Archetype_Summoner" xml:space="preserve">
+    <value>Invocador</value>
+  </data>
+  <data name="Archetype_Warden" xml:space="preserve">
+    <value>Guarda</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_DranGrenadier" xml:space="preserve">
+    <value>Gwendil: A Não Queimada</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_NightWeaver" xml:space="preserve">
+    <value>A Tecelã da Noite</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_ThreeMenMorris" xml:space="preserve">
+    <value>Sala do Postulante</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_RedPrince" xml:space="preserve">
+    <value>O Príncipe Vermelho</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_BloatKing" xml:space="preserve">
+    <value>Rei Inchado</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_Faelin" xml:space="preserve">
+    <value>Rei impostor</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_FaeArchon" xml:space="preserve">
+    <value>Magíster Dullain</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_Ravenous" xml:space="preserve">
+    <value>O Grande Salão</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_TownTurnToDust" xml:space="preserve">
+    <value>Descanso do Lavrador</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CharnelHouse" xml:space="preserve">
+    <value>Alcance do Coletor</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_FaeCouncil" xml:space="preserve">
+    <value>Tribunal do Conselho</value>
+  </data>
+  <data name="World_FilterNerud" xml:space="preserve">
+    <value>N&apos;erud</value>
+  </data>
+  <data name="World_FilterLosomn" xml:space="preserve">
+    <value>Losomn</value>
+  </data>
+  <data name="World_FilterYaesha" xml:space="preserve">
+    <value>Yaesha</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CrimsonHarvest" xml:space="preserve">
+    <value>Distrito do Açougueiro</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger1" xml:space="preserve">
+    <value>Adaga do Assassino (joia turquesa)</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger2" xml:space="preserve">
+    <value>Adaga do Assassino (joia vermelha)</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger3" xml:space="preserve">
+    <value>Adaga do Assassino (joia roxa)</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_1" xml:space="preserve">
+    <value>Boneca Esculpida em Pedra I</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_2" xml:space="preserve">
+    <value>Boneca Esculpida em Pedra II</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_3" xml:space="preserve">
+    <value>Boneca Esculpida em Pedra III</value>
+  </data>
+  <data name="Quest_Item_Story_BicentennialManPart1_A" xml:space="preserve">
+    <value>Núcleo de Memória do Protótipo (vermelho)</value>
+  </data>
+  <data name="Quest_Item_Story_BicentennialManPart1_B" xml:space="preserve">
+    <value>Núcleo de Memória do Protótipo (azul)</value>
+  </data>
+  <data name="Quest_Injectable_FieryGraveyard" xml:space="preserve">
+    <value>Casa em Chamas</value>
+  </data>
+  <data name="Quest_Injectable_BurningCity_Rookery" xml:space="preserve">
+    <value>Ninho</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_LivingStone" xml:space="preserve">
+    <value>Quatro Estátuas</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_Sarcophagus" xml:space="preserve">
+    <value>O Caixão</value>
+  </data>
+  <data name="Quest_Injectable_CryptHidden" xml:space="preserve">
+    <value>Tumba Oculta</value>
+  </data>
+  <data name="Quest_Injectable_FaeCity_BoneHarvesterLair" xml:space="preserve">
+    <value>Mantícora do Ralo</value>
+  </data>
+  <data name="Quest_Injectable_GoldenHall_BlackandWhite" xml:space="preserve">
+    <value>Enigma dos Peões Flamejantes</value>
+  </data>
+  <data name="Quest_Injectable_GoldenHall_SilverGold" xml:space="preserve">
+    <value>As Estátuas</value>
+  </data>
+  <data name="Quest_Injectable_Island_BrokenTomb" xml:space="preserve">
+    <value>Arena do Atirador de Elite</value>
+  </data>
+  <data name="Quest_Injectable_IslandJump" xml:space="preserve">
+    <value>Ruínas Flutuantes</value>
+  </data>
+  <data name="Quest_Injectable_Islands_Tower" xml:space="preserve">
+    <value>Torre de Código</value>
+  </data>
+  <data name="Quest_Injectable_OverworldFog" xml:space="preserve">
+    <value>Névoa</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_BoneHarvesterLair" xml:space="preserve">
+    <value>Monstro no Ralo</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_RisingTides" xml:space="preserve">
+    <value>Esgoto Inundado</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_TheNest" xml:space="preserve">
+    <value>Gaiolas Suspensas</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_TheSafe" xml:space="preserve">
+    <value>Cofre Trancado</value>
+  </data>
+  <data name="Quest_Injectable_Towers_ElevatorShaft" xml:space="preserve">
+    <value>Elevador Duplo</value>
+  </data>
+  <data name="Quest_Injectable_Towers_RemainsBelow" xml:space="preserve">
+    <value>Poço do Olho Sentinela</value>
+  </data>
+  <data name="Quest_Injectable_Towers_Seeker" xml:space="preserve">
+    <value>Passagem Secreta</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_BlackHole" xml:space="preserve">
+    <value>Trem Destruído</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_LurkerVents" xml:space="preserve">
+    <value>Hangar de Robôs</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_SewageFacility" xml:space="preserve">
+    <value>Câmara Inundada</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_Shockwire" xml:space="preserve">
+    <value>Cabo Rompido</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_StoreRoom" xml:space="preserve">
+    <value>Porta do Glifo de Erário</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_TheClaw" xml:space="preserve">
+    <value>Torres com Cápsulas de Estase</value>
+  </data>
+  <data name="Quest_Injectable_WindHollow" xml:space="preserve">
+    <value>Vale Ventoso</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_HiddenChamber" xml:space="preserve">
+    <value>Sala da Cachoeira</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_Library" xml:space="preserve">
+    <value>Biblioteca Oculta</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_DLC" xml:space="preserve">
+    <value>Poço do Traidor</value>
+  </data>
+  <data name="Quest_Injectable_Halls_DLC" xml:space="preserve">
+    <value>Piso Espelhado</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_DLC" xml:space="preserve">
+    <value>A Sala do Tesouro</value>
+  </data>
+  <data name="Quest_Injectable_Island_DLC" xml:space="preserve">
+    <value>Bosque das Corças</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_DLC" xml:space="preserve">
+    <value>Sala da Lua</value>
+  </data>
+  <data name="Quest_Injectable_Tower_DLC" xml:space="preserve">
+    <value>Laboratório de Cultivo</value>
+  </data>
+  <data name="Quest_Injectable_Overload_DLC" xml:space="preserve">
+    <value>Núcleo de Energia</value>
+  </data>
+  <data name="Quest_Injectable_SecurityDrone_DLC" xml:space="preserve">
+    <value>Labirinto do Drone de Segurança</value>
+  </data>
+  <data name="Quest_Miniboss_Amalgam" xml:space="preserve">
+    <value>Amálgama de Kel Roth e Amálgama de Relis</value>
+  </data>
+  <data name="Material_PrismaticStone_1" xml:space="preserve">
+    <value>Pedra Prismática (amarela)</value>
+  </data>
+  <data name="Material_PrismaticStone_2" xml:space="preserve">
+    <value>Pedra Prismática (azul)</value>
+  </data>
+  <data name="Material_PrismaticStone_3" xml:space="preserve">
+    <value>Pedra Prismática (vermelha)</value>
+  </data>
+</root>

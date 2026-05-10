@@ -6,9 +6,9 @@
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-
-    <!-- https://stackoverflow.com/questions/20342061/disable-dll-culture-folders-on-compile -->
-    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- Keep satellite resource output limited to cultures we explicitly support. Add culture names here when adding translated .resx files.
+         https://stackoverflow.com/questions/20342061/disable-dll-culture-folders-on-compile -->
+    <SatelliteResourceLanguages>en;de;es;fr;it;ja;ko;pt-BR;ru;zh-Hans</SatelliteResourceLanguages>
     <ApplicationIcon>Assets\IconShadow.ico</ApplicationIcon>
     <AssemblyVersion>1.6.9</AssemblyVersion>
   </PropertyGroup>
@@ -37,7 +37,7 @@
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.3" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
-    <PackageReference Include="lib.remnant2.analyzer" Version="0.0.43" />
+    <PackageReference Include="lib.remnant2.analyzer" Version="1.0.0" />
     <PackageReference Include="LoadingIndicators.Avalonia" Version="11.0.11.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />

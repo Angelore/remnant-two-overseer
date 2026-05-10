@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Notification_TitleInformation" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="Notification_TitleWarning" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="Notification_TitleError" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="DefaultLocationFound" xml:space="preserve">
+    <value>Расположение файла сохранения найдено и установлено</value>
+  </data>
+  <data name="DefaultLocationNotFound" xml:space="preserve">
+    <value>Не удалось определить папку сохранений. Укажите ее вручную в настройках</value>
+  </data>
+  <data name="ErrorWhenLoadingSettings" xml:space="preserve">
+    <value>Не удалось прочитать файл настроек</value>
+  </data>
+  <data name="ErrorWhenUpdatingSettings" xml:space="preserve">
+    <value>При сохранении настроек произошла ошибка</value>
+  </data>
+  <data name="SaveFileParsingError" xml:space="preserve">
+    <value>При разборе файла сохранения произошла ошибка. Сообщение:</value>
+  </data>
+  <data name="FileWatcherFolderNotFound" xml:space="preserve">
+    <value>Папка с указанным файлом не найдена. Проверьте путь и перезапустите приложение</value>
+  </data>
+  <data name="FileWatcherFileNotFound" xml:space="preserve">
+    <value>Файл профиля не найден. Проверьте путь и перезапустите приложение</value>
+  </data>
+  <data name="SaveFileLocationChanged" xml:space="preserve">
+    <value>Расположение файла сохранения успешно изменено</value>
+  </data>
+  <data name="SelectedCharacterNotValid" xml:space="preserve">
+    <value>Возникла проблема при выборе активного персонажа. Выберите персонажа вручную</value>
+  </data>
+  <data name="NewerVersionFound" xml:space="preserve">
+    <value>Доступна новая версия ({0})</value>
+  </data>
+  <data name="PlayerInfoNotAvailable" xml:space="preserve">
+    <value>Информация об игроке недоступна, пока не загружен файл сохранения</value>
+  </data>
+  <data name="Character_LoadError" xml:space="preserve">
+    <value>Не удалось загрузить персонажей. Сообщите об этой ошибке и приложите архив папки сохранений</value>
+  </data>
+  <data name="Settings_ProfileFilePickerTitle" xml:space="preserve">
+    <value>Выберите файл профиля. Это может быть 'profile.sav' или 'containers.index'</value>
+  </data>
+  <data name="Settings_ExportFolderPickerTitle" xml:space="preserve">
+    <value>Выберите папку для экспорта данных сохранения</value>
+  </data>
+  <data name="FilePicker_SaveFileTypeName" xml:space="preserve">
+    <value>Файлы сохранений Remnant 2</value>
+  </data>
+  <data name="MainWindow_Characters" xml:space="preserve">
+    <value>Персонажи</value>
+  </data>
+  <data name="MainWindow_Items" xml:space="preserve">
+    <value>Предметы</value>
+  </data>
+  <data name="MainWindow_MissingItems" xml:space="preserve">
+    <value>Недостающие предметы</value>
+  </data>
+  <data name="MainWindow_Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="MainWindow_ErrorState" xml:space="preserve">
+    <value>Похоже, произошла ошибка.&#x0a;Проверьте настройки и перезапустите приложение</value>
+  </data>
+  <data name="Settings_SaveFileLocation" xml:space="preserve">
+    <value>Расположение файла сохранения</value>
+  </data>
+  <data name="Settings_ChooseSaveFile" xml:space="preserve">
+    <value>Выбрать файл сохранения</value>
+  </data>
+  <data name="Settings_EnableVersionChecking" xml:space="preserve">
+    <value>Проверять наличие новых версий</value>
+  </data>
+  <data name="Settings_EnableLocationSpecificHints" xml:space="preserve">
+    <value>Включить подсказки для локаций</value>
+  </data>
+  <data name="Settings_DisplayToolkitLinks" xml:space="preserve">
+    <value>Показывать ссылки на Remnant Toolkit для подходящих предметов</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="Settings_LoggingAndDebug" xml:space="preserve">
+    <value>Журналирование и отладка</value>
+  </data>
+  <data name="Settings_OpenLog" xml:space="preserve">
+    <value>Открыть журнал</value>
+  </data>
+  <data name="Settings_DumpPlayerInfoToLog" xml:space="preserve">
+    <value>Записать информацию об игроке в журнал</value>
+  </data>
+  <data name="Settings_ExportSaveData" xml:space="preserve">
+    <value>Экспортировать данные сохранения</value>
+  </data>
+  <data name="World_NothingLeftToCollect" xml:space="preserve">
+    <value>Больше нечего собирать</value>
+  </data>
+  <data name="World_Campaign" xml:space="preserve">
+    <value>Кампания</value>
+  </data>
+  <data name="World_Adventure" xml:space="preserve">
+    <value>Приключение</value>
+  </data>
+  <data name="Common_CollapseAll" xml:space="preserve">
+    <value>Свернуть все</value>
+  </data>
+  <data name="Common_ExpandAll" xml:space="preserve">
+    <value>Развернуть все</value>
+  </data>
+  <data name="Common_ResetFilters" xml:space="preserve">
+    <value>Сбросить фильтры</value>
+  </data>
+  <data name="Common_SearchWatermark" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
+  <data name="Common_SearchTooltip" xml:space="preserve">
+    <value>Поиск предметов или событий</value>
+  </data>
+  <data name="Common_Unknown" xml:space="preserve">
+    <value>Неизвестно</value>
+  </data>
+  <data name="World_ToggleDuplicatesHiding" xml:space="preserve">
+    <value>Переключить дубликаты (скрыты)</value>
+  </data>
+  <data name="World_ToggleDuplicatesShowing" xml:space="preserve">
+    <value>Переключить дубликаты (показаны)</value>
+  </data>
+  <data name="World_MoreFilters" xml:space="preserve">
+    <value>Дополнительные фильтры</value>
+  </data>
+  <data name="World_FilterLootedItems" xml:space="preserve">
+    <value>Полученные предметы</value>
+  </data>
+  <data name="World_FilterMissingPrerequisites" xml:space="preserve">
+    <value>Предметы с недоступными требованиями</value>
+  </data>
+  <data name="World_FilterUncraftedWithRequiredMaterial" xml:space="preserve">
+    <value>Несозданные предметы с&#x0a;нужным материалом в наличии</value>
+  </data>
+  <data name="World_BloodmoonChance" xml:space="preserve">
+    <value>Шанс Кровавой Луны: {0}%</value>
+  </data>
+  <data name="World_TraitBookAvailable" xml:space="preserve">
+    <value>Доступен талант</value>
+  </data>
+  <data name="World_SimulacrumAvailable" xml:space="preserve">
+    <value>Доступен симулякр</value>
+  </data>
+  <data name="Hint_Genesis" xml:space="preserve">
+    <value>Подсказка: Генезис</value>
+  </data>
+  <data name="Hint_ThaenTree" xml:space="preserve">
+    <value>Подсказка: дерево Тейна</value>
+  </data>
+  <data name="Hint_OraclesQuilt" xml:space="preserve">
+    <value>Подсказка: одеяло Вещуньи</value>
+  </data>
+  <data name="Item_CannotBeLootedPrerequisites" xml:space="preserve">
+    <value>Нельзя получить в текущем состоянии мира. Одно или несколько требований недоступны</value>
+  </data>
+  <data name="Item_CannotBeLootedWorldState" xml:space="preserve">
+    <value>Нельзя получить в текущем состоянии мира. Например, если задание уже завершено и была выбрана другая награда</value>
+  </data>
+  <data name="Item_ClickWiki" xml:space="preserve">
+    <value>Нажмите, чтобы открыть wiki</value>
+  </data>
+  <data name="Item_ClickToolkit" xml:space="preserve">
+    <value>Нажмите, чтобы найти сборки с этим предметом</value>
+  </data>
+  <data name="Item_ClickTranslateNote" xml:space="preserve">
+    <value>Нажмите, чтобы открыть перевод</value>
+  </data>
+  <data name="Item_CoopRequired" xml:space="preserve">
+    <value>Требуется совместная игра</value>
+  </data>
+  <data name="Item_AccountWideUnlock" xml:space="preserve">
+    <value>Разблокируется для всей учетной записи</value>
+  </data>
+  <data name="Item_OriginNameFormat" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="Character_PowerLevel" xml:space="preserve">
+    <value>Уровень силы</value>
+  </data>
+  <data name="Character_Hardcore" xml:space="preserve">
+    <value>Героический режим</value>
+  </data>
+  <data name="Character_LevelFormat" xml:space="preserve">
+    <value>Уровень {0}</value>
+  </data>
+  <data name="Character_SummarySingle" xml:space="preserve">
+    <value>{0} :: Уровень {1}</value>
+  </data>
+  <data name="Character_SummaryDual" xml:space="preserve">
+    <value>{0}/{1} :: Уровень {2}</value>
+  </data>
+  <data name="Genesis_Title" xml:space="preserve">
+    <value>Хранилище Генезиса</value>
+  </data>
+  <data name="Genesis_CodeMismatchHint" xml:space="preserve">
+    <value>Коды могут рассинхронизироваться во время долгих игровых сессий&#x0a;Если это произошло, перезапустите игру</value>
+  </data>
+  <data name="Thaen_Title" xml:space="preserve">
+    <value>Плодовое дерево Тейна</value>
+  </data>
+  <data name="Thaen_TimeToNextStageTooltip" xml:space="preserve">
+    <value>Время до следующей стадии. Когда таймер дойдет до нуля, переместитесь куда-нибудь и вернитесь в Блок 13</value>
+  </data>
+  <data name="Thaen_FruitAvailable" xml:space="preserve">
+    <value>Плод доступен</value>
+  </data>
+  <data name="Patchwork_Title" xml:space="preserve">
+    <value>Лоскутное одеяло</value>
+  </data>
+  <data name="Location_WorldStoneRespawn" xml:space="preserve">
+    <value>Камень мира: {0}</value>
+  </data>
+  <data name="Location_CheckpointRespawn" xml:space="preserve">
+    <value>Контрольная точка: {0}</value>
+  </data>
+  <data name="Location_ZoneTransitionRespawn" xml:space="preserve">
+    <value>Переход между {0} и {1}</value>
+  </data>
+  <data name="ItemType_Unknown" xml:space="preserve">
+    <value>Неизвестно</value>
+  </data>
+  <data name="ItemType_Unknown_Plural" xml:space="preserve">
+    <value>Неизвестно</value>
+  </data>
+  <data name="ItemType_Amulet" xml:space="preserve">
+    <value>Амулет</value>
+  </data>
+  <data name="ItemType_Amulet_Plural" xml:space="preserve">
+    <value>Амулеты</value>
+  </data>
+  <data name="ItemType_Armor" xml:space="preserve">
+    <value>Броня</value>
+  </data>
+  <data name="ItemType_Armor_Plural" xml:space="preserve">
+    <value>Броня</value>
+  </data>
+  <data name="ItemType_Concoction" xml:space="preserve">
+    <value>Отвар</value>
+  </data>
+  <data name="ItemType_Concoction_Plural" xml:space="preserve">
+    <value>Отвары</value>
+  </data>
+  <data name="ItemType_Consumable" xml:space="preserve">
+    <value>Расходуемый предмет</value>
+  </data>
+  <data name="ItemType_Consumable_Plural" xml:space="preserve">
+    <value>Расходуемые предметы</value>
+  </data>
+  <data name="ItemType_Dream" xml:space="preserve">
+    <value>Сон</value>
+  </data>
+  <data name="ItemType_Dream_Plural" xml:space="preserve">
+    <value>Сны</value>
+  </data>
+  <data name="ItemType_Engram" xml:space="preserve">
+    <value>Энграмма</value>
+  </data>
+  <data name="ItemType_Engram_Plural" xml:space="preserve">
+    <value>Энграммы</value>
+  </data>
+  <data name="ItemType_Material" xml:space="preserve">
+    <value>Материал</value>
+  </data>
+  <data name="ItemType_Material_Plural" xml:space="preserve">
+    <value>Материалы</value>
+  </data>
+  <data name="ItemType_Mod" xml:space="preserve">
+    <value>Модуль</value>
+  </data>
+  <data name="ItemType_Mod_Plural" xml:space="preserve">
+    <value>Модули</value>
+  </data>
+  <data name="ItemType_Mutator" xml:space="preserve">
+    <value>Мутатор</value>
+  </data>
+  <data name="ItemType_Mutator_Plural" xml:space="preserve">
+    <value>Мутаторы</value>
+  </data>
+  <data name="ItemType_Prism" xml:space="preserve">
+    <value>Призма</value>
+  </data>
+  <data name="ItemType_Prism_Plural" xml:space="preserve">
+    <value>Призмы</value>
+  </data>
+  <data name="ItemType_QuestItem" xml:space="preserve">
+    <value>Вещь для задания</value>
+  </data>
+  <data name="ItemType_QuestItem_Plural" xml:space="preserve">
+    <value>Вещи для заданий</value>
+  </data>
+  <data name="ItemType_Relic" xml:space="preserve">
+    <value>Реликвия</value>
+  </data>
+  <data name="ItemType_Relic_Plural" xml:space="preserve">
+    <value>Реликвии</value>
+  </data>
+  <data name="ItemType_Ring" xml:space="preserve">
+    <value>Кольцо</value>
+  </data>
+  <data name="ItemType_Ring_Plural" xml:space="preserve">
+    <value>Кольца</value>
+  </data>
+  <data name="ItemType_Trait" xml:space="preserve">
+    <value>Талант</value>
+  </data>
+  <data name="ItemType_Trait_Plural" xml:space="preserve">
+    <value>Таланты</value>
+  </data>
+  <data name="ItemType_Weapon" xml:space="preserve">
+    <value>Оружие</value>
+  </data>
+  <data name="ItemType_Weapon_Plural" xml:space="preserve">
+    <value>Оружие</value>
+  </data>
+  <data name="WeaponSubtype_LongGun" xml:space="preserve">
+    <value>Винтовка</value>
+  </data>
+  <data name="WeaponSubtype_HandGun" xml:space="preserve">
+    <value>Пистолет</value>
+  </data>
+  <data name="WeaponSubtype_MeleeWeapon" xml:space="preserve">
+    <value>Оружие ближнего боя</value>
+  </data>
+  <data name="OriginType_None" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="OriginType_Location" xml:space="preserve">
+    <value>Зона</value>
+  </data>
+  <data name="OriginType_Vendor" xml:space="preserve">
+    <value>Торговец</value>
+  </data>
+  <data name="OriginType_Boss" xml:space="preserve">
+    <value>Босс</value>
+  </data>
+  <data name="OriginType_Dungeon" xml:space="preserve">
+    <value>Подземелье</value>
+  </data>
+  <data name="OriginType_Injectable" xml:space="preserve">
+    <value>Инжект</value>
+  </data>
+  <data name="OriginType_WorldDrop" xml:space="preserve">
+    <value>Добыча в мире</value>
+  </data>
+  <data name="OriginType_Miniboss" xml:space="preserve">
+    <value>Мини-босс</value>
+  </data>
+  <data name="OriginType_OverworldPOI" xml:space="preserve">
+    <value>Точка интереса в открытом мире</value>
+  </data>
+  <data name="Archetype_Unknown" xml:space="preserve">
+    <value>Неизвестно</value>
+  </data>
+  <data name="Archetype_Alchemist" xml:space="preserve">
+    <value>Алхимик</value>
+  </data>
+  <data name="Archetype_Archon" xml:space="preserve">
+    <value>Архонт</value>
+  </data>
+  <data name="Archetype_Challenger" xml:space="preserve">
+    <value>Боец</value>
+  </data>
+  <data name="Archetype_Engineer" xml:space="preserve">
+    <value>Инженер</value>
+  </data>
+  <data name="Archetype_Explorer" xml:space="preserve">
+    <value>Исследователь</value>
+  </data>
+  <data name="Archetype_Gunslinger" xml:space="preserve">
+    <value>Стрелок</value>
+  </data>
+  <data name="Archetype_Handler" xml:space="preserve">
+    <value>Кинолог</value>
+  </data>
+  <data name="Archetype_Hunter" xml:space="preserve">
+    <value>Охотник</value>
+  </data>
+  <data name="Archetype_Invader" xml:space="preserve">
+    <value>Захватчик</value>
+  </data>
+  <data name="Archetype_Invoker" xml:space="preserve">
+    <value>Колдун</value>
+  </data>
+  <data name="Archetype_Medic" xml:space="preserve">
+    <value>Медик</value>
+  </data>
+  <data name="Archetype_Ritualist" xml:space="preserve">
+    <value>Мастер обрядов</value>
+  </data>
+  <data name="Archetype_Summoner" xml:space="preserve">
+    <value>Призыватель</value>
+  </data>
+  <data name="Archetype_Warden" xml:space="preserve">
+    <value>Смотритель</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_DranGrenadier" xml:space="preserve">
+    <value>Гвендил Неопаленная</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_NightWeaver" xml:space="preserve">
+    <value>Ночная Ткачиха</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_ThreeMenMorris" xml:space="preserve">
+    <value>Зал Послушника</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_RedPrince" xml:space="preserve">
+    <value>Красный принц</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_BloatKing" xml:space="preserve">
+    <value>Раздувшийся король</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_Faelin" xml:space="preserve">
+    <value>Король-самозванец</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_FaeArchon" xml:space="preserve">
+    <value>Магистр Дуллейн</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_Ravenous" xml:space="preserve">
+    <value>Большой зал</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_TownTurnToDust" xml:space="preserve">
+    <value>Убежище земледельца</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CharnelHouse" xml:space="preserve">
+    <value>Предел жнеца</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_FaeCouncil" xml:space="preserve">
+    <value>Суд Совета</value>
+  </data>
+  <data name="World_FilterNerud" xml:space="preserve">
+    <value>Н&apos;еруд</value>
+  </data>
+  <data name="World_FilterLosomn" xml:space="preserve">
+    <value>Лосом</value>
+  </data>
+  <data name="World_FilterYaesha" xml:space="preserve">
+    <value>Йаэша</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CrimsonHarvest" xml:space="preserve">
+    <value>Квартал мясника</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger1" xml:space="preserve">
+    <value>Кинжал убийцы (бирюзовый)</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger2" xml:space="preserve">
+    <value>Кинжал убийцы (красный)</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger3" xml:space="preserve">
+    <value>Кинжал убийцы (фиолетовый)</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_1" xml:space="preserve">
+    <value>Каменная фигурка I</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_2" xml:space="preserve">
+    <value>Каменная фигурка II</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_3" xml:space="preserve">
+    <value>Каменная фигурка III</value>
+  </data>
+  <data name="Quest_Item_Story_BicentennialManPart1_A" xml:space="preserve">
+    <value>Ядро памяти прототипа (красное)</value>
+  </data>
+  <data name="Quest_Item_Story_BicentennialManPart1_B" xml:space="preserve">
+    <value>Ядро памяти прототипа (синее)</value>
+  </data>
+  <data name="Quest_Injectable_FieryGraveyard" xml:space="preserve">
+    <value>Горящий дом</value>
+  </data>
+  <data name="Quest_Injectable_BurningCity_Rookery" xml:space="preserve">
+    <value>Гнездовье</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_LivingStone" xml:space="preserve">
+    <value>Четыре статуи</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_Sarcophagus" xml:space="preserve">
+    <value>Гроб</value>
+  </data>
+  <data name="Quest_Injectable_CryptHidden" xml:space="preserve">
+    <value>Скрытая гробница</value>
+  </data>
+  <data name="Quest_Injectable_FaeCity_BoneHarvesterLair" xml:space="preserve">
+    <value>Мантикора из стока</value>
+  </data>
+  <data name="Quest_Injectable_GoldenHall_BlackandWhite" xml:space="preserve">
+    <value>Головоломка с пылающими пешками</value>
+  </data>
+  <data name="Quest_Injectable_GoldenHall_SilverGold" xml:space="preserve">
+    <value>Статуи</value>
+  </data>
+  <data name="Quest_Injectable_Island_BrokenTomb" xml:space="preserve">
+    <value>Арена снайпера</value>
+  </data>
+  <data name="Quest_Injectable_IslandJump" xml:space="preserve">
+    <value>Парящие руины</value>
+  </data>
+  <data name="Quest_Injectable_Islands_Tower" xml:space="preserve">
+    <value>Башня с кодом</value>
+  </data>
+  <data name="Quest_Injectable_OverworldFog" xml:space="preserve">
+    <value>Туман</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_BoneHarvesterLair" xml:space="preserve">
+    <value>Монстр в стоке</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_RisingTides" xml:space="preserve">
+    <value>Затопленная канализация</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_TheNest" xml:space="preserve">
+    <value>Подвесные клетки</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_TheSafe" xml:space="preserve">
+    <value>Запертый сейф</value>
+  </data>
+  <data name="Quest_Injectable_Towers_ElevatorShaft" xml:space="preserve">
+    <value>Двойной лифт</value>
+  </data>
+  <data name="Quest_Injectable_Towers_RemainsBelow" xml:space="preserve">
+    <value>Яма с глазом-стражем</value>
+  </data>
+  <data name="Quest_Injectable_Towers_Seeker" xml:space="preserve">
+    <value>Тайный проход</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_BlackHole" xml:space="preserve">
+    <value>Разбитый поезд</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_LurkerVents" xml:space="preserve">
+    <value>Ангар роботов</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_SewageFacility" xml:space="preserve">
+    <value>Затопленная камера</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_Shockwire" xml:space="preserve">
+    <value>Оборванный кабель</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_StoreRoom" xml:space="preserve">
+    <value>Дверь со знаком хранилища</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_TheClaw" xml:space="preserve">
+    <value>Башни со стазис-капсулами</value>
+  </data>
+  <data name="Quest_Injectable_WindHollow" xml:space="preserve">
+    <value>Ветреная лощина</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_HiddenChamber" xml:space="preserve">
+    <value>Комната с водопадом</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_Library" xml:space="preserve">
+    <value>Скрытая библиотека</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_DLC" xml:space="preserve">
+    <value>Яма предателя</value>
+  </data>
+  <data name="Quest_Injectable_Halls_DLC" xml:space="preserve">
+    <value>Зеркальный пол</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_DLC" xml:space="preserve">
+    <value>Сокровищница</value>
+  </data>
+  <data name="Quest_Injectable_Island_DLC" xml:space="preserve">
+    <value>Роща ланей</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_DLC" xml:space="preserve">
+    <value>Лунная комната</value>
+  </data>
+  <data name="Quest_Injectable_Tower_DLC" xml:space="preserve">
+    <value>Лаборатория выращивания</value>
+  </data>
+  <data name="Quest_Injectable_Overload_DLC" xml:space="preserve">
+    <value>Энергоузел</value>
+  </data>
+  <data name="Quest_Injectable_SecurityDrone_DLC" xml:space="preserve">
+    <value>Лабиринт охранного дрона</value>
+  </data>
+  <data name="Quest_Miniboss_Amalgam" xml:space="preserve">
+    <value>Амальгама Кель&apos;Рот и Амальгама Релис</value>
+  </data>
+  <data name="Material_PrismaticStone_1" xml:space="preserve">
+    <value>Призматический камень (желтый)</value>
+  </data>
+  <data name="Material_PrismaticStone_2" xml:space="preserve">
+    <value>Призматический камень (синий)</value>
+  </data>
+  <data name="Material_PrismaticStone_3" xml:space="preserve">
+    <value>Призматический камень (красный)</value>
+  </data>
+</root>

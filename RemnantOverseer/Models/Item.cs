@@ -1,23 +1,34 @@
-﻿using RemnantOverseer.Models.Enums;
+using CommunityToolkit.Mvvm.ComponentModel;
+using RemnantOverseer.Models.Enums;
+using RemnantOverseer.Services;
 using RemnantOverseer.Utilities;
 using System;
 
 namespace RemnantOverseer.Models;
-public class Item
+public class Item : ObservableObject
 {
     public string Id { get; set; } = string.Empty;
-    public string Name { get; set; } = string.Empty;
+    public string CanonicalName { get; set; } = string.Empty;
+    public string Name => LocalizationService.GameString(Id, CanonicalName);
     public ItemTypes Type { get; set; }
     public WeaponSubtypes? WeaponSubtype { get; set; }
     public string Description { get; set; } = string.Empty;
+    public bool HasDescription => !string.IsNullOrWhiteSpace(Description);
+    public string? NoteTranslationLink => LocalizationService.ExternalTranslationUrl(Description);
+    public bool HasNoteTranslationLink => NoteTranslationLink is not null;
+    public bool HasPlainDescriptionIcon => HasDescription && !HasNoteTranslationLink;
     public OriginTypes OriginType { get; set; }
-    public string OriginName { get; set; } = string.Empty;
+    public string OriginId { get; set; } = string.Empty;
+    public string CanonicalOriginName { get; set; } = string.Empty;
+    public string OriginName => LocalizationService.GameString(OriginId, CanonicalOriginName);
     public bool IsDuplicate { get; set; }
     public bool IsLooted { get; set; }
     public bool IsPrerequisiteMissing { get; set; }
     public bool HasRequiredMaterial { get; set; }
     public bool IsCoop { get; set; }
     public bool IsAccountAward { get; set; }
+
+    public string TypeName => LocalizationService.ItemTypeName(Type);
 
     // We are only interested in a couple of types to display
     public string? OriginNameFormatted
@@ -29,19 +40,32 @@ public class Item
             {
                 // Extra spaces are a temporary workaround to https://github.com/AvaloniaUI/Avalonia/issues/17862, remove when fixed
                 // It's not fixed yet, but I moved this text out of the tooltip. Removing spaces, keeping comment
-                OriginTypes.Injectable or OriginTypes.Dungeon or OriginTypes.Vendor => $"{OriginType}: {OriginName}",
+                OriginTypes.Injectable or OriginTypes.Dungeon or OriginTypes.Vendor => LocalizationService.Format("Item_OriginNameFormat", LocalizationService.OriginTypeName(OriginType), OriginName),
                 _ => null
             };
         }
     }
 
-    public string? WikiLink => $"{UrlStrings.WikiUrl}/{Name}";
+    private string LinkName => CanonicalName;
+
+    public string? WikiLink => $"{UrlStrings.WikiUrl}/{LinkName}";
 
     public string? ToolkitLink => GetToolkitLink();
 
     public Item ShallowCopy()
     {
         return (Item)MemberwiseClone();
+    }
+
+    public void RefreshLocalizedProperties()
+    {
+        OnPropertyChanged(nameof(Name));
+        OnPropertyChanged(nameof(OriginName));
+        OnPropertyChanged(nameof(TypeName));
+        OnPropertyChanged(nameof(OriginNameFormatted));
+        OnPropertyChanged(nameof(NoteTranslationLink));
+        OnPropertyChanged(nameof(HasNoteTranslationLink));
+        OnPropertyChanged(nameof(HasPlainDescriptionIcon));
     }
 
     private string? GetToolkitLink()
@@ -68,7 +92,7 @@ public class Item
             default:
                 return null;
         }
-        var itemName = Name.Replace(" ", "+");
+        var itemName = LinkName.Replace(" ", "+");
         return $"{UrlStrings.ToolkitUrl}?{querySubstring}={itemName}";
     }
 }

@@ -72,7 +72,9 @@ public partial class WorldViewModel : ViewModelBase
     [NotifyPropertyChangedFor(nameof(BloodmoonChanceString))]
     private float? _bloodmoonChance = null;
 
-    public string BloodmoonChanceString => BloodmoonChance.HasValue ? $"Blood moon chance: {BloodmoonChance.Value}%" : "Unknown";
+    public string BloodmoonChanceString => BloodmoonChance.HasValue
+        ? LocalizationService.Format("World_BloodmoonChance", BloodmoonChance.Value)
+        : LocalizationService.Get("Common_Unknown");
 
     [ObservableProperty]
     private bool _hideTips;
@@ -226,9 +228,9 @@ public partial class WorldViewModel : ViewModelBase
             // Toggles only applicable to campaign
             if (IsCampaignSelected)
             {
-                if (IsNerudFilterChecked && zone.Name != LocationStrings.Nerud) continue;
-                if (IsYaeshaFilterChecked && zone.Name != LocationStrings.Yaesha) continue;
-                if (IsLosomnFilterChecked && zone.Name != LocationStrings.Losomn) continue;
+                if (IsNerudFilterChecked && zone.CanonicalName != LocationStrings.Nerud) continue;
+                if (IsYaeshaFilterChecked && zone.CanonicalName != LocationStrings.Yaesha) continue;
+                if (IsLosomnFilterChecked && zone.CanonicalName != LocationStrings.Losomn) continue;
             }
 
             var tempZone = zone.ShallowCopy();
@@ -379,6 +381,28 @@ public partial class WorldViewModel : ViewModelBase
         Messenger.Register<WorldViewModel, HideToolkitLinksChangedMessage>(this, (r, m) => {
             HideToolkitLinks = m.Value;
         });
+
+        Messenger.Register<WorldViewModel, CultureChangedMessage>(this, (r, m) => {
+            r.ApplyFilter();
+            r.OnPropertyChanged(nameof(BloodmoonChanceString));
+            r.RefreshLocalizedTreeProperties();
+        });
     }
     #endregion Messages
+
+    private void RefreshLocalizedTreeProperties()
+    {
+        foreach (var zone in FilteredZones)
+        {
+            foreach (var location in zone.Locations)
+            {
+                location.RefreshLocalizedProperties();
+
+                foreach (var item in location.Items)
+                {
+                    item.RefreshLocalizedProperties();
+                }
+            }
+        }
+    }
 }

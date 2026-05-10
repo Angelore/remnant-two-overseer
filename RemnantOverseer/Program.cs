@@ -19,6 +19,7 @@ internal sealed class Program
     {
         if (mutex.WaitOne(TimeSpan.Zero, false))
         {
+            LocalizationService.ApplyCulture(SettingsService.GetConfiguredCultureName());
             BuildAvaloniaApp()
                 .StartWithClassicDesktopLifetime(args);
             mutex.ReleaseMutex();

@@ -48,6 +48,26 @@ public class SettingsService
 # endif
     }
 
+    public static string GetConfiguredCultureName()
+    {
+        try
+        {
+            var path = GetDefaultSettingsPath();
+            if (!File.Exists(path))
+            {
+                return LocalizationConstants.DefaultCultureName;
+            }
+
+            var json = File.ReadAllText(path);
+            var config = JsonSerializer.Deserialize<ConfigData>(json);
+            return string.IsNullOrWhiteSpace(config?.CultureName) ? LocalizationConstants.DefaultCultureName : config.CultureName;
+        }
+        catch
+        {
+            return LocalizationConstants.DefaultCultureName;
+        }
+    }
+
     public Settings Get()
     {
         return _settings.Result;

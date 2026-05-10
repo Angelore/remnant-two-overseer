@@ -3,15 +3,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:RemnantOverseer.ViewModels"
+             xmlns:loc="using:RemnantOverseer.Services"
              mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="500"
              x:Class="RemnantOverseer.Views.PatchworkQuiltView"
              x:DataType="vm:PatchworkQuiltViewModel">
 
   <Grid RowDefinitions="Auto, *">
     <TextBlock Grid.Row="0" HorizontalAlignment="Center"
-               FontWeight="DemiBold" FontSize="16" Margin="10 10 10 0">
-      Patchwork Quilt
-    </TextBlock>
+               FontWeight="DemiBold" FontSize="16" Margin="10 10 10 0"
+               Text="{loc:Loc Patchwork_Title}"/>
     <ItemsControl Grid.Row="1" HorizontalAlignment="Center" Width="306" Margin="10 10 10 10"
                   ItemsSource="{Binding QuiltPatches, Mode=OneWay}">
       <ItemsControl.ItemsPanel>

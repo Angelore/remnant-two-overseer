@@ -86,7 +86,7 @@ public partial class CharacterSelectViewModel: ViewModelBase
             {
                 IsLoading = false;
                 // TODO: Handle this better when reworking error handling
-                Messenger.Send(new NotificationErrorMessage("Could not load characters. Please report this error with attached zipped save folder" + Environment.NewLine + ex.Message));
+                Messenger.Send(new NotificationErrorMessage(LocalizationService.Get("Character_LoadError") + Environment.NewLine + ex.Message));
             }
 #if DEBUG
             //mappedCharacters.Add(new Character() { ObjectCount = 0, Archetype = Archetypes.Unknown, Index = 2 });
@@ -121,6 +121,13 @@ public partial class CharacterSelectViewModel: ViewModelBase
         Messenger.Register<CharacterSelectViewModel, SaveFileChangedMessage>(this, (r, m) => {
             IsLoading = true;
             Task.Run(async () => await ReadSave(m.CharacterCountChanged));
+        });
+
+        Messenger.Register<CharacterSelectViewModel, CultureChangedMessage>(this, (r, m) => {
+            foreach (var character in r.Characters)
+            {
+                character.RefreshLocalizedProperties();
+            }
         });
     }
     #endregion Messages

@@ -9,6 +9,7 @@
              xmlns:local="using:RemnantOverseer"
              xmlns:models="using:RemnantOverseer.Models"
              xmlns:controls="using:RemnantOverseer.Controls"
+             xmlns:loc="using:RemnantOverseer.Services"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="RemnantOverseer.Views.MissingItemsView"
              x:DataType="vm:MissingItemsViewModel">
@@ -40,18 +41,18 @@
           <Grid ColumnDefinitions="Auto, *">
             <PathIcon Grid.Column="0" Data="{StaticResource SquareMinusIcon}" IsVisible="{Binding IsGlobalExpandOn}" Width="14" Margin="5 0"/>
             <PathIcon Grid.Column="0" Data="{StaticResource SquarePlusIcon}" IsVisible="{Binding !IsGlobalExpandOn}" Width="14" Margin="5 0"/>
-            <TextBlock Grid.Column="1" Text="Collapse All" IsVisible="{Binding IsGlobalExpandOn}" Margin="0 0 5 0"/>
-            <TextBlock Grid.Column="1" Text="Expand All" IsVisible="{Binding !IsGlobalExpandOn}" Margin="0 0 5 0"/>
+            <TextBlock Grid.Column="1" Text="{loc:Loc Common_CollapseAll}" IsVisible="{Binding IsGlobalExpandOn}" Margin="0 0 5 0"/>
+            <TextBlock Grid.Column="1" Text="{loc:Loc Common_ExpandAll}" IsVisible="{Binding !IsGlobalExpandOn}" Margin="0 0 5 0"/>
           </Grid>
         </Button>
 
         <Grid Grid.Column="2" ColumnDefinitions="Auto, *">
-          <Button Grid.Column="0"  Command="{Binding ResetFiltersCommand}" ToolTip.Tip="Reset Filters">
+          <Button Grid.Column="0"  Command="{Binding ResetFiltersCommand}" ToolTip.Tip="{loc:Loc Common_ResetFilters}">
             <Grid ColumnDefinitions="Auto">
               <PathIcon Grid.Column="0" Data="{StaticResource ResetIcon}" Width="14" Margin="5 0"/>
             </Grid>
           </Button>
-          <TextBox Grid.Column="1" Name="FilterBox" Text="{Binding FilterText}" MinWidth="250" MaxWidth="450" Watermark="Find items or events" />
+          <TextBox Grid.Column="1" Name="FilterBox" Text="{Binding FilterText}" MinWidth="250" MaxWidth="450" Watermark="{loc:Loc Common_SearchWatermark}" ToolTip.Tip="{loc:Loc Common_SearchTooltip}" />
         </Grid>
       </Grid>
 
@@ -96,7 +97,7 @@
                 </Style>
               </Grid.Styles>
               <TextBlock Grid.Column="0" Text="{Binding Name}"  IsEnabled="{Binding !IsLooted}"
-                         ToolTip.Tip="Can't be looted in the current world state. For example, if the quest has already been completed and an alternative reward was chosen"
+                         ToolTip.Tip="{loc:Loc Item_CannotBeLootedWorldState}"
                          ToolTip.ServiceEnabled="{Binding IsLooted}" ToolTip.ShowOnDisabled="True" />
 
               <!-- Column 1 is reserved for spacing-->
@@ -112,8 +113,18 @@
                 </StackPanel.Styles>
                 <!-- consider always showing icons, but very faint if not applicable for layout consistency -->
                 <!--<PathIcon Height="{StaticResource IconSize}" Width="{StaticResource IconSize}" Margin="5 0" Foreground="{StaticResource BaseTextColor}" Data="{StaticResource CoopIcon}"/>-->
-                <PathIcon Data="{StaticResource RoundInfoIcon}" IsVisible="{Binding Description, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" ToolTip.Tip="{Binding Description}" ToolTip.Placement="LeftEdgeAlignedTop"/>
-                <PathIcon Data="{StaticResource CoopIcon}" IsVisible="{Binding IsCoop}" ToolTip.Tip="Co-op required" ToolTip.Placement="LeftEdgeAlignedTop"/>
+                <HyperlinkButton Classes="plain" Margin="0" Padding="0" NavigateUri="{Binding NoteTranslationLink}" IsVisible="{Binding HasNoteTranslationLink}">
+                  <PathIcon Data="{StaticResource RoundInfoIcon}"/>
+                  <ToolTip.Placement>LeftEdgeAlignedTop</ToolTip.Placement>
+                  <ToolTip.Tip>
+                    <StackPanel Orientation="Vertical">
+                      <TextBlock TextDecorations="{x:Null}" Margin="0 0 0 5" Text="{loc:Loc Item_ClickTranslateNote}"/>
+                      <TextBlock TextDecorations="{x:Null}" Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="450"/>
+                    </StackPanel>
+                  </ToolTip.Tip>
+                </HyperlinkButton>
+                <PathIcon Data="{StaticResource RoundInfoIcon}" IsVisible="{Binding HasPlainDescriptionIcon}" ToolTip.Tip="{Binding Description}" ToolTip.Placement="LeftEdgeAlignedTop"/>
+                <PathIcon Data="{StaticResource CoopIcon}" IsVisible="{Binding IsCoop}" ToolTip.Tip="{loc:Loc Item_CoopRequired}" ToolTip.Placement="LeftEdgeAlignedTop"/>
               </StackPanel>
             </Grid>
           </TreeDataTemplate>

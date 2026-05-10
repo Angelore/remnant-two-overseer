@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Notification_TitleInformation" xml:space="preserve">
+    <value>정보</value>
+  </data>
+  <data name="Notification_TitleWarning" xml:space="preserve">
+    <value>경고</value>
+  </data>
+  <data name="Notification_TitleError" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="DefaultLocationFound" xml:space="preserve">
+    <value>저장 파일 위치를 찾아 설정했습니다</value>
+  </data>
+  <data name="DefaultLocationNotFound" xml:space="preserve">
+    <value>저장 폴더 위치를 감지할 수 없습니다. 설정에서 수동으로 지정하세요</value>
+  </data>
+  <data name="ErrorWhenLoadingSettings" xml:space="preserve">
+    <value>설정 파일을 읽을 수 없습니다</value>
+  </data>
+  <data name="ErrorWhenUpdatingSettings" xml:space="preserve">
+    <value>설정을 저장하는 중 오류가 발생했습니다</value>
+  </data>
+  <data name="SaveFileParsingError" xml:space="preserve">
+    <value>저장 파일을 분석하는 중 오류가 발생했습니다. 메시지:</value>
+  </data>
+  <data name="FileWatcherFolderNotFound" xml:space="preserve">
+    <value>요청한 파일이 있는 폴더를 찾을 수 없습니다. 경로가 올바른지 확인한 뒤 애플리케이션을 다시 시작하세요</value>
+  </data>
+  <data name="FileWatcherFileNotFound" xml:space="preserve">
+    <value>프로필을 찾을 수 없습니다. 경로가 올바른지 확인한 뒤 애플리케이션을 다시 시작하세요</value>
+  </data>
+  <data name="SaveFileLocationChanged" xml:space="preserve">
+    <value>저장 파일 위치가 성공적으로 변경되었습니다</value>
+  </data>
+  <data name="SelectedCharacterNotValid" xml:space="preserve">
+    <value>활성 캐릭터를 선택하는 중 문제가 발생했습니다. 캐릭터를 수동으로 선택하세요</value>
+  </data>
+  <data name="NewerVersionFound" xml:space="preserve">
+    <value>새 버전 ({0})을 사용할 수 있습니다</value>
+  </data>
+  <data name="PlayerInfoNotAvailable" xml:space="preserve">
+    <value>저장 파일을 불러오기 전에는 플레이어 정보를 사용할 수 없습니다</value>
+  </data>
+  <data name="Character_LoadError" xml:space="preserve">
+    <value>캐릭터를 불러올 수 없습니다. 저장 폴더를 압축해 첨부하여 이 오류를 보고해 주세요</value>
+  </data>
+  <data name="Settings_ProfileFilePickerTitle" xml:space="preserve">
+    <value>프로필 파일을 선택하세요. 'profile.sav' 또는 'containers.index'일 수 있습니다</value>
+  </data>
+  <data name="Settings_ExportFolderPickerTitle" xml:space="preserve">
+    <value>저장 데이터를 내보낼 폴더를 선택하세요</value>
+  </data>
+  <data name="FilePicker_SaveFileTypeName" xml:space="preserve">
+    <value>Remnant 2 저장 파일</value>
+  </data>
+  <data name="MainWindow_Characters" xml:space="preserve">
+    <value>캐릭터</value>
+  </data>
+  <data name="MainWindow_Items" xml:space="preserve">
+    <value>아이템</value>
+  </data>
+  <data name="MainWindow_MissingItems" xml:space="preserve">
+    <value>누락된 아이템</value>
+  </data>
+  <data name="MainWindow_Settings" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="MainWindow_ErrorState" xml:space="preserve">
+    <value>오류가 발생한 것 같습니다.&#x0a;설정이 정확한지 확인하고 애플리케이션을 다시 시작하세요</value>
+  </data>
+  <data name="Settings_SaveFileLocation" xml:space="preserve">
+    <value>저장 파일 위치</value>
+  </data>
+  <data name="Settings_ChooseSaveFile" xml:space="preserve">
+    <value>저장 파일 선택</value>
+  </data>
+  <data name="Settings_EnableVersionChecking" xml:space="preserve">
+    <value>버전 확인 활성화</value>
+  </data>
+  <data name="Settings_EnableLocationSpecificHints" xml:space="preserve">
+    <value>위치별 힌트 활성화</value>
+  </data>
+  <data name="Settings_DisplayToolkitLinks" xml:space="preserve">
+    <value>해당 아이템에 Remnant Toolkit 링크 표시</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>언어</value>
+  </data>
+  <data name="Settings_LoggingAndDebug" xml:space="preserve">
+    <value>로그 및 디버그</value>
+  </data>
+  <data name="Settings_OpenLog" xml:space="preserve">
+    <value>로그 열기</value>
+  </data>
+  <data name="Settings_DumpPlayerInfoToLog" xml:space="preserve">
+    <value>플레이어 정보를 로그에 기록</value>
+  </data>
+  <data name="Settings_ExportSaveData" xml:space="preserve">
+    <value>저장 데이터 내보내기</value>
+  </data>
+  <data name="World_NothingLeftToCollect" xml:space="preserve">
+    <value>더 이상 수집할 것이 없습니다</value>
+  </data>
+  <data name="World_Campaign" xml:space="preserve">
+    <value>캠페인</value>
+  </data>
+  <data name="World_Adventure" xml:space="preserve">
+    <value>어드벤처</value>
+  </data>
+  <data name="Common_CollapseAll" xml:space="preserve">
+    <value>모두 접기</value>
+  </data>
+  <data name="Common_ExpandAll" xml:space="preserve">
+    <value>모두 펼치기</value>
+  </data>
+  <data name="Common_ResetFilters" xml:space="preserve">
+    <value>필터 초기화</value>
+  </data>
+  <data name="Common_SearchWatermark" xml:space="preserve">
+    <value>검색</value>
+  </data>
+  <data name="Common_SearchTooltip" xml:space="preserve">
+    <value>아이템 또는 이벤트 찾기</value>
+  </data>
+  <data name="Common_Unknown" xml:space="preserve">
+    <value>알 수 없음</value>
+  </data>
+  <data name="World_ToggleDuplicatesHiding" xml:space="preserve">
+    <value>중복 전환(숨김)</value>
+  </data>
+  <data name="World_ToggleDuplicatesShowing" xml:space="preserve">
+    <value>중복 전환(표시)</value>
+  </data>
+  <data name="World_MoreFilters" xml:space="preserve">
+    <value>추가 필터</value>
+  </data>
+  <data name="World_FilterLootedItems" xml:space="preserve">
+    <value>획득한 아이템</value>
+  </data>
+  <data name="World_FilterMissingPrerequisites" xml:space="preserve">
+    <value>필수 조건이 부족한 아이템</value>
+  </data>
+  <data name="World_FilterUncraftedWithRequiredMaterial" xml:space="preserve">
+    <value>필요 재료를 보유한&#x0a;미제작 아이템</value>
+  </data>
+  <data name="World_BloodmoonChance" xml:space="preserve">
+    <value>혈월 확률: {0}%</value>
+  </data>
+  <data name="World_TraitBookAvailable" xml:space="preserve">
+    <value>특성 획득 가능</value>
+  </data>
+  <data name="World_SimulacrumAvailable" xml:space="preserve">
+    <value>모조품 획득 가능</value>
+  </data>
+  <data name="Hint_Genesis" xml:space="preserve">
+    <value>힌트: 제네시스</value>
+  </data>
+  <data name="Hint_ThaenTree" xml:space="preserve">
+    <value>힌트: 타엔 나무</value>
+  </data>
+  <data name="Hint_OraclesQuilt" xml:space="preserve">
+    <value>힌트: 신탁 전달자의 퀼트</value>
+  </data>
+  <data name="Item_CannotBeLootedPrerequisites" xml:space="preserve">
+    <value>현재 월드 상태에서는 획득할 수 없습니다. 하나 이상의 필수 조건을 사용할 수 없습니다</value>
+  </data>
+  <data name="Item_CannotBeLootedWorldState" xml:space="preserve">
+    <value>현재 월드 상태에서는 획득할 수 없습니다. 예를 들어 퀘스트가 이미 완료되었고 다른 보상을 선택한 경우입니다</value>
+  </data>
+  <data name="Item_ClickWiki" xml:space="preserve">
+    <value>클릭하여 wiki 열기</value>
+  </data>
+  <data name="Item_ClickToolkit" xml:space="preserve">
+    <value>클릭하여 이 아이템을 사용하는 빌드 찾기</value>
+  </data>
+  <data name="Item_ClickTranslateNote" xml:space="preserve">
+    <value>번역을 열려면 클릭</value>
+  </data>
+  <data name="Item_CoopRequired" xml:space="preserve">
+    <value>협동 플레이 필요</value>
+  </data>
+  <data name="Item_AccountWideUnlock" xml:space="preserve">
+    <value>계정 전체 잠금 해제</value>
+  </data>
+  <data name="Item_OriginNameFormat" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="Character_PowerLevel" xml:space="preserve">
+    <value>파워 레벨</value>
+  </data>
+  <data name="Character_Hardcore" xml:space="preserve">
+    <value>하드코어</value>
+  </data>
+  <data name="Character_LevelFormat" xml:space="preserve">
+    <value>레벨 {0}</value>
+  </data>
+  <data name="Character_SummarySingle" xml:space="preserve">
+    <value>{0} :: 레벨 {1}</value>
+  </data>
+  <data name="Character_SummaryDual" xml:space="preserve">
+    <value>{0}/{1} :: 레벨 {2}</value>
+  </data>
+  <data name="Genesis_Title" xml:space="preserve">
+    <value>제네시스 금고</value>
+  </data>
+  <data name="Genesis_CodeMismatchHint" xml:space="preserve">
+    <value>긴 플레이 세션 중 코드가 어긋날 수 있습니다&#x0a;그럴 경우 게임을 다시 시작하세요</value>
+  </data>
+  <data name="Thaen_Title" xml:space="preserve">
+    <value>타엔 열매 나무</value>
+  </data>
+  <data name="Thaen_TimeToNextStageTooltip" xml:space="preserve">
+    <value>다음 단계까지 남은 시간입니다. 타이머가 0이 되면 다른 곳으로 이동했다가 13구역으로 돌아오세요</value>
+  </data>
+  <data name="Thaen_FruitAvailable" xml:space="preserve">
+    <value>열매를 사용할 수 있습니다</value>
+  </data>
+  <data name="Patchwork_Title" xml:space="preserve">
+    <value>패치워크 퀼트</value>
+  </data>
+  <data name="Location_WorldStoneRespawn" xml:space="preserve">
+    <value>세계석: {0}</value>
+  </data>
+  <data name="Location_CheckpointRespawn" xml:space="preserve">
+    <value>체크포인트: {0}</value>
+  </data>
+  <data name="Location_ZoneTransitionRespawn" xml:space="preserve">
+    <value>{0}와 {1} 사이 전환</value>
+  </data>
+  <data name="ItemType_Unknown" xml:space="preserve">
+    <value>알 수 없음</value>
+  </data>
+  <data name="ItemType_Unknown_Plural" xml:space="preserve">
+    <value>알 수 없음</value>
+  </data>
+  <data name="ItemType_Amulet" xml:space="preserve">
+    <value>목걸이</value>
+  </data>
+  <data name="ItemType_Amulet_Plural" xml:space="preserve">
+    <value>아뮬렛</value>
+  </data>
+  <data name="ItemType_Armor" xml:space="preserve">
+    <value>갑옷</value>
+  </data>
+  <data name="ItemType_Armor_Plural" xml:space="preserve">
+    <value>방어구</value>
+  </data>
+  <data name="ItemType_Concoction" xml:space="preserve">
+    <value>혼합물</value>
+  </data>
+  <data name="ItemType_Concoction_Plural" xml:space="preserve">
+    <value>혼합물</value>
+  </data>
+  <data name="ItemType_Consumable" xml:space="preserve">
+    <value>소모품</value>
+  </data>
+  <data name="ItemType_Consumable_Plural" xml:space="preserve">
+    <value>소모품</value>
+  </data>
+  <data name="ItemType_Dream" xml:space="preserve">
+    <value>꿈</value>
+  </data>
+  <data name="ItemType_Dream_Plural" xml:space="preserve">
+    <value>꿈</value>
+  </data>
+  <data name="ItemType_Engram" xml:space="preserve">
+    <value>기억 흔적</value>
+  </data>
+  <data name="ItemType_Engram_Plural" xml:space="preserve">
+    <value>기억 흔적</value>
+  </data>
+  <data name="ItemType_Material" xml:space="preserve">
+    <value>재료</value>
+  </data>
+  <data name="ItemType_Material_Plural" xml:space="preserve">
+    <value>재료</value>
+  </data>
+  <data name="ItemType_Mod" xml:space="preserve">
+    <value>개조체</value>
+  </data>
+  <data name="ItemType_Mod_Plural" xml:space="preserve">
+    <value>모드</value>
+  </data>
+  <data name="ItemType_Mutator" xml:space="preserve">
+    <value>뮤테이터</value>
+  </data>
+  <data name="ItemType_Mutator_Plural" xml:space="preserve">
+    <value>뮤테이터</value>
+  </data>
+  <data name="ItemType_Prism" xml:space="preserve">
+    <value>프리즘</value>
+  </data>
+  <data name="ItemType_Prism_Plural" xml:space="preserve">
+    <value>프리즘</value>
+  </data>
+  <data name="ItemType_QuestItem" xml:space="preserve">
+    <value>퀘스트 아이템</value>
+  </data>
+  <data name="ItemType_QuestItem_Plural" xml:space="preserve">
+    <value>퀘스트 아이템</value>
+  </data>
+  <data name="ItemType_Relic" xml:space="preserve">
+    <value>유물</value>
+  </data>
+  <data name="ItemType_Relic_Plural" xml:space="preserve">
+    <value>유물</value>
+  </data>
+  <data name="ItemType_Ring" xml:space="preserve">
+    <value>반지</value>
+  </data>
+  <data name="ItemType_Ring_Plural" xml:space="preserve">
+    <value>반지</value>
+  </data>
+  <data name="ItemType_Trait" xml:space="preserve">
+    <value>특성</value>
+  </data>
+  <data name="ItemType_Trait_Plural" xml:space="preserve">
+    <value>특성</value>
+  </data>
+  <data name="ItemType_Weapon" xml:space="preserve">
+    <value>무기</value>
+  </data>
+  <data name="ItemType_Weapon_Plural" xml:space="preserve">
+    <value>무기</value>
+  </data>
+  <data name="WeaponSubtype_LongGun" xml:space="preserve">
+    <value>장총</value>
+  </data>
+  <data name="WeaponSubtype_HandGun" xml:space="preserve">
+    <value>권총</value>
+  </data>
+  <data name="WeaponSubtype_MeleeWeapon" xml:space="preserve">
+    <value>근접 무기</value>
+  </data>
+  <data name="OriginType_None" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="OriginType_Location" xml:space="preserve">
+    <value>위치</value>
+  </data>
+  <data name="OriginType_Vendor" xml:space="preserve">
+    <value>상인</value>
+  </data>
+  <data name="OriginType_Boss" xml:space="preserve">
+    <value>보스</value>
+  </data>
+  <data name="OriginType_Dungeon" xml:space="preserve">
+    <value>던전</value>
+  </data>
+  <data name="OriginType_Injectable" xml:space="preserve">
+    <value>삽입 요소</value>
+  </data>
+  <data name="OriginType_WorldDrop" xml:space="preserve">
+    <value>월드 드롭</value>
+  </data>
+  <data name="OriginType_Miniboss" xml:space="preserve">
+    <value>미니 보스</value>
+  </data>
+  <data name="OriginType_OverworldPOI" xml:space="preserve">
+    <value>오버월드 POI</value>
+  </data>
+  <data name="Archetype_Unknown" xml:space="preserve">
+    <value>알 수 없음</value>
+  </data>
+  <data name="Archetype_Alchemist" xml:space="preserve">
+    <value>연금술사</value>
+  </data>
+  <data name="Archetype_Archon" xml:space="preserve">
+    <value>집정관</value>
+  </data>
+  <data name="Archetype_Challenger" xml:space="preserve">
+    <value>도전자</value>
+  </data>
+  <data name="Archetype_Engineer" xml:space="preserve">
+    <value>엔지니어</value>
+  </data>
+  <data name="Archetype_Explorer" xml:space="preserve">
+    <value>탐험가</value>
+  </data>
+  <data name="Archetype_Gunslinger" xml:space="preserve">
+    <value>총잡이</value>
+  </data>
+  <data name="Archetype_Handler" xml:space="preserve">
+    <value>핸들러</value>
+  </data>
+  <data name="Archetype_Hunter" xml:space="preserve">
+    <value>사냥꾼</value>
+  </data>
+  <data name="Archetype_Invader" xml:space="preserve">
+    <value>침략자</value>
+  </data>
+  <data name="Archetype_Invoker" xml:space="preserve">
+    <value>인보커</value>
+  </data>
+  <data name="Archetype_Medic" xml:space="preserve">
+    <value>위생병</value>
+  </data>
+  <data name="Archetype_Ritualist" xml:space="preserve">
+    <value>의식술사</value>
+  </data>
+  <data name="Archetype_Summoner" xml:space="preserve">
+    <value>소환사</value>
+  </data>
+  <data name="Archetype_Warden" xml:space="preserve">
+    <value>관리인</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_DranGrenadier" xml:space="preserve">
+    <value>불타지 않는 그웬딜</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_NightWeaver" xml:space="preserve">
+    <value>나이트위버</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_ThreeMenMorris" xml:space="preserve">
+    <value>성직 청원자의 객실</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_RedPrince" xml:space="preserve">
+    <value>붉은 왕자</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_BloatKing" xml:space="preserve">
+    <value>블로트 킹</value>
+  </data>
+  <data name="Patchwork_Quest_Boss_Faelin" xml:space="preserve">
+    <value>참칭왕</value>
+  </data>
+  <data name="Patchwork_Quest_Miniboss_FaeArchon" xml:space="preserve">
+    <value>마지스터 덜레인</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_Ravenous" xml:space="preserve">
+    <value>대회당</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_TownTurnToDust" xml:space="preserve">
+    <value>틸러의 휴식</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CharnelHouse" xml:space="preserve">
+    <value>수확자의 구역</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_FaeCouncil" xml:space="preserve">
+    <value>의회 재판소</value>
+  </data>
+  <data name="World_FilterNerud" xml:space="preserve">
+    <value>네루드</value>
+  </data>
+  <data name="World_FilterLosomn" xml:space="preserve">
+    <value>로솜</value>
+  </data>
+  <data name="World_FilterYaesha" xml:space="preserve">
+    <value>야에샤</value>
+  </data>
+  <data name="Patchwork_Quest_SideD_CrimsonHarvest" xml:space="preserve">
+    <value>도살업자 구역</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger1" xml:space="preserve">
+    <value>암살 단검 (청록 보석)</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger2" xml:space="preserve">
+    <value>암살 단검 (빨간 보석)</value>
+  </data>
+  <data name="Quest_Item_FaeCouncil_AssassinsDagger3" xml:space="preserve">
+    <value>암살 단검 (보라 보석)</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_1" xml:space="preserve">
+    <value>돌을 깎은 인형 I</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_2" xml:space="preserve">
+    <value>돌을 깎은 인형 II</value>
+  </data>
+  <data name="Quest_Item_Asylum_StoneDoll_3" xml:space="preserve">
+    <value>돌을 깎은 인형 III</value>
+  </data>
+  <data name="Quest_Item_Story_BicentennialManPart1_A" xml:space="preserve">
+    <value>프로토타입 메모리 코어 (빨간색)</value>
+  </data>
+  <data name="Quest_Item_Story_BicentennialManPart1_B" xml:space="preserve">
+    <value>프로토타입 메모리 코어 (파란색)</value>
+  </data>
+  <data name="Quest_Injectable_FieryGraveyard" xml:space="preserve">
+    <value>불타는 집</value>
+  </data>
+  <data name="Quest_Injectable_BurningCity_Rookery" xml:space="preserve">
+    <value>새 번식지</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_LivingStone" xml:space="preserve">
+    <value>네 개의 조각상</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_Sarcophagus" xml:space="preserve">
+    <value>관</value>
+  </data>
+  <data name="Quest_Injectable_CryptHidden" xml:space="preserve">
+    <value>숨겨진 무덤</value>
+  </data>
+  <data name="Quest_Injectable_FaeCity_BoneHarvesterLair" xml:space="preserve">
+    <value>배수구의 만티코라</value>
+  </data>
+  <data name="Quest_Injectable_GoldenHall_BlackandWhite" xml:space="preserve">
+    <value>불타는 폰 퍼즐</value>
+  </data>
+  <data name="Quest_Injectable_GoldenHall_SilverGold" xml:space="preserve">
+    <value>조각상들</value>
+  </data>
+  <data name="Quest_Injectable_Island_BrokenTomb" xml:space="preserve">
+    <value>저격수 경기장</value>
+  </data>
+  <data name="Quest_Injectable_IslandJump" xml:space="preserve">
+    <value>떠 있는 폐허</value>
+  </data>
+  <data name="Quest_Injectable_Islands_Tower" xml:space="preserve">
+    <value>암호 탑</value>
+  </data>
+  <data name="Quest_Injectable_OverworldFog" xml:space="preserve">
+    <value>안개</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_BoneHarvesterLair" xml:space="preserve">
+    <value>배수구의 괴물</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_RisingTides" xml:space="preserve">
+    <value>침수된 하수도</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_TheNest" xml:space="preserve">
+    <value>매달린 우리</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_TheSafe" xml:space="preserve">
+    <value>잠긴 금고</value>
+  </data>
+  <data name="Quest_Injectable_Towers_ElevatorShaft" xml:space="preserve">
+    <value>이중 엘리베이터</value>
+  </data>
+  <data name="Quest_Injectable_Towers_RemainsBelow" xml:space="preserve">
+    <value>감시자의 눈 구덩이</value>
+  </data>
+  <data name="Quest_Injectable_Towers_Seeker" xml:space="preserve">
+    <value>비밀 통로</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_BlackHole" xml:space="preserve">
+    <value>난파된 열차</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_LurkerVents" xml:space="preserve">
+    <value>로봇 격납고</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_SewageFacility" xml:space="preserve">
+    <value>침수된 방</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_Shockwire" xml:space="preserve">
+    <value>끊어진 케이블</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_StoreRoom" xml:space="preserve">
+    <value>아에라리 글리프 문</value>
+  </data>
+  <data name="Quest_Injectable_Underworld_TheClaw" xml:space="preserve">
+    <value>정지 포드 탑</value>
+  </data>
+  <data name="Quest_Injectable_WindHollow" xml:space="preserve">
+    <value>바람 골짜기</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_HiddenChamber" xml:space="preserve">
+    <value>폭포 방</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_Library" xml:space="preserve">
+    <value>숨겨진 도서관</value>
+  </data>
+  <data name="Quest_Injectable_Sewer_DLC" xml:space="preserve">
+    <value>배신자의 구덩이</value>
+  </data>
+  <data name="Quest_Injectable_Halls_DLC" xml:space="preserve">
+    <value>거울 바닥</value>
+  </data>
+  <data name="Quest_Injectable_Crypt_DLC" xml:space="preserve">
+    <value>보물 방</value>
+  </data>
+  <data name="Quest_Injectable_Island_DLC" xml:space="preserve">
+    <value>암사슴 숲</value>
+  </data>
+  <data name="Quest_Injectable_Ziggurat_DLC" xml:space="preserve">
+    <value>달의 방</value>
+  </data>
+  <data name="Quest_Injectable_Tower_DLC" xml:space="preserve">
+    <value>재배 연구실</value>
+  </data>
+  <data name="Quest_Injectable_Overload_DLC" xml:space="preserve">
+    <value>전력 허브</value>
+  </data>
+  <data name="Quest_Injectable_SecurityDrone_DLC" xml:space="preserve">
+    <value>보안 드론 미로</value>
+  </data>
+  <data name="Quest_Miniboss_Amalgam" xml:space="preserve">
+    <value>아말감 켈로스와 아말감 렐리스</value>
+  </data>
+  <data name="Material_PrismaticStone_1" xml:space="preserve">
+    <value>프리즘석 (노란색)</value>
+  </data>
+  <data name="Material_PrismaticStone_2" xml:space="preserve">
+    <value>프리즘석 (파란색)</value>
+  </data>
+  <data name="Material_PrismaticStone_3" xml:space="preserve">
+    <value>프리즘석 (빨간색)</value>
+  </data>
+</root>

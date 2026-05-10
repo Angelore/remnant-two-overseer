@@ -21,9 +21,11 @@ public class SaveDataService
 {
     private readonly SettingsService _settingsService;
     private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
+    private readonly object _loadFailureNotificationLock = new();
     Subject<DateTime> _fileUpdateSubject = new Subject<DateTime>();
     private Dataset? _dataset;
     private int _lastCharacterCount = 0;
+    private string? _lastLoadFailureNotification;
     private string? FilePath { get { return _settingsService.Get().SaveFilePath; } }
     private static readonly FileSystemWatcher FileWatcher = new();
 
@@ -53,43 +55,35 @@ public class SaveDataService
             }
             catch
             {
-                WeakReferenceMessenger.Default.Send(new NotificationWarningMessage(NotificationStrings.DefaultLocationNotFound));
-                Log.Instance.Warning(NotificationStrings.DefaultLocationNotFound);
+                var message = NotificationStrings.DefaultLocationNotFound;
+                if (ShouldShowLoadFailureNotification(message))
+                {
+                    WeakReferenceMessenger.Default.Send(new NotificationWarningMessage(message));
+                }
+                Log.Instance.Warning(message);
                 return null;
             }
         }
 
-        // TODO: Add timeout?
-        await _semaphore.WaitAsync();
-        try
+        var dataset = await LoadSaveData(false);
+
+        if (dataset == null)
         {
-            if (_dataset == null)
-            {
-                _dataset = await Task.Run(() => Analyzer.Analyze(FilePath));
-                _lastCharacterCount = _dataset.Characters.Count;
-            }
+            WeakReferenceMessenger.Default.Send(new DatasetIsNullMessage());
         }
-        catch (Exception ex)
+        else
         {
-            var message = $"{NotificationStrings.SaveFileParsingError}{Environment.NewLine}{ex.Message}";
-            WeakReferenceMessenger.Default.Send(new NotificationErrorMessage(message));
-            Log.Instance.Error(message);
-        }
-        finally
-        {
-            _semaphore.Release();
+            _lastCharacterCount = dataset.Characters.Count;
+            WeakReferenceMessenger.Default.Send(new DatasetParsedMessage());
         }
 
-        if (_dataset == null)
-            WeakReferenceMessenger.Default.Send(new DatasetIsNullMessage());
-        else
-            WeakReferenceMessenger.Default.Send(new DatasetParsedMessage());
-        return _dataset;
+        return dataset;
     }
 
     public void Reset()
     {
         _dataset = null;
+        ResetLoadFailureNotification();
     }
 
     public bool StartWatching()
@@ -138,20 +132,79 @@ public class SaveDataService
 
     private async Task OnSaveFileChangedDebounced()
     {
-        _dataset = await Task.Run(() => Analyzer.Analyze(FilePath));
+        var dataset = await LoadSaveData(true);
+        if (dataset == null) return;
+
         // If the number of character changed, we can't rely on previous index anymore. There is no way to uniquely id  characters, so we will just reset
-        var countChanged = _dataset.Characters.Count > _lastCharacterCount;
-        _lastCharacterCount = _dataset.Characters.Count;
+        var countChanged = dataset.Characters.Count != _lastCharacterCount;
+        _lastCharacterCount = dataset.Characters.Count;
         WeakReferenceMessenger.Default.Send(new SaveFileChangedMessage(countChanged));
     }
 
     private async Task SaveFilePathChangedMessageHandler(SaveFilePathChangedMessage message)
     {
         PauseWatching();
-        _dataset = await Task.Run(() => Analyzer.Analyze(FilePath));
-        _lastCharacterCount = _dataset.Characters.Count;
+        ResetLoadFailureNotification();
+        var dataset = await LoadSaveData(true, message.Value);
         StartWatching();
+        if (dataset == null) return;
+
+        _lastCharacterCount = dataset.Characters.Count;
         WeakReferenceMessenger.Default.Send(new SaveFileChangedMessage(true));
+    }
+
+    private async Task<Dataset?> LoadSaveData(bool forceRefresh, string? filePath = null)
+    {
+        // TODO: Add timeout?
+        await _semaphore.WaitAsync();
+        try
+        {
+            if (!forceRefresh && _dataset != null)
+            {
+                return _dataset;
+            }
+
+            var dataset = await Task.Run(() => Analyzer.Analyze(filePath ?? FilePath));
+            _dataset = dataset;
+            ResetLoadFailureNotification();
+            return dataset;
+        }
+        catch (Exception ex)
+        {
+            var message = $"{NotificationStrings.SaveFileParsingError}{Environment.NewLine}{ex.Message}";
+            if (ShouldShowLoadFailureNotification(message))
+            {
+                WeakReferenceMessenger.Default.Send(new NotificationErrorMessage(message));
+            }
+            Log.Instance.Error(message);
+            return null;
+        }
+        finally
+        {
+            _semaphore.Release();
+        }
+    }
+
+    private bool ShouldShowLoadFailureNotification(string message)
+    {
+        lock (_loadFailureNotificationLock)
+        {
+            if (_lastLoadFailureNotification == message)
+            {
+                return false;
+            }
+
+            _lastLoadFailureNotification = message;
+            return true;
+        }
+    }
+
+    private void ResetLoadFailureNotification()
+    {
+        lock (_loadFailureNotificationLock)
+        {
+            _lastLoadFailureNotification = null;
+        }
     }
 
     #region For debug only
@@ -175,7 +228,12 @@ public class SaveDataService
 
     internal void ReportPlayerInfo()
     {
-        Debug.Assert(_dataset != null, nameof(_dataset) + " != null");
+        if (_dataset is null)
+        {
+            WeakReferenceMessenger.Default.Send(new NotificationWarningMessage(NotificationStrings.PlayerInfoNotAvailable));
+            Log.Instance.Warning(NotificationStrings.PlayerInfoNotAvailable);
+            return;
+        }
 
         var logger = Log.Instance.ForContext<SaveDataService>();
         logger.Information($"Active character save: save_{_dataset.ActiveCharacterIndex}.sav");
@@ -311,13 +369,14 @@ public class SaveDataService
             logger.Information($"BEGIN Inventory, Character {index + 1} (save_{character.Index})");
 
             List<InventoryItem> debug = character.Profile.Inventory.Where(x => x.ProfileId == "/Game/Items/Common/Item_DragonHeartUpgrade.Item_DragonHeartUpgrade_C").ToList();
-            List<IGrouping<string, InventoryItem>> itemTypes = [.. character.Profile.Inventory
+            List<IGrouping<string?, InventoryItem>> itemTypes = [.. character.Profile.Inventory
                 .GroupBy(x => x.LootItem?.Type)
                 .OrderBy(x=> x.Key)];
 
-            foreach (IGrouping<string, InventoryItem> type in itemTypes)
+            foreach (IGrouping<string?, InventoryItem> type in itemTypes)
             {
-                if (type.Key == null)
+                string? typeKey = type.Key;
+                if (typeKey == null)
                 {
                     foreach (InventoryItem item in type)
                     {
@@ -329,8 +388,8 @@ public class SaveDataService
                 }
                 else
                 {
-                    if (type.Key == "armorspecial") continue;
-                    logger.Information("  " + Utils.Capitalize(type.Key) + ":");
+                    if (typeKey == "armorspecial") continue;
+                    logger.Information("  " + Utils.Capitalize(typeKey) + ":");
 
                     bool hasOne = false;
                     foreach (InventoryItem item in type.OrderBy(x => x.LootItem!.Name))

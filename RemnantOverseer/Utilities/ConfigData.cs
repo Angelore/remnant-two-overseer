@@ -10,4 +10,5 @@ public class ConfigData
     public bool? DisableVersionCheck { get; set; }
     public bool? HideTips { get; set; }
     public bool? HideToolkitLinks { get; set; }
+    public string? CultureName { get; set; }
 }
