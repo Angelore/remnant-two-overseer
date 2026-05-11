@@ -263,8 +263,8 @@
             </TreeDataTemplate>
 
             <TreeDataTemplate DataType="models:Item">
-              <Grid ColumnDefinitions="Auto, Auto, *, Auto, 160">
-                <!-- Col 4: 20*2 + (5*2 + 20)*4 -->
+              <Grid ColumnDefinitions="Auto, Auto, *, Auto, 190">
+                <!-- Col 4: 20*2 + (5*2 + 20)*5 -->
                 <Grid.Styles>
                   <Style Selector="TextBlock:disabled">
                     <Setter Property="Foreground" Value="{StaticResource BaseTextDisabledColor}" />
@@ -356,6 +356,7 @@
                     </ToolTip.Tip>
                   </HyperlinkButton>
                   <PathIcon Data="{StaticResource CoopIcon}" IsVisible="{Binding IsCoop}" ToolTip.Tip="{loc:Loc Item_CoopRequired}" ToolTip.Placement="LeftEdgeAlignedTop"/>
+                  <PathIcon Data="{StaticResource CassShopIcon}" IsVisible="{Binding IsInCassShop}" ToolTip.Tip="{loc:Loc Item_InCassShop}" ToolTip.Placement="LeftEdgeAlignedTop" Foreground="{StaticResource ZoneTransitionColor}"/>
                   <PathIcon Data="{StaticResource AccountAwardIcon}" IsVisible="{Binding IsAccountAward}" ToolTip.Tip="{loc:Loc Item_AccountWideUnlock}" ToolTip.Placement="LeftEdgeAlignedTop"/>
                 </StackPanel>
               </Grid>

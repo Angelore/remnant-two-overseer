@@ -27,6 +27,7 @@ public class Item : ObservableObject
     public bool HasRequiredMaterial { get; set; }
     public bool IsCoop { get; set; }
     public bool IsAccountAward { get; set; }
+    public bool IsInCassShop { get; set; }
 
     public string TypeName => LocalizationService.ItemTypeName(Type);
 
