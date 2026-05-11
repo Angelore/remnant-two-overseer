@@ -240,6 +240,9 @@
   <data name="Location_ZoneTransitionRespawn" xml:space="preserve">
     <value>{0} 和 {1} 之间的过渡</value>
   </data>
+  <data name="Location_Connections" xml:space="preserve">
+    <value>相邻位置：{0}</value>
+  </data>
   <data name="ItemType_Unknown" xml:space="preserve">
     <value>未知</value>
   </data>

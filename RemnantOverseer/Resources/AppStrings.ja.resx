@@ -240,6 +240,9 @@
   <data name="Location_ZoneTransitionRespawn" xml:space="preserve">
     <value>{0} と {1} の間の遷移</value>
   </data>
+  <data name="Location_Connections" xml:space="preserve">
+    <value>隣接するロケーション: {0}</value>
+  </data>
   <data name="ItemType_Unknown" xml:space="preserve">
     <value>不明</value>
   </data>

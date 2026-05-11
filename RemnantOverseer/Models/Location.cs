@@ -1,6 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using RemnantOverseer.Models.Enums;
 using RemnantOverseer.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -19,6 +20,9 @@ public class Location : ObservableObject
     public bool IsTraitBookLooted { get; set; }
     public bool IsSimulacrumLooted { get; set; }
     public bool IsBloodmoon { get; set; }
+    public List<string> CanonicalConnections { get; set; } = [];
+    public bool HasConnections => CanonicalConnections.Count != 0;
+    public string FormattedConnections => LocalizationService.Format("Location_Connections", string.Join(", ", CanonicalConnections.Select(LocalizeConnectionName)));
 
     public bool IsRespawnLocation { get; set; }
     public RespawnPointType RespawnPointType { get; set; }
@@ -50,6 +54,21 @@ public class Location : ObservableObject
         return LocalizationService.GameString(canonical, canonical);
     }
 
+    private static string LocalizeConnectionName(string value)
+    {
+        var canonical = value.Trim();
+        var duplicateSuffixIndex = canonical.LastIndexOf(" x", StringComparison.Ordinal);
+
+        if (duplicateSuffixIndex > 0
+            && duplicateSuffixIndex + 2 < canonical.Length
+            && int.TryParse(canonical[(duplicateSuffixIndex + 2)..], out _))
+        {
+            return $"{LocalizeLocationName(canonical[..duplicateSuffixIndex])}{canonical[duplicateSuffixIndex..]}";
+        }
+
+        return LocalizeLocationName(canonical);
+    }
+
     public bool IsGenesisLocation => CanonicalName.Equals("Withered Necropolis");
     public bool IsWard13Location => CanonicalName.Equals("Ward 13");
 
@@ -67,5 +86,6 @@ public class Location : ObservableObject
     {
         OnPropertyChanged(nameof(Name));
         OnPropertyChanged(nameof(FormattedRespawnPointName));
+        OnPropertyChanged(nameof(FormattedConnections));
     }
 }
