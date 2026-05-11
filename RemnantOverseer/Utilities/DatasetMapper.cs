@@ -120,6 +120,7 @@ internal class DatasetMapper
                     IsSimulacrumLooted = location.SimulacrumLooted,
                     IsTraitBookPresent = location.TraitBook,
                     IsTraitBookLooted = location.TraitBookLooted,
+                    CanonicalConnections = location.Connections,
 
                     // not supported yet
                     IsBloodmoon = location.Bloodmoon
