@@ -227,7 +227,7 @@
                   <!--<PathIcon Grid.Column="1" Data="{StaticResource ImageIcon}" Margin="5 0"/>-->
                 </Grid>
                 <Grid Grid.Column="1" ColumnDefinitions="Auto, Auto, Auto, Auto, Auto">
-                  <PathIcon Grid.Column="0" Data="{StaticResource LinkIcon}" IsVisible="{Binding HasConnections}" ToolTip.Tip="{Binding FormattedConnections}" Margin="5 0"/>
+                  <PathIcon Grid.Column="0" Data="{StaticResource ConnectionsIcon}" IsVisible="{Binding HasConnections}" ToolTip.Tip="{Binding FormattedConnections}" Margin="5 0"/>
                   <PathIcon Grid.Column="1" Data="{StaticResource TraitBookIcon}" IsVisible="{Binding IsTraitBookPresent}" IsEnabled="{Binding !IsTraitBookLooted}" ToolTip.Tip="{loc:Loc World_TraitBookAvailable}" Margin="5 0"/>
                   <PathIcon Grid.Column="2" Data="{StaticResource SimulacrumIcon2}" IsVisible="{Binding IsSimulacrumPresent}" IsEnabled="{Binding !IsSimulacrumLooted}" ToolTip.Tip="{loc:Loc World_SimulacrumAvailable}" Margin="5 0"/>
                   <PathIcon Grid.Column="3" Data="{StaticResource CurrentLocationIcon}" IsVisible="{Binding IsRespawnLocation}" Foreground="{StaticResource ZoneTransitionColor}" ToolTip.Tip="{Binding FormattedRespawnPointName}" Margin="5 0"/>

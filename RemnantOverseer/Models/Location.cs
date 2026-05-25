@@ -4,10 +4,13 @@ using RemnantOverseer.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace RemnantOverseer.Models;
 public class Location : ObservableObject
 {
+    private const char ConnectionsListMarker = '•';
+
     public string CanonicalName { get; set; } = string.Empty;
     public string Name
     {
@@ -22,7 +25,17 @@ public class Location : ObservableObject
     public bool IsBloodmoon { get; set; }
     public List<string> CanonicalConnections { get; set; } = [];
     public bool HasConnections => CanonicalConnections.Count != 0;
-    public string FormattedConnections => LocalizationService.Format("Location_Connections", string.Join(", ", CanonicalConnections.Select(LocalizeConnectionName)));
+    public string FormattedConnections
+    {
+        get
+        {
+            var result = new StringBuilder();
+            result.Append(LocalizationService.Get("Location_Connections"));
+            result.AppendLine(":");
+            result.Append(string.Join(Environment.NewLine, CanonicalConnections.Select(s => $"{ConnectionsListMarker} {LocalizeConnectionName(s)}")));
+            return result.ToString();
+        }
+    }
 
     public bool IsRespawnLocation { get; set; }
     public RespawnPointType RespawnPointType { get; set; }
