@@ -9,7 +9,7 @@ using System.Text;
 namespace RemnantOverseer.Models;
 public class Location : ObservableObject
 {
-    private const char ConnectionsListMarker = '•';
+    private const char ConnectionsListMarker = '-';
 
     public string CanonicalName { get; set; } = string.Empty;
     public string Name
