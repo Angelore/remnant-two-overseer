@@ -1,5 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
@@ -79,7 +184,8 @@
     <value>Impostazioni</value>
   </data>
   <data name="MainWindow_ErrorState" xml:space="preserve">
-    <value>Sembra che si sia verificato un errore.&#x0a;Controlla che le impostazioni siano corrette e riavvia l’applicazione</value>
+    <value>Sembra che si sia verificato un errore.
+Controlla che le impostazioni siano corrette e riavvia l’applicazione</value>
   </data>
   <data name="Settings_SaveFileLocation" xml:space="preserve">
     <value>Posizione del file di salvataggio</value>
@@ -154,7 +260,8 @@
     <value>Oggetti con prerequisiti mancanti</value>
   </data>
   <data name="World_FilterUncraftedWithRequiredMaterial" xml:space="preserve">
-    <value>Oggetti non creati con il&#x0a;materiale richiesto in possesso</value>
+    <value>Oggetti non creati con il
+materiale richiesto in possesso</value>
   </data>
   <data name="World_BloodmoonChance" xml:space="preserve">
     <value>Probabilità di Luna di Sangue: {0}%</value>
@@ -217,7 +324,8 @@
     <value>Cripta della Genesi</value>
   </data>
   <data name="Genesis_CodeMismatchHint" xml:space="preserve">
-    <value>I codici possono non corrispondere durante lunghe sessioni di gioco&#x0a;Riavvia il gioco se succede</value>
+    <value>I codici possono non corrispondere durante lunghe sessioni di gioco
+Riavvia il gioco se succede</value>
   </data>
   <data name="Thaen_Title" xml:space="preserve">
     <value>Albero del frutto del Thaen</value>
@@ -241,7 +349,7 @@
     <value>Transizione tra {0} e {1}</value>
   </data>
   <data name="Location_Connections" xml:space="preserve">
-    <value>Luoghi vicini: {0}</value>
+    <value>Luoghi vicini</value>
   </data>
   <data name="ItemType_Unknown" xml:space="preserve">
     <value>Sconosciuto</value>
@@ -454,7 +562,7 @@
     <value>Tribunale del Consiglio</value>
   </data>
   <data name="World_FilterNerud" xml:space="preserve">
-    <value>N&apos;erud</value>
+    <value>N'erud</value>
   </data>
   <data name="World_FilterLosomn" xml:space="preserve">
     <value>Losomn</value>
@@ -466,13 +574,13 @@
     <value>Distretto del macellaio</value>
   </data>
   <data name="Quest_Item_FaeCouncil_AssassinsDagger1" xml:space="preserve">
-    <value>Pugnale dell&apos;assassino (gioiello turchese)</value>
+    <value>Pugnale dell'assassino (gioiello turchese)</value>
   </data>
   <data name="Quest_Item_FaeCouncil_AssassinsDagger2" xml:space="preserve">
-    <value>Pugnale dell&apos;assassino (gioiello rosso)</value>
+    <value>Pugnale dell'assassino (gioiello rosso)</value>
   </data>
   <data name="Quest_Item_FaeCouncil_AssassinsDagger3" xml:space="preserve">
-    <value>Pugnale dell&apos;assassino (gioiello viola)</value>
+    <value>Pugnale dell'assassino (gioiello viola)</value>
   </data>
   <data name="Quest_Item_Asylum_StoneDoll_1" xml:space="preserve">
     <value>Statuetta di pietra intagliata I</value>
@@ -541,7 +649,7 @@
     <value>Doppio ascensore</value>
   </data>
   <data name="Quest_Injectable_Towers_RemainsBelow" xml:space="preserve">
-    <value>Fossa dell&apos;occhio sentinella</value>
+    <value>Fossa dell'occhio sentinella</value>
   </data>
   <data name="Quest_Injectable_Towers_Seeker" xml:space="preserve">
     <value>Passaggio segreto</value>
@@ -559,7 +667,7 @@
     <value>Cavo spezzato</value>
   </data>
   <data name="Quest_Injectable_Underworld_StoreRoom" xml:space="preserve">
-    <value>Porta del glifo dell&apos;erario</value>
+    <value>Porta del glifo dell'erario</value>
   </data>
   <data name="Quest_Injectable_Underworld_TheClaw" xml:space="preserve">
     <value>Torri con capsule di stasi</value>
@@ -598,7 +706,7 @@
     <value>Labirinto del drone di sicurezza</value>
   </data>
   <data name="Quest_Miniboss_Amalgam" xml:space="preserve">
-    <value>Amalgama Kel&apos;Roth e Amalgama Relis</value>
+    <value>Amalgama Kel'Roth e Amalgama Relis</value>
   </data>
   <data name="Material_PrismaticStone_1" xml:space="preserve">
     <value>Pietra prismatica (gialla)</value>
