@@ -10,7 +10,7 @@
          https://stackoverflow.com/questions/20342061/disable-dll-culture-folders-on-compile -->
     <SatelliteResourceLanguages>en;de;es;fr;it;ja;ko;pt-BR;ru;zh-Hans</SatelliteResourceLanguages>
     <ApplicationIcon>Assets\IconShadow.ico</ApplicationIcon>
-    <AssemblyVersion>1.7.0</AssemblyVersion>
+    <AssemblyVersion>1.7.1</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
