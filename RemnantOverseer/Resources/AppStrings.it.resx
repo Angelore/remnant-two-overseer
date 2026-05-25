@@ -240,6 +240,9 @@
   <data name="Location_ZoneTransitionRespawn" xml:space="preserve">
     <value>Transizione tra {0} e {1}</value>
   </data>
+  <data name="Location_Connections" xml:space="preserve">
+    <value>Luoghi vicini: {0}</value>
+  </data>
   <data name="ItemType_Unknown" xml:space="preserve">
     <value>Sconosciuto</value>
   </data>
