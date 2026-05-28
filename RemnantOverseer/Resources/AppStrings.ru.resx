@@ -150,6 +150,9 @@
   <data name="SaveFileLocationChanged" xml:space="preserve">
     <value>Расположение файла сохранения успешно изменено</value>
   </data>
+  <data name="MissingItemsCopiedToClipboard" xml:space="preserve">
+    <value>Недостающие предметы скопированы в буфер обмена</value>
+  </data>
   <data name="SelectedCharacterNotValid" xml:space="preserve">
     <value>Возникла проблема при выборе активного персонажа. Выберите персонажа вручную</value>
   </data>

@@ -150,6 +150,9 @@
   <data name="SaveFileLocationChanged" xml:space="preserve">
     <value>Speicherdatei-Speicherort wurde erfolgreich geändert</value>
   </data>
+  <data name="MissingItemsCopiedToClipboard" xml:space="preserve">
+    <value>Fehlende Gegenstände in die Zwischenablage kopiert</value>
+  </data>
   <data name="SelectedCharacterNotValid" xml:space="preserve">
     <value>Beim Auswählen des aktiven Charakters ist ein Problem aufgetreten. Wähle einen Charakter manuell aus</value>
   </data>

@@ -150,6 +150,9 @@
   <data name="SaveFileLocationChanged" xml:space="preserve">
     <value>セーブファイルの場所を変更しました</value>
   </data>
+  <data name="MissingItemsCopiedToClipboard" xml:space="preserve">
+    <value>未取得アイテムをクリップボードにコピーしました</value>
+  </data>
   <data name="SelectedCharacterNotValid" xml:space="preserve">
     <value>アクティブなキャラクターの選択中に問題が発生しました。手動でキャラクターを選択してください</value>
   </data>
