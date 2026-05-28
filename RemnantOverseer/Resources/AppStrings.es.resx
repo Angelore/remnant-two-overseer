@@ -150,6 +150,9 @@
   <data name="SaveFileLocationChanged" xml:space="preserve">
     <value>La ubicación del archivo guardado se cambió correctamente</value>
   </data>
+  <data name="MissingItemsCopiedToClipboard" xml:space="preserve">
+    <value>Objetos faltantes copiados al portapapeles</value>
+  </data>
   <data name="SelectedCharacterNotValid" xml:space="preserve">
     <value>Se produjo un problema al intentar seleccionar el personaje activo. Selecciona un personaje manualmente</value>
   </data>
