@@ -266,8 +266,20 @@ Make sure that settings are accurate and restart the application</value>
     <value>Uncrafted items with the
 required material in possession</value>
   </data>
-  <data name="World_BloodmoonChance" xml:space="preserve">
-    <value>Blood moon chance: {0}%</value>
+  <data name="World_BloodmoonActive" xml:space="preserve">
+    <value>Activated: {0} minutes left</value>
+  </data>
+  <data name="World_BloodmoonCooldown" xml:space="preserve">
+    <value>Cooldown: {0} minutes</value>
+  </data>
+  <data name="World_BloodmoonCooldownReady" xml:space="preserve">
+    <value>Cooldown: ready</value>
+  </data>
+  <data name="World_BloodmoonChanceNextCheck" xml:space="preserve">
+    <value>Blood moon chance: {0}% (next check in {1} minutes)</value>
+  </data>
+  <data name="World_BloodmoonChanceNextReady" xml:space="preserve">
+    <value>Blood moon chance: {0}% (next check: ready)</value>
   </data>
   <data name="World_TraitBookAvailable" xml:space="preserve">
     <value>Trait Book Available</value>

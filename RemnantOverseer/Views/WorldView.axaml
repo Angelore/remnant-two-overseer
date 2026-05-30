@@ -208,7 +208,7 @@
             <TreeDataTemplate DataType="models:Zone" ItemsSource="{Binding Locations}">
               <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="5,0,0,0"  Text="{Binding Name}" />
-                <PathIcon Data="{StaticResource BloodmoonIcon}" Foreground="{StaticResource BloodmoonColor}" ToolTip.Tip="{Binding $parent[TreeView].((vm:WorldViewModel)DataContext).BloodmoonChanceString}" Margin="5 0" Height="16">
+                <PathIcon Data="{StaticResource BloodmoonIcon}" Foreground="{StaticResource BloodmoonColor}" ToolTip.Tip="{Binding $parent[TreeView].((vm:WorldViewModel)DataContext).BloodmoonTooltip}" PointerEntered="BloodmoonIcon_PointerEntered" Margin="5 0" Height="16">
                   <PathIcon.IsVisible>
                     <MultiBinding Converter="{x:Static BoolConverters.And}">
                       <Binding Path="CanonicalName" Converter="{StaticResource StringComparisonConverter}" ConverterParameter="{x:Static util:LocationStrings.Yaesha}" Mode="OneWay" />

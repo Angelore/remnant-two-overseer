@@ -266,8 +266,20 @@ Controlla che le impostazioni siano corrette e riavvia l’applicazione</value>
     <value>Oggetti non creati con il
 materiale richiesto in possesso</value>
   </data>
-  <data name="World_BloodmoonChance" xml:space="preserve">
-    <value>Probabilità di Luna di Sangue: {0}%</value>
+  <data name="World_BloodmoonActive" xml:space="preserve">
+    <value>Attivata: {0} minuti rimanenti</value>
+  </data>
+  <data name="World_BloodmoonCooldown" xml:space="preserve">
+    <value>Ricarica: {0} minuti</value>
+  </data>
+  <data name="World_BloodmoonCooldownReady" xml:space="preserve">
+    <value>Ricarica: pronta</value>
+  </data>
+  <data name="World_BloodmoonChanceNextCheck" xml:space="preserve">
+    <value>Probabilità di Luna di Sangue: {0}% (prossimo controllo tra {1} minuti)</value>
+  </data>
+  <data name="World_BloodmoonChanceNextReady" xml:space="preserve">
+    <value>Probabilità di Luna di Sangue: {0}% (prossimo controllo: pronto)</value>
   </data>
   <data name="World_TraitBookAvailable" xml:space="preserve">
     <value>Caratteristica disponibile</value>

@@ -266,8 +266,20 @@
     <value>必要素材を所持している
 未クラフトのアイテム</value>
   </data>
-  <data name="World_BloodmoonChance" xml:space="preserve">
-    <value>ブラッドムーン確率: {0}%</value>
+  <data name="World_BloodmoonActive" xml:space="preserve">
+    <value>発生中: 残り{0}分</value>
+  </data>
+  <data name="World_BloodmoonCooldown" xml:space="preserve">
+    <value>クールダウン: {0}分</value>
+  </data>
+  <data name="World_BloodmoonCooldownReady" xml:space="preserve">
+    <value>クールダウン: 準備完了</value>
+  </data>
+  <data name="World_BloodmoonChanceNextCheck" xml:space="preserve">
+    <value>ブラッドムーン確率: {0}% (次回チェックまで{1}分)</value>
+  </data>
+  <data name="World_BloodmoonChanceNextReady" xml:space="preserve">
+    <value>ブラッドムーン確率: {0}% (次回チェック: 準備完了)</value>
   </data>
   <data name="World_TraitBookAvailable" xml:space="preserve">
     <value>特性入手可能</value>
