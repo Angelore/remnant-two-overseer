@@ -2,6 +2,8 @@
 using lib.remnant2.analyzer;
 using lib.remnant2.analyzer.Enums;
 using lib.remnant2.analyzer.Model;
+using lib.remnant2.analyzer.Model.Mechanics;
+using lib.remnant2.analyzer.Model.Prism;
 using lib.remnant2.analyzer.SaveLocation;
 using lib.remnant2.saves.Model.Memory;
 using RemnantOverseer.Models.Messages;
@@ -9,6 +11,7 @@ using RemnantOverseer.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reactive.Linq;
@@ -255,9 +258,9 @@ public class SaveDataService
                 logger.Information($"  Account award: {lootItem.Name}");
             }
         }
-        foreach (Dictionary<string, string> m in ItemDb.Db.Where(x => x["Type"] == "award" && !_dataset.AccountAwards.Exists(y => y == x["Id"])))
+        foreach (LootItem m in ItemDb.Db.Where(x => x["Type"] == "award" && !_dataset.AccountAwards.Exists(y => y == x["Id"])).Select(x => new LootItem { Properties = x }))
         {
-            logger.Information($"  Missing {Utils.Capitalize(m["Type"])}: {m["Name"]}");
+            logger.Information($"  Missing {Utils.Capitalize(m.Type)}: {m.Name}");
         }
         logger.Information("END Account Awards");
 
@@ -298,7 +301,21 @@ public class SaveDataService
                     foreach (InventoryItem m in character.Profile.Inventory.Where(x => x.EquippedModItemId == r.Id))
                     {
                         if (m.LootItem == null) continue;
-                        logger.Information($"  {Utils.FormatEquipmentSlot(r.EquippedSlot.ToString(), m.LootItem.Type, m.Level ?? 1, m.LootItem.Name)}");
+                        if (m.LootItem.Type == "fragment")
+                        {
+                            // The relic's FRAGMENTS-panel fragments (EquippedModItemId points at the equipped
+                            // relic — a holdover link, not prism segments). Show them by their prism-slot name,
+                            // the in-game side-bar vocabulary (e.g. "Armor" not the item label "Base Armor").
+                            // The per-level % value will be added in a later pass.
+                            LootItem slotDef = ItemDb.GetPrismSegmentByFragmentId(m.LootItem.Id) ?? m.LootItem;
+                            string slotType = Utils.FormatCamelAsWords(r.EquippedSlot.ToString());
+                            string prefix = string.IsNullOrEmpty(slotType) ? "" : $"{slotType} ";
+                            logger.Information($"  {prefix}Fragment: {slotDef.Name} (lvl {m.Level ?? 1})");
+                        }
+                        else
+                        {
+                            logger.Information($"  {Utils.FormatEquipmentSlot(r.EquippedSlot.ToString(), m.LootItem.Type, m.Level ?? 1, m.LootItem.Name)}");
+                        }
                     }
                 }
             }
@@ -406,7 +423,11 @@ public class SaveDataService
                         if (item.LootItem!.Type == "fragment")
                         {
                             name = Utils.FormatRelicFragmentLevel(item.LootItem!.Name, item.Level ?? 1);
-                            level = item.Level.HasValue ? $" (lvl {item.Level.Value})" : "";
+                            // In-game-style value, only for fragments actually slotted into the relic
+                            // (a loose inventory fragment provides no bonus, so showing its value is misleading).
+                            string fragValue = item.EquippedModItemId is >= 0
+                                && item.LootItem!.As<FragmentLootItem>()?.ValueAt(item.Level ?? 1) is { } fv ? $" {RenderFragmentValue(fv)}" : "";
+                            level = item.Level.HasValue ? $" (lvl {item.Level.Value}){fragValue}" : "";
                         }
                         if (item.LootItem!.Type == "archetype" || item.LootItem!.Type == "trait")
                         {
@@ -422,7 +443,12 @@ public class SaveDataService
                                 {
                                     logger.Warning($"!!!!!!Equipped item with profileId: '{slottedItem.ProfileId}' not found");
                                 }
-                                else
+                                // Post-revamp, relic fragments aren't relic contents — they're a character-level
+                                // FRAGMENTS panel (and, separately, prism segments). A slotted fragment's
+                                // EquippedModItemId still points at the equipped relic (a holdover from the old
+                                // slot-into-relic system), so listing it here would wrongly nest it under the
+                                // relic. Skip fragments — they're rendered separately (the FRAGMENTS panel).
+                                else if (li.Type != "fragment")
                                 {
                                     logger.Information($"      {Utils.FormatEquipmentSlot(string.Empty, li.Type, slottedItem.Level ?? 1, li.Name)}");
                                 }
@@ -447,7 +473,145 @@ public class SaveDataService
             }
             logger.Information($"END Quick slots, Character {index + 1} (save_{character.Index})");
 
-            // Thaen fruit
+            // Prisms ------------------------------------------------------------
+            logger.Information($"BEGIN Prisms, Character {index + 1} (save_{character.Index})");
+
+            // The relic's slotted fragments (the in-game "FRAGMENTS" panel), duplicated here in the
+            // prism-segment format. Character-level, not tied to a specific prism (0-3 of them). The value
+            // is the fragment at its own level (ValueAt), as it is equipped, not leveled in a prism.
+            // Inventory order == the relic's slot order, matching the in-game FRAGMENTS panel; don't re-sort.
+            List<InventoryItem> slottedFragments = character.Profile.Inventory
+                .Where(x => x.LootItem?.Type == "fragment" && x.EquippedModItemId is >= 0)
+                .ToList();
+            if (slottedFragments.Count > 0)
+            {
+                logger.Information("  Slotted fragments:");
+                foreach (InventoryItem f in slottedFragments)
+                {
+                    LootItem? slotDef = ItemDb.GetPrismSegmentByFragmentId(f.LootItem!.Id);
+                    string segName = slotDef?.Name ?? f.LootItem!.Name;
+                    string color = slotDef?.As<PrismSlotLootItem>() is { } ps ? $" ({ps.Color})" : "";
+                    string val = f.LootItem!.As<FragmentLootItem>()?.ValueAt(f.Level ?? 1) is { } fv ? $" -> {RenderFragmentValue(fv)}" : "";
+                    logger.Information($"    {segName} +{f.Level ?? 1}{color}{val}");
+                }
+            }
+
+            List<PrismData> prisms = character.Profile.Prisms;
+            if (prisms.Count == 0)
+            {
+                logger.Information("  None");
+            }
+            foreach (PrismData prism in prisms)
+            {
+                string prismName = prism.Item.LootItem?.Name ?? prism.Item.ProfileId;
+                logger.Information($"  {prismName} +{prism.DisplayLevel} (raw level {prism.Level}, fed: {(prism.HasBeenFed ? "yes" : "no")})");
+
+                // Progress of the ring shown around the level in-game (XP toward the next level).
+                // PendingExperience can bank past the threshold without levelling up, so the
+                // ring (and this %) cap at 100%; the raw banked XP is shown by pendingXp.
+                int pendingXp = (int)prism.PendingExperience;
+                if (prism.ExperienceRequiredForNextLevel is { } requiredXp)
+                {
+                    logger.Information($"    Level progress: {pendingXp} / {requiredXp} XP ({prism.LevelProgress:P0})");
+                }
+                else
+                {
+                    logger.Information($"    Level progress: maxed ({pendingXp} XP pending)");
+                }
+
+                // Fragments and fusions leveled up in the prism (the "PRISM" block in-game)
+                if (prism.Slots.Count == 0)
+                {
+                    logger.Information("    Prism: empty");
+                }
+                else
+                {
+                    logger.Information("    Prism:");
+                    foreach (PrismSlot segment in prism.Slots)
+                    {
+                        LootItem? def = segment.LootItem;
+                        string name = def?.Name ?? segment.RowName;
+                        FusionLootItem? fusion = def?.As<FusionLootItem>();
+                        PrismSlotLootItem? single = def?.As<PrismSlotLootItem>();
+
+                        // In-game-style value(s). Fusions scale LINEARLY per component (FusionLootItem.ValueAtN);
+                        // single segments use the fragment value curve (PrismSegmentValueAt).
+                        if (fusion is not null)
+                        {
+                            // "name(color) value" per component, ordered by colour (Red > Blue > Yellow) to match the game.
+                            (string Name, string Color, FragmentValue Value)[] parts =
+                            [
+                                (fusion.PrismSlotFragment1.Name, fusion.Color1, fusion.ValueAt1(segment.Level)),
+                                (fusion.PrismSlotFragment2.Name, fusion.Color2, fusion.ValueAt2(segment.Level)),
+                            ];
+                            string combo = string.Join(" / ", parts
+                                // in-game fusion component order: Red, then Blue, then Yellow
+                                .OrderBy(p => p.Color switch { "Red" => 0, "Blue" => 1, "Yellow" => 2, _ => 3 })
+                                .Select(p => $"{p.Name}({p.Color}) {RenderFragmentValue(p.Value)}"));
+                            logger.Information($"      [Fusion] {name} +{segment.Level} -> [{combo}]");
+                        }
+                        else
+                        {
+                            string color = single is { } ps ? $" ({ps.Color})" : "";
+                            string value = single is not null
+                                && ItemDb.GetItemByIdOrDefault(single.Fragment)?.As<FragmentLootItem>()?.PrismSegmentValueAt(segment.Level) is { } fv
+                                ? $" -> {RenderFragmentValue(fv)}" : "";
+                            logger.Information($"      {name} +{segment.Level}{color}{value}");
+                            // Legendary ("Mythic") slots carry an effect description; show it underneath.
+                            if (def is { Type: "legendary" } && def.Description is { Length: > 0 } desc)
+                            {
+                                logger.Information($"        {desc}");
+                            }
+                        }
+                    }
+                }
+
+                // Fragments fed into the prism (the "ROLL CHANCES" block in-game)
+                if (prism.Feed.Count == 0)
+                {
+                    logger.Information("    Roll chances: none");
+                }
+                else
+                {
+                    logger.Information("    Roll chances:");
+                    foreach (PrismFeed feed in prism.Feed)
+                    {
+                        LootItem? def = feed.LootItem;
+                        string name = def?.Name ?? feed.RowName;
+                        string feedColorValue = def?.Properties.GetValueOrDefault("Color") is { } fc ? $" ({fc})" : "";
+                        logger.Information($"      {name}: {feed.FedLevel}{feedColorValue}");
+                    }
+                }
+
+                // Seeds (deterministic proof): CurrentSeed produces the offer below; NextSeed is what it
+                // becomes after the next accepted pick (CurrentSeed advanced once per offered roll) and
+                // drives the following level-up.
+                logger.Information($"    Current seed: {prism.CurrentSeed}");
+                logger.Information($"    Next seed:    {prism.NextSeed}");
+
+                // Evaluated next enhancement offer (deterministic from CurrentSeed). Non-localized;
+                // each offer exposes Definition.Id so this can be localized later.
+                string legendaryTag = prism.IsLegendaryRoll ? "  [LEGENDARY +51 ROLL]" : "";
+                logger.Information($"    Next offer{legendaryTag}  (pool {prism.NextRollPoolSize})");
+                if (prism.NextRoll.Count == 0)
+                {
+                    logger.Information("      (no offer - empty pool)");
+                }
+                foreach (PrismOffer offer in prism.NextRoll)
+                {
+                    string fed = offer.FedLevel.HasValue ? offer.FedLevel.Value.ToString() : "-";
+                    string offerColor =
+                        offer.LootItem?.As<FusionLootItem>() is { } f ? $"{f.Color1}+{f.Color2}"
+                        : offer.LootItem?.As<PrismSlotLootItem>() is { } s ? s.Color
+                        : "None";
+                    logger.Information(
+                        $"      {offer.Name} +{offer.NextLevel} ({offerColor}, {offer.Kind.ToString().ToLowerInvariant()}, " +
+                        $"rarity {offer.Rarity}, fed {fed}, weight {offer.Weight:F4})");
+                }
+            }
+            logger.Information($"END Prisms, Character {index + 1} (save_{character.Index})");
+
+            // Thaen fruit ------------------------------------------------------------
             if (character.Save.ThaenFruit == null)
             {
                 logger.Information("Thaen fruit data not found");
@@ -575,9 +739,9 @@ public class SaveDataService
                 }
             }
 
-            foreach (Dictionary<string, string> m in ItemDb.Db.Where(x => x["Type"] == "achievement" && !character.Profile.Objectives.Exists(y => y.Id == x["Id"])))
+            foreach (LootItem m in ItemDb.Db.Where(x => x["Type"] == "achievement" && !character.Profile.Objectives.Exists(y => y.Id == x["Id"])).Select(x => new LootItem { Properties = x }))
             {
-                logger.Information($"  Missing {Utils.Capitalize(m["Type"])}: {m["Name"]}");
+                logger.Information($"  Missing {Utils.Capitalize(m.Type)}: {m.Name}");
             }
 
             logger.Information($"END Achievements for Character {index + 1} (save_{character.Index})");
@@ -591,12 +755,24 @@ public class SaveDataService
                     logger.Information($"  {Utils.Capitalize(objective.Type)}: {objective.Description} - {objective.Progress}");
                 }
             }
-            foreach (Dictionary<string, string> m in ItemDb.Db.Where(x => x["Type"] == "challenge" && !character.Profile.Objectives.Exists(y => y.Id == x["Id"])))
+            foreach (LootItem m in ItemDb.Db.Where(x => x["Type"] == "challenge" && !character.Profile.Objectives.Exists(y => y.Id == x["Id"])).Select(x => new LootItem { Properties = x }))
             {
-                logger.Information($"  Missing {Utils.Capitalize(m["Type"])}: {m["Name"]}");
+                logger.Information($"  Missing {Utils.Capitalize(m.Type)}: {m.Name}");
             }
             logger.Information($"END Challenges for Character {index + 1} (save_{character.Index})");
             logger.Information("-----------------------------------------------------------------------------");
+        }
+
+        // Render a fragment value (number + unit) into in-game-style display text. The analyzer supplies the
+        // value and its raw unit token, which is appended verbatim after the number (e.g. "%", "cm", "/s"). The
+        // number is signed, shown to 1 decimal with trailing zeros dropped ("+10%" / "+200", not "+10.0%"), and
+        // rounded half-to-even to match the game (Unreal's default; 5.25 -> 5.2). Flat "points" fragments (Base
+        // Stamina/Health/Armor) have an empty unit but still scale along the curve, so they can be fractional
+        // in-game (e.g. +2.8) — the decimal applies to them too, not an integer.
+        static string RenderFragmentValue(FragmentValue v)
+        {
+            double n = Math.Round(v.Value, 1, MidpointRounding.ToEven);
+            return (n < 0 ? "-" : "+") + Math.Abs(n).ToString("0.#", CultureInfo.InvariantCulture) + v.Unit;
         }
     }
     #endregion
