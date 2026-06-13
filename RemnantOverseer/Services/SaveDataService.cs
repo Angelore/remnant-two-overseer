@@ -167,7 +167,10 @@ public class SaveDataService
                 return _dataset;
             }
 
-            var dataset = await Task.Run(() => Analyzer.Analyze(filePath ?? FilePath));
+            // Makes Analyze faster by reusing the world save parsed files that have not changed
+            // Especially noticeable on old characters, with a lot of history
+            Dataset? previous = filePath == null ? _dataset : null;
+            var dataset = await Task.Run(() => Analyzer.Analyze(filePath ?? FilePath, previous));
             _dataset = dataset;
             ResetLoadFailureNotification();
             return dataset;
