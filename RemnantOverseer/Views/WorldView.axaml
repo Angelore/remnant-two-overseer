@@ -157,7 +157,7 @@
                 <PathIcon Grid.Column="0" Data="{StaticResource ResetIcon}" Width="14" Margin="5 0"/>
               </Grid>
             </Button>
-            <TextBox Grid.Column="3" Name="FilterBox" Text="{Binding FilterText}" MinWidth="250" MaxWidth="450" Watermark="{loc:Loc Common_SearchWatermark}" ToolTip.Tip="{loc:Loc Common_SearchTooltip}" />
+            <TextBox Grid.Column="3" Name="FilterBox" Text="{Binding FilterText}" MinWidth="250" MaxWidth="450" PlaceholderText="{loc:Loc Common_SearchWatermark}" ToolTip.Tip="{loc:Loc Common_SearchTooltip}" />
           </Grid>
         </Grid>
 
