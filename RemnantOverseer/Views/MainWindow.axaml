@@ -33,6 +33,9 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style Selector="WindowDrawnDecorations /template/ Panel#PART_TitleTextPanel > TextBlock">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
   </Window.Styles>
 
   <Window.Resources>
