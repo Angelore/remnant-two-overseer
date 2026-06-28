@@ -150,6 +150,9 @@
   <data name="SaveFileLocationChanged" xml:space="preserve">
     <value>存档文件位置已成功更改</value>
   </data>
+  <data name="MissingItemsCopiedToClipboard" xml:space="preserve">
+    <value>缺失物品已复制到剪贴板</value>
+  </data>
   <data name="SelectedCharacterNotValid" xml:space="preserve">
     <value>尝试选择当前角色时遇到问题。请手动选择角色</value>
   </data>

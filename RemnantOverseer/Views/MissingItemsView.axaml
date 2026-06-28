@@ -21,7 +21,7 @@
 
   <Grid Name="OverlayGrid">
     <!-- Location selection and item tree -->
-    <Grid Name="ContentGrid" RowDefinitions="Auto, *" Margin="5">
+    <Grid Name="ContentGrid" Focusable="True" RowDefinitions="Auto, *" Margin="5">
 
       <!-- Top ribbon -->
       <Grid Grid.Row="0" Background="Transparent" ColumnDefinitions="Auto, *, Auto" Margin="10">
