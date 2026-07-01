@@ -15,7 +15,8 @@
         MinHeight="600" MinWidth="1200"
         Height="800" Width="1200"
         WindowStartupLocation="CenterScreen"
-        ExtendClientAreaToDecorationsHint="True">
+        ExtendClientAreaToDecorationsHint="True"
+        WindowDecorations="Full">
 
   <Window.Styles>
     <Style Selector="WindowNotificationManager">
@@ -32,6 +33,18 @@
                 <SolidColorBrush Color="{StaticResource BaseTextColor}" />
             </Setter.Value>
         </Setter>
+
+    </Style>
+    <Style Selector="WindowDrawnDecorations /template/ Panel#PART_TitleTextPanel > TextBlock">
+      <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="WindowDrawnDecorations /template/ StackPanel#PART_OverlayPanel > Button#PART_FullScreenButton">
+      <Setter Property="IsVisible" Value="False" />
+      <Setter Property="Width" Value="0" />
+    </Style>
+    <!--Due to spacing property on StackPanel, the buttons are not aligned properly with the right window border. This is a workaround to fix that.-->
+    <Style Selector="WindowDrawnDecorations /template/ StackPanel#PART_OverlayPanel">
+      <Setter Property="Margin" Value="-2 0 0 0" />
     </Style>
   </Window.Styles>
 
