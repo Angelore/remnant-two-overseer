@@ -80,12 +80,12 @@ jobs:
 
       - name: Create Linux artifact
         run: |
-          tar -C $ARTIFACT_DIR/linux -czvf RemnantOverseer-${RELEASE_TAG}-linux.tar.gz .
+          tar -C $ARTIFACT_DIR/linux --exclude="*.pdb" -czvf RemnantOverseer-${RELEASE_TAG}-linux.tar.gz .
 
       - name: Create Windows artifact
         run: |
           cd $ARTIFACT_DIR/windows
-          zip -r "$GITHUB_WORKSPACE/RemnantOverseer-${RELEASE_TAG}-windows.zip" .
+          zip -r "$GITHUB_WORKSPACE/RemnantOverseer-${RELEASE_TAG}-windows.zip" . -x "*.pdb"
 
       - name: Create Release
         uses: softprops/action-gh-release@v3
