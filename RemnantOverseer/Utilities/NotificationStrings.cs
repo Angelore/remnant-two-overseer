@@ -14,6 +14,8 @@ internal static class NotificationStrings
 
     public static string SaveFileLocationChanged => LocalizationService.Get(nameof(SaveFileLocationChanged));
 
+    public static string MissingItemsCopiedToClipboard => LocalizationService.Get(nameof(MissingItemsCopiedToClipboard));
+
     public static string SelectedCharacterNotValid => LocalizationService.Get(nameof(SelectedCharacterNotValid));
 
     public static string NewerVersionFound => LocalizationService.Get(nameof(NewerVersionFound));

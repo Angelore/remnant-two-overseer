@@ -1,10 +1,12 @@
-﻿using RemnantOverseer.Models.Messages;
+﻿using Avalonia.Input.Platform;
+using RemnantOverseer.Models.Messages;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using RemnantOverseer.Services;
 using RemnantOverseer.Utilities;
@@ -71,6 +73,24 @@ public partial class MissingItemsViewModel : ViewModelBase
     public void ResetFilters()
     {
         FilterText = null;
+    }
+
+    public async Task CopyToClipboardAsync(IClipboard clipboard)
+    {
+        if (FilteredItemCategories.Count == 0) return;
+
+        var sb = new StringBuilder();
+        foreach (var category in FilteredItemCategories)
+        {
+            sb.AppendLine($"- {category.Name}");
+            foreach (var item in category.Items)
+            {
+                sb.AppendLine($"  - {item.Name}");
+            }
+        }
+
+        await clipboard.SetTextAsync(sb.ToString().TrimEnd());
+        Messenger.Send(new NotificationInfoMessage(NotificationStrings.MissingItemsCopiedToClipboard));
     }
 
     private async Task ReadSave(bool resetActiveCahracter = false)

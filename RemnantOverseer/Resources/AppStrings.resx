@@ -150,6 +150,9 @@
   <data name="SaveFileLocationChanged" xml:space="preserve">
     <value>Save file location was changed successfully</value>
   </data>
+  <data name="MissingItemsCopiedToClipboard" xml:space="preserve">
+    <value>Missing items copied to the clipboard</value>
+  </data>
   <data name="SelectedCharacterNotValid" xml:space="preserve">
     <value>An issue encountered when trying to select active character. Select a character manually</value>
   </data>
