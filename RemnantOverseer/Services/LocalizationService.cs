@@ -28,6 +28,10 @@ internal static class LocalizationService
 
     public static LocalizationBindingSource BindingSource { get; } = new();
 
+    // Since Avalonia 12 / .NET 10 the UI thread's culture is explicitly set during platform startup,
+    // so the dispatcher's captured ExecutionContext restores that startup value into every UI callback
+    public static CultureInfo CurrentCulture { get; private set; } = EnglishCulture;
+
     public static IReadOnlyList<CultureOption> SupportedCultures =>
     [
         new CultureOption(LocalizationConstants.DefaultCultureName, "English"),
@@ -45,8 +49,12 @@ internal static class LocalizationService
     public static void ApplyCulture(string? cultureName)
     {
         var culture = GetCultureOrDefault(cultureName);
-        var isCultureChanged = !string.Equals(CultureInfo.CurrentUICulture.Name, culture.Name, StringComparison.OrdinalIgnoreCase);
+        var isCultureChanged = !string.Equals(CurrentCulture.Name, culture.Name, StringComparison.OrdinalIgnoreCase);
 
+        CurrentCulture = culture;
+
+        // Still set the process-wide defaults: threads and contexts that were never pinned (worker
+        // threads, framework formatting) pick the culture up from here.
         CultureInfo.DefaultThreadCurrentCulture = culture;
         CultureInfo.DefaultThreadCurrentUICulture = culture;
 
@@ -58,7 +66,7 @@ internal static class LocalizationService
 
     public static string Get(string key)
     {
-        var value = ResourceManager.GetString(key, CultureInfo.CurrentUICulture);
+        var value = ResourceManager.GetString(key, CurrentCulture);
         if (value is not null)
         {
             return value;
@@ -74,27 +82,27 @@ internal static class LocalizationService
             return fallback;
         }
 
-        return GetResourceString(GameResourceManager, key, CultureInfo.CurrentUICulture)
+        return GetResourceString(GameResourceManager, key, CurrentCulture)
             ?? GetResourceString(GameResourceManager, key, EnglishCulture)
-            ?? GetResourceString(ResourceManager, key, CultureInfo.CurrentUICulture)
+            ?? GetResourceString(ResourceManager, key, CurrentCulture)
             ?? GetResourceString(ResourceManager, key, EnglishCulture)
             ?? fallback;
     }
 
     public static string? ExternalTranslationUrl(string text)
     {
-        if (string.IsNullOrWhiteSpace(text) || IsEnglishCulture(CultureInfo.CurrentUICulture))
+        if (string.IsNullOrWhiteSpace(text) || IsEnglishCulture(CurrentCulture))
         {
             return null;
         }
 
-        var targetLanguage = GetGoogleTranslateTargetLanguage(CultureInfo.CurrentUICulture);
+        var targetLanguage = GetGoogleTranslateTargetLanguage(CurrentCulture);
         return $"https://translate.google.com/?sl=en&tl={targetLanguage}&text={Uri.EscapeDataString(text)}&op=translate";
     }
 
     public static string Format(string key, params object?[] args)
     {
-        return string.Format(CultureInfo.CurrentCulture, Get(key), args);
+        return string.Format(CurrentCulture, Get(key), args);
     }
 
     public static string ItemTypeName(ItemTypes type)

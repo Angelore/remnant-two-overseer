@@ -1,7 +1,9 @@
 ﻿using Avalonia;
+using Avalonia.Media;
 using RemnantOverseer.Services;
 using RemnantOverseer.Utilities;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Runtime.InteropServices;
 
@@ -49,5 +51,17 @@ internal sealed class Program
                 fontManager.AddFontCollection(new MontserratFontCollection());
             })
             .WithInterFont()
+            .With(new FontManagerOptions { FontFallbacks = BuildCjkFontFallbacks() })
             .LogToTrace();
+
+    // Avalonia's own fallback picks the font from the UI thread's culture as a locale hint —
+    // which is pinned at its startup value  so after a live language switch simplified-Chinese-only
+    // glyphs render as boxes.
+    private static FontFallback[] BuildCjkFontFallbacks()
+    {
+        string[] families = SettingsService.GetConfiguredCultureName() == "zh-Hans"
+            ? ["Microsoft YaHei UI", "Yu Gothic UI", "Malgun Gothic"]
+            : ["Yu Gothic UI", "Malgun Gothic", "Microsoft YaHei UI"];
+        return [.. families.Select(f => new FontFallback { FontFamily = new FontFamily(f) })];
+    }
 }
