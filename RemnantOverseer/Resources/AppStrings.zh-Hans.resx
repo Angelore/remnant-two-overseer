@@ -266,8 +266,20 @@
     <value>拥有所需材料但
 尚未制作的物品</value>
   </data>
-  <data name="World_BloodmoonChance" xml:space="preserve">
-    <value>血月概率：{0}%</value>
+  <data name="World_BloodmoonActive" xml:space="preserve">
+    <value>已激活：剩余{0}分钟</value>
+  </data>
+  <data name="World_BloodmoonCooldown" xml:space="preserve">
+    <value>冷却时间：{0}分钟</value>
+  </data>
+  <data name="World_BloodmoonCooldownReady" xml:space="preserve">
+    <value>冷却时间：就绪</value>
+  </data>
+  <data name="World_BloodmoonChanceNextCheck" xml:space="preserve">
+    <value>血月概率：{0}%（下次检查还需{1}分钟）</value>
+  </data>
+  <data name="World_BloodmoonChanceNextReady" xml:space="preserve">
+    <value>血月概率：{0}%（下次检查：就绪）</value>
   </data>
   <data name="World_TraitBookAvailable" xml:space="preserve">
     <value>特性可获取</value>

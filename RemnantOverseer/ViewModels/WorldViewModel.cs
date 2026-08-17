@@ -11,6 +11,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace RemnantOverseer.ViewModels;
@@ -65,16 +66,65 @@ public partial class WorldViewModel : ViewModelBase
     [ObservableProperty]
     private List<string> _completedQuests = [];
 
-    private float? _bloodmoonChanceCampaign = null;
-    private float? _bloodmoonChanceAdventure = null;
+    private BloodmoonInfo? _bloodmoonInfoCampaign = null;
+    private BloodmoonInfo? _bloodmoonInfoAdventure = null;
 
+    // Drives icon visibility only; the tooltip text is built on demand in GetBloodmoonTooltip.
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(BloodmoonChanceString))]
     private float? _bloodmoonChance = null;
 
-    public string BloodmoonChanceString => BloodmoonChance.HasValue
-        ? LocalizationService.Format("World_BloodmoonChance", BloodmoonChance.Value)
-        : LocalizationService.Get("Common_Unknown");
+    private BloodmoonInfo? CurrentBloodmoonInfo => IsCampaignSelected ? _bloodmoonInfoCampaign : _bloodmoonInfoAdventure;
+
+    // Non-null placeholder, so Avalonia wires it up
+    public string BloodmoonTooltip => string.Empty;
+
+    // Built on hover so the time-relative text and the optional debug lines reflect the
+    // moment the tooltip is shown.
+    public string GetBloodmoonTooltip(bool debug)
+    {
+        var info = CurrentBloodmoonInfo;
+        if (info is null) return LocalizationService.Get("Common_Unknown");
+
+        var now = DateTime.UtcNow;
+        var chance = Math.Round(info.CurrentChance, 2, MidpointRounding.AwayFromZero);
+        var sinceTriggered = now - info.LastTriggeredTime;
+        var sinceChecked = now - info.LastCheckTime;
+
+        string main;
+        if (sinceTriggered >= TimeSpan.Zero && sinceTriggered <= TimeSpan.FromMinutes(20))
+        {
+            var minutes = (int)Math.Ceiling(((info.LastTriggeredTime + TimeSpan.FromMinutes(20)) - now).TotalMinutes);
+            main = LocalizationService.Format("World_BloodmoonActive", minutes);
+        }
+        else if (sinceTriggered >= TimeSpan.Zero && sinceTriggered <= TimeSpan.FromMinutes(80))
+        {
+            var minutes = (int)Math.Ceiling(((info.LastTriggeredTime + TimeSpan.FromMinutes(80)) - now).TotalMinutes);
+            main = LocalizationService.Format("World_BloodmoonCooldown", minutes);
+        }
+        else if (info.LastTriggeredTime == info.LastCheckTime)
+        {
+            main = LocalizationService.Get("World_BloodmoonCooldownReady");
+        }
+        else if (sinceChecked >= TimeSpan.Zero && sinceChecked <= TimeSpan.FromMinutes(6))
+        {
+            var minutes = (int)Math.Ceiling(((info.LastCheckTime + TimeSpan.FromMinutes(6)) - now).TotalMinutes);
+            main = LocalizationService.Format("World_BloodmoonChanceNextCheck", chance, minutes);
+        }
+        else
+        {
+            main = LocalizationService.Format("World_BloodmoonChanceNextReady", chance);
+        }
+
+        if (!debug) return main;
+
+        var sb = new StringBuilder();
+        sb.AppendLine(main);
+        sb.AppendLine($"Current Chance: {info.CurrentChance}");
+        sb.AppendLine($"Last Triggered Time: {info.LastTriggeredTime.ToLocalTime()}");
+        sb.AppendLine($"Last Check Time: {info.LastCheckTime.ToLocalTime()}");
+        sb.Append($"Zone Load Count: {info.ZoneLoadCount}");
+        return sb.ToString();
+    }
 
     [ObservableProperty]
     private bool _hideTips;
@@ -117,7 +167,7 @@ public partial class WorldViewModel : ViewModelBase
     partial void OnIsCampaignSelectedChanged(bool value)
     {
         ApplyFilter();
-        BloodmoonChance = IsCampaignSelected ? _bloodmoonChanceCampaign : _bloodmoonChanceAdventure;
+        BloodmoonChance = CurrentBloodmoonInfo is not null ? (float)CurrentBloodmoonInfo.CurrentChance : null;
     }
 
     partial void OnHideDuplicatesChanged(bool value)
@@ -319,9 +369,9 @@ public partial class WorldViewModel : ViewModelBase
 
         ThaenTree = DatasetMapper.MapThaenTree(dataset.Characters[_selectedCharacterIndex]);
         CompletedQuests = dataset.Characters[_selectedCharacterIndex].Save.QuestCompletedLog;
-        _bloodmoonChanceCampaign = DatasetMapper.GetBloodmoonChance(dataset.Characters[_selectedCharacterIndex].Save.Campaign);
-        _bloodmoonChanceAdventure = DatasetMapper.GetBloodmoonChance(dataset.Characters[_selectedCharacterIndex].Save.Adventure);
-        BloodmoonChance = IsCampaignSelected ? _bloodmoonChanceCampaign : _bloodmoonChanceAdventure;
+        _bloodmoonInfoCampaign = DatasetMapper.GetBloodmoonInfo(dataset.Characters[_selectedCharacterIndex].Save.Campaign);
+        _bloodmoonInfoAdventure = DatasetMapper.GetBloodmoonInfo(dataset.Characters[_selectedCharacterIndex].Save.Adventure);
+        BloodmoonChance = CurrentBloodmoonInfo is not null ? (float)CurrentBloodmoonInfo.CurrentChance : null;
 
         ApplyFilter();
 
@@ -384,7 +434,7 @@ public partial class WorldViewModel : ViewModelBase
 
         Messenger.Register<WorldViewModel, CultureChangedMessage>(this, (r, m) => {
             r.ApplyFilter();
-            r.OnPropertyChanged(nameof(BloodmoonChanceString));
+            // Bloodmoon tooltip text is rebuilt on hover, so it always reflects the current culture.
             r.RefreshLocalizedTreeProperties();
         });
     }

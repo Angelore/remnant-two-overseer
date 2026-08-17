@@ -266,8 +266,20 @@ Vérifiez que les paramètres sont corrects et redémarrez l’application</valu
     <value>Objets non fabriqués avec le
 matériau requis en possession</value>
   </data>
-  <data name="World_BloodmoonChance" xml:space="preserve">
-    <value>Chance de lune de sang : {0} %</value>
+  <data name="World_BloodmoonActive" xml:space="preserve">
+    <value>Activée : {0} minutes restantes</value>
+  </data>
+  <data name="World_BloodmoonCooldown" xml:space="preserve">
+    <value>Temps de recharge : {0} minutes</value>
+  </data>
+  <data name="World_BloodmoonCooldownReady" xml:space="preserve">
+    <value>Temps de recharge : prêt</value>
+  </data>
+  <data name="World_BloodmoonChanceNextCheck" xml:space="preserve">
+    <value>Chance de lune de sang : {0} % (prochaine vérification dans {1} minutes)</value>
+  </data>
+  <data name="World_BloodmoonChanceNextReady" xml:space="preserve">
+    <value>Chance de lune de sang : {0} % (prochaine vérification : prête)</value>
   </data>
   <data name="World_TraitBookAvailable" xml:space="preserve">
     <value>Trait disponible</value>

@@ -266,8 +266,20 @@
     <value>필요 재료를 보유한
 미제작 아이템</value>
   </data>
-  <data name="World_BloodmoonChance" xml:space="preserve">
-    <value>혈월 확률: {0}%</value>
+  <data name="World_BloodmoonActive" xml:space="preserve">
+    <value>발동됨: {0}분 남음</value>
+  </data>
+  <data name="World_BloodmoonCooldown" xml:space="preserve">
+    <value>재사용 대기시간: {0}분</value>
+  </data>
+  <data name="World_BloodmoonCooldownReady" xml:space="preserve">
+    <value>재사용 대기시간: 준비됨</value>
+  </data>
+  <data name="World_BloodmoonChanceNextCheck" xml:space="preserve">
+    <value>혈월 확률: {0}% (다음 확인까지 {1}분)</value>
+  </data>
+  <data name="World_BloodmoonChanceNextReady" xml:space="preserve">
+    <value>혈월 확률: {0}% (다음 확인: 준비됨)</value>
   </data>
   <data name="World_TraitBookAvailable" xml:space="preserve">
     <value>특성 획득 가능</value>

@@ -86,10 +86,17 @@ internal class DatasetMapper
         };
     }
 
-    public static float? GetBloodmoonChance(RolledWorld? world)
+    public static Models.BloodmoonInfo? GetBloodmoonInfo(RolledWorld? world)
     {
-        if (world is null) return null;
-        return world.BloodMoon?.CurrentChance is not null ? (float)Math.Round(world.BloodMoon.CurrentChance, 2, MidpointRounding.AwayFromZero) : null;
+        if (world?.BloodMoon is null) return null;
+        return new Models.BloodmoonInfo
+        {
+            CurrentChance = world.BloodMoon.CurrentChance,
+            // Save file timestamps are in GMT; mark them explicitly so local conversion works.
+            LastTriggeredTime = DateTime.SpecifyKind(world.BloodMoon.LastTriggeredTime, DateTimeKind.Utc),
+            LastCheckTime = DateTime.SpecifyKind(world.BloodMoon.LastCheckTime, DateTimeKind.Utc),
+            ZoneLoadCount = world.BloodMoon.ZoneLoadCount
+        };
     }
 
     private static List<Models.Zone> MapZonesToZones(List<Zone> zones, List<string> missingItemIds, RespawnPoint? respawnPoint)

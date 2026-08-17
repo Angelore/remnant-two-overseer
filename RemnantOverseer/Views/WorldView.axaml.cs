@@ -1,6 +1,8 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.Media;
 using RemnantOverseer.ViewModels;
 using System;
 
@@ -24,6 +26,27 @@ public partial class WorldView : UserControl
         base.OnLoaded(e);
         if (DataContext as WorldViewModel is null) throw new Exception("DataContext is still empty");
         ((WorldViewModel)DataContext).OnViewLoaded();
+    }
+
+    // Build the bloodmoon tooltip on hover so it reflects the current time, and show the
+    // extra debug lines when Ctrl+Shift is held while mousing over.
+    private void BloodmoonIcon_PointerEntered(object? sender, PointerEventArgs e)
+    {
+        if (sender is not Control control || DataContext is not WorldViewModel vm) return;
+
+        var debug = e.KeyModifiers.HasFlag(KeyModifiers.Control) && e.KeyModifiers.HasFlag(KeyModifiers.Shift);
+        // Supply our own ToolTip instance (Avalonia uses a Tip that is itself a ToolTip directly)
+        // so we can lift the default 320px MaxWidth for this tooltip only - other tooltips in the
+        // view still wrap as before. NoWrap then lets the box size to the widest debug line.
+        ToolTip.SetTip(control, new ToolTip
+        {
+            MaxWidth = double.PositiveInfinity,
+            Content = new TextBlock
+            {
+                Text = vm.GetBloodmoonTooltip(debug),
+                TextWrapping = TextWrapping.NoWrap
+            }
+        });
     }
 
     // Flyout can only be shown by explicitly calling it

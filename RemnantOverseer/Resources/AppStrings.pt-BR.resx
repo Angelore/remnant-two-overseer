@@ -266,8 +266,20 @@ Verifique se as configurações estão corretas e reinicie o aplicativo</value>
     <value>Itens não fabricados com o
 material necessário em posse</value>
   </data>
-  <data name="World_BloodmoonChance" xml:space="preserve">
-    <value>Chance de Lua Sangrenta: {0}%</value>
+  <data name="World_BloodmoonActive" xml:space="preserve">
+    <value>Ativada: {0} minutos restantes</value>
+  </data>
+  <data name="World_BloodmoonCooldown" xml:space="preserve">
+    <value>Recarga: {0} minutos</value>
+  </data>
+  <data name="World_BloodmoonCooldownReady" xml:space="preserve">
+    <value>Recarga: pronta</value>
+  </data>
+  <data name="World_BloodmoonChanceNextCheck" xml:space="preserve">
+    <value>Chance de Lua Sangrenta: {0}% (próxima verificação em {1} minutos)</value>
+  </data>
+  <data name="World_BloodmoonChanceNextReady" xml:space="preserve">
+    <value>Chance de Lua Sangrenta: {0}% (próxima verificação: pronta)</value>
   </data>
   <data name="World_TraitBookAvailable" xml:space="preserve">
     <value>Característica disponível</value>

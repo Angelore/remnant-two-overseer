@@ -266,8 +266,20 @@ Prüfe, ob die Einstellungen korrekt sind, und starte die Anwendung neu</value>
     <value>Nicht hergestellte Gegenstände mit dem
 benötigten Material im Besitz</value>
   </data>
-  <data name="World_BloodmoonChance" xml:space="preserve">
-    <value>Blutmond-Chance: {0}%</value>
+  <data name="World_BloodmoonActive" xml:space="preserve">
+    <value>Aktiviert: noch {0} Minuten</value>
+  </data>
+  <data name="World_BloodmoonCooldown" xml:space="preserve">
+    <value>Abklingzeit: {0} Minuten</value>
+  </data>
+  <data name="World_BloodmoonCooldownReady" xml:space="preserve">
+    <value>Abklingzeit: bereit</value>
+  </data>
+  <data name="World_BloodmoonChanceNextCheck" xml:space="preserve">
+    <value>Blutmond-Chance: {0}% (nächste Prüfung in {1} Minuten)</value>
+  </data>
+  <data name="World_BloodmoonChanceNextReady" xml:space="preserve">
+    <value>Blutmond-Chance: {0}% (nächste Prüfung: bereit)</value>
   </data>
   <data name="World_TraitBookAvailable" xml:space="preserve">
     <value>Eigenschaft verfügbar</value>

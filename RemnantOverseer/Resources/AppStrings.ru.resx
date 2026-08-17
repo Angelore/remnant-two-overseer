@@ -266,8 +266,20 @@
     <value>Несозданные предметы с
 нужным материалом в наличии</value>
   </data>
-  <data name="World_BloodmoonChance" xml:space="preserve">
-    <value>Шанс Кровавой Луны: {0}%</value>
+  <data name="World_BloodmoonActive" xml:space="preserve">
+    <value>Активирована: осталось {0} мин</value>
+  </data>
+  <data name="World_BloodmoonCooldown" xml:space="preserve">
+    <value>Перезарядка: {0} мин</value>
+  </data>
+  <data name="World_BloodmoonCooldownReady" xml:space="preserve">
+    <value>Перезарядка: готова</value>
+  </data>
+  <data name="World_BloodmoonChanceNextCheck" xml:space="preserve">
+    <value>Шанс Кровавой Луны: {0}% (следующая проверка через {1} мин)</value>
+  </data>
+  <data name="World_BloodmoonChanceNextReady" xml:space="preserve">
+    <value>Шанс Кровавой Луны: {0}% (следующая проверка: готова)</value>
   </data>
   <data name="World_TraitBookAvailable" xml:space="preserve">
     <value>Доступен талант</value>

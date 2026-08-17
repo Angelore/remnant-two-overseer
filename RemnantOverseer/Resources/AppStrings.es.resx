@@ -266,8 +266,20 @@ Comprueba que los ajustes sean correctos y reinicia la aplicación</value>
     <value>Objetos sin fabricar con el
 material requerido en posesión</value>
   </data>
-  <data name="World_BloodmoonChance" xml:space="preserve">
-    <value>Probabilidad de luna de sangre: {0}%</value>
+  <data name="World_BloodmoonActive" xml:space="preserve">
+    <value>Activada: quedan {0} minutos</value>
+  </data>
+  <data name="World_BloodmoonCooldown" xml:space="preserve">
+    <value>Enfriamiento: {0} minutos</value>
+  </data>
+  <data name="World_BloodmoonCooldownReady" xml:space="preserve">
+    <value>Enfriamiento: listo</value>
+  </data>
+  <data name="World_BloodmoonChanceNextCheck" xml:space="preserve">
+    <value>Probabilidad de luna de sangre: {0}% (próxima comprobación en {1} minutos)</value>
+  </data>
+  <data name="World_BloodmoonChanceNextReady" xml:space="preserve">
+    <value>Probabilidad de luna de sangre: {0}% (próxima comprobación: lista)</value>
   </data>
   <data name="World_TraitBookAvailable" xml:space="preserve">
     <value>Rasgo disponible</value>
