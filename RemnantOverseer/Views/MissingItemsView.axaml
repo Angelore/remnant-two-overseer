@@ -126,6 +126,7 @@
                 </HyperlinkButton>
                 <PathIcon Data="{StaticResource RoundInfoIcon}" IsVisible="{Binding HasPlainDescriptionIcon}" ToolTip.Tip="{Binding Description}" ToolTip.Placement="LeftEdgeAlignedTop"/>
                 <PathIcon Data="{StaticResource CoopIcon}" IsVisible="{Binding IsCoop}" ToolTip.Tip="{loc:Loc Item_CoopRequired}" ToolTip.Placement="LeftEdgeAlignedTop"/>
+                <PathIcon Data="{StaticResource CassShopIcon}" IsVisible="{Binding IsInCassShop}" ToolTip.Tip="{loc:Loc Item_InCassShop}" ToolTip.Placement="LeftEdgeAlignedTop" Foreground="{StaticResource ZoneTransitionColor}"/>
               </StackPanel>
             </Grid>
           </TreeDataTemplate>

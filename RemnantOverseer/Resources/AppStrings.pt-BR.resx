@@ -317,6 +317,9 @@ material necessário em posse</value>
   <data name="Item_AccountWideUnlock" xml:space="preserve">
     <value>Desbloqueio para toda a conta</value>
   </data>
+  <data name="Item_InCassShop" xml:space="preserve">
+    <value>Atualmente na loja de Cass</value>
+  </data>
   <data name="Item_OriginNameFormat" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>

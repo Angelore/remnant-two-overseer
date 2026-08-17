@@ -10,13 +10,14 @@ internal class DatasetMapper
     public static MappedZones MapCharacterToZones(Character characterData)
     {
         var missingItemIds = characterData.Profile.MissingItems.Select(x => x["Id"]).ToList();
+        var cassShopItemIds = characterData.Save.CassShop.Select(x => x.Id).ToHashSet(StringComparer.Ordinal);
         var result = new MappedZones
         {
-            CampaignZoneList = MapZonesToZones([.. characterData.Save.Campaign.Zones, characterData.Save.Campaign.Ward13], missingItemIds, characterData.Save.Campaign.RespawnPoint)
+            CampaignZoneList = MapZonesToZones([.. characterData.Save.Campaign.Zones, characterData.Save.Campaign.Ward13], missingItemIds, cassShopItemIds, characterData.Save.Campaign.RespawnPoint)
         };
         if (characterData.Save.Adventure != null)
         {
-            result.AdventureZoneList = MapZonesToZones([.. characterData.Save.Adventure.Zones, characterData.Save.Adventure.Ward13], missingItemIds, characterData.Save.Adventure.RespawnPoint);
+            result.AdventureZoneList = MapZonesToZones([.. characterData.Save.Adventure.Zones, characterData.Save.Adventure.Ward13], missingItemIds, cassShopItemIds, characterData.Save.Adventure.RespawnPoint);
         }
         return result;
     }
@@ -56,11 +57,18 @@ internal class DatasetMapper
 
     public static MappedMissingItems MapMissingItems(List<Dictionary<string, string>> missingItemsDict)
     {
+        return MapMissingItems(missingItemsDict, []);
+    }
+
+    public static MappedMissingItems MapMissingItems(List<Dictionary<string, string>> missingItemsDict, IEnumerable<string> cassShopItemIds)
+    {
         var result = new MappedMissingItems();
+        var cassShopItemIdSet = cassShopItemIds.ToHashSet(StringComparer.Ordinal);
         foreach(var missingItem in missingItemsDict)
         {
             var lootItem = new LootItemExtended() { Properties = missingItem };
             var item = MapLootItemToItem(lootItem);
+            item.IsInCassShop = cassShopItemIdSet.Contains(item.Id);
             result.ItemCategoryList[(int)item.Type].Items.Add(item);
         }
 
@@ -99,7 +107,7 @@ internal class DatasetMapper
         };
     }
 
-    private static List<Models.Zone> MapZonesToZones(List<Zone> zones, List<string> missingItemIds, RespawnPoint? respawnPoint)
+    private static List<Models.Zone> MapZonesToZones(List<Zone> zones, List<string> missingItemIds, HashSet<string> cassShopItemIds, RespawnPoint? respawnPoint)
     {
         //var locnames = new List<string>();
         //var subtypes = new List<string>();
@@ -142,7 +150,7 @@ internal class DatasetMapper
                         //{
                         //    subtypes.Add(value);
                         //}
-                        var itemModel = MapLootItemToItem(item, lootGroup, !missingItemIds.Contains(item.Id));
+                        var itemModel = MapLootItemToItem(item, lootGroup, !missingItemIds.Contains(item.Id), cassShopItemIds);
                         // if (itemModel.OriginName.Equals("Oracle's Refuge")) locationModel.IsOracleLocation = true;
                         locationModel.Items.Add(itemModel);
                     }
@@ -205,7 +213,7 @@ internal class DatasetMapper
         return itemModel;
     }
 
-    private static Models.Item MapLootItemToItem(LootItemExtended lootItem, LootGroup lootGroup, bool isDuplicate)
+    private static Models.Item MapLootItemToItem(LootItemExtended lootItem, LootGroup lootGroup, bool isDuplicate, HashSet<string> cassShopItemIds)
     {
         var itemModel = MapLootItemToItem(lootItem);
 
@@ -214,6 +222,9 @@ internal class DatasetMapper
         itemModel.CanonicalOriginName = lootGroup.Name ?? string.Empty;
         itemModel.OriginId = originType == OriginTypes.Vendor ? itemModel.CanonicalOriginName : lootGroup.EventDropReference ?? string.Empty;
         itemModel.IsDuplicate = isDuplicate;
+        itemModel.IsInCassShop = originType == OriginTypes.Vendor
+            && string.Equals(lootGroup.Name, "Cass", StringComparison.Ordinal)
+            && cassShopItemIds.Contains(lootItem.Id);
 
         if(itemModel.Type == ItemTypes.Weapon)
         {
