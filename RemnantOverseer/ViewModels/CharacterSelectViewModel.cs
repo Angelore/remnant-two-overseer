@@ -9,14 +9,13 @@ using RemnantOverseer.Services;
 using RemnantOverseer.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 namespace RemnantOverseer.ViewModels;
 public partial class CharacterSelectViewModel: ViewModelBase
 {
     private readonly SaveDataService _saveDataService;
-
+    private readonly StateService _stateService;
     private int _selectedCharacterIndex = -1;
 
     [ObservableProperty]
@@ -25,11 +24,12 @@ public partial class CharacterSelectViewModel: ViewModelBase
     [ObservableProperty]
     private bool _isLoading = false;
 
-    public CharacterSelectViewModel(SaveDataService saveDataService)
+    public CharacterSelectViewModel(SaveDataService saveDataService, StateService stateService)
     {
         _saveDataService = saveDataService;
+        _stateService = stateService;
 
-        if(Design.IsDesignMode)
+        if (Design.IsDesignMode)
         {
             Characters =
             [
@@ -62,6 +62,7 @@ public partial class CharacterSelectViewModel: ViewModelBase
             character.IsSelected = character.Index == selectedCharacter.Index;
         }
         _selectedCharacterIndex = selectedCharacter.Index;
+        _stateService.SelectedCharacterIndex = selectedCharacter.Index;
         Task.Run(async () =>
         {
             // Feeling TOO snappy without a delay

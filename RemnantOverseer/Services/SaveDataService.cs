@@ -23,6 +23,7 @@ namespace RemnantOverseer.Services;
 public class SaveDataService
 {
     private readonly SettingsService _settingsService;
+    private readonly StateService _stateService;
     private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1, 1);
     private readonly object _loadFailureNotificationLock = new();
     Subject<DateTime> _fileUpdateSubject = new Subject<DateTime>();
@@ -32,9 +33,10 @@ public class SaveDataService
     private string? FilePath { get { return _settingsService.Get().SaveFilePath; } }
     private static readonly FileSystemWatcher FileWatcher = new();
 
-    public SaveDataService(SettingsService settingsService)
+    public SaveDataService(SettingsService settingsService, StateService stateService)
     {
         _settingsService = settingsService;
+        _stateService = stateService;
 
         FileWatcher.Changed += OnSaveFileChanged;
         FileWatcher.Created += OnSaveFileChanged;
@@ -138,8 +140,12 @@ public class SaveDataService
         var dataset = await LoadSaveData(true);
         if (dataset == null) return;
 
-        // If the number of character changed, we can't rely on previous index anymore. There is no way to uniquely id  characters, so we will just reset
+        // If the number of characters changed, we can't rely on previous index anymore. There is no way to uniquely id  characters, so we will just reset
         var countChanged = dataset.Characters.Count != _lastCharacterCount;
+        if (countChanged)
+        {
+            _stateService.SelectedCharacterIndex = null;
+        }
         _lastCharacterCount = dataset.Characters.Count;
         WeakReferenceMessenger.Default.Send(new SaveFileChangedMessage(countChanged));
     }

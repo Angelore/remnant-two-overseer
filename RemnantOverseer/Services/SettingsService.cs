@@ -1,5 +1,4 @@
 ﻿using Avalonia.Controls;
-using lib.remnant2.analyzer.SaveLocation;
 using RemnantOverseer.Utilities;
 using RemnantOverseer.Models;
 using RemnantOverseer.Models.Messages;

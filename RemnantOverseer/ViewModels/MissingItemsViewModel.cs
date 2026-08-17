@@ -19,6 +19,7 @@ namespace RemnantOverseer.ViewModels;
 public partial class MissingItemsViewModel : ViewModelBase
 {
     private readonly SaveDataService _saveDataService;
+    private readonly StateService _stateService;
     private MappedMissingItems _mappedMissingItems = new();
     private readonly Subject<string?> _filterTextSubject = new Subject<string?>();
 
@@ -36,9 +37,10 @@ public partial class MissingItemsViewModel : ViewModelBase
     [ObservableProperty]
     private bool _isGlobalExpandOn = true;
 
-    public MissingItemsViewModel(SaveDataService saveDataService)
+    public MissingItemsViewModel(SaveDataService saveDataService, StateService stateService)
     {
         _saveDataService = saveDataService;
+        _stateService = stateService;
         _filterTextSubject
           .Throttle(TimeSpan.FromMilliseconds(400))
           .Subscribe(OnFilterTextChangedDebounced);
@@ -51,7 +53,20 @@ public partial class MissingItemsViewModel : ViewModelBase
     {
         if (IsInitialized) { return; }
 
-        Task.Run(async () => { await ReadSave(true); IsActive = true; IsInitialized = true; });
+        Task.Run(async () =>
+        {
+            if (_stateService.SelectedCharacterIndex != null)
+            {
+                _selectedCharacterIndex = _stateService.SelectedCharacterIndex.Value;
+                await ReadSave();
+            }
+            else
+            {
+                await ReadSave(true);
+            }
+            IsActive = true;
+            IsInitialized = true;
+        });
     }
 
     [RelayCommand]

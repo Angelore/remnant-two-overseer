@@ -13,7 +13,8 @@ public partial class SettingsView : UserControl
         {
             // This can be before or after InitializeComponent.
             var settingsService = new Services.SettingsService();
-            var saveDataService = new Services.SaveDataService(settingsService);
+            var stateService = new Services.StateService();
+            var saveDataService = new Services.SaveDataService(settingsService, stateService);
             Design.SetDataContext(this, new SettingsViewModel(settingsService, saveDataService));
         }
         InitializeComponent();

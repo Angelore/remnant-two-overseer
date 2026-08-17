@@ -20,6 +20,7 @@ public partial class WorldViewModel : ViewModelBase
 {
     private readonly SettingsService _settingsService;
     private readonly SaveDataService _saveDataService;
+    private readonly StateService _stateService;
     private MappedZones _mappedZones = new();
     private int _selectedCharacterIndex = -1;
     private readonly Subject<string?> _filterTextSubject = new Subject<string?>();
@@ -132,7 +133,7 @@ public partial class WorldViewModel : ViewModelBase
     [ObservableProperty]
     private bool _hideToolkitLinks;
 
-    public WorldViewModel(SettingsService settingsService, SaveDataService saveDataService)
+    public WorldViewModel(SettingsService settingsService, SaveDataService saveDataService, StateService stateService)
     {
         _settingsService = settingsService;
         var settings = _settingsService.Get();
@@ -143,6 +144,7 @@ public partial class WorldViewModel : ViewModelBase
         HideTips = settings.HideTips;
         HideToolkitLinks = settings.HideToolkitLinks;
         _saveDataService = saveDataService;
+        _stateService = stateService;
         _filterTextSubject
           .Throttle(TimeSpan.FromMilliseconds(400))
           .Subscribe(OnFilterTextChangedDebounced);
@@ -152,7 +154,20 @@ public partial class WorldViewModel : ViewModelBase
     {
         if (IsInitialized) { return; }
 
-        Task.Run(async () => { await ReadSave(true, true); IsActive = true; IsInitialized = true; });
+        Task.Run(async () => {
+            if (_stateService.SelectedCharacterIndex != null)
+            {
+                _selectedCharacterIndex = _stateService.SelectedCharacterIndex.Value;
+                await ReadSave(false, true);
+            }
+            else
+            {
+                await ReadSave(true, true);
+            }
+            await ReadSave(true, true);
+            IsActive = true;
+            IsInitialized = true;
+        });
     }
 
     [RelayCommand]
@@ -331,7 +346,7 @@ public partial class WorldViewModel : ViewModelBase
 
     // TODO: Look into skipping updates if character index doesn't match and reset is false?
     // Need to think about it, feel like it's a bad idea
-    private async Task ReadSave(bool doResetActiveCharacter, bool doResetCampaignToggle)
+    private async Task ReadSave(bool resetActiveCharacter, bool resetCampaignToggle)
     {
         IsLoading = true;
 
@@ -343,7 +358,7 @@ public partial class WorldViewModel : ViewModelBase
         }
 
 #pragma warning disable MVVMTK0034 // Direct field reference to [ObservableProperty] backing field. Call private field to avoid filtering on every assignment
-        if (doResetActiveCharacter)
+        if (resetActiveCharacter)
         {
             _selectedCharacterIndex = DatasetMapper.GetActiveCharacterIndex(dataset);
             ResetLocationToggles();
@@ -352,7 +367,7 @@ public partial class WorldViewModel : ViewModelBase
         }
 
         _mappedZones = DatasetMapper.MapCharacterToZones(dataset.Characters[_selectedCharacterIndex]);
-        if (doResetCampaignToggle)
+        if (resetCampaignToggle)
         {
             if (dataset.Characters[_selectedCharacterIndex].ActiveWorldSlot == lib.remnant2.analyzer.Enums.WorldSlot.Campaign)
             {

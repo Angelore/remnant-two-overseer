@@ -15,7 +15,8 @@ public partial class MainWindow : Window
         {
             // This can be before or after InitializeComponent.
             var settingsService = new Services.SettingsService();
-            Design.SetDataContext(this, new MainWindowViewModel(settingsService, new Services.SaveDataService(settingsService)));
+            var stateService = new Services.StateService();
+            Design.SetDataContext(this, new MainWindowViewModel(settingsService, new Services.SaveDataService(settingsService, stateService)));
         }
         InitializeComponent();
         Win32Properties.AddWndProcHookCallback(this, WndProcHook);
