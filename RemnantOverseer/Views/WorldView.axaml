@@ -143,11 +143,9 @@
                         <Setter Property="FontSize" Value="14"/>
                       </Style>
                     </StackPanel.Styles>
-                    <ToggleButton IsChecked="{Binding !HideLootedItems}" Content="{loc:Loc World_FilterLootedItems}"/>
-                    <ToggleButton IsChecked="{Binding !HideMissingPrerequisiteItems}" Content="{loc:Loc World_FilterMissingPrerequisites}"/>
-                    <ToggleButton IsChecked="{Binding !HideHasRequiredMaterialItems}">
-                      <TextBlock Text="{loc:Loc World_FilterUncraftedWithRequiredMaterial}"/>
-                    </ToggleButton>
+                    <CheckBox IsChecked="{Binding !HideLootedItems}" Content="{loc:Loc World_FilterLootedItems}"/>
+                    <CheckBox IsChecked="{Binding !HideMissingPrerequisiteItems}" Content="{loc:Loc World_FilterMissingPrerequisites}"/>
+                    <CheckBox IsChecked="{Binding !HideHasRequiredMaterialItems}" Content="{loc:Loc World_FilterUncraftedWithRequiredMaterial}" />
                   </StackPanel>
                 </Flyout>
               </Button.Flyout>

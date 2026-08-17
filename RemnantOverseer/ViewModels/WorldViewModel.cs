@@ -44,7 +44,7 @@ public partial class WorldViewModel : ViewModelBase
     private bool _hideLootedItems;
 
     [ObservableProperty]
-    private bool _hideMissingPrerequisiteItems ;
+    private bool _hideMissingPrerequisiteItems;
 
     [ObservableProperty]
     private bool _hideHasRequiredMaterialItems;
