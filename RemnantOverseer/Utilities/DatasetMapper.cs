@@ -9,7 +9,7 @@ internal class DatasetMapper
 {
     public static MappedZones MapCharacterToZones(Character characterData)
     {
-        var missingItemIds = characterData.Profile.MissingItems.Select(x => x["Id"]).ToList();
+        var missingItemIds = characterData.Profile.MissingItems.Select(x => x["Id"]).ToHashSet(StringComparer.Ordinal);
         var cassShopItemIds = characterData.Save.CassShop.Select(x => x.Id).ToHashSet(StringComparer.Ordinal);
         var result = new MappedZones
         {
@@ -107,7 +107,7 @@ internal class DatasetMapper
         };
     }
 
-    private static List<Models.Zone> MapZonesToZones(List<Zone> zones, List<string> missingItemIds, HashSet<string> cassShopItemIds, RespawnPoint? respawnPoint)
+    private static List<Models.Zone> MapZonesToZones(List<Zone> zones, HashSet<string> missingItemIds, HashSet<string> cassShopItemIds, RespawnPoint? respawnPoint)
     {
         //var locnames = new List<string>();
         //var subtypes = new List<string>();
