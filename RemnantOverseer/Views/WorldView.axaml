@@ -314,30 +314,35 @@
                   <controls:TextBlockWithTipWhenEllipsized Grid.Column="1" Text="{Binding OriginNameFormatted}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
                 </Grid>
 
-                <StackPanel Grid.Column="4" Orientation="Horizontal" Margin="20 0 20 0">
-                  <StackPanel.Styles>
+                <Grid Grid.Column="4" Margin="20 0 20 0" ColumnDefinitions="*,*,*,*,*">
+                  <Grid.Styles>
                     <Style Selector="PathIcon">
                       <Setter Property="Height" Value="{StaticResource IconSize}" />
                       <Setter Property="Width" Value="{StaticResource IconSize}" />
                       <Setter Property="Margin" Value="5 0" />
                       <Setter Property="Foreground" Value="{StaticResource BaseTextColor}" />
                     </Style>
-                  </StackPanel.Styles>
+                  </Grid.Styles>
                   <!-- consider always showing icons, but very faint if not applicable for layout consistency -->
                   <!--<PathIcon Height="{StaticResource IconSize}" Width="{StaticResource IconSize}" Margin="5 0" Foreground="{StaticResource BaseTextColor}" Data="{StaticResource CoopIcon}"/>-->
-                  <HyperlinkButton Classes="plain" Margin="0" Padding="0" NavigateUri="{Binding NoteTranslationLink}" IsVisible="{Binding HasNoteTranslationLink}">
-                    <PathIcon Data="{StaticResource RoundInfoIcon}"/>
-                    <ToolTip.Placement>LeftEdgeAlignedTop</ToolTip.Placement>
-                    <ToolTip.Tip>
-                      <StackPanel Orientation="Vertical">
-                        <TextBlock TextDecorations="{x:Null}" Margin="0 0 0 5" Text="{loc:Loc Item_ClickTranslateNote}"/>
-                        <Border Classes="toolTipDivider" />
-                        <TextBlock TextDecorations="{x:Null}" Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="450"/>
-                      </StackPanel>
-                    </ToolTip.Tip>
-                  </HyperlinkButton>
-                  <PathIcon Data="{StaticResource RoundInfoIcon}" IsVisible="{Binding HasPlainDescriptionIcon}" ToolTip.Tip="{Binding Description}" ToolTip.Placement="LeftEdgeAlignedTop"/>
-                  <HyperlinkButton Classes="plain" Margin="5 0" Padding="0" NavigateUri="{Binding ToolkitLink}">
+                  
+                  <!-- These two are mutualy exclusive -->
+                  <Panel Grid.Column="0">
+                    <HyperlinkButton Classes="plain" Margin="0" Padding="0" NavigateUri="{Binding NoteTranslationLink}" IsVisible="{Binding HasNoteTranslationLink}">
+                      <PathIcon Data="{StaticResource RoundInfoIcon}"/>
+                      <ToolTip.Placement>LeftEdgeAlignedTop</ToolTip.Placement>
+                      <ToolTip.Tip>
+                        <StackPanel Orientation="Vertical">
+                          <TextBlock TextDecorations="{x:Null}" Margin="0 0 0 5" Text="{loc:Loc Item_ClickTranslateNote}"/>
+                          <Border Classes="toolTipDivider" />
+                          <TextBlock TextDecorations="{x:Null}" Text="{Binding Description}" TextWrapping="Wrap" MaxWidth="450"/>
+                        </StackPanel>
+                      </ToolTip.Tip>
+                    </HyperlinkButton>
+                    <PathIcon Data="{StaticResource RoundInfoIcon}" IsVisible="{Binding HasPlainDescriptionIcon}" ToolTip.Tip="{Binding Description}" ToolTip.Placement="LeftEdgeAlignedTop"/>
+                  </Panel>
+
+                  <HyperlinkButton Grid.Column="1" Classes="plain" Margin="5 0" Padding="0" NavigateUri="{Binding ToolkitLink}">
                     <HyperlinkButton.IsVisible>
                       <MultiBinding Converter="{x:Static BoolConverters.And}">
                         <Binding Path="ToolkitLink" Converter="{x:Static StringConverters.IsNotNullOrEmpty}" Mode="OneWay" />
@@ -355,10 +360,10 @@
                       </StackPanel>
                     </ToolTip.Tip>
                   </HyperlinkButton>
-                  <PathIcon Data="{StaticResource CoopIcon}" IsVisible="{Binding IsCoop}" ToolTip.Tip="{loc:Loc Item_CoopRequired}" ToolTip.Placement="LeftEdgeAlignedTop"/>
-                  <PathIcon Data="{StaticResource CassShopIcon}" IsVisible="{Binding IsInCassShop}" ToolTip.Tip="{loc:Loc Item_InCassShop}" ToolTip.Placement="LeftEdgeAlignedTop"/>
-                  <PathIcon Data="{StaticResource AccountAwardIcon}" IsVisible="{Binding IsAccountAward}" ToolTip.Tip="{loc:Loc Item_AccountWideUnlock}" ToolTip.Placement="LeftEdgeAlignedTop"/>
-                </StackPanel>
+                  <PathIcon Grid.Column="2" Data="{StaticResource CoopIcon}" IsVisible="{Binding IsCoop}" ToolTip.Tip="{loc:Loc Item_CoopRequired}" ToolTip.Placement="LeftEdgeAlignedTop"/>
+                  <PathIcon Grid.Column="3" Data="{StaticResource CassShopIcon}" IsVisible="{Binding IsInCassShop}" ToolTip.Tip="{loc:Loc Item_InCassShop}" ToolTip.Placement="LeftEdgeAlignedTop"/>
+                  <PathIcon Grid.Column="4" Data="{StaticResource AccountAwardIcon}" IsVisible="{Binding IsAccountAward}" ToolTip.Tip="{loc:Loc Item_AccountWideUnlock}" ToolTip.Placement="LeftEdgeAlignedTop"/>
+                </Grid>
               </Grid>
             </TreeDataTemplate>
           </TreeView.DataTemplates>
