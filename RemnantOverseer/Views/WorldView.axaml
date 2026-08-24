@@ -356,7 +356,7 @@
                     </ToolTip.Tip>
                   </HyperlinkButton>
                   <PathIcon Data="{StaticResource CoopIcon}" IsVisible="{Binding IsCoop}" ToolTip.Tip="{loc:Loc Item_CoopRequired}" ToolTip.Placement="LeftEdgeAlignedTop"/>
-                  <PathIcon Data="{StaticResource CassShopIcon}" IsVisible="{Binding IsInCassShop}" ToolTip.Tip="{loc:Loc Item_InCassShop}" ToolTip.Placement="LeftEdgeAlignedTop" Foreground="{StaticResource ZoneTransitionColor}"/>
+                  <PathIcon Data="{StaticResource CassShopIcon}" IsVisible="{Binding IsInCassShop}" ToolTip.Tip="{loc:Loc Item_InCassShop}" ToolTip.Placement="LeftEdgeAlignedTop"/>
                   <PathIcon Data="{StaticResource AccountAwardIcon}" IsVisible="{Binding IsAccountAward}" ToolTip.Tip="{loc:Loc Item_AccountWideUnlock}" ToolTip.Placement="LeftEdgeAlignedTop"/>
                 </StackPanel>
               </Grid>
