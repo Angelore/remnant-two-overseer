@@ -129,7 +129,10 @@ public partial class MissingItemsViewModel : ViewModelBase
             OnPropertyChanged(nameof(FilterText));
         }
 
-        _mappedMissingItems = DatasetMapper.MapMissingItems(dataset.Characters[_selectedCharacterIndex].Profile.MissingItems);
+        var character = dataset.Characters[_selectedCharacterIndex];
+        _mappedMissingItems = DatasetMapper.MapMissingItems(
+            character.Profile.MissingItems,
+            character.Save.CassShop.Select(x => x.Id));
 
         ApplyFilter();
 

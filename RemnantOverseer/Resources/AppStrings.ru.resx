@@ -317,6 +317,9 @@
   <data name="Item_AccountWideUnlock" xml:space="preserve">
     <value>Разблокируется для всей учетной записи</value>
   </data>
+  <data name="Item_InCassShop" xml:space="preserve">
+    <value>Сейчас в магазине Кэсс</value>
+  </data>
   <data name="Item_OriginNameFormat" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>

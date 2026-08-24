@@ -317,6 +317,9 @@
   <data name="Item_AccountWideUnlock" xml:space="preserve">
     <value>アカウント全体で解除</value>
   </data>
+  <data name="Item_InCassShop" xml:space="preserve">
+    <value>現在キャスのショップにあります</value>
+  </data>
   <data name="Item_OriginNameFormat" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>

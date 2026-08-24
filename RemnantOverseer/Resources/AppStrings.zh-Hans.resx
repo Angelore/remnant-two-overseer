@@ -317,6 +317,9 @@
   <data name="Item_AccountWideUnlock" xml:space="preserve">
     <value>账号范围解锁</value>
   </data>
+  <data name="Item_InCassShop" xml:space="preserve">
+    <value>当前在卡莎的商店中</value>
+  </data>
   <data name="Item_OriginNameFormat" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>

@@ -317,6 +317,9 @@ required material in possession</value>
   <data name="Item_AccountWideUnlock" xml:space="preserve">
     <value>Account-wide unlock</value>
   </data>
+  <data name="Item_InCassShop" xml:space="preserve">
+    <value>Currently in Cass's shop</value>
+  </data>
   <data name="Item_OriginNameFormat" xml:space="preserve">
     <value>{0}: {1}</value>
   </data>
